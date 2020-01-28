@@ -34,7 +34,6 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@material-ui/core/TextField";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 
 const primaryMenu: MenuItem[] = [
@@ -288,7 +287,7 @@ const LayoutDrawer: React.FC = () => {
             <div className={classes.spaceFiller} />
         </>
     )
-}
+};
 
 
 const useAppBarStyles = makeStyles((theme: Theme) => createStyles({
@@ -387,7 +386,7 @@ const LayoutAppBar: React.FC = () => {
             <div className={classes.toolbar} />
         </>
     )
-}
+};
 
 const useLayoutStyles = makeStyles((theme: Theme) => createStyles({
     body: {
@@ -415,6 +414,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
         </>
     )
-}
+};
 
 export default Layout;
