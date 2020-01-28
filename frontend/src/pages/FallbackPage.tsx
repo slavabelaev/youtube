@@ -1,9 +1,9 @@
 import React from "react";
 
-const ErrorPage: React.FC = () => {
+const FallbackPage: React.FC = () => {
     return (
         <h1>Error Page</h1>
     )
 }
 
-export default ErrorPage;
+export default FallbackPage;
