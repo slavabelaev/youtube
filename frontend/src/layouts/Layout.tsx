@@ -1,5 +1,5 @@
 import React, {ReactElement} from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {AppBar, createStyles, IconButton, Theme, Toolbar, Typography} from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -51,11 +51,11 @@ const secondaryMenu: MenuItem[] = [
 ];
 
 const playlistsMenu: MenuItem[] = Array(10).fill(null).map((_, index) => (
-    { title: `Плэйлист ${index}`, to: '/playlist?list=1', icon: <PlaylistPlayIcon /> }
+    { title: `Плэйлист ${index}`, to: `/playlist?list=${index}`, icon: <PlaylistPlayIcon /> }
 ));
 
 const subscriptionsMenu: MenuItem[] = Array(10).fill(null).map((_, index) => (
-    { title: `Название канала ${index}`, to: '/channel/1', icon: <></> }
+    { title: `Название канала ${index}`, to: `/channel/${index}`, icon: <></> }
 ));
 
 const otherFeatures: MenuItem[] = [
@@ -86,6 +86,12 @@ const guideLinksSecondary: MenuItem[] = [
     { title: 'Правила и безопасность', to: '/', icon: <></> },
     { title: 'Новые функции', to: '/', icon: <></> },
 ];
+
+interface MenuItem {
+    title: string;
+    to: string;
+    icon: ReactElement
+}
 
 const drawerWidth = 240;
 const useDrawerStyles = makeStyles((theme: Theme) => createStyles({
@@ -154,12 +160,6 @@ const useDrawerStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-interface MenuItem {
-    title: string;
-    to: string;
-    icon: ReactElement
-}
-
 const LayoutDrawer: React.FC = () => {
     const classes = useDrawerStyles();
     const [collapsed, setCollapsed] = React.useState(true);
@@ -168,7 +168,7 @@ const LayoutDrawer: React.FC = () => {
     const toggleSubscriptions = () => setSubscriptionsCollapsed(!subscriptionsCollapsed);
 
     const renderMenuItem = (item: MenuItem) => (
-        <ListItem button dense component={Link} to={item.to}>
+        <ListItem button dense component={NavLink} to={item.to} exact activeClassName="Mui-selected">
             <ListItemIcon className={classes.listItemIcon}>
                 {item.icon}
             </ListItemIcon>
@@ -199,7 +199,7 @@ const LayoutDrawer: React.FC = () => {
     );
 
     const renderSubscriptionMenuItem = (item: MenuItem) => (
-        <ListItem button dense component={Link} to={item.to}>
+        <ListItem button dense component={NavLink} to={item.to} activeClassName="Mui-selected">
             <ListItemAvatar className={classes.listItemAvatar}>
                 <Avatar className={classes.avatar} />
             </ListItemAvatar>
