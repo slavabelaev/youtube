@@ -294,7 +294,7 @@ const LayoutDrawer: React.FC = () => {
 const useAppBarStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
         backgroundColor: '#fff',
-        borderBottomWidth: 0
+        borderWidth: 0
     },
     menuButton: {
         marginRight: theme.spacing(1.5)
@@ -308,16 +308,18 @@ const useAppBarStyles = makeStyles((theme: Theme) => createStyles({
     searchForm: {
         flex: 1,
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingLeft: theme.spacing(3),
+        paddingRight: theme.spacing(1)
+    },
+    search: {
+        width: '100%',
+        maxWidth: 600
     },
     avatar: {
         width: theme.spacing(4),
         height: theme.spacing(4)
     },
-    search: {
-        width: '100%',
-        maxWidth: 600
-    }
 }));
 
 const LayoutAppBar: React.FC = () => {

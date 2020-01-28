@@ -14,7 +14,7 @@ const GridList: React.FC = () => {
             <Grid container spacing={2}>
                 {Array(12).fill(null).map(item => {
                     return (
-                        <Grid item xl={4} lg={3} md={2} sm={1} xs={1}>
+                        <Grid item xl={2} lg={3} md={6} sm={12} xs={12}>
                             <GridItem />
                         </Grid>
                     )
