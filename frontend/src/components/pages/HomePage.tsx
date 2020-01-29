@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../layouts/Layout";
-import GridList from "../components/GridList";
+import GridList from "../GridList";
 import {createStyles, Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 
