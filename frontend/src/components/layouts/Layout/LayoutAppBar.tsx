@@ -6,11 +6,13 @@ import {Link} from "react-router-dom";
 import logo from "../logo.svg";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
+import KeyboardIcon from "@material-ui/icons/Keyboard";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AvatarPopoverButton from "../AvatarPopoverButton";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -72,14 +74,20 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                     >
                         <TextField
                             className={classes.search}
+                            color="secondary"
                             variant="outlined"
                             margin="dense"
                             placeholder="Введите запрос"
                             InputProps={{
                                 endAdornment: (
-                                    <IconButton size="small">
-                                        <SearchIcon />
-                                    </IconButton>
+                                    <Box display="flex">
+                                        <IconButton size="small">
+                                            <KeyboardIcon />
+                                        </IconButton>
+                                        <IconButton size="small">
+                                            <SearchIcon />
+                                        </IconButton>
+                                    </Box>
                                 ),
                             }}
                         />
@@ -93,7 +101,7 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                     <IconButton>
                         <Badge
                             badgeContent={199}
-                            color="secondary"
+                            color="primary"
                         >
                             <NotificationsIcon />
                         </Badge>

@@ -1,12 +1,16 @@
 import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
+import { MuiThemeProvider } from "@material-ui/core";
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {DEFAULT_THEME} from "./theme";
 
 const Root: React.FC = () => (
   <Router>
-      <App />
+      <MuiThemeProvider theme={DEFAULT_THEME}>
+        <App />
+      </MuiThemeProvider>
   </Router>
 );
 ReactDOM.render(<Root />, document.getElementById('root'));

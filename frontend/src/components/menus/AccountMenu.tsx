@@ -20,8 +20,19 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Divider from "@material-ui/core/Divider";
+import Link from "@material-ui/core/Link";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    link: {
+        display: 'block',
+        marginTop: theme.spacing(1),
+        whiteSpace: 'nowrap'
+    }
+}));
 const AccountMenu: React.FC = () => {
+    const classes = useStyles();
+
     const primaryList = (
         <List>
             <RouteListItem {...CHANNEL_ROUTE} />
@@ -46,13 +57,25 @@ const AccountMenu: React.FC = () => {
 
     const accountList = (
         <List>
-            <ListItem>
+            <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                     <Avatar />
                 </ListItemAvatar>
                 <ListItemText
                     primary="Slava Belaev"
-                    secondary="slav@belaev.pro"
+                    secondary={
+                        <>
+                            <div>slav@belaev.pro</div>
+                            <Link
+                                className={classes.link}
+                                color="secondary"
+                                target="_blank"
+                                href="https://myaccount.google.com"
+                            >
+                                Управление аккаунтом Google
+                            </Link>
+                        </>
+                    }
                 />
             </ListItem>
         </List>
