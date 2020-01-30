@@ -12,7 +12,6 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import FlagIcon from "@material-ui/icons/Flag";
 import HelpIcon from "@material-ui/icons/Help";
 import RateReviewIcon from "@material-ui/icons/RateReview";
-import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";

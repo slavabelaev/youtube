@@ -1,7 +1,6 @@
 import React from "react";
 import {createStyles, List, Theme} from "@material-ui/core";
 import RouteListItem from "../common/RouteListItem";
-import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ExpandLess from "@material-ui/icons/ExpandLess";

@@ -1,6 +1,6 @@
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme} from "@material-ui/core";
-import React, {ReactElement} from "react";
 import Divider from "@material-ui/core/Divider";
 import {
     ABOUT_ROUTE, ADS_ROUTE, CONTACT_US_ROUTE, COPYRIGHT_ROUTE, CREATORS_ROUTE, DEV_ROUTE,
