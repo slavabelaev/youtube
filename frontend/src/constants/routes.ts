@@ -1,7 +1,6 @@
 import HomeIcon from "@material-ui/icons/Home";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
-import RouteItem from "../interfaces/RouteItem";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import HistoryIcon from "@material-ui/icons/History";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
@@ -14,6 +13,12 @@ import FlagIcon from "@material-ui/icons/Flag";
 import HelpIcon from "@material-ui/icons/Help";
 import RateReviewIcon from "@material-ui/icons/RateReview";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import SecurityIcon from "@material-ui/icons/Security";
+import RouteItem from "../interfaces/RouteItem";
 
 export const HOME_ROUTE: RouteItem = { title: 'Главная', to: '/', icon: HomeIcon };
 export const TRENDING_ROUTE: RouteItem = { title: 'В тренде', to: '/feed/trending', icon: WhatshotIcon };
@@ -41,60 +46,8 @@ export const PRIVACY_ROUTE: RouteItem = { title: 'Конфиденциально
 export const RULES_ROUTE: RouteItem = { title: 'Правила и безопасность', to: '/policies/rules-and-safety', icon: () => null };
 export const NEW_ROUTE: RouteItem = { title: 'Новые функции', to: '/new', icon: () => null };
 
-export const MAIN_ROUTES: RouteItem[] = [
-    HOME_ROUTE,
-    TRENDING_ROUTE,
-    SUBSCRIPTIONS_ROUTE,
-    LIBRARY_ROUTE,
-];
-
-export const PRIMARY_ROUTES: RouteItem[] = [
-    HOME_ROUTE,
-    TRENDING_ROUTE,
-    SUBSCRIPTIONS_ROUTE,
-];
-
-export const SECONDARY_ROUTES: RouteItem[] = [
-    LIBRARY_ROUTE,
-    HISTORY_ROUTE,
-    WATCH_LATER_ROUTE,
-    PURCHASES_ROUTE,
-    FAVORITES_ROUTE,
-];
-
-export const PLAYLISTS_ROUTES: RouteItem[] = Array(10).fill(null).map((_, index) => (
-    { title: `Плэйлист ${index}`, to: `/playlist?list=${index}`, icon: PlaylistPlayIcon }
-));
-
-export const SUBSCRIPTIONS_ROUTES: RouteItem[] = Array(10).fill(null).map((_, index) => (
-    { title: `Название канала ${index}`, to: `/channel/${index}`, icon: () => null }
-));
-
-export const OTHER_FEATURES_ROUTES: RouteItem[] = [
-    GAMING_ROUTE,
-    STREAMING_ROUTE
-];
-
-export const OPTIONS_ROUTES: RouteItem[] = [
-    SETTINGS_ROUTE,
-    REPORTS_ROUTE,
-    HELP_ROUTE,
-    REVIEWS_ROUTE
-];
-
-export const GUIDE_PRIMARY_ROUTES: RouteItem[] = [
-    ABOUT_ROUTE,
-    PRESS_ROUTE,
-    COPYRIGHT_ROUTE,
-    CONTACT_US_ROUTE,
-    CREATORS_ROUTE,
-    ADS_ROUTE,
-    DEV_ROUTE,
-];
-
-export const GUIDE_SECONDARY_ROUTES: RouteItem[] = [
-    TERMS_ROUTE,
-    PRIVACY_ROUTE,
-    RULES_ROUTE,
-    NEW_ROUTE,
-];
+export const CHANNEL_ROUTE: RouteItem = { title: 'Мой канал', to: '/channel/', icon: AccountBoxIcon };
+export const PAID_MEMBERSHIPS_ROUTE: RouteItem = { title: 'Платные подписки', to: '/paid-memberships', icon: MonetizationOnIcon };
+export const STUDIO_ROUTE: RouteItem = { title: 'Творческая студия YouTube', to: '/studio', icon: PlayCircleFilledIcon };
+export const PERSONAL_DATA_ROUTE: RouteItem = { title: 'Личные данные на YouTube', to: '/personal-data', icon: SecurityIcon };
+export const SIGN_OUT_ROUTE: RouteItem = { title: 'Выйти', to: '/sign-out', icon: ExitToAppIcon };

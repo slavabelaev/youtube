@@ -10,7 +10,7 @@ import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import Avatar from "@material-ui/core/Avatar";
+import AvatarPopoverButton from "../AvatarPopoverButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -37,10 +37,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         width: '100%',
         maxWidth: 600
     },
-    avatar: {
-        width: theme.spacing(4),
-        height: theme.spacing(4)
-    },
 }));
 
 export interface LayoutAppBarProps {
@@ -48,6 +44,7 @@ export interface LayoutAppBarProps {
 }
 const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
     const classes = useStyles();
+
     return (
         <>
             <AppBar
@@ -101,11 +98,7 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                             <NotificationsIcon />
                         </Badge>
                     </IconButton>
-                    <IconButton
-                        edge="end"
-                    >
-                        <Avatar className={classes.avatar} />
-                    </IconButton>
+                    <AvatarPopoverButton />
                 </Toolbar>
             </AppBar>
             <div className={classes.toolbar} />
