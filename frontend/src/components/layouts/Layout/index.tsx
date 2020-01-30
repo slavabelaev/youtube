@@ -2,7 +2,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme, useMediaQuery} from "@material-ui/core";
 import React, {ReactElement} from "react";
 import LayoutAppBar from "./LayoutAppBar";
-import LayoutDrawer from "./DrawerContent";
 import Drawer from "@material-ui/core/Drawer";
 import DrawerContent from "./DrawerContent";
 import NavigationMenu from "../../menus/NavigationMenu";
