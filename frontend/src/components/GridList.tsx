@@ -7,18 +7,21 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         padding: theme.spacing(2)
     }
 }));
+
+const items = Array(12).fill(null);
 const GridList: React.FC = () => {
     const classes = useStyles();
+
+    const renderItem = (item: null) => (
+        <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
+            <GridItem />
+        </Grid>
+    );
+
     return (
         <div className={classes.root}>
             <Grid container spacing={2}>
-                {Array(12).fill(null).map(item => {
-                    return (
-                        <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
-                            <GridItem />
-                        </Grid>
-                    )
-                })}
+                {items.map(renderItem)}
             </Grid>
         </div>
     )

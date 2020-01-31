@@ -8,12 +8,13 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 interface MenuListItemProps extends ListItemProps {
     title: string;
     icon: React.FC;
+    onClick?: () => void
 }
 
-const MenuListItem: React.FC<MenuListItemProps> = ({ title, icon, ...otherProps }) => {
+const MenuListItem: React.FC<MenuListItemProps> = ({ title, icon, onClick }) => {
     const Icon = icon;
     return (
-        <ListItem dense button>
+        <ListItem dense button onClick={onClick}>
             <ListItemIcon>
                 <Icon />
             </ListItemIcon>

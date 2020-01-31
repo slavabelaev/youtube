@@ -9,21 +9,21 @@ export interface RouteListItemProps {
     to: string;
     icon: React.FC
 }
-const RouteListItem: React.FC<RouteListItemProps> = (props) => {
-    const Icon = props.icon;
+const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, title }) => {
+    const Icon = icon;
     return (
         <ListItem
             button
             dense
             component={NavLink}
-            to={props.to}
+            to={to}
             activeClassName="Mui-selected"
         >
             <ListItemIcon>
                 <Icon />
             </ListItemIcon>
             <ListItemText
-                primary={props.title}
+                primary={title}
             />
         </ListItem>
     )

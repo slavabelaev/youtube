@@ -16,6 +16,6 @@ const App: React.FC = () => {
         </Switch>
     </Suspense>
   );
-}
+};
 
 export default App;

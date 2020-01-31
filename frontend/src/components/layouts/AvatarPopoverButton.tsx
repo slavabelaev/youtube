@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         width: theme.spacing(4),
         height: theme.spacing(4)
     },
+    paper: {
+        width: '100%',
+        maxWidth: 300
+    }
 }));
 
 const AvatarPopoverButton: React.FC = () => {
@@ -34,6 +38,9 @@ const AvatarPopoverButton: React.FC = () => {
                 open={open}
                 onClose={handleClose}
                 anchorEl={anchorEl}
+                PaperProps={{
+                    className: classes.paper
+                }}
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'left',
