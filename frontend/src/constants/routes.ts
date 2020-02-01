@@ -35,17 +35,17 @@ export const REPORTS_ROUTE: RouteItem = { title: 'Жалобы', to: '/report-hi
 export const HELP_ROUTE: RouteItem = { title: 'Справка', to: '/help', icon: HelpIcon };
 export const REVIEWS_ROUTE: RouteItem = { title: 'Отправить отзыв', to: '/send-review', icon: RateReviewIcon };
 export const KEYBOARD_SHORTCUTS_ROUTE: RouteItem = { title: 'Быстрые клавишы', to: '#keyoard-shortcuts', icon: KeyboardIcon };
-export const ABOUT_ROUTE: RouteItem = { title: 'О сервисе', to: '/about', icon: () => null };
-export const PRESS_ROUTE: RouteItem = { title: 'Прессе', to: '/press', icon: () => null };
-export const COPYRIGHT_ROUTE: RouteItem = { title: 'Правообладателям', to: '/', icon: () => null };
-export const CONTACT_US_ROUTE: RouteItem = { title: 'Связаться с нами', to: '/contact-us', icon: () => null };
-export const CREATORS_ROUTE: RouteItem = { title: 'Авторам', to: '/creators', icon: () => null };
-export const ADS_ROUTE: RouteItem = { title: 'Рекламодателям', to: '/ads', icon: () => null };
-export const DEV_ROUTE: RouteItem = { title: 'Разработчикам', to: '/dev', icon: () => null };
-export const TERMS_ROUTE: RouteItem = { title: 'Условия использования', to: '/terms', icon: () => null };
-export const PRIVACY_ROUTE: RouteItem = { title: 'Конфиденциальность', to: '/privacy', icon: () => null };
-export const RULES_ROUTE: RouteItem = { title: 'Правила и безопасность', to: '/policies/rules-and-safety', icon: () => null };
-export const NEW_ROUTE: RouteItem = { title: 'Новые функции', to: '/new', icon: () => null };
+export const ABOUT_ROUTE: RouteItem = { title: 'О сервисе', to: '/about' };
+export const PRESS_ROUTE: RouteItem = { title: 'Прессе', to: '/press' };
+export const COPYRIGHT_ROUTE: RouteItem = { title: 'Правообладателям', to: '/' };
+export const CONTACT_US_ROUTE: RouteItem = { title: 'Связаться с нами', to: '/contact-us' };
+export const CREATORS_ROUTE: RouteItem = { title: 'Авторам', to: '/creators' };
+export const ADS_ROUTE: RouteItem = { title: 'Рекламодателям', to: '/ads' };
+export const DEV_ROUTE: RouteItem = { title: 'Разработчикам', to: '/dev' };
+export const TERMS_ROUTE: RouteItem = { title: 'Условия использования', to: '/terms' };
+export const PRIVACY_ROUTE: RouteItem = { title: 'Конфиденциальность', to: '/privacy' };
+export const RULES_ROUTE: RouteItem = { title: 'Правила и безопасность', to: '/policies/rules-and-safety' };
+export const NEW_ROUTE: RouteItem = { title: 'Новые функции', to: '/new' };
 
 export const CHANNEL_ROUTE: RouteItem = { title: 'Мой канал', to: '/channel/', icon: AccountBoxIcon };
 export const PAID_MEMBERSHIPS_ROUTE: RouteItem = { title: 'Платные подписки', to: '/paid-memberships', icon: MonetizationOnIcon };

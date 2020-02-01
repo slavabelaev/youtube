@@ -9,6 +9,9 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import NotificationsList from "./NotificationsList";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
+import Tooltip from "@material-ui/core/Tooltip";
+import {Link} from "react-router-dom";
+import {SETTINGS_ROUTE} from "../constants/routes";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     popoverPaper: {
@@ -29,9 +32,34 @@ const NotificationsButton: React.FC = () => {
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const appBar = (
+        <AppBar
+            className={classes.appBar}
+            position="sticky"
+            variant="outlined"
+            color="inherit"
+        >
+            <Toolbar>
+                <Typography className={classes.toolbarTitle}>
+                    Уведомления
+                </Typography>
+                <Tooltip title={SETTINGS_ROUTE.title}>
+                    <IconButton
+                        edge="end"
+                        component={Link}
+                        to={SETTINGS_ROUTE.to}
+                    >
+                        <SettingsIcon />
+                    </IconButton>
+                </Tooltip>
+            </Toolbar>
+        </AppBar>
+    );
 
     const popover = (
         <Popover
@@ -46,21 +74,7 @@ const NotificationsButton: React.FC = () => {
                 horizontal: 'left',
             }}
         >
-            <AppBar
-                className={classes.appBar}
-                position="sticky"
-                variant="outlined"
-                color="inherit"
-            >
-                <Toolbar>
-                    <Typography className={classes.toolbarTitle}>
-                        Уведомления
-                    </Typography>
-                    <IconButton edge="end">
-                        <SettingsIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+            {appBar}
             <NotificationsList />
         </Popover>
     );

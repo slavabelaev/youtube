@@ -3,14 +3,21 @@ import {NavLink} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import {ListItemIcon} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
+import RouteItem from "../../interfaces/RouteItem";
 
-export interface RouteListItemProps {
-    title: string;
-    to: string;
-    icon: React.FC
-}
+export interface RouteListItemProps extends RouteItem {}
+
 const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, title }) => {
-    const Icon = icon;
+    const renderIcon = () => {
+        if (!icon) return;
+        const Icon = icon;
+        return (
+            <ListItemIcon>
+                <Icon />
+            </ListItemIcon>
+        );
+    };
+
     return (
         <ListItem
             button
@@ -19,9 +26,7 @@ const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, title }) => {
             to={to}
             activeClassName="Mui-selected"
         >
-            <ListItemIcon>
-                <Icon />
-            </ListItemIcon>
+            {renderIcon()}
             <ListItemText
                 primary={title}
             />

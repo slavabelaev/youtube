@@ -5,19 +5,26 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-interface MenuListItemProps extends ListItemProps {
+export interface MenuListItemProps extends ListItemProps {
     title: string;
-    icon: React.FC;
+    icon?: React.FC;
     onClick?: () => void
 }
 
 const MenuListItem: React.FC<MenuListItemProps> = ({ title, icon, onClick }) => {
-    const Icon = icon;
-    return (
-        <ListItem dense button onClick={onClick}>
+    const renderIcon = () => {
+        if (!icon) return;
+        const Icon = icon;
+        return (
             <ListItemIcon>
                 <Icon />
             </ListItemIcon>
+        )
+    };
+
+    return (
+        <ListItem dense button onClick={onClick}>
+            {renderIcon()}
             <ListItemText
                 primary={title}
             />
