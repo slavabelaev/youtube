@@ -38,7 +38,7 @@ const SubscriptionsMenu: React.FC = () => {
             <ListItemIcon>
                 {open ? <ExpandLess /> : <ExpandMore />}
             </ListItemIcon>
-            <ListItemText primary={open ? `Показать ещё ${toggleCount}` : 'Скрыть'} />
+            <ListItemText primary={open ? 'Скрыть' : `Показать ещё ${toggleCount}`} />
         </ListItem>
     );
 

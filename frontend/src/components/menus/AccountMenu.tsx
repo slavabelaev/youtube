@@ -2,7 +2,7 @@ import React from "react";
 import List from "@material-ui/core/List";
 import RouteListItem from "../common/RouteListItem";
 import {
-    CHANNEL_ROUTE, HELP_ROUTE,
+    CHANNEL_ROUTE, HELP_ROUTE, KEYBOARD_SHORTCUTS_ROUTE,
     PAID_MEMBERSHIPS_ROUTE, PERSONAL_DATA_ROUTE, REVIEWS_ROUTE,
     SETTINGS_ROUTE,
     SIGN_OUT_ROUTE,
@@ -12,7 +12,6 @@ import MenuListItem from "../common/MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import TranslateIcon from "@material-ui/icons/Translate";
-import KeyboardIcon from "@material-ui/icons/Keyboard";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
@@ -32,6 +31,7 @@ import LanguageList from "../LanguageList";
 import SafeModeListItem from "../SafeModeListItem";
 import DescriptionBox from "../DescriptionBox";
 import CountriesList from "../CountriesList";
+import AppBar from "@material-ui/core/AppBar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -39,14 +39,21 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         marginTop: theme.spacing(1),
         whiteSpace: 'nowrap'
     },
-    view: {}
+    appBar: {
+        borderWidth: '0 0 1px 0'
+    }
 }));
 
 const AccountMenu: React.FC = () => {
     const classes = useStyles();
 
     const renderToolbar = (title: string) => (
-        <>
+        <AppBar
+            className={classes.appBar}
+            position="sticky"
+            variant="outlined"
+            color="inherit"
+        >
             <Toolbar>
                 <IconButton
                     edge="start"
@@ -58,8 +65,7 @@ const AccountMenu: React.FC = () => {
                     {title}
                 </Typography>
             </Toolbar>
-            <Divider />
-        </>
+        </AppBar>
     );
 
     const primaryList = (
@@ -92,11 +98,7 @@ const AccountMenu: React.FC = () => {
             <RouteListItem {...PERSONAL_DATA_ROUTE} />
             <RouteListItem {...HELP_ROUTE} />
             <RouteListItem {...REVIEWS_ROUTE} />
-            <MenuListItem
-                title="Быстрые клавишы"
-                icon={KeyboardIcon}
-                onClick={() => null}
-            />
+            <RouteListItem {...KEYBOARD_SHORTCUTS_ROUTE} />
         </List>
     );
 
@@ -175,7 +177,7 @@ const AccountMenu: React.FC = () => {
     );
 
     const darkThemeView = (
-        <div className={classes.view}>
+        <div>
             {renderToolbar('Темная тема')}
             <DescriptionBox
                 paragraphs={[
@@ -190,7 +192,7 @@ const AccountMenu: React.FC = () => {
     );
 
     const safeModeView = (
-        <div className={classes.view}>
+        <div>
             {renderToolbar('Безопасный режим')}
             <DescriptionBox
                 paragraphs={[
@@ -205,14 +207,14 @@ const AccountMenu: React.FC = () => {
     );
 
     const languagesView = (
-        <div className={classes.view}>
+        <div>
             {renderToolbar('Выберите язык')}
             <LanguageList />
         </div>
     );
 
     const countriesView = (
-        <div className={classes.view}>
+        <div>
             {renderToolbar('Выберите страну')}
             <CountriesList />
         </div>

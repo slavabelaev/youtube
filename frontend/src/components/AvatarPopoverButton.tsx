@@ -3,12 +3,9 @@ import {makeStyles, createStyles, Theme} from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
 import Popover from "@material-ui/core/Popover";
-import AccountMenu from "../menus/AccountMenu";
+import AccountMenu from "./menus/AccountMenu";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    root: {
-        position: 'relative'
-    },
     avatar: {
         width: theme.spacing(4),
         height: theme.spacing(4)
@@ -31,36 +28,37 @@ const AvatarPopoverButton: React.FC = () => {
         setAnchorEl(null);
     };
 
-    const renderPopover = () => {
-        const open = Boolean(anchorEl);
-        return (
-            <Popover
-                open={open}
-                onClose={handleClose}
-                anchorEl={anchorEl}
-                PaperProps={{
-                    className: classes.paper
-                }}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                }}
-            >
-                <AccountMenu />
-            </Popover>
-        )
-    };
+    const popover = (
+        <Popover
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            anchorEl={anchorEl}
+            PaperProps={{
+                className: classes.paper
+            }}
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+            }}
+        >
+            <AccountMenu />
+        </Popover>
+    );
+
+    const button = (
+        <IconButton
+            edge="end"
+            onClick={handleClick}
+        >
+            <Avatar className={classes.avatar} />
+        </IconButton>
+    );
 
     return (
-        <div className={classes.root}>
-            <IconButton
-                edge="end"
-                onClick={handleClick}
-            >
-                <Avatar className={classes.avatar} />
-            </IconButton>
-            {renderPopover()}
-        </div>
+        <>
+            {button}
+            {popover}
+        </>
     );
 };
 

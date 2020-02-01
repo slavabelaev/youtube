@@ -11,8 +11,9 @@ import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import AvatarPopoverButton from "../AvatarPopoverButton";
+import AvatarPopoverButton from "../../AvatarPopoverButton";
 import Box from "@material-ui/core/Box";
+import NotificationsButton from "../../NotificationsButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -98,14 +99,7 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                     <IconButton>
                         <AppsIcon />
                     </IconButton>
-                    <IconButton>
-                        <Badge
-                            badgeContent={199}
-                            color="primary"
-                        >
-                            <NotificationsIcon />
-                        </Badge>
-                    </IconButton>
+                    <NotificationsButton />
                     <AvatarPopoverButton />
                 </Toolbar>
             </AppBar>

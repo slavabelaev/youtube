@@ -27,7 +27,7 @@ const PlaylistsMenu: React.FC = () => {
             <ListItemIcon>
                 {open ? <ExpandLess /> : <ExpandMore />}
             </ListItemIcon>
-            <ListItemText primary={open ? 'Развернуть' : 'Скрыть'} />
+            <ListItemText primary={open ? 'Скрыть' : 'Развернуть'} />
         </ListItem>
     );
 

@@ -17,6 +17,7 @@ import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import SecurityIcon from "@material-ui/icons/Security";
+import KeyboardIcon from "@material-ui/icons/Keyboard";
 import RouteItem from "../interfaces/RouteItem";
 
 export const HOME_ROUTE: RouteItem = { title: 'Главная', to: '/', icon: HomeIcon };
@@ -33,6 +34,7 @@ export const SETTINGS_ROUTE: RouteItem = { title: 'Настройки', to: '/se
 export const REPORTS_ROUTE: RouteItem = { title: 'Жалобы', to: '/report-history', icon: FlagIcon };
 export const HELP_ROUTE: RouteItem = { title: 'Справка', to: '/help', icon: HelpIcon };
 export const REVIEWS_ROUTE: RouteItem = { title: 'Отправить отзыв', to: '/send-review', icon: RateReviewIcon };
+export const KEYBOARD_SHORTCUTS_ROUTE: RouteItem = { title: 'Быстрые клавишы', to: '#keyoard-shortcuts', icon: KeyboardIcon };
 export const ABOUT_ROUTE: RouteItem = { title: 'О сервисе', to: '/about', icon: () => null };
 export const PRESS_ROUTE: RouteItem = { title: 'Прессе', to: '/press', icon: () => null };
 export const COPYRIGHT_ROUTE: RouteItem = { title: 'Правообладателям', to: '/', icon: () => null };
