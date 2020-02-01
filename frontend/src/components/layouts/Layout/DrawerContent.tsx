@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {createStyles, Theme} from "@material-ui/core";
+import {createStyles, IconButtonProps, Theme, useMediaQuery} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import {
     ABOUT_ROUTE, ADS_ROUTE, CONTACT_US_ROUTE, COPYRIGHT_ROUTE, CREATORS_ROUTE, DEV_ROUTE,
@@ -13,16 +13,51 @@ import SubscriptionsMenu from "../../menus/SubscriptionsMenu";
 import OtherFeaturesMenu from "../../menus/OtherFeaturesMenu";
 import OptionsMenu from "../../menus/OptionsMenu";
 import RouteLinks from "../../common/RouteLinks";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import Logo from "../Logo";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     routeLinks: {
         padding: theme.spacing(3)
+    },
+    menuButton: {
+        marginRight: theme.spacing(1.5)
     }
 }));
-const DrawerContent: React.FC = (props) => {
+
+export interface DrawerContentProps {
+    menuButtonProps?: IconButtonProps
+}
+
+const DrawerContent: React.FC<DrawerContentProps> = ({ menuButtonProps }) => {
     const classes = useStyles();
+    const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
+
+    const appBar = (
+        <AppBar
+            position="sticky"
+            color="inherit"
+            elevation={0}
+        >
+            <Toolbar>
+                <IconButton
+                    {...menuButtonProps}
+                    edge="start"
+                    className={classes.menuButton}
+                >
+                    <MenuIcon />
+                </IconButton>
+                <Logo />
+            </Toolbar>
+        </AppBar>
+    );
+
     return (
         <div>
+            {!isLargeScreen ? appBar : null}
             <PrimaryMenu />
             <Divider />
             <SecondaryMenu />

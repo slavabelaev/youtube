@@ -1,15 +1,22 @@
-import {makeStyles} from "@material-ui/core/styles";
-import {AppBar, createStyles, IconButton, IconButtonProps, Theme, Toolbar, useMediaQuery} from "@material-ui/core";
 import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
+import {
+    AppBar,
+    createStyles,
+    IconButton,
+    IconButtonProps,
+    Theme,
+    Toolbar,
+    useMediaQuery
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import {Link} from "react-router-dom";
-import logo from "../logo.svg";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import AvatarPopoverButton from "../../AvatarPopoverButton";
 import NotificationsButton from "../../NotificationsButton";
 import SearchButton from "../../SearchButton";
 import SearchField from "../../SearchField";
+import Logo from "../Logo";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -18,9 +25,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     menuButton: {
         marginRight: theme.spacing(1.5)
-    },
-    logo: {
-        width: 80
     },
     toolbar: {
         ...theme.mixins.toolbar
@@ -44,6 +48,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 export interface LayoutAppBarProps {
     menuButtonProps: IconButtonProps
 }
+
 const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
     const classes = useStyles();
     const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
@@ -71,13 +76,7 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Link to="/">
-                        <img
-                            className={classes.logo}
-                            src={logo}
-                            alt="Logo"
-                        />
-                    </Link>
+                    <Logo />
                     {isLargeScreen ? searchForm : null}
                     <div className={classes.side}>
                         {isLargeScreen ? (

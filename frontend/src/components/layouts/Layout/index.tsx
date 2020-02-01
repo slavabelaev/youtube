@@ -50,7 +50,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 style: drawerStyles
             }}
         >
-            <DrawerContent />
+            <DrawerContent
+                menuButtonProps={{
+                    onClick: toggleDrawer
+                }}
+            />
         </Drawer>
     );
 
@@ -70,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <>
             <LayoutAppBar
                 menuButtonProps={{
-                    onClick: toggleDrawer
+                    onClick: toggleDrawer,
                 }}
             />
             <div className={classes.body}>
