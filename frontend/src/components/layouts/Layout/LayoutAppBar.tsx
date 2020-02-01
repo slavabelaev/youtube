@@ -49,11 +49,11 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
     const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
 
     const searchForm = (
-        <form
+        <div
             className={classes.searchForm}
         >
             <SearchField />
-        </form>
+        </div>
     );
 
     return (

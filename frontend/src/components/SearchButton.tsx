@@ -7,6 +7,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import {makeStyles} from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import InputBase from "@material-ui/core/InputBase";
+import {RenderInputParams} from "@material-ui/lab";
+import SearchField from "./SearchField";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -18,6 +20,16 @@ const SearchButton: React.FC = () => {
     const classes = useStyles();
     const [show, setShow] = React.useState(false);
     const toggle = () => setShow(!show);
+
+    const renderInput = (params: RenderInputParams) => (
+        <InputBase
+            {...params.InputProps}
+            inputProps={params.inputProps}
+            fullWidth
+            autoFocus
+            placeholder="Введите запрос"
+        />
+    );
 
     const appBar = (
         <AppBar
@@ -33,10 +45,8 @@ const SearchButton: React.FC = () => {
                 >
                     <ArrowBackIcon />
                 </IconButton>
-                <InputBase
-                    fullWidth
-                    autoFocus
-                    placeholder="Введите запрос"
+                <SearchField
+                    renderInput={renderInput}
                 />
                 <IconButton
                     edge="end"
