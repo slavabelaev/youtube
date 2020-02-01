@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     paper: {
         width: '100%',
         maxWidth: 300
+    },
+    iconButton: {
+        padding: theme.spacing(1)
     }
 }));
 
@@ -47,10 +50,13 @@ const AvatarPopoverButton: React.FC = () => {
 
     const button = (
         <IconButton
+            className={classes.iconButton}
             edge="end"
             onClick={handleClick}
         >
-            <Avatar className={classes.avatar} />
+            <Avatar
+                className={classes.avatar}
+            />
         </IconButton>
     );
 

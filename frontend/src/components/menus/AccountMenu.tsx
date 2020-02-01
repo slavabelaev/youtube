@@ -119,7 +119,7 @@ const AccountMenu: React.FC = () => {
                                 target="_blank"
                                 href="https://myaccount.google.com"
                             >
-                                Управление аккаунтом Google
+                                Управление аккаунтом
                             </Link>
                         </>
                     }

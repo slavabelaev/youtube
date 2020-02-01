@@ -1,11 +1,12 @@
 import React from "react";
-import {BottomNavigation, createStyles, Theme} from "@material-ui/core";
+import {BottomNavigation, BottomNavigationProps, createStyles, Theme} from "@material-ui/core";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import {HOME_ROUTE, LIBRARY_ROUTE, SUBSCRIPTIONS_ROUTE, TRENDING_ROUTE} from "../../constants/routes";
 import RouteItem from "../../interfaces/RouteItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {NavLink} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_vertical: {
@@ -25,6 +26,15 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         display: 'inline-block',
         marginTop: theme.spacing(1),
         fontSize: 11
+    },
+    root_fixed: {
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0
+    },
+    spaceFiller: {
+        height: theme.spacing(7)
     }
 }));
 
@@ -35,26 +45,30 @@ const items: RouteItem[] = [
     LIBRARY_ROUTE
 ];
 
-export interface NavigationMenuProps {
-    variant?: 'vertical' | 'horizontal'
+export interface NavigationMenuProps extends BottomNavigationProps {
+    variant?: 'vertical' | 'horizontal',
+    position?: 'fixed' | 'static'
 }
 
-const NavigationMenu: React.FC<NavigationMenuProps> = ({ variant = 'horizontal' }) => {
+const NavigationMenu: React.FC<NavigationMenuProps> = ({ variant = 'horizontal', position = 'static', className, ...otherProps }) => {
     const classes = useStyles();
     const isVertical = variant === 'vertical';
+
+    const renderVerticalLabel = (title: string) => (
+        <Typography
+            className={classes.label_vertical}
+            component="span"
+        >
+            {title}
+        </Typography>
+    );
+
     const renderItem = (item: RouteItem) => {
         const Icon = item.icon;
         return (
             <BottomNavigationAction
                 className={isVertical ? classes.item_vertical : ''}
-                label={
-                    <Typography
-                        className={isVertical ? classes.label_vertical : ''}
-                        component="span"
-                    >
-                        {item.title}
-                    </Typography>
-                }
+                label={isVertical ? renderVerticalLabel(item.title) : item.title}
                 icon={<Icon />}
                 component={NavLink}
                 to={item.to}
@@ -62,13 +76,21 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ variant = 'horizontal' 
             />
         )
     };
+
     return (
-        <BottomNavigation
-            className={isVertical ? classes.root_vertical : ''}
-            showLabels
-        >
-            {items.map(renderItem)}
-        </BottomNavigation>
+        <>
+            <BottomNavigation
+                className={clsx(className, {
+                    [classes.root_vertical] : isVertical,
+                    [classes.root_fixed]: position === 'fixed'
+                })}
+                showLabels
+                {...otherProps}
+            >
+                {items.map(renderItem)}
+            </BottomNavigation>
+            <div className={classes.spaceFiller} />
+        </>
     )
 };
 

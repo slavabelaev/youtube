@@ -48,11 +48,13 @@ const NotificationsList: React.FC<NotificationsListProps> = ({ items = notificat
               primary={item.text}
               secondary={item.createdAt.toLocaleDateString()}
           />
-          <img
-              className={classes.img}
-              src={item.imageUrl}
-              alt=""
-          />
+          {item.imageUrl ? (
+              <img
+                  className={classes.img}
+                  src={item.imageUrl}
+                  alt=""
+              />
+          ) : null}
           <ListItemSecondaryAction>
               <IconButton>
                   <MoreVertIcon />

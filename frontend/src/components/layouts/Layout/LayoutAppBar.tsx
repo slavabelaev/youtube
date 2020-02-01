@@ -1,19 +1,15 @@
 import {makeStyles} from "@material-ui/core/styles";
-import {AppBar, createStyles, IconButton, IconButtonProps, Theme, Toolbar} from "@material-ui/core";
+import {AppBar, createStyles, IconButton, IconButtonProps, Theme, Toolbar, useMediaQuery} from "@material-ui/core";
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import {Link} from "react-router-dom";
 import logo from "../logo.svg";
-import TextField from "@material-ui/core/TextField";
-import SearchIcon from "@material-ui/icons/Search";
-import KeyboardIcon from "@material-ui/icons/Keyboard";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
-import Badge from "@material-ui/core/Badge";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import AvatarPopoverButton from "../../AvatarPopoverButton";
-import Box from "@material-ui/core/Box";
 import NotificationsButton from "../../NotificationsButton";
+import SearchButton from "../../SearchButton";
+import SearchField from "../../SearchField";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -40,6 +36,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         width: '100%',
         maxWidth: 600
     },
+    side: {
+        marginLeft: 'auto'
+    }
 }));
 
 export interface LayoutAppBarProps {
@@ -47,6 +46,15 @@ export interface LayoutAppBarProps {
 }
 const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
     const classes = useStyles();
+    const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
+
+    const searchForm = (
+        <form
+            className={classes.searchForm}
+        >
+            <SearchField />
+        </form>
+    );
 
     return (
         <>
@@ -70,37 +78,23 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                             alt="Logo"
                         />
                     </Link>
-                    <form
-                        className={classes.searchForm}
-                    >
-                        <TextField
-                            className={classes.search}
-                            color="secondary"
-                            variant="outlined"
-                            margin="dense"
-                            placeholder="Введите запрос"
-                            InputProps={{
-                                endAdornment: (
-                                    <Box display="flex">
-                                        <IconButton size="small">
-                                            <KeyboardIcon />
-                                        </IconButton>
-                                        <IconButton size="small">
-                                            <SearchIcon />
-                                        </IconButton>
-                                    </Box>
-                                ),
-                            }}
-                        />
-                    </form>
-                    <IconButton>
-                        <VideoCallIcon />
-                    </IconButton>
-                    <IconButton>
-                        <AppsIcon />
-                    </IconButton>
-                    <NotificationsButton />
-                    <AvatarPopoverButton />
+                    {isLargeScreen ? searchForm : null}
+                    <div className={classes.side}>
+                        {isLargeScreen ? (
+                            <>
+                                <IconButton>
+                                    <VideoCallIcon />
+                                </IconButton>
+                                <IconButton>
+                                    <AppsIcon />
+                                </IconButton>
+                            </>
+                        ) : (
+                            <SearchButton />
+                        )}
+                        <NotificationsButton />
+                        <AvatarPopoverButton />
+                    </div>
                 </Toolbar>
             </AppBar>
             <div className={classes.toolbar} />
