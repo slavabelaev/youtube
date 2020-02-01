@@ -27,11 +27,20 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>YouTube</title>
     <style>
-      html, body, #root {
-        padding: 0;
-        margin: 0;
-        background-color: #f9f9f9;
-      }
+        html, body, #root {
+            padding: 0;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        body ::-webkit-scrollbar {
+            width: 0;
+        }
+        body :hover::-webkit-scrollbar {
+            width: 8px;
+        }
+        body ::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0, .2);
+        }
     </style>
   </head>
   <body>

@@ -6,40 +6,26 @@ import Drawer from "@material-ui/core/Drawer";
 import DrawerContent from "./DrawerContent";
 import NavigationMenu from "../../menus/NavigationMenu";
 
-const useStyles = makeStyles((theme: Theme) => {
-    const scrollbarStyles = {
-        overflow: 'auto',
-        '&::-webkit-scrollbar': {
-            width: 0
-        },
-        '&:hover::-webkit-scrollbar': {
-            width: theme.spacing(1)
-        },
-        '&:hover::-webkit-scrollbar-thumb': {
-            backgroundColor: theme.palette.grey.A100
-        }
-    };
-    return createStyles({
-        body: {
-            display: 'flex',
-        },
-        main: {
-            flex: 1
-        },
-        drawerPaper: {
-            ...scrollbarStyles
-        },
-        landscapeDrawer: {
-            position: 'fixed',
-            top: 64,
-            left: 0,
-            bottom: 0,
-            backgroundColor: theme.palette.background.paper,
-            zIndex: theme.zIndex.drawer,
-            ...scrollbarStyles
-        }
-    })
-});
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    body: {
+        display: 'flex',
+    },
+    main: {
+        flex: 1
+    },
+    drawerPaper: {
+        overflow: 'auto'
+    },
+    largeScreenDrawer: {
+        position: 'fixed',
+        top: 64,
+        left: 0,
+        bottom: 0,
+        backgroundColor: theme.palette.background.paper,
+        zIndex: theme.zIndex.drawer,
+        overflow: 'auto'
+    }
+}));
 
 export interface LayoutProps {
     children: ReactElement;
@@ -71,7 +57,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const largeScreenDrawer = (
         <>
             <div
-                className={classes.landscapeDrawer}
+                className={classes.largeScreenDrawer}
                 style={drawerStyles}
             >
                 {open ? <DrawerContent /> : <NavigationMenu variant="vertical" />}
