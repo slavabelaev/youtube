@@ -8,6 +8,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import {makeStyles} from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 
 export interface Notification {
     text: string;
@@ -23,7 +24,7 @@ export interface NotificationsListProps {
 const notifications: Notification[] = Array(20).fill(null).map(_ => ({
     text: `На канале "Дмитрий Гордон" появилось новое видео: "Гордон о том, кто скоро покинет команду Зеленского и о возвращении Яценюка в политику". Советуем его посмотреть.`,
     avatarUrl: '',
-    imageUrl: 'https://i.ytimg.com/vi/7KXGZAEWzn0/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAJcdmjocz237CwW9gOxQMlYIj5wA',
+    imageUrl: 'https://source-to-image',
     createdAt: new Date()
 }));
 
@@ -31,7 +32,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     img: {
         minWidth: theme.spacing(12),
         maxWidth: theme.spacing(12),
-        maxHeight: theme.spacing(12),
+        height: theme.spacing(8),
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: theme.palette.grey.A700,
         margin: theme.spacing(1, 2),
     }
 }));
@@ -49,10 +54,11 @@ const NotificationsList: React.FC<NotificationsListProps> = ({ items = notificat
               secondary={item.createdAt.toLocaleDateString()}
           />
           {item.imageUrl ? (
-              <img
+              <div
                   className={classes.img}
-                  src={item.imageUrl}
-                  alt=""
+                  style={{
+                      backgroundImage: `url(${item.imageUrl}`
+                  }}
               />
           ) : null}
           <ListItemSecondaryAction>
