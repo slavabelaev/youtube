@@ -7,7 +7,7 @@ import RouteItem from "../../interfaces/RouteItem";
 
 export interface RouteListItemProps extends RouteItem {}
 
-const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, title }) => {
+const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, exact = false, title }) => {
     const renderIcon = () => {
         if (!icon) return;
         const Icon = icon;
@@ -24,6 +24,7 @@ const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, title }) => {
             dense
             component={NavLink}
             to={to}
+            exact={exact}
             activeClassName="Mui-selected"
         >
             {renderIcon()}

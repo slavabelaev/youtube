@@ -1,10 +1,11 @@
+import React, {ReactElement} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme, useMediaQuery} from "@material-ui/core";
-import React, {ReactElement} from "react";
 import LayoutAppBar from "./LayoutAppBar";
 import Drawer from "@material-ui/core/Drawer";
 import DrawerContent from "./DrawerContent";
 import NavigationMenu from "../../menus/NavigationMenu";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     body: {
@@ -13,81 +14,80 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     main: {
         flex: 1
     },
-    drawerPaper: {
-        overflow: 'auto'
-    },
-    largeScreenDrawer: {
-        position: 'fixed',
+    drawerPermanent: {
         top: 64,
-        left: 0,
         bottom: 0,
-        backgroundColor: theme.palette.background.paper,
-        zIndex: theme.zIndex.drawer,
-        overflow: 'auto'
+        height: 'auto',
+        borderWidth: 0,
     }
 }));
 
 export interface LayoutProps {
-    children: ReactElement;
+    children: ReactElement | ReactElement[];
+    drawerVariantUpSm?: 'permanent' | 'temporary';
 }
 
-const isOpen = window.outerWidth >= 992;
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const initialOpen = window.outerWidth >= 992;
+const Layout: React.FC<LayoutProps> = ({ children, drawerVariantUpSm = 'permanent' }) => {
     const classes = useStyles();
-    const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
-    const isSmallScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
-    const [open, setOpen] = React.useState(isOpen);
+    const isScreenDownSm = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+    const [open, setOpen] = React.useState(drawerVariantUpSm === 'temporary' ? false : initialOpen);
     const toggleDrawer = () => setOpen(!open);
+    const drawerVariant = isScreenDownSm ? 'temporary' : drawerVariantUpSm;
+    const isDrawerPermanent = drawerVariant === 'permanent';
     const drawerWidth = open ? 240 : 72;
     const drawerStyles = { width: drawerWidth };
 
-    const smallScreenDrawer = (
+    const drawerPermanent = open ? <DrawerContent /> : <NavigationMenu variant="vertical" />;
+
+    const drawerTemporary = (
+        <DrawerContent
+            showAppBar
+            onMenuButtonClick={toggleDrawer}
+        />
+    );
+
+    const drawer = (
         <Drawer
             open={open}
             onClose={toggleDrawer}
+            variant={drawerVariant}
             PaperProps={{
-                className: classes.drawerPaper,
+                className: clsx({
+                    [classes.drawerPermanent]: isDrawerPermanent
+                }),
                 style: drawerStyles
             }}
         >
-            <DrawerContent
-                menuButtonProps={{
-                    onClick: toggleDrawer
-                }}
-            />
+            {isDrawerPermanent ? drawerPermanent : drawerTemporary}
         </Drawer>
     );
 
-    const largeScreenDrawer = (
-        <>
-            <div
-                className={classes.largeScreenDrawer}
-                style={drawerStyles}
-            >
-                {open ? <DrawerContent /> : <NavigationMenu variant="vertical" />}
-            </div>
-            <div style={drawerStyles} />
-        </>
+    const drawerSpaceFiller = isDrawerPermanent ? <div style={drawerStyles} /> : null;
+
+    const appBar = (
+        <LayoutAppBar
+            menuButtonProps={{
+                onClick: toggleDrawer,
+            }}
+        />
     );
+
+    const bottomNavigation = isScreenDownSm ? <NavigationMenu position="fixed" /> : null;
 
     return (
         <>
-            <LayoutAppBar
-                menuButtonProps={{
-                    onClick: toggleDrawer,
-                }}
-            />
+            {appBar}
             <div className={classes.body}>
-                {isScreenUpMd ? largeScreenDrawer : smallScreenDrawer}
+                <div>
+                    {drawer}
+                    {drawerSpaceFiller}
+                </div>
                 <div className={classes.main}>
                     {children}
                 </div>
             </div>
-            {isSmallScreen ? (
-                <NavigationMenu
-                    position="fixed"
-                />
-            ) : null}
+            {bottomNavigation}
         </>
     )
 };

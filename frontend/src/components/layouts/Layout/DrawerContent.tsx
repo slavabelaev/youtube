@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {createStyles, IconButtonProps, Theme, useMediaQuery} from "@material-ui/core";
+import {createStyles, IconButtonProps, Theme} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import {
     ABOUT_ROUTE, ADS_ROUTE, CONTACT_US_ROUTE, COPYRIGHT_ROUTE, CREATORS_ROUTE, DEV_ROUTE,
@@ -33,12 +33,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 export interface DrawerContentProps {
-    menuButtonProps?: IconButtonProps
+    showAppBar?: boolean;
+    onMenuButtonClick?: IconButtonProps['onClick'];
 }
 
-const DrawerContent: React.FC<DrawerContentProps> = ({ menuButtonProps }) => {
+const DrawerContent: React.FC<DrawerContentProps> = ({ onMenuButtonClick, showAppBar = false  }) => {
     const classes = useStyles();
-    const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
 
     const appBar = (
         <AppBar
@@ -48,7 +48,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ menuButtonProps }) => {
         >
             <Toolbar>
                 <IconButton
-                    {...menuButtonProps}
+                    onClick={onMenuButtonClick}
                     edge="start"
                     className={classes.menuButton}
                 >
@@ -71,7 +71,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ menuButtonProps }) => {
 
     return (
         <div>
-            {!isScreenUpMd ? appBar : null}
+            {showAppBar ? appBar : null}
             <PrimaryMenu />
             <Divider />
             <SecondaryMenu />

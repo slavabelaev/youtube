@@ -20,14 +20,14 @@ import SecurityIcon from "@material-ui/icons/Security";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
 import RouteItem from "../interfaces/RouteItem";
 
-export const HOME_ROUTE: RouteItem = { title: 'Главная', to: '/', icon: HomeIcon };
+export const HOME_ROUTE: RouteItem = { title: 'Главная', to: '/', exact: true, icon: HomeIcon };
 export const TRENDING_ROUTE: RouteItem = { title: 'В тренде', to: '/feed/trending', icon: WhatshotIcon };
 export const SUBSCRIPTIONS_ROUTE: RouteItem = { title: 'Подписки', to: '/feed/subscriptions', icon: SubscriptionsIcon };
 export const LIBRARY_ROUTE: RouteItem = { title: 'Библиотека', to: '/feed/library', icon: VideoLibraryIcon };
 export const HISTORY_ROUTE: RouteItem = { title: 'История', to: '/feed/history', icon: HistoryIcon };
-export const WATCH_LATER_ROUTE: RouteItem = { title: 'Смотреть позже', to: '/playlist?list=WL', icon: WatchLaterIcon };
+export const WATCH_LATER_ROUTE: RouteItem = { title: 'Смотреть позже', to: '/playlist/WL', icon: WatchLaterIcon };
 export const PURCHASES_ROUTE: RouteItem = { title: 'Покупки', to: '/feed/purchases', icon: LocalOfferIcon };
-export const FAVORITES_ROUTE: RouteItem = { title: 'Понравившиеся', to: '/playlist?list=1', icon: ThumbUpIcon };
+export const FAVORITES_ROUTE: RouteItem = { title: 'Понравившиеся', to: '/playlist/favorites', icon: ThumbUpIcon };
 export const GAMING_ROUTE: RouteItem = { title: 'Видеоигры', to: '/gaming', icon: VideogameAssetIcon };
 export const STREAMING_ROUTE: RouteItem = { title: 'Трансляции', to: '/streaming', icon: WifiTetheringIcon };
 export const SETTINGS_ROUTE: RouteItem = { title: 'Настройки', to: '/settings', icon: SettingsIcon };
