@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const AvatarPopoverButton: React.FC = () => {
+const AccountMenuButton: React.FC = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
@@ -68,4 +68,4 @@ const AvatarPopoverButton: React.FC = () => {
     );
 };
 
-export default AvatarPopoverButton;
+export default AccountMenuButton;

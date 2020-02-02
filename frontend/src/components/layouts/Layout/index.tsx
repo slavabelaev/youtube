@@ -34,7 +34,7 @@ export interface LayoutProps {
 const isOpen = window.outerWidth >= 992;
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     const classes = useStyles();
-    const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
+    const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
     const isSmallScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
     const [open, setOpen] = React.useState(isOpen);
     const toggleDrawer = () => setOpen(!open);
@@ -78,7 +78,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 }}
             />
             <div className={classes.body}>
-                {isLargeScreen ? largeScreenDrawer : smallScreenDrawer}
+                {isScreenUpMd ? largeScreenDrawer : smallScreenDrawer}
                 <div className={classes.main}>
                     {children}
                 </div>

@@ -26,12 +26,13 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const NotificationsButton: React.FC = () => {
+const NotificationsMenuButton: React.FC = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
+    const title = 'Уведомления';
 
     const handleClose = () => {
         setAnchorEl(null);
@@ -46,7 +47,7 @@ const NotificationsButton: React.FC = () => {
         >
             <Toolbar>
                 <Typography className={classes.toolbarTitle}>
-                    Уведомления
+                    {title}
                 </Typography>
                 <Tooltip title={SETTINGS_ROUTE.title}>
                     <IconButton
@@ -80,14 +81,16 @@ const NotificationsButton: React.FC = () => {
     );
 
     const button = (
-        <IconButton onClick={handleClick}>
-            <Badge
-                badgeContent={199}
-                color="primary"
-            >
-                <NotificationsIcon />
-            </Badge>
-        </IconButton>
+        <Tooltip title={title}>
+            <IconButton onClick={handleClick}>
+                <Badge
+                    badgeContent={199}
+                    color="primary"
+                >
+                    <NotificationsIcon />
+                </Badge>
+            </IconButton>
+        </Tooltip>
     );
 
     return (
@@ -98,4 +101,4 @@ const NotificationsButton: React.FC = () => {
     )
 };
 
-export default NotificationsButton;
+export default NotificationsMenuButton;

@@ -4,7 +4,7 @@ import {createStyles, IconButtonProps, Theme, useMediaQuery} from "@material-ui/
 import Divider from "@material-ui/core/Divider";
 import {
     ABOUT_ROUTE, ADS_ROUTE, CONTACT_US_ROUTE, COPYRIGHT_ROUTE, CREATORS_ROUTE, DEV_ROUTE,
-    NEW_ROUTE, PRESS_ROUTE, PRIVACY_ROUTE, RULES_ROUTE, TERMS_ROUTE
+    NEW_ROUTE, PRESS_ROUTE, PRIVACY_ROUTE, RULES_ROUTE, SUBSCRIPTIONS_ROUTE, TERMS_ROUTE
 } from "../../../constants/routes";
 import PrimaryMenu from "../../menus/PrimaryMenu";
 import SecondaryMenu from "../../menus/SecondaryMenu";
@@ -18,6 +18,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Logo from "../Logo";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     routeLinks: {
@@ -25,6 +26,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     menuButton: {
         marginRight: theme.spacing(1.5)
+    },
+    title: {
+        padding: theme.spacing(1, 2, 0, 2)
     }
 }));
 
@@ -34,7 +38,7 @@ export interface DrawerContentProps {
 
 const DrawerContent: React.FC<DrawerContentProps> = ({ menuButtonProps }) => {
     const classes = useStyles();
-    const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
+    const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
 
     const appBar = (
         <AppBar
@@ -55,16 +59,28 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ menuButtonProps }) => {
         </AppBar>
     );
 
+    const renderTitle = (title: string) => (
+        <Typography
+            className={classes.title}
+            variant="overline"
+            component="h3"
+        >
+            {title}
+        </Typography>
+    );
+
     return (
         <div>
-            {!isLargeScreen ? appBar : null}
+            {!isScreenUpMd ? appBar : null}
             <PrimaryMenu />
             <Divider />
             <SecondaryMenu />
             <PlaylistsMenu />
             <Divider />
+            {renderTitle(SUBSCRIPTIONS_ROUTE.title)}
             <SubscriptionsMenu />
             <Divider />
+            {renderTitle('Другие возможности')}
             <OtherFeaturesMenu />
             <Divider />
             <OptionsMenu />

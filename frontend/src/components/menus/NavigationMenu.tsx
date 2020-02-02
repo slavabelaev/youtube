@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
             paddingTop: 0
         }
     },
+    item_horizontal: {
+        minWidth: 'initial'
+    },
     label_vertical: {
         display: 'inline-block',
         marginTop: theme.spacing(1),
@@ -67,7 +70,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ variant = 'horizontal',
         const Icon = item.icon || (() => null);
         return (
             <BottomNavigationAction
-                className={isVertical ? classes.item_vertical : ''}
+                className={isVertical ? classes.item_vertical : classes.item_horizontal}
                 label={isVertical ? renderVerticalLabel(item.title) : item.title}
                 icon={<Icon />}
                 component={NavLink}

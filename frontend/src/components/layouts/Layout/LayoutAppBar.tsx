@@ -10,13 +10,13 @@ import {
     useMediaQuery
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import VideoCallIcon from "@material-ui/icons/VideoCall";
-import AppsIcon from "@material-ui/icons/Apps";
-import AvatarPopoverButton from "../../AvatarPopoverButton";
-import NotificationsButton from "../../NotificationsButton";
+import AccountMenuButton from "../../AccountMenuButton";
+import NotificationsMenuButton from "../../NotificationsMenuButton";
 import SearchButton from "../../SearchButton";
 import SearchField from "../../SearchField";
 import Logo from "../Logo";
+import AppsMenuButton from "../../AppsMenuButton";
+import VideoMenuButton from "../../VideoMenuButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -51,7 +51,8 @@ export interface LayoutAppBarProps {
 
 const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
     const classes = useStyles();
-    const isLargeScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
+    const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
+    const isScreenDownXs = useMediaQuery((theme: Theme) => theme.breakpoints.down('xs'));
 
     const searchForm = (
         <div
@@ -59,6 +60,16 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
         >
             <SearchField />
         </div>
+    );
+
+    const menuButton = (
+        <IconButton
+            className={classes.menuButton}
+            edge="start"
+            {...menuButtonProps}
+        >
+            <MenuIcon />
+        </IconButton>
     );
 
     return (
@@ -69,30 +80,18 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({ menuButtonProps }) => {
                 className={classes.appBar}
             >
                 <Toolbar color="inherit">
-                    <IconButton
-                        className={classes.menuButton}
-                        edge="start"
-                        {...menuButtonProps}
-                    >
-                        <MenuIcon />
-                    </IconButton>
+                    {isScreenDownXs ? null : menuButton}
                     <Logo />
-                    {isLargeScreen ? searchForm : null}
+                    {isScreenUpMd ? searchForm : null}
                     <div className={classes.side}>
-                        {isLargeScreen ? (
+                        {isScreenUpMd ? (
                             <>
-                                <IconButton>
-                                    <VideoCallIcon />
-                                </IconButton>
-                                <IconButton>
-                                    <AppsIcon />
-                                </IconButton>
+                                <VideoMenuButton />
+                                <AppsMenuButton />
                             </>
-                        ) : (
-                            <SearchButton />
-                        )}
-                        <NotificationsButton />
-                        <AvatarPopoverButton />
+                        ) : <SearchButton />}
+                        {isScreenDownXs ? null : <NotificationsMenuButton />}
+                        <AccountMenuButton />
                     </div>
                 </Toolbar>
             </AppBar>
