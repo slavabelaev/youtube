@@ -2,7 +2,6 @@ import React from "react";
 import GridList from "../GridList";
 import {createStyles, Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import Layout from "../layouts/Layout";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     heading: {
@@ -13,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const HomePage: React.FC = () => {
     const classes = useStyles();
     return (
-        <Layout>
+        <>
             <Typography
                 className={classes.heading}
                 variant="h6"
@@ -21,7 +20,7 @@ const HomePage: React.FC = () => {
                 Рекомендованные
             </Typography>
             <GridList />
-        </Layout>
+        </>
     )
 };
 

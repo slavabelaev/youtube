@@ -4,17 +4,21 @@ import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    logo: {
+    img: {
         width: 80
+    },
+    link: {
+        display: 'inline-flex',
+        alignItems: 'center'
     }
 }));
 
 const Logo: React.FC = () => {
     const classes = useStyles();
     return (
-        <Link to="/">
+        <Link to="/" className={classes.link}>
             <img
-                className={classes.logo}
+                className={classes.img}
                 src={logo}
                 alt="Logo"
             />

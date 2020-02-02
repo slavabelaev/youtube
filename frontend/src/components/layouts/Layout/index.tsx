@@ -1,4 +1,4 @@
-import React, {ReactElement} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme, useMediaQuery} from "@material-ui/core";
 import LayoutAppBar from "./LayoutAppBar";
@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 export interface LayoutProps {
-    children: ReactElement | ReactElement[];
     drawerVariantUpSm?: 'permanent' | 'temporary';
 }
 
@@ -93,3 +92,9 @@ const Layout: React.FC<LayoutProps> = ({ children, drawerVariantUpSm = 'permanen
 };
 
 export default Layout;
+
+export const withLayout = (Component: React.ComponentType, layoutProps?: LayoutProps): React.FC => () => (
+    <Layout {...layoutProps}>
+        <Component />
+    </Layout>
+);
