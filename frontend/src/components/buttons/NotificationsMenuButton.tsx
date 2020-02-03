@@ -6,12 +6,12 @@ import Popover from "@material-ui/core/Popover";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import SettingsIcon from "@material-ui/icons/Settings";
-import NotificationsList from "./NotificationsList";
+import NotificationsList from "../NotificationsList";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
-import {SETTINGS_ROUTE} from "../constants/routes";
+import {SETTINGS_ROUTE} from "../../constants/routes";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     popoverPaper: {

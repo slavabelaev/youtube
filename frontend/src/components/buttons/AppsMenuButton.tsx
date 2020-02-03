@@ -1,16 +1,16 @@
 import React from "react";
-import VideoCallIcon from "@material-ui/icons/VideoCall";
+import AppsIcon from "@material-ui/icons/Apps";
 import {IconButton} from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import Tooltip from "@material-ui/core/Tooltip";
-import VideoMenu from "./menus/VideoMenu";
+import AppsMenu from "../menus/AppsMenu";
 
-const VideoMenuButton: React.FC = () => {
+const AppsMenuButton: React.FC = () => {
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
-    const title = 'Создать видео или запись';
+    const title = 'Приложения';
 
     const handleClose = () => {
         setAnchorEl(null);
@@ -26,14 +26,14 @@ const VideoMenuButton: React.FC = () => {
                 horizontal: 'left',
             }}
         >
-            <VideoMenu />
+            <AppsMenu />
         </Popover>
     );
 
     const button = (
         <Tooltip title={title}>
             <IconButton onClick={handleClick}>
-                <VideoCallIcon />
+                <AppsIcon />
             </IconButton>
         </Tooltip>
     );
@@ -46,4 +46,4 @@ const VideoMenuButton: React.FC = () => {
     )
 };
 
-export default VideoMenuButton;
+export default AppsMenuButton;

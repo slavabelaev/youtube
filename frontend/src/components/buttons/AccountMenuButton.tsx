@@ -3,7 +3,7 @@ import {makeStyles, createStyles, Theme} from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
 import Popover from "@material-ui/core/Popover";
-import AccountMenu from "./menus/AccountMenu";
+import AccountMenu from "../menus/AccountMenu";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     avatar: {

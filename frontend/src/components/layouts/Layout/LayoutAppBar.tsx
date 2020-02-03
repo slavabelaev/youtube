@@ -10,13 +10,13 @@ import {
     useMediaQuery
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import AccountMenuButton from "../../AccountMenuButton";
-import NotificationsMenuButton from "../../NotificationsMenuButton";
-import SearchButton from "../../SearchButton";
+import AccountMenuButton from "../../buttons/AccountMenuButton";
+import NotificationsMenuButton from "../../buttons/NotificationsMenuButton";
+import SearchButton from "../../buttons/SearchButton";
 import SearchField from "../../SearchField";
 import Logo from "../Logo";
-import AppsMenuButton from "../../AppsMenuButton";
-import VideoMenuButton from "../../VideoMenuButton";
+import AppsMenuButton from "../../buttons/AppsMenuButton";
+import VideoMenuButton from "../../buttons/VideoMenuButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
