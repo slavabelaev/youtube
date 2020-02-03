@@ -58,6 +58,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         [theme.breakpoints.up('lg')]: {
             paddingLeft: theme.spacing(7)
         }
+    },
+    notificationsButton: {
+        marginLeft: theme.spacing(1)
     }
 }));
 
@@ -75,7 +78,8 @@ const WatchPage: React.FC = () => {
           <aside className={classes.toolbarAside}>
               <LikeDislikeButton
                   initialLikes={998}
-                  initialDislikes={998}
+                  initialDislikes={101}
+                  initialChecked="like"
               />
               <Button
                   variant="text"
@@ -117,7 +121,7 @@ const WatchPage: React.FC = () => {
                 >
                     Подписаться
                 </Button>
-                <IconButton>
+                <IconButton className={classes.notificationsButton}>
                     <NotificationsIcon />
                 </IconButton>
             </aside>

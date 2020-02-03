@@ -9,36 +9,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert"
 import List from "@material-ui/core/List";
 import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {Box, BoxProps} from "@material-ui/core";
-
-interface ImageBoxProps extends BoxProps {
-    src: string;
-    to: string;
-}
-const useImageBoxStyles = makeStyles((theme: Theme) => createStyles({
-    root: {
-        display: 'block',
-        height: theme.spacing(20),
-        backgroundColor: theme.palette.grey.A700,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-    }
-}));
-const ImageBox: React.FC<ImageBoxProps> = ({ src, ...otherProps }) => {
-    const classes = useImageBoxStyles();
-    const styles = {
-        backgroundImage: `url('${src}')`,
-    };
-
-    return (
-        <Box
-            className={classes.root}
-            style={styles}
-            {...otherProps}
-        />
-    )
-}
+import MediaBox from "./MediaBox";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     listItemTextPrimary: {
@@ -46,7 +17,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         '-webkit-box-orient': 'vertical',
         '-webkit-line-clamp': 2,
         overflow: 'hidden',
-        fontWeight: 600,
         textDecoration: 'none',
         color: 'inherit',
         '&:visited': {
@@ -57,25 +27,25 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     channelLink: {
         display: 'block',
         textDecoration: 'none',
-        color: 'initial',
+        color: 'inherit',
         '&:visited': {
-            color: 'initial'
+            color: 'inherit'
         }
     },
     viewsLink: {
         display: 'block',
         textDecoration: 'none',
-        color: 'initial',
+        color: 'inherit',
         '&:visited': {
-            color: 'initial'
+            color: 'inherit'
         }
     },
     createdAtLink: {
         display: 'block',
         textDecoration: 'none',
-        color: 'initial',
+        color: 'inherit',
         '&:visited': {
-            color: 'initial'
+            color: 'inherit'
         }
     },
     avatar: {
@@ -87,10 +57,11 @@ const GridItem: React.FC = () => {
     const classes = useStyles();
     return (
         <div>
-            <ImageBox
-                src=""
-                component={Link}
-                to="/watch?v=1"
+            <MediaBox
+                imageUrl="none"
+                style={{
+                    minHeight: 165
+                }}
             />
             <List>
                 <ListItem dense disableGutters alignItems="flex-start">

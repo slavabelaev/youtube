@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     typography: {
         cursor: 'pointer',
         userSelect: 'none',
-        paddingRight: theme.spacing(1)
+        paddingRight: theme.spacing(1),
+        paddingLeft: theme.spacing(.5)
     }
 }));
 
@@ -27,7 +28,7 @@ const ToggleCountButton: React.FC<ToggleCountButtonProps> = ({
     checked = false,
     icon,
     onClick,
-    ...iconButtonProps
+    ...IconButtonProps
 }) => {
     const classes = useStyles();
     const color = checked ? 'secondary' : undefined;
@@ -36,6 +37,7 @@ const ToggleCountButton: React.FC<ToggleCountButtonProps> = ({
     const valueBox = (
         <Typography
             className={classes.typography}
+            variant={IconButtonProps.size === 'small' ? 'caption' : 'button'}
             color={color}
             component="label"
             htmlFor={id}
@@ -47,14 +49,14 @@ const ToggleCountButton: React.FC<ToggleCountButtonProps> = ({
     return (
         <div className={classes.root}>
             <IconButton
-                {...iconButtonProps}
+                {...IconButtonProps}
                 id={id}
                 onClick={onClick}
                 color={color}
             >
                 {icon ? icon : value}
             </IconButton>
-            {(icon && value) ? valueBox : null}
+            {icon ? valueBox : null}
         </div>
     );
 };

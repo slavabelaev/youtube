@@ -28,7 +28,7 @@ const notifications: Notification[] = Array(20).fill(null).map(_ => ({
 }));
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    img: {
+    media: {
         minWidth: theme.spacing(12),
         maxWidth: theme.spacing(12),
         height: theme.spacing(8),
@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         backgroundRepeat: 'no-repeat',
         backgroundColor: theme.palette.grey.A700,
         margin: theme.spacing(1, 2),
+        borderRadius: theme.shape.borderRadius
     }
 }));
 
@@ -54,7 +55,7 @@ const NotificationsList: React.FC<NotificationsListProps> = ({ items = notificat
           />
           {item.imageUrl ? (
               <div
-                  className={classes.img}
+                  className={classes.media}
                   style={{
                       backgroundImage: `url(${item.imageUrl}`
                   }}

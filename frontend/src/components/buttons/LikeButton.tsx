@@ -9,7 +9,7 @@ const LikeButton: React.FC<LikeButtonProps> = (props) => (
     <Tooltip title="Мне понравилось">
         <ToggleCountButton
             {...props}
-            icon={<ThumbUpIcon />}
+            icon={<ThumbUpIcon fontSize={props.size === 'small' ? 'small' : 'default'} />}
         />
     </Tooltip>
 );
