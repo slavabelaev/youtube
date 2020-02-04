@@ -2,6 +2,7 @@ import React, {ReactNode} from "react";
 import IconButton, {IconButtonProps} from "@material-ui/core/IconButton";
 import {createStyles, Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import {toShortString} from "../../utils/numbers";
 
 export interface ToggleCountButtonProps extends IconButtonProps {
     value?: number;
@@ -42,7 +43,7 @@ const ToggleCountButton: React.FC<ToggleCountButtonProps> = ({
             component="label"
             htmlFor={id}
         >
-            {value}
+            {toShortString(value)}
         </Typography>
     );
 

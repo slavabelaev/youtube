@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import MediaBox from "./MediaBox";
 import {makeStyles} from "@material-ui/core/styles";
+import {toShortString} from "../utils/numbers";
 
 export interface VideoProps {
     title: string;
@@ -72,13 +73,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const RecommendationsList: React.FC<RecommendationsListProps> = ({ items = videos }) => {
     const classes = useStyles();
 
-    const getLocaleViews = (views: number) => (
-        (views > 1000000000) ? `${Math.round(views / 1000000000)} млрд.` :
-        (views > 1000000) ? `${Math.round(views / 1000000)} млн.` :
-        (views > 1000) ? `${Math.round(views / 1000000)} тыс.` :
-        views
-    );
-
     const renderItem = (item: VideoProps) => (
         <ListItem disableGutters className={classes.listItem}>
             <MediaBox
@@ -100,7 +94,7 @@ const RecommendationsList: React.FC<RecommendationsListProps> = ({ items = video
                         ) : null}
                         {item.views ? (
                             <div className={classes.listItemViews}>
-                                {getLocaleViews(item.views)} просмотров
+                                {toShortString(item.views)} просмотров
                             </div>
                         ) : null}
                         {item.isNew ? (

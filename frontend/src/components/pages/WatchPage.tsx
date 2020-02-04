@@ -77,8 +77,8 @@ const WatchPage: React.FC = () => {
           </Typography>
           <aside className={classes.toolbarAside}>
               <LikeDislikeButton
-                  initialLikes={998}
-                  initialDislikes={101}
+                  initialLikes={998788}
+                  initialDislikes={87654}
                   initialChecked="like"
               />
               <Button
@@ -149,26 +149,38 @@ const WatchPage: React.FC = () => {
         </main>
     );
 
-    const autoplayListItem = (
-        <Toolbar
-            className={classes.autoplayToolbar}
-            disableGutters
-        >
-            <Typography>
-                Следующее
-            </Typography>
-            <aside className={classes.toolbarAside}>
-                <Typography variant="button">
-                    Автовоспроизведение
+    const renderAutoplayListItem = () => {
+        const id = (+new Date()).toString(16);
+        return (
+            <Toolbar
+                className={classes.autoplayToolbar}
+                disableGutters
+            >
+                <Typography>
+                    Следующее
                 </Typography>
-                <Switch defaultChecked={true} />
-            </aside>
-        </Toolbar>
-    );
+                <aside className={classes.toolbarAside}>
+                    <Typography
+                        variant="button"
+                        component="label"
+                        htmlFor={id}
+                    >
+                        Автовоспроизведение
+                    </Typography>
+                    <Switch
+                        inputProps={{
+                            id: id
+                        }}
+                        defaultChecked={true}
+                    />
+                </aside>
+            </Toolbar>
+        )
+    };
 
     const aside = (
         <aside className={classes.aside}>
-            {autoplayListItem}
+            {renderAutoplayListItem()}
             <RecommendationsList />
         </aside>
     );
