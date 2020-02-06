@@ -15,8 +15,8 @@ interface DescriptionBoxProps {
 const DescriptionBox: React.FC<DescriptionBoxProps> = ({ paragraphs }) => {
     const classes = useStyles();
 
-    const renderItem = (text: string) => (
-        <Typography component="p">
+    const renderItem = (text: string, index: number) => (
+        <Typography component="p" key={index}>
             {text}
         </Typography>
     );

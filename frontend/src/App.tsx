@@ -1,31 +1,23 @@
-import React, {Suspense} from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
-import {withLayout} from "./components/layouts/Layout";
-import {CircularProgress} from "@material-ui/core";
-
-const HomePage = withLayout(
-    React.lazy(() => import('./components/pages/HomePage'))
-);
-const WatchPage = withLayout(
-    React.lazy(() => import('./components/pages/WatchPage')),
-    { drawerVariantUpSm: 'temporary' }
-);
-const ChannelPage = withLayout(
-    React.lazy(() => import('./components/pages/ChannelPage')),
-);
-const NotFoundPage = withLayout(
-    React.lazy(() => import('./components/pages/NotFoundPage'))
-);
+import Layout from "./components/layouts/Layout";
+import {LayoutDrawerProvider} from "./components/layouts/Layout/LayoutDrawer/LayoutDrawerContext";
+import HomePage, {HOME_PAGE_ROUTE} from "./components/pages/HomePage";
+import WatchPage, {WATCH_PAGE_ROUTE} from "./components/pages/WatchPage";
+import ChannelPage, {CHANNEL_PAGE_ROUTE} from "./components/pages/ChannelPage";
+import NotFoundPage from "./components/pages/NotFoundPage";
 
 const App: React.FC = () => (
-    <Suspense fallback={<CircularProgress />}>
-        <Switch>
-            <Route exact={true} path="/" component={HomePage} />
-            <Route path="/watch" component={WatchPage} />
-            <Route path="/channel" component={ChannelPage} />
-            <Route component={NotFoundPage} />
-        </Switch>
-    </Suspense>
+    <LayoutDrawerProvider>
+        <Layout>
+            <Switch>
+                <Route exact={true} path={HOME_PAGE_ROUTE} component={HomePage} />
+                <Route path={WATCH_PAGE_ROUTE} component={WatchPage} />
+                <Route path={CHANNEL_PAGE_ROUTE} component={ChannelPage} />
+                <Route component={NotFoundPage} />
+            </Switch>
+        </Layout>
+    </LayoutDrawerProvider>
 );
 
 export default App;

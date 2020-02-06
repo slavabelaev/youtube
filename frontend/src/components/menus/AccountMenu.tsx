@@ -27,7 +27,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Typography from "@material-ui/core/Typography";
 import AccountsMenu from "./AccountsMenu";
 import DarkThemeListItem from "../DarkThemeListItem";
-import LanguageList from "../LanguageList";
+import LanguagesList from "../LanguagesList/LanguagesList";
 import SafeModeListItem from "../SafeModeListItem";
 import DescriptionBox from "../DescriptionBox";
 import CountriesList from "../CountriesList";
@@ -209,7 +209,7 @@ const AccountMenu: React.FC = () => {
     const languagesView = (
         <div>
             {renderToolbar('Выберите язык')}
-            <LanguageList />
+            <LanguagesList />
         </div>
     );
 

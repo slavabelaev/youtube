@@ -16,6 +16,7 @@ const PlaylistsMenu: React.FC = () => {
 
     const renderItem = (_: null, index: number) => (
         <RouteListItem
+            key={index}
             title={`Плэйлист ${index}`}
             to={`/playlist/${index}`}
             icon={PlaylistPlayIcon}

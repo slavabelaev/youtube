@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const RouteLinks: React.FC<RouteLinksProps> = ({ items, className, ...otherProps }) => {
     const classes = useStyles();
-    const renderItem = (item: RouteItem) => (
+    const renderItem = (item: RouteItem, index: number) => (
         <Typography
+            key={index}
             variant="subtitle2"
             component={Link}
             to={item.to}

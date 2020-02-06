@@ -19,8 +19,8 @@ const AccountsList: React.FC<AccountsMenuProps> = ({ items = accounts }) => {
     const hasOther = !!otherItems.length;
     const needDivider = hasSelected && hasOther;
 
-    const renderItem = (item: AccountListItemProps) => (
-        <AccountListItem {...item} />
+    const renderItem = (item: AccountListItemProps, index: number) => (
+        <AccountListItem {...item} key={index} />
     );
 
     const selectedList = (

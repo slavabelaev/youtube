@@ -27,6 +27,7 @@ const SubscriptionsMenu: React.FC = () => {
 
     const renderItem = (_: null, index: number) => (
         <RouteListItem
+            key={index}
             title={`Название канала ${index}`}
             to={`/channel/${index}`}
             icon={() => <Avatar className={classes.avatar} />}

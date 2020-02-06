@@ -16,18 +16,16 @@ export interface SingleChoiceListProps {
 }
 
 const SingleChoiceList: React.FC<SingleChoiceListProps> = ({ items }) => {
-    const renderItem = (item: SingleChoiceItemProps) => {
-        return (
-            <ListItem dense button>
-                <ListItemIcon>
-                    {item.selected ? <CheckIcon /> : <></>}
-                </ListItemIcon>
-                <ListItemText
-                    primary={item.title}
-                />
-            </ListItem>
-        )
-    };
+    const renderItem = (item: SingleChoiceItemProps, index: number) => (
+        <ListItem dense button key={index}>
+            <ListItemIcon>
+                {item.selected ? <CheckIcon /> : <></>}
+            </ListItemIcon>
+            <ListItemText
+                primary={item.title}
+            />
+        </ListItem>
+    );
 
     return (
         <List>

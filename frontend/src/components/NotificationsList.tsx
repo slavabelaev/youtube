@@ -44,8 +44,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const NotificationsList: React.FC<NotificationsListProps> = ({ items = notifications }) => {
     const classes = useStyles();
 
-    const renderItem = (item: Notification) => (
-      <ListItem dense button alignItems="flex-start">
+    const renderItem = (item: Notification, index: number) => (
+      <ListItem dense button alignItems="flex-start" key={index}>
           <ListItemAvatar>
               <Avatar src={item.avatarUrl} />
           </ListItemAvatar>

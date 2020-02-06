@@ -66,10 +66,11 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ variant = 'horizontal',
         </Typography>
     );
 
-    const renderItem = (item: RouteItem) => {
+    const renderItem = (item: RouteItem, index: number) => {
         const Icon = item.icon || (() => null);
         return (
             <BottomNavigationAction
+                key={index}
                 className={isVertical ? classes.item_vertical : classes.item_horizontal}
                 label={isVertical ? renderVerticalLabel(item.title) : item.title}
                 icon={<Icon />}
