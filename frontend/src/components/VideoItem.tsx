@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Media from "./Media";
-import {toShortString} from "../utils/numbers";
+import {toStringNumber} from "../utils/numbers";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import {ListItem} from "@material-ui/core";
@@ -146,7 +146,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
     
     const viewsNode = views ? (
         <span className={classes.views}>
-            {toShortString(views)} просмотров
+            {toStringNumber(views)} просмотров
         </span>
     ) : null;
     

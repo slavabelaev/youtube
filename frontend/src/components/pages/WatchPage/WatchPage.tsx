@@ -9,17 +9,13 @@ import IconButton from "@material-ui/core/IconButton";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import ShareIcon from "@material-ui/icons/Share";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import Button from "@material-ui/core/Button";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Switch from "@material-ui/core/Switch";
 import CollapseText from "../../CollapseText";
 import Comments from "../../Comments";
 import LikeDislikeButton from "../../buttons/LikeDislikeButton";
+import ChannelToolbar from "../../ChannelToolbar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -45,10 +41,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     toolbarCreatedAt: {},
     toolbarAside: {
-        marginLeft: 'auto'
-    },
-    toolbarListItem: {
-        width: 'auto'
+        marginLeft: 'auto',
     },
     autoplayToolbar: {
         minHeight: 'initial',
@@ -59,9 +52,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         [theme.breakpoints.up('lg')]: {
             paddingLeft: theme.spacing(7)
         }
-    },
-    notificationsButton: {
-        marginLeft: theme.spacing(1)
     }
 }));
 
@@ -101,34 +91,6 @@ const WatchPage: React.FC = () => {
       </Toolbar>
     );
 
-    const secondaryToolbar = (
-        <Toolbar disableGutters>
-            <ListItem
-                className={classes.toolbarListItem}
-                disableGutters
-            >
-                <ListItemAvatar>
-                    <Avatar />
-                </ListItemAvatar>
-                <ListItemText
-                    primary="Название канала"
-                    secondary="999 тыс. подписчиков"
-                />
-            </ListItem>
-            <aside className={classes.toolbarAside}>
-                <Button
-                    variant="contained"
-                    color="primary"
-                >
-                    Подписаться
-                </Button>
-                <IconButton className={classes.notificationsButton}>
-                    <NotificationsIcon />
-                </IconButton>
-            </aside>
-        </Toolbar>
-    );
-
     const main = (
         <main className={classes.main}>
             <VideoPlayer
@@ -139,7 +101,7 @@ const WatchPage: React.FC = () => {
             </Typography>
             {toolbar}
             <Divider />
-            {secondaryToolbar}
+            <ChannelToolbar disableGutters />
             <CollapseText
                 className={classes.collapseText}
                 initialText={`Подробное описание видеоролика, предназначенное для продвижения в поиске, а также прочие детали которые могут быть полезны пользователям после просмотра видеоролика.`}
