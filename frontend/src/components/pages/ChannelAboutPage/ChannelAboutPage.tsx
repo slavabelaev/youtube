@@ -84,7 +84,6 @@ const ChannelAboutPage: React.FC = () => {
         <>
             <Typography
                 className={classes.detailTitle}
-                variant="subtitle2"
                 color="textSecondary"
                 component="dt"
             >
@@ -92,7 +91,6 @@ const ChannelAboutPage: React.FC = () => {
             </Typography>
             <Typography
                 className={classes.detailValue}
-                variant="subtitle2"
                 color="textSecondary"
                 component="dd"
             >
@@ -131,7 +129,7 @@ const ChannelAboutPage: React.FC = () => {
     );
 
     const renderStatItem = (text: string) => (
-        <ListItem dense disableGutters divider>
+        <ListItem disableGutters divider>
             <ListItemText
                 primary={text}
             />
