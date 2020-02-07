@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Theme, useMediaQuery} from "@material-ui/core";
 
 export interface LayoutDrawerProps {
     open: boolean;

@@ -4,19 +4,8 @@ import VideoItem, {VideoItemProps} from "../VideoItem";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 export interface RecommendationsListProps {
-    items?: VideoItemProps[]
+    items: VideoItemProps[]
 }
-
-const generateVideos = (): VideoItemProps[] => Array(10).fill(null).map((item, index) => ({
-    title: 'Очень длинный заголовок видеоролика для предстваления',
-    linkTo: `/watch?v=${index}`,
-    imageUrl: 'https://invalid_url',
-    channelName: 'Название канала',
-    channelLinkTo: `/channel/${index}`,
-    isNew: index % 2 === 0,
-    isRecommended: index % 2 === 1,
-    views: Math.round(Math.random() * 999999999)
-}));
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     item: {
@@ -27,12 +16,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideosList: React.FC<RecommendationsListProps> = ({ items = generateVideos() }) => {
+const VideosList: React.FC<RecommendationsListProps> = ({ items }) => {
     const classes = useStyles();
 
-    const renderItem = (item: VideoItemProps, index: number) => (
+    const renderItem = (item: VideoItemProps) => (
         <VideoItem
-            key={index}
+            key={item.id}
             className={classes.item}
             {...item}
         />

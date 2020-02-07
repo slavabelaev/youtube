@@ -1,12 +1,10 @@
 import React from "react";
-import SingleChoiceList, {SingleChoiceItemProps} from "../SingleChoiceList";
+import SingleChoiceList, {SingleChoiceListProps} from "../SingleChoiceList";
 
-const generateLanguages = (): SingleChoiceItemProps[] => [
-    { title: 'Русский', value: 'ru', selected: true },
-    { title: 'Беларуская', value: 'be' },
-    { title: 'Украинский', value: 'ua' },
-];
+export interface LanguagesListProps extends SingleChoiceListProps {}
 
-const LanguagesList: React.FC = () => (<SingleChoiceList items={generateLanguages()} />);
+const LanguagesList: React.FC<LanguagesListProps> = ({ items }) => (
+    <SingleChoiceList items={items} />
+);
 
 export default LanguagesList;

@@ -10,14 +10,25 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import {makeStyles} from "@material-ui/core/styles";
 
-const items = Array(10).fill(null);
+export interface SubscriptionProps {
+    id: string;
+    title: string;
+    linkTo: string;
+    imageUrl: string;
+}
+
+export interface SubscriptionsProps {
+    items: SubscriptionProps[]
+}
+
 const useStyles = makeStyles((theme: Theme) => createStyles({
     avatar: {
         width: theme.spacing(3),
         height: theme.spacing(3)
     }
 }));
-const SubscriptionsMenu: React.FC = () => {
+
+const Subscriptions: React.FC<SubscriptionsProps> = ({ items }) => {
     const classes = useStyles();
     const displayItems = items.slice(0, 7);
     const toggleItems = items.slice(7);
@@ -25,12 +36,19 @@ const SubscriptionsMenu: React.FC = () => {
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);
 
-    const renderItem = (_: null, index: number) => (
+    const renderAvatar = (imageUrl: string) => (
+        <Avatar
+            src={imageUrl}
+            className={classes.avatar}
+        />
+    );
+
+    const renderItem = (item: SubscriptionProps) => (
         <RouteListItem
-            key={index}
-            title={`Название канала ${index}`}
-            to={`/channel/${index}`}
-            icon={() => <Avatar className={classes.avatar} />}
+            key={item.id}
+            title={item.title}
+            to={item.linkTo}
+            icon={() => renderAvatar(item.imageUrl)}
         />
     );
 
@@ -58,4 +76,4 @@ const SubscriptionsMenu: React.FC = () => {
     );
 };
 
-export default SubscriptionsMenu;
+export default Subscriptions;

@@ -16,16 +16,9 @@ export interface Notification {
     createdAt: Date
 }
 
-export interface NotificationsListProps {
-    items?: Notification[]
+export interface NotificationsProps {
+    items: Notification[]
 }
-
-const notifications: Notification[] = Array(20).fill(null).map(_ => ({
-    text: `На канале "Дмитрий Гордон" появилось новое видео: "Гордон о том, кто скоро покинет команду Зеленского и о возвращении Яценюка в политику". Советуем его посмотреть.`,
-    avatarUrl: '',
-    imageUrl: 'https://source-to-image',
-    createdAt: new Date()
-}));
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     media: {
@@ -41,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const NotificationsList: React.FC<NotificationsListProps> = ({ items = notifications }) => {
+const Notifications: React.FC<NotificationsProps> = ({ items }) => {
     const classes = useStyles();
 
     const renderItem = (item: Notification, index: number) => (
@@ -76,4 +69,4 @@ const NotificationsList: React.FC<NotificationsListProps> = ({ items = notificat
     );
 };
 
-export default NotificationsList;
+export default Notifications;

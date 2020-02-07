@@ -9,7 +9,7 @@ import {
 import PrimaryMenu from "../../menus/PrimaryMenu";
 import SecondaryMenu from "../../menus/SecondaryMenu";
 import PlaylistsMenu from "../../menus/PlatlistsMenu";
-import SubscriptionsMenu from "../../menus/SubscriptionsMenu";
+import Subscriptions from "../../Subscriptions";
 import OtherFeaturesMenu from "../../menus/OtherFeaturesMenu";
 import OptionsMenu from "../../menus/OptionsMenu";
 import RouteLinks from "../../common/RouteLinks";
@@ -45,7 +45,7 @@ const DrawerContent: React.FC = () => {
             <PlaylistsMenu />
             <Divider />
             {renderTitle(SUBSCRIPTIONS_ROUTE.title)}
-            <SubscriptionsMenu />
+            <Subscriptions />
             <Divider />
             {renderTitle('Другие возможности')}
             <OtherFeaturesMenu />

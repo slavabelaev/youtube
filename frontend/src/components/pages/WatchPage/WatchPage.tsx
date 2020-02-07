@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme} from "@material-ui/core";
 import VideoPlayer from "../../VideoPlayer";
@@ -20,7 +20,6 @@ import Switch from "@material-ui/core/Switch";
 import CollapseText from "../../CollapseText";
 import Comments from "../../Comments";
 import LikeDislikeButton from "../../buttons/LikeDislikeButton";
-import LayoutDrawerContext from "../../layouts/Layout/LayoutDrawer/LayoutDrawerContext";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {

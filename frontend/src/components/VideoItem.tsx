@@ -14,6 +14,7 @@ import Avatar from "@material-ui/core/Avatar";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 
 export interface VideoItemProps {
+    id: string;
     title: string;
     linkTo: string;
     imageUrl: string;

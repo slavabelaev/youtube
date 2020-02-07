@@ -1,12 +1,10 @@
 import React from "react";
-import SingleChoiceList, {SingleChoiceItemProps} from "../SingleChoiceList";
+import SingleChoiceList, {SingleChoiceListProps} from "../SingleChoiceList";
 
-const generateCountries = (): SingleChoiceItemProps[] => [
-    { title: 'Россия', value: 'ru', selected: true },
-    { title: 'Беларусия', value: 'be' },
-    { title: 'Украина', value: 'ua' },
-];
+export interface CountriesListProps extends SingleChoiceListProps {}
 
-const CountriesList: React.FC = () => (<SingleChoiceList items={generateCountries()} />);
+const CountriesList: React.FC<CountriesListProps> = ({ items }) => (
+    <SingleChoiceList items={items} />
+);
 
 export default CountriesList;

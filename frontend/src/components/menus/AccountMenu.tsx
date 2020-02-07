@@ -27,7 +27,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Typography from "@material-ui/core/Typography";
 import AccountsMenu from "./AccountsMenu";
 import DarkThemeListItem from "../DarkThemeListItem";
-import LanguagesList from "../LanguagesList/LanguagesList";
+import LanguagesList from "../LanguagesList";
 import SafeModeListItem from "../SafeModeListItem";
 import DescriptionBox from "../DescriptionBox";
 import CountriesList from "../CountriesList";

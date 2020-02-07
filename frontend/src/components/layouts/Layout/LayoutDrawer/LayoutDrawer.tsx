@@ -3,7 +3,7 @@ import DrawerContent from "../DrawerContent";
 import NavigationMenu from "../../../menus/NavigationMenu";
 import Drawer from "@material-ui/core/Drawer";
 import clsx from "clsx";
-import {createStyles, Theme, useMediaQuery} from "@material-ui/core";
+import {createStyles, Theme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
