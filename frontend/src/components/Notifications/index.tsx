@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {Notification} from "./Notifications";
+import SuspenseFallback from "../SuspenseFallback";
 
 const Notifications = React.lazy(() => import('./Notifications'));
 
@@ -12,7 +12,7 @@ const generateNotifications = (): Notification[] => Array(12).fill(null).map(_ =
 }));
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <Notifications items={generateNotifications()} />
     </Suspense>
 );

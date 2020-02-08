@@ -3,8 +3,12 @@ import { Switch, Route, useRouteMatch, useHistory, RouteProps } from "react-rout
 import Tab, {TabProps} from "@material-ui/core/Tab";
 import {Tabs} from "@material-ui/core";
 import {NavLink} from "react-router-dom";
-import ChannelVideosPage from "../ChannelVideosPage";
-import ChannelAboutPage from "../ChannelAboutPage";
+import ChannelVideosPage, {CHANNEL_VIDEOS_PAGE_ROUTE} from "../ChannelVideosPage";
+import ChannelAboutPage, {CHANNEL_ABOUT_PAGE_ROUTE} from "../ChannelAboutPage";
+import ChannelFeaturedPage, {CHANNEL_FEATURED_PAGE_ROUTE} from "../ChannelFeaturedPage";
+import ChannelPlaylistsPage, {CHANNEL_PLAYLISTS_PAGE_ROUTE} from "../ChannelPlaylistsPage";
+import ChannelCommunityPage, {CHANNEL_COMMUNITY_PAGE_ROUTE} from "../ChannelCommunityPage";
+import ChannelChannelsPage, {CHANNEL_CHANNELS_PAGE_ROUTE} from "../ChannelChannelsPage";
 
 export interface ChannelTabProps {
     label: TabProps['label'];
@@ -20,12 +24,12 @@ const ChannelTabs: React.FC<ChannelTabsProps> = () => {
     const match = useRouteMatch();
     const { location } = useHistory();
     const items: ChannelTabProps[] = [
-        { label: 'Главная', path: match.url, component: ChannelVideosPage },
-        { label: 'Видео', path: `${match.url}/videos`, component: ChannelVideosPage },
-        { label: 'Плэйлисты', path: `${match.url}/playlists`, component: ChannelVideosPage },
-        { label: 'Сообщество', path: `${match.url}/community`, component: ChannelVideosPage },
-        { label: 'Каналы', path: `${match.url}/channels`, component: ChannelVideosPage },
-        { label: 'О канале', path: `${match.url}/about`, component: ChannelAboutPage }
+        { label: 'Главная', path: CHANNEL_FEATURED_PAGE_ROUTE, component: ChannelFeaturedPage },
+        { label: 'Видео', path: CHANNEL_VIDEOS_PAGE_ROUTE, component: ChannelVideosPage },
+        { label: 'Плэйлисты', path: CHANNEL_PLAYLISTS_PAGE_ROUTE, component: ChannelPlaylistsPage },
+        { label: 'Сообщество', path: CHANNEL_COMMUNITY_PAGE_ROUTE, component: ChannelCommunityPage },
+        { label: 'Каналы', path: CHANNEL_CHANNELS_PAGE_ROUTE, component: ChannelChannelsPage },
+        { label: 'О канале', path: CHANNEL_ABOUT_PAGE_ROUTE, component: ChannelAboutPage }
     ];
     const initialValue = items.findIndex(item => item.path.includes(location.pathname));
     const [value, setValue] = useState(initialValue);
@@ -35,7 +39,7 @@ const ChannelTabs: React.FC<ChannelTabsProps> = () => {
             key={item.path}
             label={item.label}
             component={NavLink}
-            to={item.path}
+            to={match.url + item.path}
             exact={true}
             onClick={() => setValue(index)}
             activeClassName="Mui-selected"
@@ -45,7 +49,7 @@ const ChannelTabs: React.FC<ChannelTabsProps> = () => {
     const renderRoute = (item: ChannelTabProps) => (
         <Route
             key={item.path}
-            path={item.path}
+            path={match.url + item.path}
             exact={true}
             component={item.component}
         />

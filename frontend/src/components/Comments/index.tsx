@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {Comment} from "./Comments";
+import SuspenseFallback from "../SuspenseFallback";
 
 const Comments = React.lazy(() => import('./Comments'));
 
@@ -16,7 +16,7 @@ const generateComments = (): Comment[] => Array(12).fill(null).map((_, index) =>
 }));
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <Comments items={generateComments()} />
     </Suspense>
 );

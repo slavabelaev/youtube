@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {SingleChoiceItemProps} from "../SingleChoiceList";
+import SuspenseFallback from "../SuspenseFallback";
 
 const LanguagesList = React.lazy(() => import('./LanguagesList'));
 
@@ -11,7 +11,7 @@ const generateLanguages = (): SingleChoiceItemProps[] => [
 ];
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <LanguagesList items={generateLanguages()} />
     </Suspense>
 );

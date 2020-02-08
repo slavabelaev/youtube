@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {SubscriptionProps} from "./Subscriptions";
+import SuspenseFallback from "../SuspenseFallback";
 
 const Subscriptions = React.lazy(() => import('./Subscriptions'));
 
@@ -12,7 +12,7 @@ const generateSubscriptions = (): SubscriptionProps[] => Array(12).fill(null).ma
 }));
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <Subscriptions items={generateSubscriptions()} />
     </Suspense>
 );

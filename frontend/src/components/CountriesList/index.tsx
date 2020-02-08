@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {SingleChoiceItemProps} from "../SingleChoiceList";
+import SuspenseFallback from "../SuspenseFallback";
 
 const CountriesList = React.lazy(() => import('./CountriesList'));
 
@@ -11,7 +11,7 @@ const generateCountries = (): SingleChoiceItemProps[] => [
 ];
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <CountriesList items={generateCountries()} />
     </Suspense>
 );

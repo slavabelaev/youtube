@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {PlaylistProps} from "./Playlists";
+import SuspenseFallback from "../SuspenseFallback";
 
 const Playlists = React.lazy(() => import('./Playlists'));
 
@@ -11,7 +11,7 @@ const generatePlaylists = (): PlaylistProps[] => Array(10).fill(null).map((item,
 }));
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <Playlists items={generatePlaylists()} />
     </Suspense>
 )

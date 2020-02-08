@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
-import {CircularProgress} from "@material-ui/core";
 import {VideoItemProps} from "../VideoItem";
+import SuspenseFallback from "../SuspenseFallback";
 
 const VideosList = React.lazy(() => import('./VideosList'));
 
@@ -17,7 +17,7 @@ const generateVideos = (): VideoItemProps[] => Array(12).fill(null).map((item, i
 }));
 
 export default () => (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<SuspenseFallback />}>
         <VideosList items={generateVideos()} />
     </Suspense>
 );

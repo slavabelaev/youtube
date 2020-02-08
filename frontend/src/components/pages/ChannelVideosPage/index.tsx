@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 
-export const CHANNEL_VIDEOS_PAGE_ROUTE = '/channel/:id/videos';
+export const CHANNEL_VIDEOS_PAGE_ROUTE = '/videos';
 
 const Page = React.lazy(() => import('./ChannelVideosPage'));
 

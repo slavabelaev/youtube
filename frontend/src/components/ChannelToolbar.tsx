@@ -4,13 +4,12 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
 import {Typography} from "@material-ui/core";
 import {toStringNumber} from "../utils/numbers";
+import SubscribeButton from "./buttons/SubscribeButton";
+import ChannelNotificationsButton from "./buttons/ChannelNotificationsButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     listItem: {
@@ -58,15 +57,10 @@ const ChannelToolbar: React.FC<ChannelToolbar> = (props) => {
                 />
             </ListItem>
             <aside className={classes.aside}>
-                <Button
-                    variant="contained"
-                    color="primary"
-                >
-                    Подписаться
-                </Button>
-                <IconButton className={classes.notificationsButton}>
-                    <NotificationsIcon />
-                </IconButton>
+                <SubscribeButton />
+                <ChannelNotificationsButton
+                    className={classes.notificationsButton}
+                />
             </aside>
         </Toolbar>
     );
