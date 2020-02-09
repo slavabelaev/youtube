@@ -18,7 +18,7 @@ const SuspenseFallback: React.FC = () => {
     return (
         <div className={classes.root}>
             <CircularProgress
-                size={48}
+                size={32}
                 className={classes.circularProgress}
             />
         </div>

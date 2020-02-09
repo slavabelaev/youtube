@@ -3,7 +3,7 @@ import {List} from "@material-ui/core";
 import AccountListItem, {AccountListItemProps} from "./AccountsListItem";
 import Divider from "@material-ui/core/Divider";
 
-export interface AccountsMenuProps {
+export interface AccountsListProps {
     items?: AccountListItemProps[]
 }
 
@@ -12,7 +12,7 @@ const accounts: AccountListItemProps[] = [
     { fullName: 'User 2', email: 'user2@email.com', avatarUrl: '', selected: false },
     { fullName: 'User 3', email: 'user3@email.com', avatarUrl: '', selected: false },
 ];
-const AccountsList: React.FC<AccountsMenuProps> = ({ items = accounts }) => {
+const AccountsList: React.FC<AccountsListProps> = ({ items = accounts }) => {
     const selectedItems = items.filter(item => item.selected);
     const otherItems = items.filter(item => !item.selected);
     const hasSelected = !!selectedItems.length;
