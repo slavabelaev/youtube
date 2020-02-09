@@ -2,19 +2,22 @@ import React from "react";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import ChannelToolbar from "../../ChannelToolbar";
 import ChannelTabs from "./ChannelTabs";
+import {generateBackgroundImageStyles} from "./styles";
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-    poster: {
-        height: theme.spacing(25),
-        backgroundColor: theme.palette.grey.A700
-    },
-    header: {
-        maxWidth: theme.breakpoints.width('md'),
-        margin: '0 auto'
-    }
-}));
+const useStyles = makeStyles((theme: Theme) => {
+    return createStyles({
+        poster: {
+            height: theme.spacing(25),
+            ...generateBackgroundImageStyles(theme)
+        },
+        header: {
+            maxWidth: theme.breakpoints.width('md'),
+            margin: '0 auto'
+        }
+    })
+});
 
-const ChannelPage: React.FC = ({ children: ReactElement }) => {
+const ChannelPage: React.FC = () => {
     const classes = useStyles();
 
     const poster = (

@@ -59,6 +59,7 @@ const Channel: React.FC<ChannelProps> = (props) => {
             </Typography>
             <SubscribeButton
                 size="small"
+                color="default"
             />
         </div>
     )

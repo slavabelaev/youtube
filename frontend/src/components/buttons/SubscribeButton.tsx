@@ -6,9 +6,10 @@ export interface SubscribeButtonProps extends ButtonProps {}
 const SubscribeButton: React.FC<SubscribeButtonProps> = (props) => {
    return (
        <Button
-           {...props}
            variant="contained"
            color="primary"
+           disableElevation
+           {...props}
        >
            Подписаться
        </Button>
