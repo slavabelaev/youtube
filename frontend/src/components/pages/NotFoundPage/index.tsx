@@ -1,10 +1,12 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 
-const NotFoundPage = React.lazy(() => import('./NotFoundPage'));
+const Page = React.lazy(() => import('./NotFoundPage'));
 
-export default () => (
+const NotFoundPage = () => (
     <Suspense fallback={<LinearProgress />}>
-        <NotFoundPage />
+        <Page />
     </Suspense>
 );
+
+export default NotFoundPage;
