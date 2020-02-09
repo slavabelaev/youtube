@@ -1,9 +1,9 @@
-import React, {useContext} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {
     AppBar,
     createStyles,
-    IconButton,
+    IconButton, IconButtonProps,
     Theme,
     Toolbar,
     useMediaQuery
@@ -16,7 +16,10 @@ import SearchField from "../../SearchField";
 import Logo from "../Logo";
 import AppsMenuButton from "../../buttons/AppsMenuButton";
 import VideoMenuButton from "../../buttons/VideoMenuButton";
-import LayoutDrawerContext from "./LayoutDrawer/LayoutDrawerContext";
+
+interface LayoutAppBarProps {
+    MenuButtonProps?: IconButtonProps;
+}
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -45,9 +48,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const LayoutAppBar: React.FC = () => {
+const LayoutAppBar: React.FC<LayoutAppBarProps> = ({
+    MenuButtonProps
+}) => {
     const classes = useStyles();
-    const { actions } = useContext(LayoutDrawerContext);
     const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
     const isScreenDownXs = useMediaQuery((theme: Theme) => theme.breakpoints.down('xs'));
 
@@ -63,7 +67,7 @@ const LayoutAppBar: React.FC = () => {
         <IconButton
             className={classes.menuButton}
             edge="start"
-            onClick={actions?.toggle}
+            {...MenuButtonProps}
         >
             <MenuIcon />
         </IconButton>
