@@ -84,6 +84,7 @@ const ChannelAboutPage: React.FC = () => {
         <>
             <Typography
                 className={classes.detailTitle}
+                variant="body2"
                 color="textSecondary"
                 component="dt"
             >
@@ -91,6 +92,7 @@ const ChannelAboutPage: React.FC = () => {
             </Typography>
             <Typography
                 className={classes.detailValue}
+                variant="body2"
                 color="textSecondary"
                 component="dd"
             >

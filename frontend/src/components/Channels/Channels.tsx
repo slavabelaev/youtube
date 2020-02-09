@@ -9,10 +9,11 @@ export interface ChannelsProps {
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr'
+        gridTemplateColumns: 'repeat(5, minmax(0, 1fr))'
     },
     item: {
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        flex: '1 20%'
     }
 }));
 

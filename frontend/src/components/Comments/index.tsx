@@ -1,10 +1,11 @@
 import React, {Suspense} from "react";
-import {Comment} from "./Comments";
 import SuspenseFallback from "../SuspenseFallback";
+import {CommentProps} from "./Comment";
 
 const Comments = React.lazy(() => import('./Comments'));
 
-const generateComments = (): Comment[] => Array(12).fill(null).map((_, index) => ({
+const generateComments = (): CommentProps[] => Array(12).fill(null).map((_, index) => ({
+    id: index.toString(),
     avatarUrl: '',
     userName: index % 2 === 0 ? 'Иванов Иван' : 'Василий Петров',
     text: 'Очень длинный текст сообщения, который будет отображаться здесь после отправки его пользователем, который занимает несколько строк и выражает субъективное мнение данного пользователя по отношению к той информации, которую он получил в результате просмотра видеоролика',

@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         justifyContent: 'center'
     },
     title: {
-        marginTop: theme.spacing(2)
+        marginTop: theme.spacing(2),
+        lineHeight: 1.25
     },
     main: {
         flex: 1,

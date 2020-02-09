@@ -26,11 +26,19 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     title: {
         textDecoration: 'none',
-        textAlign: 'center'
+        textAlign: 'center',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        width: '100%',
+        textOverflow: 'ellipsis'
     },
     subscribersLabel: {
-        marginBottom: theme.spacing(2),
-        textAlign: 'center'
+        marginBottom: theme.spacing(1),
+        textAlign: 'center',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        width: '100%',
+        textOverflow: 'ellipsis'
     }
 }));
 
@@ -43,7 +51,7 @@ const Channel: React.FC<ChannelProps> = (props) => {
             />
             <Typography
                 className={classes.title}
-                variant="subtitle1"
+                variant="body1"
                 color="textPrimary"
                 component={Link}
                 to={props.linkTo}
@@ -52,10 +60,10 @@ const Channel: React.FC<ChannelProps> = (props) => {
             </Typography>
             <Typography
                 className={classes.subscribersLabel}
-                variant="body1"
+                variant="body2"
                 color="textSecondary"
             >
-                {`${toStringNumber(props.subscribersNumber)} подписчиков`}
+                {toStringNumber(props.subscribersNumber)} подписчиков
             </Typography>
             <SubscribeButton
                 size="small"

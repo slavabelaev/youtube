@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as NotFound } from "./NotFound.svg";
+import { ReactComponent as NotFoundImage } from "./NotFound.svg";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    image: {
+        maxWidth: 720
     }
 }));
 
@@ -14,7 +17,9 @@ const NotFoundPage: React.FC = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <NotFound />
+            <NotFoundImage
+                className={classes.image}
+            />
         </div>
     )
 };

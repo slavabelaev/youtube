@@ -53,8 +53,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         '-webkit-box-orient': 'vertical',
         '-webkit-line-clamp': 2,
         overflow: 'hidden',
-        fontSize: theme.typography.body2.fontSize,
-        textDecoration: 'none'
+        textDecoration: 'none',
+        lineHeight: 1.25,
+        marginBottom: theme.spacing(.5)
     },
     channelName: {
         whiteSpace: 'nowrap',
@@ -114,6 +115,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
     const titleNode = title ? (
         <Typography
             className={classes.title}
+            variant="body1"
             color="inherit"
             component={Link}
             to={linkTo}
