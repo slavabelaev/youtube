@@ -1,6 +1,6 @@
 import React from "react";
 import {List} from "@material-ui/core";
-import RouteListItem from "../common/RouteListItem";
+import RouteListItem from "../RouteListItem";
 import {HOME_ROUTE, SUBSCRIPTIONS_ROUTE, TRENDING_ROUTE} from "../../constants/routes";
 
 const PrimaryMenu: React.FC = () => {

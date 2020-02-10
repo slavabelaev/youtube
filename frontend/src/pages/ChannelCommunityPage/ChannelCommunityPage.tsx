@@ -1,8 +1,9 @@
 import React from "react";
+import Posts from "../../components/Posts";
 
 const ChannelCommunityPage: React.FC = () => (
     <div>
-        Community
+        <Posts />
     </div>
 );
 

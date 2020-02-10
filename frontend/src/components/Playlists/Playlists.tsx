@@ -1,6 +1,6 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import RouteListItem from "../common/RouteListItem";
+import RouteListItem from "../RouteListItem";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 
 export interface PlaylistProps {

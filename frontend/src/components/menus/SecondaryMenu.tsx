@@ -1,6 +1,6 @@
 import React from "react";
 import {List} from "@material-ui/core";
-import RouteListItem from "../common/RouteListItem";
+import RouteListItem from "../RouteListItem";
 import {
     FAVORITES_ROUTE,
     HISTORY_ROUTE,

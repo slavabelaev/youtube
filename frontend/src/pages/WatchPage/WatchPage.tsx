@@ -1,8 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme} from "@material-ui/core";
-import VideoPlayer from "../../VideoPlayer";
-import VideosList from "../../VideosList";
+import VideoPlayer from "../../components/VideoPlayer";
+import VideosList from "../../components/VideosList";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
@@ -12,10 +12,10 @@ import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import Switch from "@material-ui/core/Switch";
-import CollapseText from "../../CollapseText";
-import Comments from "../../Comments";
-import LikeDislikeButton from "../../buttons/LikeDislikeButton";
-import ChannelToolbar from "../../ChannelToolbar";
+import CollapseText from "../../components/CollapseText";
+import Comments from "../../components/Comments";
+import LikeDislikeButton from "../../components/buttons/LikeDislikeButton";
+import ChannelToolbar from "../../components/ChannelToolbar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {

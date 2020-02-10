@@ -1,5 +1,5 @@
 import React from "react";
-import Channels from "../../Channels";
+import Channels from "../../components/Channels";
 
 const ChannelChannelsPage: React.FC = () => (
     <div>

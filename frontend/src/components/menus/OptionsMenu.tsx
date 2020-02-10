@@ -1,6 +1,6 @@
 import React from "react";
 import {List} from "@material-ui/core";
-import RouteListItem from "../common/RouteListItem";
+import RouteListItem from "../RouteListItem";
 import {HELP_ROUTE, REPORTS_ROUTE, REVIEWS_ROUTE, SETTINGS_ROUTE} from "../../constants/routes";
 
 const OptionsMenu: React.FC = () => {

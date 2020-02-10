@@ -1,6 +1,6 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import RouteListItem from "../common/RouteListItem";
+import RouteListItem from "../RouteListItem";
 import {
     CHANNEL_ROUTE, HELP_ROUTE, KEYBOARD_SHORTCUTS_ROUTE,
     PAID_MEMBERSHIPS_ROUTE, PERSONAL_DATA_ROUTE, REVIEWS_ROUTE,
@@ -8,7 +8,7 @@ import {
     SIGN_OUT_ROUTE,
     STUDIO_ROUTE
 } from "../../constants/routes";
-import MenuListItem from "../common/MenuListItem";
+import MenuListItem from "../MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import TranslateIcon from "@material-ui/icons/Translate";

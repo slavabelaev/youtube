@@ -1,6 +1,6 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import RouteListItem from "../common/RouteListItem";
+import RouteListItem from "../RouteListItem";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import LiveTvIcon from "@material-ui/icons/LiveTv";
 import {IconProps} from "@material-ui/core";

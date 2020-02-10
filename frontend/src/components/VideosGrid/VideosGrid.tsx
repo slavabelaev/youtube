@@ -8,7 +8,8 @@ export interface VideosGridProps {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
-        padding: theme.spacing(2)
+        width: '100%',
+        margin: 0
     }
 }));
 
@@ -22,11 +23,13 @@ const VideosGrid: React.FC<VideosGridProps> = ({ items }) => {
     );
 
     return (
-        <div className={classes.root}>
-            <Grid container spacing={2}>
-                {items.map(renderItem)}
-            </Grid>
-        </div>
+        <Grid
+            className={classes.root}
+            container
+            spacing={2}
+        >
+            {items.map(renderItem)}
+        </Grid>
     )
 };
 

@@ -12,7 +12,7 @@ import PlaylistsMenu from "../../menus/PlatlistsMenu";
 import Subscriptions from "../../Subscriptions";
 import OtherFeaturesMenu from "../../menus/OtherFeaturesMenu";
 import OptionsMenu from "../../menus/OptionsMenu";
-import RouteLinks from "../../common/RouteLinks";
+import RouteLinks from "../../RouteLinks";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({

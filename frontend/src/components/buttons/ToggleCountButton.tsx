@@ -38,7 +38,7 @@ const ToggleCountButton: React.FC<ToggleCountButtonProps> = ({
     const valueBox = (
         <Typography
             className={classes.typography}
-            variant={IconButtonProps.size === 'small' ? 'caption' : 'button'}
+            variant={IconButtonProps.size === 'small' ? 'body2' : 'button'}
             color={color}
             component="label"
             htmlFor={id}

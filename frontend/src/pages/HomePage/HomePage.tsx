@@ -1,25 +1,34 @@
 import React from "react";
-import VideosGrid from "../../VideosGrid";
+import VideosGrid from "../../components/VideosGrid";
 import {createStyles, Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    heading: {
-       padding: theme.spacing(2, 2, 0, 2)
+    main: {
+        padding: theme.spacing(0, 2, 2, 2)
     }
 }));
 
 const HomePage: React.FC = () => {
     const classes = useStyles();
-    return (
-        <>
+
+    const toolbar = (
+        <Toolbar>
             <Typography
-                className={classes.heading}
                 variant="h6"
             >
                 Рекомендованные
             </Typography>
-            <VideosGrid />
+        </Toolbar>
+    );
+
+    return (
+        <>
+            {toolbar}
+            <main className={classes.main}>
+                <VideosGrid />
+            </main>
         </>
     )
 };

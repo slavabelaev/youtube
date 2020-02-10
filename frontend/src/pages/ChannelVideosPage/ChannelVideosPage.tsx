@@ -1,5 +1,5 @@
 import React from "react";
-import VideosGrid from "../../VideosGrid";
+import VideosGrid from "../../components/VideosGrid";
 
 const ChannelVideosPage: React.FC = () => (
     <VideosGrid />

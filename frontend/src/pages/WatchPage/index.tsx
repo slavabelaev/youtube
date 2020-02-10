@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import Layout from "../../layouts/Layout";
+import Layout from "../../components/layouts/Layout";
 
 export const WATCH_PAGE_ROUTE = '/watch';
 

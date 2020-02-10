@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import {ListItemIcon} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
-import RouteItem from "../../interfaces/RouteItem";
+import RouteItem from "../interfaces/RouteItem";
 
 export interface RouteListItemProps extends RouteItem {}
 
