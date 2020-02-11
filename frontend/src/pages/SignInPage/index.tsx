@@ -1,13 +1,13 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 export const SIGN_IN_PAGE_ROUTE = '/sign-in';
 export const SIGN_OUT_PAGE_ROUTE = '/sign-out';
 
-export const SIGN_OUT_ROUTE: RouteItem = {
+export const SIGN_OUT_MENU_ITEM: MenuItem = {
     title: 'Выйти',
     to: SIGN_OUT_PAGE_ROUTE,
     icon: ExitToAppIcon

@@ -1,15 +1,15 @@
 import React from "react";
 import {BottomNavigation, BottomNavigationProps, createStyles, Theme} from "@material-ui/core";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {NavLink} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
-import {HOME_ROUTE} from "../../pages/HomePage";
-import {TRENDING_ROUTE} from "../../pages/TrendingPage";
-import {SUBSCRIPTIONS_ROUTE} from "../../pages/SubscriptionsPage";
-import {LIBRARY_ROUTE} from "../../pages/LibraryPage";
+import {HOME_MENU_ITEM} from "../../pages/HomePage";
+import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
+import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
+import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_vertical: {
@@ -58,11 +58,11 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
     const classes = useStyles();
     const isVertical = variant === 'vertical';
 
-    const items: RouteItem[] = [
-        HOME_ROUTE,
-        TRENDING_ROUTE,
-        SUBSCRIPTIONS_ROUTE,
-        LIBRARY_ROUTE
+    const items: MenuItem[] = [
+        HOME_MENU_ITEM,
+        TRENDING_MENU_ITEM,
+        SUBSCRIPTIONS_MENU_ITEM,
+        LIBRARY_MENU_ITEM
     ];
 
     const renderVerticalLabel = (title: string) => (
@@ -74,7 +74,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
         </Typography>
     );
 
-    const renderItem = (item: RouteItem, index: number) => {
+    const renderItem = (item: MenuItem, index: number) => {
         const Icon = item.icon || (() => null);
         return (
             <BottomNavigationAction

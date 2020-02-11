@@ -3,9 +3,9 @@ import {NavLink} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import {ListItemIcon} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
-import RouteItem from "../interfaces/RouteItem";
+import MenuItem from "../interfaces/MenuItem";
 
-export interface RouteListItemProps extends RouteItem {}
+export interface RouteListItemProps extends MenuItem {}
 
 const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, exact = false, title }) => {
     const renderIcon = () => {

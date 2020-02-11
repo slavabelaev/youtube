@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 
 export const ADS_PAGE_ROUTE = '/ads';
 
-export const ADS_ROUTE: RouteItem = {
+export const ADS_MENU_ITEM: MenuItem = {
     title: 'Рекламодателям',
     to: ADS_PAGE_ROUTE
 };

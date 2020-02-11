@@ -1,6 +1,6 @@
 import React from "react";
 
-export default interface RouteItem {
+export default interface MenuItem {
     title: string;
     to: string;
     exact?: boolean;

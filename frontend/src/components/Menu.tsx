@@ -1,14 +1,14 @@
 import React from "react";
-import RouteItem from "../interfaces/RouteItem";
+import MenuItem from "../interfaces/MenuItem";
 import {List} from "@material-ui/core";
 import RouteListItem from "./RouteListItem";
 
 export interface MenuProps {
-    items: RouteItem[];
+    items: MenuItem[];
 }
 
 const Menu: React.FC<MenuProps> = ({ items }) => {
-    const renderItem = (item: RouteItem) => (
+    const renderItem = (item: MenuItem) => (
         <RouteListItem {...item} key={item.to} />
     );
 

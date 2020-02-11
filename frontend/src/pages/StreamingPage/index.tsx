@@ -1,12 +1,12 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 import WifiTetheringIcon from "@material-ui/icons/WifiTethering";
 
 export const STREAMING_PAGE_ROUTE = '/streaming';
 
-export const STREAMING_ROUTE: RouteItem = {
+export const STREAMING_MENU_ITEM: MenuItem = {
     title: 'Трансляции',
     to: STREAMING_PAGE_ROUTE,
     icon: WifiTetheringIcon

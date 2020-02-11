@@ -3,30 +3,30 @@ import { useRouteMatch, useHistory } from "react-router-dom";
 import Tab from "@material-ui/core/Tab";
 import {Tabs} from "@material-ui/core";
 import {NavLink} from "react-router-dom";
-import {CHANNEL_VIDEOS_ROUTE} from "./pages/ChannelVideosPage";
-import {CHANNEL_ABOUT_ROUTE} from "./pages/ChannelAboutPage";
-import {CHANNEL_FEATURED_ROUTE} from "./pages/ChannelFeaturedPage";
-import {CHANNEL_PLAYLISTS_ROUTE} from "./pages/ChannelPlaylistsPage";
-import {CHANNEL_COMMUNITY_ROUTE} from "./pages/ChannelCommunityPage";
-import {CHANNEL_CHANNELS_ROUTE} from "./pages/ChannelChannelsPage";
-import RouteItem from "../../interfaces/RouteItem";
+import {CHANNEL_VIDEOS_MENU_ITEM} from "./pages/ChannelVideosPage";
+import {CHANNEL_ABOUT_MENU_ITEM} from "./pages/ChannelAboutPage";
+import {CHANNEL_FEATURED_MENU_ITEM} from "./pages/ChannelFeaturedPage";
+import {CHANNEL_PLAYLISTS_MENU_ITEM} from "./pages/ChannelPlaylistsPage";
+import {CHANNEL_COMMUNITY_MENU_ITEM} from "./pages/ChannelCommunityPage";
+import {CHANNEL_CHANNELS_MENU_ITEM} from "./pages/ChannelChannelsPage";
+import MenuItem from "../../interfaces/MenuItem";
 import ChannelRoutes from "./ChannelRoutes";
 
 const ChannelTabs: React.FC = () => {
     const match = useRouteMatch();
     const { location } = useHistory();
-    const items: RouteItem[] = [
-        CHANNEL_FEATURED_ROUTE,
-        CHANNEL_VIDEOS_ROUTE,
-        CHANNEL_PLAYLISTS_ROUTE,
-        CHANNEL_COMMUNITY_ROUTE,
-        CHANNEL_CHANNELS_ROUTE,
-        CHANNEL_ABOUT_ROUTE
+    const items: MenuItem[] = [
+        CHANNEL_FEATURED_MENU_ITEM,
+        CHANNEL_VIDEOS_MENU_ITEM,
+        CHANNEL_PLAYLISTS_MENU_ITEM,
+        CHANNEL_COMMUNITY_MENU_ITEM,
+        CHANNEL_CHANNELS_MENU_ITEM,
+        CHANNEL_ABOUT_MENU_ITEM
     ];
     const initialValue = items.findIndex(item => location.pathname.includes(item.to));
     const [value, setValue] = useState(initialValue);
 
-    const renderItem = (item: RouteItem, index: number) => (
+    const renderItem = (item: MenuItem, index: number) => (
         <Tab
             key={item.to}
             label={item.title}

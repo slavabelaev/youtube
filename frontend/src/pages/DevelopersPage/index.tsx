@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 
 export const DEV_PAGE_ROUTE = '/dev';
 
-export const DEV_ROUTE: RouteItem = {
+export const DEV_MENU_ITEM: MenuItem = {
     title: 'Разработчикам',
     to: DEV_PAGE_ROUTE
 };

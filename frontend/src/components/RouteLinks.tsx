@@ -2,11 +2,11 @@ import React from "react";
 import clsx from "clsx";
 import {Link} from "react-router-dom";
 import {createStyles, Theme, Typography} from "@material-ui/core";
-import RouteItem from "../interfaces/RouteItem";
+import MenuItem from "../interfaces/MenuItem";
 import {makeStyles} from "@material-ui/core/styles";
 
 export interface RouteLinksProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    items: RouteItem[]
+    items: MenuItem[]
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const RouteLinks: React.FC<RouteLinksProps> = ({ items, className, ...otherProps }) => {
     const classes = useStyles();
-    const renderItem = (item: RouteItem, index: number) => (
+    const renderItem = (item: MenuItem, index: number) => (
         <Typography
             key={index}
             variant="subtitle2"

@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 
 export const NEW_PAGE_ROUTE = '/new';
 
-export const NEW_ROUTE: RouteItem = {
+export const NEW_MENU_ITEM: MenuItem = {
     title: 'Новые функции',
     to: NEW_PAGE_ROUTE
 };

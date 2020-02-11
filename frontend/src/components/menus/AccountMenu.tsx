@@ -25,15 +25,15 @@ import SafeModeListItem from "../SafeModeListItem";
 import DescriptionBox from "../DescriptionBox";
 import CountriesList from "../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
-import {CHANNEL_ROUTE} from "../../pages/ChannelPage";
-import {PAID_MEMBERSHIPS_ROUTE} from "../../pages/PaidMembershipsPage";
-import {STUDIO_ROUTE} from "../../pages/StudioPage";
-import {SIGN_OUT_ROUTE} from "../../pages/SignInPage";
-import {SETTINGS_ROUTE} from "../../pages/SettingsPage";
-import {PERSONAL_DATA_ROUTE} from "../../pages/PersonalDataPage";
-import {HELP_ROUTE} from "../../pages/HelpPage";
-import {REVIEWS_ROUTE} from "../../pages/ReviewsPage";
-import {KEYBOARD_SHORTCUTS_ROUTE} from "../../pages/KeyboardShortcutsPage";
+import {CHANNEL_MENU_ITEM} from "../../pages/ChannelPage";
+import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../pages/PaidMembershipsPage";
+import {STUDIO_MENU_ITEM} from "../../pages/StudioPage";
+import {SIGN_OUT_MENU_ITEM} from "../../pages/SignInPage";
+import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
+import {PERSONAL_DATA_MENU_ITEM} from "../../pages/PersonalDataPage";
+import {HELP_MENU_ITEM} from "../../pages/HelpPage";
+import {REVIEWS_MENU_ITEM} from "../../pages/ReviewsPage";
+import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../pages/KeyboardShortcutsPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -72,15 +72,15 @@ const AccountMenu: React.FC = () => {
 
     const primaryList = (
         <List>
-            <RouteListItem {...CHANNEL_ROUTE} />
-            <RouteListItem {...PAID_MEMBERSHIPS_ROUTE} />
-            <RouteListItem {...STUDIO_ROUTE} />
+            <RouteListItem {...CHANNEL_MENU_ITEM} />
+            <RouteListItem {...PAID_MEMBERSHIPS_MENU_ITEM} />
+            <RouteListItem {...STUDIO_MENU_ITEM} />
             <MenuListItem
                 title="Сменить аккаунт"
                 icon={RecentActorsIcon}
                 onClick={() => setActiveView(accountsView)}
             />
-            <RouteListItem {...SIGN_OUT_ROUTE} />
+            <RouteListItem {...SIGN_OUT_MENU_ITEM} />
         </List>
     );
 
@@ -96,11 +96,11 @@ const AccountMenu: React.FC = () => {
                 icon={TranslateIcon}
                 onClick={() => setActiveView(languagesView)}
             />
-            <RouteListItem {...SETTINGS_ROUTE} />
-            <RouteListItem {...PERSONAL_DATA_ROUTE} />
-            <RouteListItem {...HELP_ROUTE} />
-            <RouteListItem {...REVIEWS_ROUTE} />
-            <RouteListItem {...KEYBOARD_SHORTCUTS_ROUTE} />
+            <RouteListItem {...SETTINGS_MENU_ITEM} />
+            <RouteListItem {...PERSONAL_DATA_MENU_ITEM} />
+            <RouteListItem {...HELP_MENU_ITEM} />
+            <RouteListItem {...REVIEWS_MENU_ITEM} />
+            <RouteListItem {...KEYBOARD_SHORTCUTS_MENU_ITEM} />
         </List>
     );
 

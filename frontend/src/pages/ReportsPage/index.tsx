@@ -1,12 +1,12 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 import FlagIcon from "@material-ui/icons/Flag";
 
 export const REPORTS_PAGE_ROUTE = '/reports';
 
-export const REPORTS_ROUTE: RouteItem = {
+export const REPORTS_MENU_ITEM: MenuItem = {
     title: 'Жалобы',
     to: REPORTS_PAGE_ROUTE,
     icon: FlagIcon

@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 
 export const PRIVACY_PAGE_ROUTE = '/privacy';
 
-export const PRIVACY_ROUTE: RouteItem = { 
+export const PRIVACY_MENU_ITEM: MenuItem = {
     title: 'Конфиденциальность', 
     to: PRIVACY_PAGE_ROUTE
 };

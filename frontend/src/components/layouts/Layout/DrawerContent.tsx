@@ -10,18 +10,18 @@ import OtherFeaturesMenu from "../../menus/OtherFeaturesMenu";
 import OptionsMenu from "../../menus/OptionsMenu";
 import RouteLinks from "../../RouteLinks";
 import Typography from "@material-ui/core/Typography";
-import {ABOUT_ROUTE} from "../../../pages/AboutPage";
-import {PRESS_ROUTE} from "../../../pages/PressPage";
-import {COPYRIGHT_ROUTE} from "../../../pages/CopyrightPage";
-import {CONTACTS_ROUTE} from "../../../pages/ContactsPage";
-import {CREATORS_ROUTE} from "../../../pages/CreatorsPage";
-import {ADS_ROUTE} from "../../../pages/AdsPage";
-import {DEV_ROUTE} from "../../../pages/DevelopersPage";
-import {TERMS_ROUTE} from "../../../pages/TermsPage";
-import {PRIVACY_ROUTE} from "../../../pages/PrivacyPage";
-import {NEW_ROUTE} from "../../../pages/NewPage";
-import {RULES_ROUTE} from "../../../pages/PoliciesPage";
-import {SUBSCRIPTIONS_ROUTE} from "../../../pages/SubscriptionsPage";
+import {ABOUT_MENU_ITEM} from "../../../pages/AboutPage";
+import {PRESS_MENU_ITEM} from "../../../pages/PressPage";
+import {COPYRIGHT_MENU_ITEM} from "../../../pages/CopyrightPage";
+import {CONTACTS_MENU_ITEM} from "../../../pages/ContactsPage";
+import {CREATORS_MENU_ITEM} from "../../../pages/CreatorsPage";
+import {ADS_MENU_ITEM} from "../../../pages/AdsPage";
+import {DEV_MENU_ITEM} from "../../../pages/DevelopersPage";
+import {TERMS_MENU_ITEM} from "../../../pages/TermsPage";
+import {PRIVACY_MENU_ITEM} from "../../../pages/PrivacyPage";
+import {NEW_MENU_ITEM} from "../../../pages/NewPage";
+import {RULES_MENU_ITEM} from "../../../pages/PoliciesPage";
+import {SUBSCRIPTIONS_MENU_ITEM} from "../../../pages/SubscriptionsPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     routeLinks: {
@@ -52,7 +52,7 @@ const DrawerContent: React.FC = () => {
             <SecondaryMenu />
             <PlaylistsMenu />
             <Divider />
-            {renderTitle(SUBSCRIPTIONS_ROUTE.title)}
+            {renderTitle(SUBSCRIPTIONS_MENU_ITEM.title)}
             <Subscriptions />
             <Divider />
             {renderTitle('Другие возможности')}
@@ -63,23 +63,23 @@ const DrawerContent: React.FC = () => {
             <RouteLinks
                 className={classes.routeLinks}
                 items={[
-                    ABOUT_ROUTE,
-                    PRESS_ROUTE,
-                    COPYRIGHT_ROUTE,
-                    CONTACTS_ROUTE,
-                    CREATORS_ROUTE,
-                    ADS_ROUTE,
-                    DEV_ROUTE,
+                    ABOUT_MENU_ITEM,
+                    PRESS_MENU_ITEM,
+                    COPYRIGHT_MENU_ITEM,
+                    CONTACTS_MENU_ITEM,
+                    CREATORS_MENU_ITEM,
+                    ADS_MENU_ITEM,
+                    DEV_MENU_ITEM,
                 ]}
             />
             <RouteLinks
                 className={classes.routeLinks}
                 style={{paddingTop: 0}}
                 items={[
-                    TERMS_ROUTE,
-                    PRIVACY_ROUTE,
-                    RULES_ROUTE,
-                    NEW_ROUTE,
+                    TERMS_MENU_ITEM,
+                    PRIVACY_MENU_ITEM,
+                    RULES_MENU_ITEM,
+                    NEW_MENU_ITEM,
                 ]}
             />
         </div>

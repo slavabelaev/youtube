@@ -1,10 +1,10 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import RouteItem from "../../../../interfaces/RouteItem";
+import MenuItem from "../../../../interfaces/MenuItem";
 
 export const CHANNEL_CHANNELS_PAGE_ROUTE = '/channels';
 
-export const CHANNEL_CHANNELS_ROUTE: RouteItem = {
+export const CHANNEL_CHANNELS_MENU_ITEM: MenuItem = {
     title: 'Каналы',
     to: CHANNEL_CHANNELS_PAGE_ROUTE
 };

@@ -7,7 +7,7 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import Divider from "@material-ui/core/Divider";
 import AccountsList from "../AccountsList";
 import RouteListItem from "../RouteListItem";
-import {SIGN_OUT_ROUTE} from "../../pages/SignInPage";
+import {SIGN_OUT_MENU_ITEM} from "../../pages/SignInPage";
 
 const AccountsMenu: React.FC = () => {
     const actionsList = (
@@ -20,7 +20,7 @@ const AccountsMenu: React.FC = () => {
                     primary="Добавить аккаунт"
                 />
             </ListItem>
-            <RouteListItem {...SIGN_OUT_ROUTE} />
+            <RouteListItem {...SIGN_OUT_MENU_ITEM} />
         </List>
     );
 

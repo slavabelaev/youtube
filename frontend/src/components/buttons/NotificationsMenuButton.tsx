@@ -11,7 +11,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
-import {SETTINGS_ROUTE} from "../../pages/SettingsPage";
+import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     popoverPaper: {
@@ -49,11 +49,11 @@ const NotificationsMenuButton: React.FC = () => {
                 <Typography className={classes.toolbarTitle}>
                     {title}
                 </Typography>
-                <Tooltip title={SETTINGS_ROUTE.title}>
+                <Tooltip title={SETTINGS_MENU_ITEM.title}>
                     <IconButton
                         edge="end"
                         component={Link}
-                        to={SETTINGS_ROUTE.to}
+                        to={SETTINGS_MENU_ITEM.to}
                     >
                         <SettingsIcon />
                     </IconButton>

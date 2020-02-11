@@ -1,10 +1,10 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import RouteItem from "../../../../interfaces/RouteItem";
+import MenuItem from "../../../../interfaces/MenuItem";
 
 export const CHANNEL_COMMUNITY_PAGE_ROUTE = '/community';
 
-export const CHANNEL_COMMUNITY_ROUTE: RouteItem = {
+export const CHANNEL_COMMUNITY_MENU_ITEM: MenuItem = {
     title: 'Сообщество',
     to: CHANNEL_COMMUNITY_PAGE_ROUTE
 };

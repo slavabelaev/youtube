@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import RouteItem from "../../../../interfaces/RouteItem";
+import MenuItem from "../../../../interfaces/MenuItem";
 import {AccountBox} from "@material-ui/icons";
 
 export const SETTINGS_ACCOUNT_PAGE_ROUTE = '/account';
 
-export const SETTINGS_ACCOUNT_ROUTE: RouteItem = {
+export const SETTINGS_ACCOUNT_MENU_ITEM: MenuItem = {
     title: 'Аккаунт',
     to: SETTINGS_ACCOUNT_PAGE_ROUTE,
     icon: AccountBox

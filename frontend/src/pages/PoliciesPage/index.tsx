@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
-import RouteItem from "../../interfaces/RouteItem";
+import MenuItem from "../../interfaces/MenuItem";
 
 export const POLICIES_PAGE_ROUTE = '/policies';
 
-export const RULES_ROUTE: RouteItem = {
+export const RULES_MENU_ITEM: MenuItem = {
     title: 'Правила и безопасность',
     to: `${POLICIES_PAGE_ROUTE}/rules-and-safety`
 };

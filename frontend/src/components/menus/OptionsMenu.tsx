@@ -1,16 +1,16 @@
 import React from "react";
 import Menu from "../Menu";
-import {SETTINGS_ROUTE} from "../../pages/SettingsPage";
-import {REPORTS_ROUTE} from "../../pages/ReportsPage";
-import {HELP_ROUTE} from "../../pages/HelpPage";
-import {REVIEWS_ROUTE} from "../../pages/ReviewsPage";
+import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
+import {REPORTS_MENU_ITEM} from "../../pages/ReportsPage";
+import {HELP_MENU_ITEM} from "../../pages/HelpPage";
+import {REVIEWS_MENU_ITEM} from "../../pages/ReviewsPage";
 
 const OptionsMenu: React.FC = () => (
     <Menu items={[
-        SETTINGS_ROUTE,
-        REPORTS_ROUTE,
-        HELP_ROUTE,
-        REVIEWS_ROUTE
+        SETTINGS_MENU_ITEM,
+        REPORTS_MENU_ITEM,
+        HELP_MENU_ITEM,
+        REVIEWS_MENU_ITEM
     ]} />
 );
 

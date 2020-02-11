@@ -1,17 +1,17 @@
 import React from "react";
-import {LIBRARY_ROUTE} from "../../pages/LibraryPage";
-import {HISTORY_ROUTE} from "../../pages/HistoryPage";
-import {FAVORITES_ROUTE, WATCH_LATER_ROUTE} from "../../pages/PlaylistPage";
-import {PURCHASES_ROUTE} from "../../pages/PurchasesPage";
+import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
+import {HISTORY_MENU_ITEM} from "../../pages/HistoryPage";
+import {FAVORITES_MENU_ITEM, WATCH_LATER_MENU_ITEM} from "../../pages/PlaylistPage";
+import {PURCHASES_MENU_ITEM} from "../../pages/PurchasesPage";
 import Menu from "../Menu";
 
 const SecondaryMenu: React.FC = () => (
     <Menu items={[
-        LIBRARY_ROUTE,
-        HISTORY_ROUTE,
-        WATCH_LATER_ROUTE,
-        PURCHASES_ROUTE,
-        FAVORITES_ROUTE
+        LIBRARY_MENU_ITEM,
+        HISTORY_MENU_ITEM,
+        WATCH_LATER_MENU_ITEM,
+        PURCHASES_MENU_ITEM,
+        FAVORITES_MENU_ITEM
     ]} />
 );
 
