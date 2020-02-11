@@ -2,10 +2,6 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
-import {
-    ABOUT_ROUTE, ADS_ROUTE, CONTACT_US_ROUTE, COPYRIGHT_ROUTE, CREATORS_ROUTE, DEV_ROUTE,
-    NEW_ROUTE, PRESS_ROUTE, PRIVACY_ROUTE, RULES_ROUTE, SUBSCRIPTIONS_ROUTE, TERMS_ROUTE
-} from "../../../constants/routes";
 import PrimaryMenu from "../../menus/PrimaryMenu";
 import SecondaryMenu from "../../menus/SecondaryMenu";
 import PlaylistsMenu from "../../menus/PlatlistsMenu";
@@ -14,6 +10,18 @@ import OtherFeaturesMenu from "../../menus/OtherFeaturesMenu";
 import OptionsMenu from "../../menus/OptionsMenu";
 import RouteLinks from "../../RouteLinks";
 import Typography from "@material-ui/core/Typography";
+import {ABOUT_ROUTE} from "../../../pages/AboutPage";
+import {PRESS_ROUTE} from "../../../pages/PressPage";
+import {COPYRIGHT_ROUTE} from "../../../pages/CopyrightPage";
+import {CONTACTS_ROUTE} from "../../../pages/ContactsPage";
+import {CREATORS_ROUTE} from "../../../pages/CreatorsPage";
+import {ADS_ROUTE} from "../../../pages/AdsPage";
+import {DEV_ROUTE} from "../../../pages/DevelopersPage";
+import {TERMS_ROUTE} from "../../../pages/TermsPage";
+import {PRIVACY_ROUTE} from "../../../pages/PrivacyPage";
+import {NEW_ROUTE} from "../../../pages/NewPage";
+import {RULES_ROUTE} from "../../../pages/PoliciesPage";
+import {SUBSCRIPTIONS_ROUTE} from "../../../pages/SubscriptionsPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     routeLinks: {
@@ -58,7 +66,7 @@ const DrawerContent: React.FC = () => {
                     ABOUT_ROUTE,
                     PRESS_ROUTE,
                     COPYRIGHT_ROUTE,
-                    CONTACT_US_ROUTE,
+                    CONTACTS_ROUTE,
                     CREATORS_ROUTE,
                     ADS_ROUTE,
                     DEV_ROUTE,

@@ -1,17 +1,17 @@
 import React from "react";
-import {List} from "@material-ui/core";
-import RouteListItem from "../RouteListItem";
-import {HELP_ROUTE, REPORTS_ROUTE, REVIEWS_ROUTE, SETTINGS_ROUTE} from "../../constants/routes";
+import Menu from "../Menu";
+import {SETTINGS_ROUTE} from "../../pages/SettingsPage";
+import {REPORTS_ROUTE} from "../../pages/ReportsPage";
+import {HELP_ROUTE} from "../../pages/HelpPage";
+import {REVIEWS_ROUTE} from "../../pages/ReviewsPage";
 
-const OptionsMenu: React.FC = () => {
-    return (
-        <List>
-            <RouteListItem {...SETTINGS_ROUTE} />
-            <RouteListItem {...REPORTS_ROUTE} />
-            <RouteListItem {...HELP_ROUTE} />
-            <RouteListItem {...REVIEWS_ROUTE} />
-        </List>
-    );
-};
+const OptionsMenu: React.FC = () => (
+    <Menu items={[
+        SETTINGS_ROUTE,
+        REPORTS_ROUTE,
+        HELP_ROUTE,
+        REVIEWS_ROUTE
+    ]} />
+);
 
 export default OptionsMenu;

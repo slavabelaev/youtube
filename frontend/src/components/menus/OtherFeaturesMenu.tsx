@@ -1,15 +1,13 @@
 import React from "react";
-import {List} from "@material-ui/core";
-import RouteListItem from "../RouteListItem";
-import {GAMING_ROUTE, STREAMING_ROUTE} from "../../constants/routes";
+import Menu from "../Menu";
+import {GAMING_ROUTE} from "../../pages/GamingPage";
+import {STREAMING_ROUTE} from "../../pages/StreamingPage";
 
-const OtherFeaturesMenu: React.FC = () => {
-    return (
-        <List>
-            <RouteListItem {...GAMING_ROUTE} />
-            <RouteListItem {...STREAMING_ROUTE} />
-        </List>
-    );
-};
+const OtherFeaturesMenu: React.FC = () => (
+    <Menu items={[
+        GAMING_ROUTE,
+        STREAMING_ROUTE
+    ]} />
+);
 
 export default OtherFeaturesMenu;

@@ -23,7 +23,7 @@ interface LayoutAppBarProps {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
-        backgroundColor: '#fff',
+        //backgroundColor: 'inherit',
         borderWidth: 0
     },
     menuButton: {
@@ -77,6 +77,7 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({
         <>
             <AppBar
                 position="fixed"
+                color="inherit"
                 variant="outlined"
                 className={classes.appBar}
             >

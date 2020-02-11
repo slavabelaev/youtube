@@ -1,24 +1,18 @@
 import React from "react";
-import {List} from "@material-ui/core";
-import RouteListItem from "../RouteListItem";
-import {
-    FAVORITES_ROUTE,
-    HISTORY_ROUTE,
-    LIBRARY_ROUTE,
-    PURCHASES_ROUTE,
-    WATCH_LATER_ROUTE
-} from "../../constants/routes";
+import {LIBRARY_ROUTE} from "../../pages/LibraryPage";
+import {HISTORY_ROUTE} from "../../pages/HistoryPage";
+import {FAVORITES_ROUTE, WATCH_LATER_ROUTE} from "../../pages/PlaylistPage";
+import {PURCHASES_ROUTE} from "../../pages/PurchasesPage";
+import Menu from "../Menu";
 
-const SecondaryMenu: React.FC = () => {
-    return (
-        <List>
-            <RouteListItem {...LIBRARY_ROUTE} />
-            <RouteListItem {...HISTORY_ROUTE} />
-            <RouteListItem {...WATCH_LATER_ROUTE} />
-            <RouteListItem {...PURCHASES_ROUTE} />
-            <RouteListItem {...FAVORITES_ROUTE} />
-        </List>
-    );
-};
+const SecondaryMenu: React.FC = () => (
+    <Menu items={[
+        LIBRARY_ROUTE,
+        HISTORY_ROUTE,
+        WATCH_LATER_ROUTE,
+        PURCHASES_ROUTE,
+        FAVORITES_ROUTE
+    ]} />
+);
 
 export default SecondaryMenu;

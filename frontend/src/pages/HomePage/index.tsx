@@ -1,8 +1,17 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../components/layouts/Layout";
+import RouteItem from "../../interfaces/RouteItem";
+import HomeIcon from "@material-ui/icons/Home";
 
 export const HOME_PAGE_ROUTE = '/';
+
+export const HOME_ROUTE: RouteItem = {
+    title: 'Главная',
+    to: HOME_PAGE_ROUTE,
+    exact: true,
+    icon: HomeIcon
+};
 
 const Page = React.lazy(() => import('./HomePage'));
 

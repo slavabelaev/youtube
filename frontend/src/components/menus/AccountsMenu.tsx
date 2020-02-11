@@ -4,9 +4,10 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Divider from "@material-ui/core/Divider";
 import AccountsList from "../AccountsList";
+import RouteListItem from "../RouteListItem";
+import {SIGN_OUT_ROUTE} from "../../pages/SignInPage";
 
 const AccountsMenu: React.FC = () => {
     const actionsList = (
@@ -19,14 +20,7 @@ const AccountsMenu: React.FC = () => {
                     primary="Добавить аккаунт"
                 />
             </ListItem>
-            <ListItem button dense>
-                <ListItemIcon>
-                    <ExitToAppIcon />
-                </ListItemIcon>
-                <ListItemText
-                    primary="Выйти"
-                />
-            </ListItem>
+            <RouteListItem {...SIGN_OUT_ROUTE} />
         </List>
     );
 

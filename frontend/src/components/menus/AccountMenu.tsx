@@ -1,13 +1,6 @@
 import React from "react";
 import List from "@material-ui/core/List";
 import RouteListItem from "../RouteListItem";
-import {
-    CHANNEL_ROUTE, HELP_ROUTE, KEYBOARD_SHORTCUTS_ROUTE,
-    PAID_MEMBERSHIPS_ROUTE, PERSONAL_DATA_ROUTE, REVIEWS_ROUTE,
-    SETTINGS_ROUTE,
-    SIGN_OUT_ROUTE,
-    STUDIO_ROUTE
-} from "../../constants/routes";
 import MenuListItem from "../MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
@@ -32,6 +25,15 @@ import SafeModeListItem from "../SafeModeListItem";
 import DescriptionBox from "../DescriptionBox";
 import CountriesList from "../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
+import {CHANNEL_ROUTE} from "../../pages/ChannelPage";
+import {PAID_MEMBERSHIPS_ROUTE} from "../../pages/PaidMembershipsPage";
+import {STUDIO_ROUTE} from "../../pages/StudioPage";
+import {SIGN_OUT_ROUTE} from "../../pages/SignInPage";
+import {SETTINGS_ROUTE} from "../../pages/SettingsPage";
+import {PERSONAL_DATA_ROUTE} from "../../pages/PersonalDataPage";
+import {HELP_ROUTE} from "../../pages/HelpPage";
+import {REVIEWS_ROUTE} from "../../pages/ReviewsPage";
+import {KEYBOARD_SHORTCUTS_ROUTE} from "../../pages/KeyboardShortcutsPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {

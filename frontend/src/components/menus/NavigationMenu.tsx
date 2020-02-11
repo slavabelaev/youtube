@@ -1,12 +1,15 @@
 import React from "react";
 import {BottomNavigation, BottomNavigationProps, createStyles, Theme} from "@material-ui/core";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import {HOME_ROUTE, LIBRARY_ROUTE, SUBSCRIPTIONS_ROUTE, TRENDING_ROUTE} from "../../constants/routes";
 import RouteItem from "../../interfaces/RouteItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {NavLink} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
+import {HOME_ROUTE} from "../../pages/HomePage";
+import {TRENDING_ROUTE} from "../../pages/TrendingPage";
+import {SUBSCRIPTIONS_ROUTE} from "../../pages/SubscriptionsPage";
+import {LIBRARY_ROUTE} from "../../pages/LibraryPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_vertical: {
@@ -41,21 +44,26 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const items: RouteItem[] = [
-    HOME_ROUTE,
-    TRENDING_ROUTE,
-    SUBSCRIPTIONS_ROUTE,
-    LIBRARY_ROUTE
-];
-
 export interface NavigationMenuProps extends BottomNavigationProps {
     variant?: 'vertical' | 'horizontal',
     position?: 'fixed' | 'static'
 }
 
-const NavigationMenu: React.FC<NavigationMenuProps> = ({ variant = 'horizontal', position = 'static', className, ...otherProps }) => {
+const NavigationMenu: React.FC<NavigationMenuProps> = ({
+    variant = 'horizontal',
+    position = 'static',
+    className,
+    ...otherProps
+}) => {
     const classes = useStyles();
     const isVertical = variant === 'vertical';
+
+    const items: RouteItem[] = [
+        HOME_ROUTE,
+        TRENDING_ROUTE,
+        SUBSCRIPTIONS_ROUTE,
+        LIBRARY_ROUTE
+    ];
 
     const renderVerticalLabel = (title: string) => (
         <Typography

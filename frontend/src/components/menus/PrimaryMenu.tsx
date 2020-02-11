@@ -1,16 +1,15 @@
 import React from "react";
-import {List} from "@material-ui/core";
-import RouteListItem from "../RouteListItem";
-import {HOME_ROUTE, SUBSCRIPTIONS_ROUTE, TRENDING_ROUTE} from "../../constants/routes";
+import Menu from "../Menu";
+import {HOME_ROUTE} from "../../pages/HomePage";
+import {TRENDING_ROUTE} from "../../pages/TrendingPage";
+import {SUBSCRIPTIONS_ROUTE} from "../../pages/SubscriptionsPage";
 
-const PrimaryMenu: React.FC = () => {
-    return (
-        <List>
-            <RouteListItem {...HOME_ROUTE} />
-            <RouteListItem {...TRENDING_ROUTE} />
-            <RouteListItem {...SUBSCRIPTIONS_ROUTE} />
-        </List>
-    );
-};
+const PrimaryMenu: React.FC = () => (
+    <Menu items={[
+        HOME_ROUTE,
+        TRENDING_ROUTE,
+        SUBSCRIPTIONS_ROUTE
+    ]} />
+);
 
 export default PrimaryMenu;
