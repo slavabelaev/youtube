@@ -36,7 +36,7 @@ const LayoutDrawer: React.FC<LayoutDrawerProps> = ({
 }) => {
     const classes = useStyles();
     const isPermanent = largeScreenVariant === 'permanent';
-    const drawerWidth = open ? 240 : 72;
+    const drawerWidth = isPermanent ? (open ? 240 : 72) : 240;
     const style = { width: drawerWidth };
 
     const appBar = (
