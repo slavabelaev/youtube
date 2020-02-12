@@ -1,5 +1,6 @@
 import React from "react";
 import {makeStyles, createStyles, Theme} from "@material-ui/core";
+import VideosList from "../../components/VideosList";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -14,7 +15,7 @@ const SearchPage: React.FC = () => {
 
     return (
         <main className={classes.root}>
-            Search Page
+            <VideosList />
         </main>
     )
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import RouteListItem from "../RouteListItem";
-import MenuListItem from "../MenuListItem";
+import RouteListItem from "../../RouteListItem";
+import MenuListItem from "../../MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import TranslateIcon from "@material-ui/icons/Translate";
@@ -18,22 +18,22 @@ import {Toolbar} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Typography from "@material-ui/core/Typography";
-import AccountsMenu from "./AccountsMenu";
-import DarkThemeListItem from "../DarkThemeListItem";
-import LanguagesList from "../LanguagesList";
-import SafeModeListItem from "../SafeModeListItem";
-import DescriptionBox from "../DescriptionBox";
-import CountriesList from "../CountriesList";
+import AccountsMenu from "../AccountsMenu";
+import DarkThemeListItem from "../../DarkThemeListItem";
+import LanguagesList from "../../LanguagesList";
+import SafeModeListItem from "../../SafeModeListItem";
+import DescriptionBox from "../../DescriptionBox";
+import CountriesList from "../../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
-import {CHANNEL_MENU_ITEM} from "../../pages/ChannelPage";
-import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../pages/PaidMembershipsPage";
-import {STUDIO_MENU_ITEM} from "../../pages/StudioPage";
-import {SIGN_OUT_MENU_ITEM} from "../../pages/SignInPage";
-import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
-import {PERSONAL_DATA_MENU_ITEM} from "../../pages/PersonalDataPage";
-import {HELP_MENU_ITEM} from "../../pages/HelpPage";
-import {REVIEWS_MENU_ITEM} from "../../pages/ReviewsPage";
-import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../pages/KeyboardShortcutsPage";
+import {CHANNEL_MENU_ITEM} from "../../../pages/ChannelPage";
+import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../../pages/PaidMembershipsPage";
+import {STUDIO_MENU_ITEM} from "../../../pages/StudioPage";
+import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
+import {SETTINGS_MENU_ITEM} from "../../../pages/SettingsPage";
+import {PERSONAL_DATA_MENU_ITEM} from "../../../pages/PersonalDataPage";
+import {HELP_MENU_ITEM} from "../../../pages/HelpPage";
+import {REVIEWS_MENU_ITEM} from "../../../pages/ReviewsPage";
+import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../../pages/KeyboardShortcutsPage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {

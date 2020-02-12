@@ -2,9 +2,10 @@ import React from "react";
 import List from "@material-ui/core/List";
 import VideoItem, {VideoItemProps} from "../VideoItem";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import LoadMoreList, {LoadMoreListProps} from "../LoadMoreList";
 
 export interface RecommendationsListProps {
-    items: VideoItemProps[]
+    onLoad: LoadMoreListProps<VideoItemProps>['onLoad'];
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideosList: React.FC<RecommendationsListProps> = ({ items }) => {
+const VideosList: React.FC<RecommendationsListProps> = ({ onLoad }) => {
     const classes = useStyles();
 
     const renderItem = (item: VideoItemProps) => (
@@ -29,7 +30,10 @@ const VideosList: React.FC<RecommendationsListProps> = ({ items }) => {
 
     return (
         <List disablePadding>
-            {items.map(renderItem)}
+            <LoadMoreList
+                renderItem={renderItem}
+                onLoad={onLoad}
+            />
         </List>
     );
 };

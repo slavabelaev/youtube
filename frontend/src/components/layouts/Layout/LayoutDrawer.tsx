@@ -19,7 +19,7 @@ export interface LayoutDrawerProps {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_variant_permanent: {
-        top: 64,
+        top: theme.mixins.toolbar.minHeight,
         bottom: 0,
         height: 'auto',
         borderWidth: 0,

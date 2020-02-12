@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import SuspenseFallback from "../SuspenseFallback";
 import {CommentProps} from "./Comment";
 
-const Comments = React.lazy(() => import('./Comments'));
+const Component = React.lazy(() => import('./Comments'));
 
 const generateComments = (): CommentProps[] => Array(12).fill(null).map((_, index) => ({
     id: index.toString(),
@@ -16,8 +16,12 @@ const generateComments = (): CommentProps[] => Array(12).fill(null).map((_, inde
     edited: index % 3 === 0
 }));
 
-export default () => (
+const Comments: React.FC = () => (
     <Suspense fallback={<SuspenseFallback />}>
-        <Comments items={generateComments()} />
+        <Component
+            onLoad={async skip => await generateComments()}
+        />
     </Suspense>
 );
+
+export default Comments;

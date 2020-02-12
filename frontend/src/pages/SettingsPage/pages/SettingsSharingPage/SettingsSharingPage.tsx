@@ -1,11 +1,12 @@
 import React from "react";
 import {makeStyles, createStyles, Theme} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
         maxWidth: theme.breakpoints.width('md'),
-        padding: theme.spacing(2),
-        margin: 'auto'
+        padding: theme.spacing(3, 2),
+        margin: '0 auto'
     }
 }));
 
@@ -13,9 +14,24 @@ const SettingsSharingPage: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <main className={classes.root}>
-            Playlist Page
-        </main>
+        <div className={classes.root}>
+            <header>
+                <Typography
+                    variant="h5"
+                    gutterBottom
+                >
+                    Настройки синхронизации
+                </Typography>
+                <Typography
+                    variant="body1"
+                    color="textSecondary"
+                    gutterBottom
+                >
+                    В этом разделе вы можете установить связь между каналом и своими аккаунтами в других сервисах.
+                    Посмотреть полный список разрешенных сервисов можно здесь.
+                </Typography>
+            </header>
+        </div>
     )
 };
 

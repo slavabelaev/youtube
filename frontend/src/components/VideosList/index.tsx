@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {VideoItemProps} from "../VideoItem";
 import SuspenseFallback from "../SuspenseFallback";
 
-const VideosList = React.lazy(() => import('./VideosList'));
+const Component = React.lazy(() => import('./VideosList'));
 
 const generateVideos = (): VideoItemProps[] => Array(12).fill(null).map((item, index) => ({
     id: `${index}`,
@@ -16,8 +16,12 @@ const generateVideos = (): VideoItemProps[] => Array(12).fill(null).map((item, i
     views: Math.round(Math.random() * 999999999)
 }));
 
-export default () => (
+const VideosList: React.FC = () => (
     <Suspense fallback={<SuspenseFallback />}>
-        <VideosList items={generateVideos()} />
+        <Component
+            onLoad={async skip => await generateVideos()}
+        />
     </Suspense>
 );
+
+export default VideosList;

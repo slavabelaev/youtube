@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import HomePage, {HOME_PAGE_ROUTE} from "./pages/HomePage";
 import WatchPage, {WATCH_PAGE_ROUTE} from "./pages/WatchPage";
 import ChannelPage, {CHANNEL_PAGE_ROUTE} from "./pages/ChannelPage";

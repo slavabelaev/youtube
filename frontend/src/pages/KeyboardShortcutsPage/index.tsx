@@ -4,7 +4,7 @@ import Layout from "../../components/layouts/Layout";
 import MenuItem from "../../interfaces/MenuItem";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
 
-export const KEYBOARD_SHORTCUTS_PAGE_ROUTE = '#keyoard-shortcuts';
+export const KEYBOARD_SHORTCUTS_PAGE_ROUTE = '#keyboard-shortcuts';
 
 export const KEYBOARD_SHORTCUTS_MENU_ITEM: MenuItem = {
     title: 'Быстрые клавишы',
