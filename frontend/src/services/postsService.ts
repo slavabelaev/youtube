@@ -4,6 +4,7 @@ import faker from "faker/locale/en";
 export const generatePosts = async (): Promise<PostProps[]> => Array(12)
     .fill(null)
     .map((item, index) => ({
+        id: index.toString(),
         avatarSrc: faker.image.avatar(),
         title: faker.company.companyName(),
         subheader: faker.date.past().toLocaleDateString(),

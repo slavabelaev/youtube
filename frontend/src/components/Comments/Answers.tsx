@@ -16,7 +16,7 @@ export interface AnswersProps {
 const useStyles = makeStyles((theme: Theme) => createStyles({
     toolbar: {
         padding: theme.spacing(0, 0, 0, 7),
-        minHeight: 'auto'
+        minHeight: 'initial'
     },
     collapse: {
         paddingLeft: theme.spacing(7)
@@ -46,7 +46,7 @@ const Answers: React.FC<AnswersProps> = ({ commentId }) => {
                 startIcon={<ArrowDropDownIcon />}
                 onClick={toggle}
             >
-                {open ? 'Скрыть' : 'Показать'} 5 ответов
+                {open ? 'Скрыть' : 'Показать'} ответы
             </Button>
         </Toolbar>
     );

@@ -1,5 +1,5 @@
-import React from "react";
-import {AvatarProps, Card, CardHeaderProps, CardProps} from "@material-ui/core";
+import React, {ReactNode} from "react";
+import {AvatarProps, Card, CardHeaderProps} from "@material-ui/core";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
@@ -11,12 +11,13 @@ import LikeDislikeButton, {LikeDislikeButtonProps} from "./buttons/LikeDislikeBu
 import Button from "@material-ui/core/Button";
 
 export interface PostProps {
+    id: string;
     avatarSrc: AvatarProps['src']
     title: CardHeaderProps['title'];
     subheader: CardHeaderProps['subheader'];
     text: string;
     LikeDislikeButtonProps?: LikeDislikeButtonProps;
-    CardProps?: CardProps;
+    bottomToolbar?: ReactNode;
 }
 
 const Post: React.FC<PostProps> = ({
@@ -25,7 +26,7 @@ const Post: React.FC<PostProps> = ({
     subheader,
     text,
     LikeDislikeButtonProps,
-    CardProps
+    bottomToolbar
 }) => {
     const headerAction = (
         <IconButton>
@@ -40,7 +41,7 @@ const Post: React.FC<PostProps> = ({
     );
 
     return (
-        <Card {...CardProps}>
+        <Card variant="outlined">
             <CardHeader
                 avatar={avatar}
                 action={headerAction}
@@ -62,11 +63,7 @@ const Post: React.FC<PostProps> = ({
                     Оставить комментарий
                 </Button>
             </CardActions>
-            <CardActions>
-                <Button size="small">
-                    Показать комментарии
-                </Button>
-            </CardActions>
+            {bottomToolbar}
         </Card>
     )
 };

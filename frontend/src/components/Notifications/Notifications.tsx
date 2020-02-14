@@ -1,5 +1,5 @@
 import React from "react";
-import {createStyles, List, Theme} from "@material-ui/core";
+import {AvatarProps, createStyles, List, Theme} from "@material-ui/core";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -9,12 +9,14 @@ import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import {makeStyles} from "@material-ui/core/styles";
 import LoadList, {LoadListProps} from "../LoadList";
+import {Link} from "react-router-dom";
 
 export interface Notification {
     text: string;
-    avatarUrl: string;
+    avatarUrl: AvatarProps['src'];
     imageUrl?: string;
-    createdAt: Date
+    createdAt: Date,
+    linkTo: string;
 }
 
 export interface NotificationsProps {
@@ -39,7 +41,14 @@ const Notifications: React.FC<NotificationsProps> = ({ onLoad }) => {
     const classes = useStyles();
 
     const renderItem = (item: Notification, index: number) => (
-      <ListItem dense button alignItems="flex-start" key={index}>
+      <ListItem
+          dense
+          button
+          alignItems="flex-start"
+          key={index}
+          component={Link}
+          to={item.linkTo}
+      >
           <ListItemAvatar>
               <Avatar src={item.avatarUrl} />
           </ListItemAvatar>
@@ -56,7 +65,7 @@ const Notifications: React.FC<NotificationsProps> = ({ onLoad }) => {
               />
           ) : null}
           <ListItemSecondaryAction>
-              <IconButton>
+              <IconButton edge="end">
                   <MoreVertIcon />
               </IconButton>
           </ListItemSecondaryAction>

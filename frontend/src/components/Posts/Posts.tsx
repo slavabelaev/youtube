@@ -2,6 +2,7 @@ import React from "react";
 import Post, {PostProps} from "../Post";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import LoadList, {LoadListProps} from "../LoadList";
+import Answers from "../Comments/Answers";
 
 export interface PostsProps {
     onLoad: LoadListProps['onLoad']
@@ -17,12 +18,14 @@ const Posts: React.FC<PostsProps> = ({ onLoad }) => {
     const classes = useStyles();
 
     const renderItem = (item: PostProps) => (
-        <Post
-            {...item}
-            CardProps={{
-                className: classes.item
-            }}
-        />
+        <div className={classes.item}>
+            <Post
+                {...item}
+                bottomToolbar={
+                    <Answers commentId={item.id} />
+                }
+            />
+        </div>
     );
 
     return (
