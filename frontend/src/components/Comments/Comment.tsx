@@ -11,10 +11,13 @@ import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import React from "react";
+import {Link} from "react-router-dom";
+import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
+import clsx from "clsx";
 
 export interface CommentProps {
+    variant?: 'mini' | 'normal';
     id: string;
     avatarUrl: string;
     userName: string;
@@ -32,12 +35,18 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
         minHeight: 'auto'
     },
     userName: {
-        marginRight: theme.spacing(2)
+        marginRight: theme.spacing(2),
+        textDecoration: 'none',
+    },
+    avatar_variant_mini: {
+        width: 32,
+        height: 32
     }
 }));
 
 const Comment: React.FC<CommentProps> = (props) => {
     const classes = useStyles();
+    const linkToChannel = CHANNEL_PAGE_ROUTE.replace(':id', props.id);
 
     const listItem = (
         <ListItem
@@ -45,7 +54,13 @@ const Comment: React.FC<CommentProps> = (props) => {
             alignItems="flex-start"
         >
             <ListItemAvatar>
-                <Avatar />
+                <Avatar
+                    className={clsx({
+                        [classes.avatar_variant_mini]: props.variant === 'mini'
+                    })}
+                    component={Link}
+                    to={linkToChannel}
+                />
             </ListItemAvatar>
             <ListItemText
                 primary={
@@ -53,7 +68,9 @@ const Comment: React.FC<CommentProps> = (props) => {
                         <Typography
                             className={classes.userName}
                             variant="inherit"
-                            component="span"
+                            color="textPrimary"
+                            component={Link}
+                            to={linkToChannel}
                         >
                             {props.userName}
                         </Typography>
@@ -100,23 +117,10 @@ const Comment: React.FC<CommentProps> = (props) => {
         </Toolbar>
     );
 
-    const answersToolbar = (
-        <Toolbar className={classes.toolbar}>
-            <Button
-                size="small"
-                color="secondary"
-                startIcon={<ArrowDropDownIcon />}
-            >
-                Показать 5 ответов
-            </Button>
-        </Toolbar>
-    );
-
     return (
         <div>
             {listItem}
             {toolbar}
-            {answersToolbar}
         </div>
     )
 };

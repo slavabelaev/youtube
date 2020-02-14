@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import {createStyles, List, Theme} from "@material-ui/core";
 import RouteListItem from "../RouteListItem";
 import ListItem from "@material-ui/core/ListItem";
@@ -9,6 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import {makeStyles} from "@material-ui/core/styles";
+import LoadList, {LoadListProps} from "../LoadList";
 
 export interface SubscriptionProps {
     id: string;
@@ -18,7 +19,8 @@ export interface SubscriptionProps {
 }
 
 export interface SubscriptionsProps {
-    items: SubscriptionProps[]
+    onLoad: LoadListProps['onLoad'];
+    onLoadMore?: LoadListProps['onLoad'];
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -28,13 +30,44 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Subscriptions: React.FC<SubscriptionsProps> = ({ items }) => {
-    const classes = useStyles();
-    const displayItems = items.slice(0, 7);
-    const toggleItems = items.slice(7);
-    const toggleCount = toggleItems.length;
+interface CollapsedItemsProps {
+   renderItem:  (item: SubscriptionProps) => ReactNode;
+   onLoad: LoadListProps['onLoad'];
+}
+
+const CollapsedItems: React.FC<CollapsedItemsProps> = ({ renderItem, onLoad }) => {
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);
+
+    const triggerListItem = (
+        <ListItem button dense onClick={toggle}>
+            <ListItemIcon>
+                {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItemIcon>
+            <ListItemText primary={open ? 'Скрыть' : `Показать ещё`} />
+        </ListItem>
+    );
+
+    const collapse = (
+        <Collapse in={open} timeout="auto" unmountOnExit>
+            <LoadList
+                renderLoadMore={null}
+                renderItem={renderItem}
+                onLoad={onLoad}
+            />
+        </Collapse>
+    );
+
+    return (
+        <>
+            {collapse}
+            {triggerListItem}
+        </>
+    )
+};
+
+const Subscriptions: React.FC<SubscriptionsProps> = ({ onLoad, onLoadMore }) => {
+    const classes = useStyles();
 
     const renderAvatar = (imageUrl: string) => (
         <Avatar
@@ -52,26 +85,21 @@ const Subscriptions: React.FC<SubscriptionsProps> = ({ items }) => {
         />
     );
 
-    const triggerListItem = (
-        <ListItem button dense onClick={toggle}>
-            <ListItemIcon>
-                {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItemIcon>
-            <ListItemText primary={open ? 'Скрыть' : `Показать ещё ${toggleCount}`} />
-        </ListItem>
-    );
-
-    const collapse = (
-        <Collapse in={open} timeout="auto" unmountOnExit>
-            {toggleItems.map(renderItem)}
-        </Collapse>
-    );
+    const collapsedItems = onLoadMore ? (
+        <CollapsedItems
+            renderItem={renderItem}
+            onLoad={onLoadMore}
+        />
+    ) : null;
 
     return (
         <List>
-            {displayItems.map(renderItem)}
-            {toggleCount ? collapse : null}
-            {toggleCount ? triggerListItem : null}
+            <LoadList
+                renderLoadMore={null}
+                renderItem={renderItem}
+                onLoad={onLoad}
+            />
+            {collapsedItems}
         </List>
     );
 };

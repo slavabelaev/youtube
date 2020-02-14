@@ -1,42 +1,30 @@
-const find = () => {
-    return []
-};
+import {VideoItemProps} from "../components/VideoItem";
 
-const findOne = () => {
-    return {};
-};
+export const generateGridVideos = async (): Promise<VideoItemProps[]> => Array(12)
+    .fill(null)
+    .map((item, index) => ({
+        id: `${index}`,
+        title: `Очень длинный заголовок видеоролика для предстваления ${index}`,
+        linkTo: `/watch?v=${index}`,
+        imageUrl: 'https://invalid_url',
+        channelImageUrl: null,
+        channelName: 'Название канала',
+        channelLinkTo: `/channel/${index}`,
+        views: Math.round(Math.random() * 999999999),
+        createdAt: new Date(),
+        variant: 'vertical'
+    }));
 
-const createOne = () => {
-    return {};
-};
-
-const createMany = () => {
-    return [];
-};
-
-const updateOne = () => {
-    return {};
-};
-
-const updateMany = () => {
-    return [];
-};
-
-const deleteOne = () => {
-    return {};
-};
-
-const deleteMany = () => {
-    return [];
-};
-
-export default {
-    find: find,
-    findOne: findOne,
-    createOne: createOne,
-    createMany: createMany,
-    updateOne: updateOne,
-    updateMany: updateMany,
-    deleteOne: deleteOne,
-    deleteMany: deleteMany
-}
+export const generateListVideos = async (): Promise<VideoItemProps[]> => Array(12)
+    .fill(null)
+    .map((item, index) => ({
+        id: `${index}`,
+        title: `Очень длинный заголовок видеоролика для предстваления ${index}`,
+        linkTo: `/watch?v=${index}`,
+        imageUrl: 'https://invalid_url',
+        channelName: 'Название канала',
+        channelLinkTo: `/channel/${index}`,
+        isNew: index % 2 === 0,
+        isRecommended: index % 2 === 1,
+        views: Math.round(Math.random() * 999999999)
+    }));

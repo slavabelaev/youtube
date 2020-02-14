@@ -1,9 +1,10 @@
 import React from "react";
 import Post, {PostProps} from "../Post";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import LoadList, {LoadListProps} from "../LoadList";
 
 export interface PostsProps {
-    items: PostProps[]
+    onLoad: LoadListProps['onLoad']
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Posts: React.FC<PostsProps> = ({ items }) => {
+const Posts: React.FC<PostsProps> = ({ onLoad }) => {
     const classes = useStyles();
 
     const renderItem = (item: PostProps) => (
@@ -25,9 +26,10 @@ const Posts: React.FC<PostsProps> = ({ items }) => {
     );
 
     return (
-        <div>
-            {items.map(renderItem)}
-        </div>
+        <LoadList
+            renderItem={renderItem}
+            onLoad={onLoad}
+        />
     )
 };
 

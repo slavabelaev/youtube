@@ -5,9 +5,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import Divider from "@material-ui/core/Divider";
-import AccountsList from "../AccountsList";
-import RouteListItem from "../RouteListItem";
-import {SIGN_OUT_MENU_ITEM} from "../../pages/SignInPage";
+import AccountsList from "../../AccountsList";
+import RouteListItem from "../../RouteListItem";
+import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
 
 const AccountsMenu: React.FC = () => {
     const actionsList = (

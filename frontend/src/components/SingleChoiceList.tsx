@@ -4,6 +4,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import CheckIcon from "@material-ui/icons/Check";
 import ListItemText from "@material-ui/core/ListItemText";
 import {List} from "@material-ui/core";
+import LoadList, {LoadListProps} from "./LoadList";
 
 export interface SingleChoiceItemProps {
     title: string;
@@ -12,10 +13,10 @@ export interface SingleChoiceItemProps {
 }
 
 export interface SingleChoiceListProps {
-    items: SingleChoiceItemProps[]
+    onLoad: LoadListProps['onLoad']
 }
 
-const SingleChoiceList: React.FC<SingleChoiceListProps> = ({ items }) => {
+const SingleChoiceList: React.FC<SingleChoiceListProps> = ({ onLoad }) => {
     const renderItem = (item: SingleChoiceItemProps, index: number) => (
         <ListItem dense button key={index}>
             <ListItemIcon>
@@ -29,7 +30,11 @@ const SingleChoiceList: React.FC<SingleChoiceListProps> = ({ items }) => {
 
     return (
         <List>
-            {items.map(renderItem)}
+            <LoadList
+                renderLoadMore={null}
+                renderItem={renderItem}
+                onLoad={onLoad}
+            />
         </List>
     );
 };

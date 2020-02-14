@@ -3,7 +3,8 @@ import {Button, createStyles, Theme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-export interface LoadMoreListProps<T = any> {
+export interface LoadListProps<T = any> {
+    renderLoadMore?: ((onClick: VoidFunction) => ReactNode) | null;
     renderItem: (item: T, index: number) => ReactNode;
     onLoad: (skip: number) => Promise<T[]>;
 }
@@ -23,7 +24,8 @@ interface LoadMoreListState {
     items: any;
 }
 
-const LoadMoreList: React.FC<LoadMoreListProps> = ({
+const LoadList: React.FC<LoadListProps> = ({
+    renderLoadMore,
     renderItem,
     onLoad
 }) => {
@@ -43,20 +45,24 @@ const LoadMoreList: React.FC<LoadMoreListProps> = ({
 
     if (!initialLoaded) load();
 
-    const button = (
-        <Button onClick={load}>
-            Еще
-        </Button>
-    );
+    const button =
+        renderLoadMore === null ? null :
+        renderLoadMore ? renderLoadMore(load) : (
+            <div className={classes.container}>
+                {initialLoaded ? (
+                    <Button onClick={load}>
+                        Еще
+                    </Button>
+                ) : <CircularProgress />}
+            </div>
+        );
 
     return (
         <>
             {items.map(renderItem)}
-            <div className={classes.container}>
-                {initialLoaded ? button : <CircularProgress />}
-            </div>
+            {button}
         </>
     );
 };
 
-export default LoadMoreList;
+export default LoadList;

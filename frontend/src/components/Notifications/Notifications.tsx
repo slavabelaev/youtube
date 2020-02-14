@@ -8,6 +8,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import {makeStyles} from "@material-ui/core/styles";
+import LoadList, {LoadListProps} from "../LoadList";
 
 export interface Notification {
     text: string;
@@ -17,7 +18,7 @@ export interface Notification {
 }
 
 export interface NotificationsProps {
-    items: Notification[]
+    onLoad: LoadListProps['onLoad']
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Notifications: React.FC<NotificationsProps> = ({ items }) => {
+const Notifications: React.FC<NotificationsProps> = ({ onLoad }) => {
     const classes = useStyles();
 
     const renderItem = (item: Notification, index: number) => (
@@ -64,7 +65,10 @@ const Notifications: React.FC<NotificationsProps> = ({ items }) => {
 
     return (
       <List>
-          {items.map(renderItem)}
+          <LoadList
+              renderItem={renderItem}
+              onLoad={onLoad}
+          />
       </List>
     );
 };

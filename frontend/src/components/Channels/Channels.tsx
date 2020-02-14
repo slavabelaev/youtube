@@ -1,9 +1,10 @@
 import React from "react";
 import Channel, {ChannelProps} from "../Channel";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import LoadList, {LoadListProps} from "../LoadList";
 
 export interface ChannelsProps {
-    items: ChannelProps[]
+    onLoad: LoadListProps['onLoad']
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Channels: React.FC<ChannelsProps> = ({ items }) => {
+const Channels: React.FC<ChannelsProps> = ({ onLoad }) => {
     const classes = useStyles();
     const renderItem = (item: ChannelProps) => (
         <div className={classes.item}>
@@ -27,7 +28,10 @@ const Channels: React.FC<ChannelsProps> = ({ items }) => {
 
     return (
         <div className={classes.root}>
-            {items.map(renderItem)}
+            <LoadList
+                renderItem={renderItem}
+                onLoad={onLoad}
+            />
         </div>
     )
 };

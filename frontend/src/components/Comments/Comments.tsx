@@ -1,22 +1,26 @@
 import React from "react";
 import {List} from "@material-ui/core";
 import Comment, {CommentProps} from "./Comment";
-import LoadMoreList, {LoadMoreListProps} from "../LoadMoreList";
+import LoadList, {LoadListProps} from "../LoadList";
+import Answers from "./Answers";
 
 export interface CommentsProps {
-    onLoad: LoadMoreListProps<CommentProps>['onLoad'];
+    onLoad: LoadListProps<CommentProps>['onLoad'];
 }
 
 const Comments: React.FC<CommentsProps> = ({
     onLoad
 }) => {
     const renderItem = (item: CommentProps) => (
-        <Comment {...item} key={item.id} />
+        <>
+            <Comment {...item} key={item.id} />
+            <Answers commentId={item.id} />
+        </>
     );
 
     return (
         <List>
-            <LoadMoreList
+            <LoadList
                 renderItem={renderItem}
                 onLoad={onLoad}
             />

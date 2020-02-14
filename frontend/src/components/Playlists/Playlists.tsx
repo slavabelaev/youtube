@@ -2,6 +2,7 @@ import React from "react";
 import List from "@material-ui/core/List";
 import RouteListItem from "../RouteListItem";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+import LoadList, {LoadListProps} from "../LoadList";
 
 export interface PlaylistProps {
     id: string;
@@ -10,10 +11,10 @@ export interface PlaylistProps {
 }
 
 export interface PlaylistsProps {
-    items: PlaylistProps[];
+    onLoad: LoadListProps['onLoad'];
 }
 
-const Playlists: React.FC<PlaylistsProps> = ({ items }) => {
+const Playlists: React.FC<PlaylistsProps> = ({ onLoad }) => {
     const renderItem = (item: PlaylistProps) => (
         <RouteListItem
             key={item.id}
@@ -25,7 +26,10 @@ const Playlists: React.FC<PlaylistsProps> = ({ items }) => {
 
     return (
         <List>
-            {items.map(renderItem)}
+            <LoadList
+                onLoad={onLoad}
+                renderItem={renderItem}
+            />
         </List>
     )
 };
