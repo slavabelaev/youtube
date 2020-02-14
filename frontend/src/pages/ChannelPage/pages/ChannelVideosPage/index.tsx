@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import MenuItem from "../../../../interfaces/MenuItem";
+import {MenuItem} from "../../../../components/MenuListItem";
 
 export const CHANNEL_VIDEOS_PAGE_ROUTE = '/videos';
 

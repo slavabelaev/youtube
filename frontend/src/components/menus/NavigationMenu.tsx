@@ -1,7 +1,6 @@
 import React from "react";
 import {BottomNavigation, BottomNavigationProps, createStyles, Theme} from "@material-ui/core";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import MenuItem from "../../interfaces/MenuItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {NavLink} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
@@ -10,6 +9,7 @@ import {HOME_MENU_ITEM} from "../../pages/HomePage";
 import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
 import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
 import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
+import {MenuItem} from "../MenuListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_vertical: {

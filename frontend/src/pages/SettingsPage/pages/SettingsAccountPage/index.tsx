@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import MenuItem from "../../../../interfaces/MenuItem";
 import {AccountBox} from "@material-ui/icons";
+import {MenuItem} from "../../../../components/MenuListItem";
 
 export const SETTINGS_ACCOUNT_PAGE_ROUTE = '/account';
 

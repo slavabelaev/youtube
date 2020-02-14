@@ -1,7 +1,7 @@
 import React from "react";
-import MenuItem from "../interfaces/MenuItem";
 import {List} from "@material-ui/core";
 import RouteListItem from "./RouteListItem";
+import {MenuItem} from "./MenuListItem";
 
 export interface MenuProps {
     items: MenuItem[];

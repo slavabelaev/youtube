@@ -1,6 +1,6 @@
 import React from 'react';
 import DrawerContent from "./DrawerContent";
-import NavigationMenu from "../../menus/NavigationMenu";
+import NavigationMenu from "../../components/menus/NavigationMenu";
 import Drawer, {DrawerProps} from "@material-ui/core/Drawer";
 import clsx from "clsx";
 import {createStyles, Theme} from "@material-ui/core";

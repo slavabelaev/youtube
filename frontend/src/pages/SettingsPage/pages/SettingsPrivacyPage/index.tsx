@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import MenuItem from "../../../../interfaces/MenuItem";
 import {Info} from "@material-ui/icons";
+import {MenuItem} from "../../../../components/MenuListItem";
 
 export const SETTINGS_PRIVACY_PAGE_ROUTE = '/privacy';
 

@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {createStyles, List, Theme} from "@material-ui/core";
+import {AvatarProps, createStyles, List, Theme} from "@material-ui/core";
 import RouteListItem from "../RouteListItem";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -15,7 +15,7 @@ export interface SubscriptionProps {
     id: string;
     title: string;
     linkTo: string;
-    imageUrl: string;
+    avatarUrl: AvatarProps['src'];
 }
 
 export interface SubscriptionsProps {
@@ -69,9 +69,9 @@ const CollapsedItems: React.FC<CollapsedItemsProps> = ({ renderItem, onLoad }) =
 const Subscriptions: React.FC<SubscriptionsProps> = ({ onLoad, onLoadMore }) => {
     const classes = useStyles();
 
-    const renderAvatar = (imageUrl: string) => (
+    const renderAvatar = (avatarUrl: SubscriptionProps['avatarUrl']) => (
         <Avatar
-            src={imageUrl}
+            src={avatarUrl}
             className={classes.avatar}
         />
     );
@@ -81,7 +81,7 @@ const Subscriptions: React.FC<SubscriptionsProps> = ({ onLoad, onLoadMore }) => 
             key={item.id}
             title={item.title}
             to={item.linkTo}
-            icon={() => renderAvatar(item.imageUrl)}
+            icon={() => renderAvatar(item.avatarUrl)}
         />
     );
 

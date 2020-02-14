@@ -1,8 +1,8 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import Layout from "../../components/layouts/Layout";
-import MenuItem from "../../interfaces/MenuItem";
+import Layout from "../../layouts/Layout";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
+import {MenuItem} from "../../components/MenuListItem";
 
 export const KEYBOARD_SHORTCUTS_PAGE_ROUTE = '#keyboard-shortcuts';
 

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Avatar, createStyles, Theme} from "@material-ui/core";
+import {Avatar, AvatarProps, createStyles, Theme} from "@material-ui/core";
 import {toStringNumber} from "../utils/numbers";
 import SubscribeButton from "./buttons/SubscribeButton";
 import {makeStyles} from "@material-ui/core/styles";
@@ -10,6 +10,7 @@ export interface ChannelProps {
     id: string;
     title: string;
     subscribersNumber: number;
+    avatarUrl: AvatarProps['src'];
     linkTo: string;
 }
 
@@ -48,6 +49,7 @@ const Channel: React.FC<ChannelProps> = (props) => {
         <div className={classes.root}>
             <Avatar
                 className={classes.avatar}
+                src={props.avatarUrl}
             />
             <Typography
                 className={classes.title}

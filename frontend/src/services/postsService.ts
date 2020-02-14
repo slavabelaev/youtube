@@ -1,5 +1,5 @@
 import {PostProps} from "../components/Post";
-import faker from "faker";
+import faker from "faker/locale/en";
 
 export const generatePosts = async (): Promise<PostProps[]> => Array(12)
     .fill(null)

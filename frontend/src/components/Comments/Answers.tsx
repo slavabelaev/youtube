@@ -7,8 +7,7 @@ import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Collapse from "@material-ui/core/Collapse";
 import LoadList from "../LoadList";
-import {findAllComments} from "../../services/commentsService";
-import {CommentsProps} from "./Comments";
+import {generateComments} from "../../services/commentsService";
 
 export interface AnswersProps {
     commentId: CommentProps['id'];
@@ -28,9 +27,6 @@ const Answers: React.FC<AnswersProps> = ({ commentId }) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);
-    const handleLoad: CommentsProps['onLoad'] = async skip => await findAllComments({
-        parentId: commentId
-    }, skip);
 
     const renderItem = (item: CommentProps) => (
         <>
@@ -66,7 +62,7 @@ const Answers: React.FC<AnswersProps> = ({ commentId }) => {
                 <List>
                     <LoadList
                         renderItem={renderItem}
-                        onLoad={handleLoad}
+                        onLoad={generateComments}
                     />
                 </List>
             </Collapse>

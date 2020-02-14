@@ -2,7 +2,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme, useMediaQuery} from "@material-ui/core";
 import LayoutAppBar from "./LayoutAppBar";
-import NavigationMenu from "../../menus/NavigationMenu";
+import NavigationMenu from "../../components/menus/NavigationMenu";
 import LayoutDrawer, {LayoutDrawerProps} from "./LayoutDrawer";
 
 export interface LayoutProps {

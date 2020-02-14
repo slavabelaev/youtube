@@ -2,8 +2,8 @@ import React from "react";
 import clsx from "clsx";
 import {Link} from "react-router-dom";
 import {createStyles, Theme, Typography} from "@material-ui/core";
-import MenuItem from "../interfaces/MenuItem";
 import {makeStyles} from "@material-ui/core/styles";
+import {MenuItem} from "./MenuListItem";
 
 export interface RouteLinksProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     items: MenuItem[]

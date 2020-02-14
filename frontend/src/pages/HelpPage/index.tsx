@@ -1,8 +1,8 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import Layout from "../../components/layouts/Layout";
-import MenuItem from "../../interfaces/MenuItem";
+import Layout from "../../layouts/Layout";
 import HelpIcon from "@material-ui/icons/Help";
+import {MenuItem} from "../../components/MenuListItem";
 
 export const HELP_PAGE_ROUTE = '/help';
 

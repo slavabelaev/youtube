@@ -1,13 +1,25 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
-import {ListItemIcon} from "@material-ui/core";
+import {createStyles, ListItemIcon, Theme} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
-import MenuItem from "../interfaces/MenuItem";
+import {MenuItem} from "./MenuListItem";
+import {makeStyles} from "@material-ui/core/styles";
 
 export interface RouteListItemProps extends MenuItem {}
 
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    title: {
+        display: 'block',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden'
+    }
+}));
+
 const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, exact = false, title }) => {
+    const classes = useStyles();
+
     const renderIcon = () => {
         if (!icon) return;
         const Icon = icon;
@@ -29,7 +41,11 @@ const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, exact = false, 
         >
             {renderIcon()}
             <ListItemText
-                primary={title}
+                primary={
+                    <span className={classes.title}>
+                        {title}
+                    </span>
+                }
             />
         </ListItem>
     )

@@ -1,5 +1,5 @@
 import {makeStyles} from "@material-ui/core/styles";
-import {createStyles, Theme} from "@material-ui/core";
+import {AvatarProps, createStyles, Theme} from "@material-ui/core";
 import LikeDislikeButton, {LikeDislikeButtonProps} from "../buttons/LikeDislikeButton";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -19,7 +19,7 @@ import clsx from "clsx";
 export interface CommentProps {
     variant?: 'mini' | 'normal';
     id: string;
-    avatarUrl: string;
+    avatarUrl: AvatarProps['src'];
     userName: string;
     text: string;
     createdAt: Date;
@@ -60,6 +60,7 @@ const Comment: React.FC<CommentProps> = (props) => {
                     })}
                     component={Link}
                     to={linkToChannel}
+                    src={props.avatarUrl}
                 />
             </ListItemAvatar>
             <ListItemText

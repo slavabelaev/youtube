@@ -9,13 +9,13 @@ import {
     useMediaQuery
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import AccountMenuButton from "../../buttons/AccountMenuButton";
-import NotificationsMenuButton from "../../buttons/NotificationsMenuButton";
-import SearchButton from "../../buttons/SearchButton";
-import SearchField from "../../SearchField";
+import AccountMenuButton from "../../components/buttons/AccountMenuButton";
+import NotificationsMenuButton from "../../components/buttons/NotificationsMenuButton";
+import SearchButton from "../../components/buttons/SearchButton";
+import SearchField from "../../components/SearchField";
 import Logo from "../Logo";
-import AppsMenuButton from "../../buttons/AppsMenuButton";
-import VideoMenuButton from "../../buttons/VideoMenuButton";
+import AppsMenuButton from "../../components/buttons/AppsMenuButton";
+import VideoMenuButton from "../../components/buttons/VideoMenuButton";
 
 interface LayoutAppBarProps {
     MenuButtonProps?: IconButtonProps;

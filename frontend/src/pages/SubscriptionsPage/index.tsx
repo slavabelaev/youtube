@@ -1,8 +1,8 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import Layout from "../../components/layouts/Layout";
-import MenuItem from "../../interfaces/MenuItem";
+import Layout from "../../layouts/Layout";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
+import {MenuItem} from "../../components/MenuListItem";
 
 export const SUBSCRIPTIONS_PAGE_ROUTE = '/feed/subscriptions';
 

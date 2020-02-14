@@ -7,7 +7,7 @@ import {SETTINGS_PLAYBACK_MENU_ITEM} from "../../pages/SettingsPage/pages/Settin
 import {SETTINGS_PRIVACY_MENU_ITEM} from "../../pages/SettingsPage/pages/SettingsPrivacyPage";
 import {SETTINGS_SHARING_MENU_ITEM} from "../../pages/SettingsPage/pages/SettingsSharingPage";
 import {SETTINGS_ADVANCED_MENU_ITEM} from "../../pages/SettingsPage/pages/SettingsAdvancedPage";
-import MenuItem from "../../interfaces/MenuItem";
+import {MenuItem} from "../MenuListItem";
 
 const SettingsMenu: React.FC = () => {
     const match = useRouteMatch();

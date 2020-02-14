@@ -4,14 +4,17 @@ import Button, {ButtonProps} from "@material-ui/core/Button";
 export interface SubscribeButtonProps extends ButtonProps {}
 
 const SubscribeButton: React.FC<SubscribeButtonProps> = (props) => {
-   return (
+    const [subscribed, setSubscribed] = React.useState(false);
+    const toggle = () => setSubscribed(!subscribed);
+    return (
        <Button
            variant="contained"
-           color="primary"
            disableElevation
            {...props}
+           color={subscribed ? 'default' : (props.color || 'primary')}
+           onClick={toggle}
        >
-           Подписаться
+           {subscribed ? 'Вы подписаны' : 'Подписаться'}
        </Button>
    )
 };

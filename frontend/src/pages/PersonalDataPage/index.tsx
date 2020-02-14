@@ -1,8 +1,8 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import Layout from "../../components/layouts/Layout";
-import MenuItem from "../../interfaces/MenuItem";
+import Layout from "../../layouts/Layout";
 import SecurityIcon from "@material-ui/icons/Security";
+import {MenuItem} from "../../components/MenuListItem";
 
 export const PERSONAL_DATA_PAGE_ROUTE = '/personal-data';
 

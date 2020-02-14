@@ -35,14 +35,16 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         alignItems: 'center'
     },
     root_variant_vertical: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignItems: 'initial'
     },
     listItem: {
         alignItems: 'flex-start',
         padding: theme.spacing(0)
     },
     container: {
-        listStyle: 'none'
+        listStyle: 'none',
+        width: '100%'
     },
     listItemTextNode: {
         marginTop: 0,
@@ -83,11 +85,13 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     media: {
         flex: 1,
-        width: '100%',
         minWidth: theme.spacing(20),
-        minHeight: theme.spacing(13),
+        maxWidth: theme.spacing(20),
+        height: theme.spacing(13),
     },
     media_variant_vertical: {
+        minWidth: 'initial',
+        maxWidth: 'initial',
         minHeight: theme.spacing(20),
         marginBottom: theme.spacing(2)
     },
@@ -217,7 +221,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
                 {channelAvatarNode}
                 {listItemTextNode}
                 <ListItemSecondaryAction>
-                    <IconButton>
+                    <IconButton edge="end">
                         <MoreVertIcon />
                     </IconButton>
                 </ListItemSecondaryAction>

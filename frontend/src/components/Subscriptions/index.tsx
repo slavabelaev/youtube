@@ -1,5 +1,4 @@
 import React, {Suspense} from "react";
-import {SubscriptionProps} from "./Subscriptions";
 import SuspenseFallback from "../SuspenseFallback";
 import {generateSubscriptions} from "../../services/subscriptionsService";
 
