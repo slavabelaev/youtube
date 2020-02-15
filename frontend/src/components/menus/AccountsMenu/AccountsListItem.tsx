@@ -6,14 +6,21 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import CheckIcon from "@material-ui/icons/Check";
 
-export interface AccountListItemProps {
+export interface AccountModel {
     avatarUrl: string;
     fullName: string;
     email: string;
     selected?: boolean;
 }
 
-export const AccountListItem: React.FC<AccountListItemProps> = ({ fullName, email, avatarUrl, selected = false }) => {
+export interface AccountListItemProps extends AccountModel {}
+
+export const AccountListItem: React.FC<AccountListItemProps> = ({
+    fullName,
+    email,
+    avatarUrl,
+    selected = false
+}) => {
     const selectedIcon = (
         <ListItemSecondaryAction>
             <CheckIcon />

@@ -2,12 +2,14 @@ import React from "react";
 import {List} from "@material-ui/core";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import Divider from "@material-ui/core/Divider";
-import AccountsList from "../../AccountsList";
+import AccountsList, {AccountsListProps} from "./AccountsList";
 import LinkListItem from "../../LinkListItem";
 import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
 import MenuListItem from "../../MenuListItem";
 
-const AccountsMenu: React.FC = () => {
+export interface AccountsMenuProps extends AccountsListProps {}
+
+const AccountsMenu: React.FC<AccountsMenuProps> = ({ onLoad }) => {
     const actionsList = (
         <List>
             <MenuListItem
@@ -20,7 +22,9 @@ const AccountsMenu: React.FC = () => {
 
     return (
         <div>
-            <AccountsList />
+            <AccountsList
+                onLoad={onLoad}
+            />
             <Divider />
             {actionsList}
         </div>
