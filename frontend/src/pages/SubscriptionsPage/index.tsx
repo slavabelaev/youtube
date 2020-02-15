@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const SUBSCRIPTIONS_PAGE_ROUTE = '/feed/subscriptions';
 
-export const SUBSCRIPTIONS_MENU_ITEM: MenuItem = {
+export const SUBSCRIPTIONS_MENU_ITEM: RouteLink = {
     title: 'Подписки',
     to: SUBSCRIPTIONS_PAGE_ROUTE,
     icon: SubscriptionsIcon

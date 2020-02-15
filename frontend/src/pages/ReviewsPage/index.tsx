@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import RateReviewIcon from "@material-ui/icons/RateReview";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const REVIEWS_PAGE_ROUTE = '/reviews';
 
-export const REVIEWS_MENU_ITEM: MenuItem = {
+export const REVIEWS_MENU_ITEM: RouteLink = {
     title: 'Отправить отзыв',
     to: REVIEWS_PAGE_ROUTE,
     icon: RateReviewIcon

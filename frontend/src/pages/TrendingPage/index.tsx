@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const TRENDING_PAGE_ROUTE = '/feed/trending';
 
-export const TRENDING_MENU_ITEM: MenuItem = {
+export const TRENDING_MENU_ITEM: RouteLink = {
     title: 'В тренде',
     to: TRENDING_PAGE_ROUTE,
     icon: WhatshotIcon

@@ -8,6 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
 import ViewListIcon from "@material-ui/icons/ViewList";
 import {makeStyles} from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
 
 export interface VideosProps {
     initialVariant?: 'grid' | 'list';
@@ -39,19 +40,23 @@ const Videos: React.FC<VideosProps> = ({
                 {title}
             </Typography>
             <aside className={classes.toolbarAside}>
-                <IconButton
-                    color={variant === 'grid' ? 'secondary' : 'default'}
-                    onClick={() => setVariant('grid')}
-                >
-                    <ViewModuleIcon />
-                </IconButton>
-                <IconButton
-                    edge="end"
-                    color={variant === 'list' ? 'secondary' : 'default'}
-                    onClick={() => setVariant('list')}
-                >
-                    <ViewListIcon />
-                </IconButton>
+                <Tooltip title="Сетка">
+                    <IconButton
+                        color={variant === 'grid' ? 'secondary' : 'default'}
+                        onClick={() => setVariant('grid')}
+                    >
+                        <ViewModuleIcon />
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title="Список">
+                    <IconButton
+                        edge="end"
+                        color={variant === 'list' ? 'secondary' : 'default'}
+                        onClick={() => setVariant('list')}
+                    >
+                        <ViewListIcon />
+                    </IconButton>
+                </Tooltip>
             </aside>
         </Toolbar>
     ) : null;

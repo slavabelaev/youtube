@@ -3,10 +3,16 @@ import {NavLink} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import {createStyles, ListItemIcon, Theme} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
-import {MenuItem} from "./MenuListItem";
 import {makeStyles} from "@material-ui/core/styles";
 
-export interface RouteListItemProps extends MenuItem {}
+export interface RouteLink {
+    title: string;
+    to: string;
+    exact?: boolean;
+    icon?: React.FC;
+}
+
+export interface LinkListItemProps extends RouteLink {}
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     title: {
@@ -17,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, exact = false, title }) => {
+const LinkListItem: React.FC<LinkListItemProps> = ({ icon, to, exact = false, title }) => {
     const classes = useStyles();
 
     const renderIcon = () => {
@@ -51,4 +57,4 @@ const RouteListItem: React.FC<RouteListItemProps> = ({ icon, to, exact = false, 
     )
 };
 
-export default RouteListItem;
+export default LinkListItem;

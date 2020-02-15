@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const POLICIES_PAGE_ROUTE = '/policies';
 
-export const RULES_MENU_ITEM: MenuItem = {
+export const RULES_MENU_ITEM: RouteLink = {
     title: 'Правила и безопасность',
     to: `${POLICIES_PAGE_ROUTE}/rules-and-safety`
 };

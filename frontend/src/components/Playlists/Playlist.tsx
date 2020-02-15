@@ -1,5 +1,5 @@
 import React from "react";
-import RouteListItem from "../RouteListItem";
+import LinkListItem from "../LinkListItem";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 
 export interface PlaylistModel {
@@ -12,7 +12,7 @@ export interface PlaylistProps extends PlaylistModel {
 }
 
 const Playlist: React.FC<PlaylistProps> = (props) => (
-    <RouteListItem
+    <LinkListItem
         key={props.id}
         title={props.title}
         to={props.linkTo}

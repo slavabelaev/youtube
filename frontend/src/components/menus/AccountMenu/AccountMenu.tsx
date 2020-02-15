@@ -1,6 +1,7 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import RouteListItem from "../../RouteListItem";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import LinkListItem from "../../LinkListItem";
 import MenuListItem from "../../MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
@@ -9,19 +10,17 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Divider from "@material-ui/core/Divider";
 import Link from "@material-ui/core/Link";
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import {Toolbar} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import SecurityIcon from "@material-ui/icons/Security";
+import BrightnessIcon from "@material-ui/icons/Brightness4";
 import Typography from "@material-ui/core/Typography";
 import AccountsMenu from "../AccountsMenu";
-import DarkThemeListItem from "../../DarkThemeListItem";
 import LanguagesList from "../../LanguagesList";
-import SafeModeListItem from "../../SafeModeListItem";
 import DescriptionBox from "../../DescriptionBox";
 import CountriesList from "../../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
@@ -34,6 +33,7 @@ import {PERSONAL_DATA_MENU_ITEM} from "../../../pages/PersonalDataPage";
 import {HELP_MENU_ITEM} from "../../../pages/HelpPage";
 import {REVIEWS_MENU_ITEM} from "../../../pages/ReviewsPage";
 import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../../pages/KeyboardShortcutsPage";
+import SwitchListItem from "../../SwitchListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -72,15 +72,16 @@ const AccountMenu: React.FC = () => {
 
     const primaryList = (
         <List>
-            <RouteListItem {...CHANNEL_MENU_ITEM} />
-            <RouteListItem {...PAID_MEMBERSHIPS_MENU_ITEM} />
-            <RouteListItem {...STUDIO_MENU_ITEM} />
+            <LinkListItem {...CHANNEL_MENU_ITEM} />
+            <LinkListItem {...PAID_MEMBERSHIPS_MENU_ITEM} />
+            <LinkListItem {...STUDIO_MENU_ITEM} />
             <MenuListItem
                 title="Сменить аккаунт"
-                icon={RecentActorsIcon}
+                icon={<RecentActorsIcon />}
+                secondaryAction={<ChevronRightIcon />}
                 onClick={() => setActiveView(accountsView)}
             />
-            <RouteListItem {...SIGN_OUT_MENU_ITEM} />
+            <LinkListItem {...SIGN_OUT_MENU_ITEM} />
         </List>
     );
 
@@ -88,19 +89,21 @@ const AccountMenu: React.FC = () => {
         <List>
             <MenuListItem
                 title="Тёмная тема: откл"
-                icon={Brightness4Icon}
+                icon={<BrightnessIcon />}
+                secondaryAction={<ChevronRightIcon />}
                 onClick={() => setActiveView(darkThemeView)}
             />
             <MenuListItem
                 title="Язык: Русский"
-                icon={TranslateIcon}
+                icon={<TranslateIcon />}
+                secondaryAction={<ChevronRightIcon />}
                 onClick={() => setActiveView(languagesView)}
             />
-            <RouteListItem {...SETTINGS_MENU_ITEM} />
-            <RouteListItem {...PERSONAL_DATA_MENU_ITEM} />
-            <RouteListItem {...HELP_MENU_ITEM} />
-            <RouteListItem {...REVIEWS_MENU_ITEM} />
-            <RouteListItem {...KEYBOARD_SHORTCUTS_MENU_ITEM} />
+            <LinkListItem {...SETTINGS_MENU_ITEM} />
+            <LinkListItem {...PERSONAL_DATA_MENU_ITEM} />
+            <LinkListItem {...HELP_MENU_ITEM} />
+            <LinkListItem {...REVIEWS_MENU_ITEM} />
+            <LinkListItem {...KEYBOARD_SHORTCUTS_MENU_ITEM} />
         </List>
     );
 
@@ -132,30 +135,16 @@ const AccountMenu: React.FC = () => {
 
     const footerList = (
         <List>
-            <ListItem
-                dense
-                button
+            <MenuListItem
+                title="Страна: Россия"
+                secondaryAction={<ChevronRightIcon />}
                 onClick={() => setActiveView(countriesView)}
-            >
-                <ListItemText
-                    primary="Страна: Россия"
-                />
-                <ListItemSecondaryAction>
-                    <ChevronRightIcon />
-                </ListItemSecondaryAction>
-            </ListItem>
-            <ListItem
-                dense
-                button
+            />
+            <MenuListItem
+                title="Безопасный режим: откл."
+                secondaryAction={<ChevronRightIcon />}
                 onClick={() => setActiveView(safeModeView)}
-            >
-                <ListItemText
-                    primary="Безопасный режим: откл."
-                />
-                <ListItemSecondaryAction>
-                    <ChevronRightIcon />
-                </ListItemSecondaryAction>
-            </ListItem>
+            />
         </List>
     );
 
@@ -188,7 +177,10 @@ const AccountMenu: React.FC = () => {
                 ]}
             />
             <List>
-                <DarkThemeListItem />
+                <SwitchListItem
+                    title="Темная тема"
+                    icon={<Brightness4Icon />}
+                />
             </List>
         </div>
     );
@@ -203,7 +195,10 @@ const AccountMenu: React.FC = () => {
                 ]}
             />
             <List>
-                <SafeModeListItem />
+                <SwitchListItem
+                    title="Безопасный режим"
+                    icon={<SecurityIcon />}
+                />
             </List>
         </div>
     );

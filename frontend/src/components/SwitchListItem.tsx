@@ -1,21 +1,33 @@
 import React from "react";
 import ListItem from "@material-ui/core/ListItem";
+import {ListItemIcon, ListItemIconProps, ListItemTextProps} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Switch from "@material-ui/core/Switch";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
-import {ListItemIcon} from "@material-ui/core";
 
-const DarkThemeListItem: React.FC = () => {
+export interface SwitchListItemProps {
+    title: ListItemTextProps['primary'];
+    icon?: ListItemIconProps['children'];
+}
+
+const SwitchListItem: React.FC<SwitchListItemProps> = ({
+    title,
+    icon
+}) => {
     const [checked, setChecked] = React.useState(false);
     const toggle = () => setChecked(!checked);
+
+    const listItemIcon = icon ? (
+        <ListItemIcon>
+            {icon}
+        </ListItemIcon>
+    ) : null;
+
     return (
         <ListItem dense button onClick={toggle}>
-            <ListItemIcon>
-                <Brightness4Icon />
-            </ListItemIcon>
+            {listItemIcon}
             <ListItemText
-                primary="Темная тема"
+                primary={title}
             />
             <ListItemSecondaryAction>
                 <Switch
@@ -27,4 +39,4 @@ const DarkThemeListItem: React.FC = () => {
     )
 };
 
-export default DarkThemeListItem;
+export default SwitchListItem;

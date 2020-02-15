@@ -1,4 +1,4 @@
-import {VideoModel} from "../components/Videos/VideoItem";
+import {VideoModel} from "../components/Videos/Video";
 import faker from "faker/locale/en";
 
 export const generateGridVideos = async (): Promise<VideoModel[]> => Array(12)
@@ -12,7 +12,7 @@ export const generateGridVideos = async (): Promise<VideoModel[]> => Array(12)
         channelName: faker.company.companyName(),
         channelLinkTo: `/channel/${index}`,
         views: Math.round(Math.random() * 999999999),
-        createdAt: new Date()
+        createdAt: faker.date.past()
     }));
 
 export const generateListVideos = async (): Promise<VideoModel[]> => Array(12)
@@ -26,5 +26,6 @@ export const generateListVideos = async (): Promise<VideoModel[]> => Array(12)
         channelLinkTo: `/channel/${index}`,
         isNew: index % 2 === 0,
         isRecommended: index % 2 === 1,
-        views: Math.round(Math.random() * 999999999)
+        views: Math.round(Math.random() * 999999999),
+        createdAt: faker.date.past()
     }));

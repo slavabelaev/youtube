@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import HelpIcon from "@material-ui/icons/Help";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const HELP_PAGE_ROUTE = '/help';
 
-export const HELP_MENU_ITEM: MenuItem = {
+export const HELP_MENU_ITEM: RouteLink = {
     title: 'Справка',
     to: HELP_PAGE_ROUTE,
     icon: HelpIcon

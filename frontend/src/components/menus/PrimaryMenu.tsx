@@ -1,11 +1,11 @@
 import React from "react";
-import Menu from "../Menu";
+import LinksMenu from "../LinksMenu";
 import {HOME_MENU_ITEM} from "../../pages/HomePage";
 import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
 import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
 
 const PrimaryMenu: React.FC = () => (
-    <Menu items={[
+    <LinksMenu items={[
         HOME_MENU_ITEM,
         TRENDING_MENU_ITEM,
         SUBSCRIPTIONS_MENU_ITEM

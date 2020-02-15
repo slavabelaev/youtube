@@ -1,10 +1,10 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import {MenuItem} from "../../../../components/MenuListItem";
+import {RouteLink} from "../../../../components/LinkListItem";
 
 export const CHANNEL_FEATURED_PAGE_ROUTE = '/featured';
 
-export const CHANNEL_FEATURED_MENU_ITEM: MenuItem = {
+export const CHANNEL_FEATURED_MENU_ITEM: RouteLink = {
     title: 'Главная',
     to: CHANNEL_FEATURED_PAGE_ROUTE
 };

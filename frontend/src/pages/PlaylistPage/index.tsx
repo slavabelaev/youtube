@@ -3,17 +3,17 @@ import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const PLAYLIST_PAGE_ROUTE = '/playlist';
 
-export const FAVORITES_MENU_ITEM: MenuItem = {
+export const FAVORITES_MENU_ITEM: RouteLink = {
     title: 'Понравившиеся',
     to: `${PLAYLIST_PAGE_ROUTE}/favorites`,
     icon: ThumbUpIcon
 };
 
-export const WATCH_LATER_MENU_ITEM: MenuItem = {
+export const WATCH_LATER_MENU_ITEM: RouteLink = {
     title: 'Смотреть позже',
     to: `${PLAYLIST_PAGE_ROUTE}/WL`,
     icon: WatchLaterIcon

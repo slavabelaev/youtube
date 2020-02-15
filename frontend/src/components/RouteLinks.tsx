@@ -3,15 +3,14 @@ import clsx from "clsx";
 import {Link} from "react-router-dom";
 import {createStyles, Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import {MenuItem} from "./MenuListItem";
+import {RouteLink} from "./LinkListItem";
 
 export interface RouteLinksProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    items: MenuItem[]
+    items: RouteLink[]
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    root: {
-    },
+    root: {},
     item: {
         display: 'inline-block',
         color: theme.palette.text.secondary,
@@ -27,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const RouteLinks: React.FC<RouteLinksProps> = ({ items, className, ...otherProps }) => {
     const classes = useStyles();
-    const renderItem = (item: MenuItem, index: number) => (
+    const renderItem = (item: RouteLink, index: number) => (
         <Typography
             key={index}
             variant="subtitle2"

@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
-import RouteListItem from "../RouteListItem";
+import LinkListItem from "../LinkListItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {AvatarProps, createStyles, Theme} from "@material-ui/core";
 
@@ -31,7 +31,7 @@ const Subscription: React.FC<SubscriptionProps> = (props) => {
     );
 
     return (
-        <RouteListItem
+        <LinkListItem
             key={props.id}
             title={props.title}
             to={props.linkTo}

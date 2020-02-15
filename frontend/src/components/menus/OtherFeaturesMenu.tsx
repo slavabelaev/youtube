@@ -1,10 +1,10 @@
 import React from "react";
-import Menu from "../Menu";
+import LinksMenu from "../LinksMenu";
 import {GAMING_MENU_ITEM} from "../../pages/GamingPage";
 import {STREAMING_MENU_ITEM} from "../../pages/StreamingPage";
 
 const OtherFeaturesMenu: React.FC = () => (
-    <Menu items={[
+    <LinksMenu items={[
         GAMING_MENU_ITEM,
         STREAMING_MENU_ITEM
     ]} />

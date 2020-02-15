@@ -1,47 +1,36 @@
 import ListItem from "@material-ui/core/ListItem";
-import React from "react";
+import React, {ReactElement, ReactNode} from "react";
 import {ListItemIcon} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-
-export interface MenuItem {
-    title: string;
-    to: string;
-    exact?: boolean;
-    icon?: React.FC;
-}
 
 export interface MenuListItemProps {
     title: string;
-    icon?: React.FC;
-    onClick?: () => void
+    icon?: ReactElement;
+    secondaryAction?: ReactNode
+    onClick?: () => void,
 }
 
-const MenuListItem: React.FC<MenuListItemProps> = ({
-    title,
-    icon,
-    onClick
-}) => {
-    const renderIcon = () => {
-        if (!icon) return;
-        const Icon = icon;
-        return (
-            <ListItemIcon>
-                <Icon />
-            </ListItemIcon>
-        )
-    };
+const MenuListItem: React.FC<MenuListItemProps> = (props) => {
+    const listItemIcon = props.icon ? (
+        <ListItemIcon>
+            {props.icon}
+        </ListItemIcon>
+    ) : null;
+
+    const listItemSecondaryAction = props.secondaryAction ? (
+        <ListItemSecondaryAction>
+            {props.secondaryAction}
+        </ListItemSecondaryAction>
+    ) : null;
 
     return (
-        <ListItem dense button onClick={onClick}>
-            {renderIcon()}
+        <ListItem dense button onClick={props.onClick}>
+            {listItemIcon}
             <ListItemText
-                primary={title}
+                primary={props.title}
             />
-            <ListItemSecondaryAction>
-                <ChevronRightIcon />
-            </ListItemSecondaryAction>
+            {listItemSecondaryAction}
         </ListItem>
     )
 };

@@ -3,10 +3,10 @@ import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
 import {HISTORY_MENU_ITEM} from "../../pages/HistoryPage";
 import {FAVORITES_MENU_ITEM, WATCH_LATER_MENU_ITEM} from "../../pages/PlaylistPage";
 import {PURCHASES_MENU_ITEM} from "../../pages/PurchasesPage";
-import Menu from "../Menu";
+import LinksMenu from "../LinksMenu";
 
 const SecondaryMenu: React.FC = () => (
-    <Menu items={[
+    <LinksMenu items={[
         LIBRARY_MENU_ITEM,
         HISTORY_MENU_ITEM,
         WATCH_LATER_MENU_ITEM,

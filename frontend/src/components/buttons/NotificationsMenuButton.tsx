@@ -29,10 +29,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const NotificationsMenuButton: React.FC = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+    const title = 'Уведомления';
+
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
-    const title = 'Уведомления';
 
     const handleClose = () => {
         setAnchorEl(null);

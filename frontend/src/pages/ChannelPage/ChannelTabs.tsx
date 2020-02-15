@@ -10,12 +10,12 @@ import {CHANNEL_PLAYLISTS_MENU_ITEM} from "./pages/ChannelPlaylistsPage";
 import {CHANNEL_COMMUNITY_MENU_ITEM} from "./pages/ChannelCommunityPage";
 import {CHANNEL_CHANNELS_MENU_ITEM} from "./pages/ChannelChannelsPage";
 import ChannelRoutes from "./ChannelRoutes";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 const ChannelTabs: React.FC = () => {
     const match = useRouteMatch();
     const { location } = useHistory();
-    const items: MenuItem[] = [
+    const items: RouteLink[] = [
         CHANNEL_FEATURED_MENU_ITEM,
         CHANNEL_VIDEOS_MENU_ITEM,
         CHANNEL_PLAYLISTS_MENU_ITEM,
@@ -26,7 +26,7 @@ const ChannelTabs: React.FC = () => {
     const initialValue = items.findIndex(item => location.pathname.includes(item.to));
     const [value, setValue] = useState(initialValue);
 
-    const renderItem = (item: MenuItem, index: number) => (
+    const renderItem = (item: RouteLink, index: number) => (
         <Tab
             key={item.to}
             label={item.title}

@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const CREATORS_PAGE_ROUTE = '/creators';
 
-export const CREATORS_MENU_ITEM: MenuItem = {
+export const CREATORS_MENU_ITEM: RouteLink = {
     title: 'Авторам',
     to: CREATORS_PAGE_ROUTE
 };

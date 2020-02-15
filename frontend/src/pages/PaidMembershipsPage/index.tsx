@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const PAID_MEMBERSHIPS_PAGE_ROUTE = '/paid-memberships';
 
-export const PAID_MEMBERSHIPS_MENU_ITEM: MenuItem = {
+export const PAID_MEMBERSHIPS_MENU_ITEM: RouteLink = {
     title: 'Платные подписки',
     to: PAID_MEMBERSHIPS_PAGE_ROUTE,
     icon: MonetizationOnIcon

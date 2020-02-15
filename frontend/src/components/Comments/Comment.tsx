@@ -7,14 +7,14 @@ import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import {Link} from "react-router-dom";
 import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
 import clsx from "clsx";
+import {formatDistance} from "date-fns";
+import CommentPopoverButton from "./CommentPopoverButton";
 
 export interface CommentModel {
     id: string;
@@ -83,7 +83,7 @@ const Comment: React.FC<CommentProps> = (props) => {
                             color="textSecondary"
                             component="span"
                         >
-                            {props.createdAt.toLocaleDateString()}
+                            {formatDistance(new Date(), props.createdAt)}
                             {props.edited ? ' (изменено)' : null}
                         </Typography>
                     </>
@@ -91,9 +91,7 @@ const Comment: React.FC<CommentProps> = (props) => {
                 secondary={props.text}
             />
             <ListItemSecondaryAction>
-                <IconButton>
-                    <MoreVertIcon />
-                </IconButton>
+                <CommentPopoverButton />
             </ListItemSecondaryAction>
         </ListItem>
     );

@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const PRESS_PAGE_ROUTE = '/new';
 
-export const PRESS_MENU_ITEM: MenuItem = {
+export const PRESS_MENU_ITEM: RouteLink = {
     title: 'Прессе',
     to: PRESS_PAGE_ROUTE
 };

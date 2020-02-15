@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
-export const KEYBOARD_SHORTCUTS_PAGE_ROUTE = '#keyboard-shortcuts';
+export const KEYBOARD_SHORTCUTS_PAGE_ROUTE = '/keyboard-shortcuts';
 
-export const KEYBOARD_SHORTCUTS_MENU_ITEM: MenuItem = {
+export const KEYBOARD_SHORTCUTS_MENU_ITEM: RouteLink = {
     title: 'Быстрые клавишы',
     to: KEYBOARD_SHORTCUTS_PAGE_ROUTE,
     icon: KeyboardIcon

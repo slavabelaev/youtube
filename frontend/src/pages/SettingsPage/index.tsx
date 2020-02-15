@@ -2,11 +2,11 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import SettingsIcon from "@material-ui/icons/Settings";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const SETTINGS_PAGE_ROUTE = '/settings';
 
-export const SETTINGS_MENU_ITEM: MenuItem = {
+export const SETTINGS_MENU_ITEM: RouteLink = {
     title: 'Настройки',
     to: SETTINGS_PAGE_ROUTE,
     icon: SettingsIcon

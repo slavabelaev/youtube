@@ -9,7 +9,7 @@ import {HOME_MENU_ITEM} from "../../pages/HomePage";
 import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
 import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
 import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
-import {MenuItem} from "../MenuListItem";
+import {RouteLink} from "../LinkListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_vertical: {
@@ -44,12 +44,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-export interface NavigationMenuProps extends BottomNavigationProps {
+export interface NavigationLinksMenuProps extends BottomNavigationProps {
     variant?: 'vertical' | 'horizontal',
     position?: 'fixed' | 'static'
 }
 
-const NavigationMenu: React.FC<NavigationMenuProps> = ({
+const NavigationMenu: React.FC<NavigationLinksMenuProps> = ({
     variant = 'horizontal',
     position = 'static',
     className,
@@ -58,7 +58,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
     const classes = useStyles();
     const isVertical = variant === 'vertical';
 
-    const items: MenuItem[] = [
+    const items: RouteLink[] = [
         HOME_MENU_ITEM,
         TRENDING_MENU_ITEM,
         SUBSCRIPTIONS_MENU_ITEM,
@@ -74,7 +74,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
         </Typography>
     );
 
-    const renderItem = (item: MenuItem, index: number) => {
+    const renderItem = (item: RouteLink, index: number) => {
         const Icon = item.icon || (() => null);
         return (
             <BottomNavigationAction

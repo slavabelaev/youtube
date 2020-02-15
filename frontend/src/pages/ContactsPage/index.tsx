@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
-import {MenuItem} from "../../components/MenuListItem";
+import {RouteLink} from "../../components/LinkListItem";
 
 export const CONTACTS_PAGE_ROUTE = '/contacts';
 
-export const CONTACTS_MENU_ITEM: MenuItem = {
+export const CONTACTS_MENU_ITEM: RouteLink = {
     title: 'Связаться с нами',
     to: CONTACTS_PAGE_ROUTE
 };

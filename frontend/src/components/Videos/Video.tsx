@@ -3,8 +3,6 @@ import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Media from "../Media";
 import {toStringNumber} from "../../utils/numbers";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import {ListItem} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
@@ -12,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import {formatDistance} from "date-fns";
+import VideoPopoverButton from "./VideoPopoverButton";
 
 export interface VideoModel {
     id: string;
@@ -24,10 +24,10 @@ export interface VideoModel {
     views?: number;
     isRecommended?: boolean;
     isNew?: boolean;
-    createdAt?: Date;
+    createdAt: Date;
 }
 
-export interface VideoItemProps extends VideoModel {
+export interface VideoProps extends VideoModel {
     variant?: 'horizontal' | 'vertical',
     className?: string;
 }
@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideoItem: React.FC<VideoItemProps> = ({
+const Video: React.FC<VideoProps> = ({
     variant = 'horizontal',
     title,
     linkTo,
@@ -174,9 +174,9 @@ const VideoItem: React.FC<VideoItemProps> = ({
         </span>
     ) : null;
 
-    const createdAtNode = createdAt ? (
+    const createdAtNode = createdAt && variant === 'vertical' ? (
         <span className={classes.createdAt}>
-            12 минут назад
+            {formatDistance(new Date(), createdAt)}
         </span>
     ) : null;
 
@@ -227,13 +227,11 @@ const VideoItem: React.FC<VideoItemProps> = ({
                 {channelAvatarNode}
                 {listItemTextNode}
                 <ListItemSecondaryAction>
-                    <IconButton edge="end">
-                        <MoreVertIcon />
-                    </IconButton>
+                    <VideoPopoverButton />
                 </ListItemSecondaryAction>
             </ListItem>
         </div>
     );
 };
 
-export default VideoItem;
+export default Video;

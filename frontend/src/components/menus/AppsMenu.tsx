@@ -5,11 +5,11 @@ import MusicVideoIcon from "@material-ui/icons/MusicVideo";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import PersonIcon from "@material-ui/icons/Person";
-import Menu from "../Menu";
+import LinksMenu from "../LinksMenu";
 
 const AppsMenu: React.FC = () => (
     <div>
-        <Menu items={[
+        <LinksMenu items={[
             {
                 title: 'YonTube TV',
                 to: '/apps/tv',
@@ -17,7 +17,7 @@ const AppsMenu: React.FC = () => (
             }
         ]} />
         <Divider />
-        <Menu items={[
+        <LinksMenu items={[
             {
                 title: 'YonTube Music',
                 to: '/apps/music',
@@ -30,7 +30,7 @@ const AppsMenu: React.FC = () => (
             }
         ]} />
         <Divider />
-        <Menu items={[
+        <LinksMenu items={[
             {
                 title: 'Академия для авторов',
                 to: '/apps/authors',
