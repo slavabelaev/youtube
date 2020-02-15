@@ -1,5 +1,5 @@
 import React from "react";
-import Post, {PostProps} from "../Post";
+import Post, {PostProps} from "./Post";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import LoadList, {LoadListProps} from "../LoadList";
 import Answers from "../Comments/Answers";

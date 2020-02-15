@@ -6,10 +6,13 @@ import ListItemText from "@material-ui/core/ListItemText";
 import {List} from "@material-ui/core";
 import LoadList, {LoadListProps} from "./LoadList";
 
-export interface SingleChoiceItemProps {
+export interface SingleChoiceItemModel {
     title: string;
     selected?: boolean;
     value: any;
+}
+
+export interface SingleChoiceItemProps extends SingleChoiceItemModel {
 }
 
 export interface SingleChoiceListProps {

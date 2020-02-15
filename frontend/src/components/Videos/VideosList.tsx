@@ -1,6 +1,6 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import VideoItem, {VideoItemProps} from "../VideoItem";
+import VideoItem, {VideoItemProps} from "./VideoItem";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import LoadList, {LoadListProps} from "../LoadList";
 

@@ -7,25 +7,33 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Typography from "@material-ui/core/Typography";
-import LikeDislikeButton, {LikeDislikeButtonProps} from "./buttons/LikeDislikeButton";
+import LikeDislikeButton, {LikeDislikeButtonProps} from "../buttons/LikeDislikeButton";
 import Button from "@material-ui/core/Button";
 
-export interface PostProps {
+export interface PostModel {
     id: string;
     avatarSrc: AvatarProps['src']
     title: CardHeaderProps['title'];
-    subheader: CardHeaderProps['subheader'];
+    createdAt: CardHeaderProps['subheader'];
     text: string;
-    LikeDislikeButtonProps?: LikeDislikeButtonProps;
+    initialLikes: LikeDislikeButtonProps['initialLikes'];
+    initialDislikes: LikeDislikeButtonProps['initialDislikes'];
+    initialChecked: LikeDislikeButtonProps['initialChecked'];
+
+}
+
+export interface PostProps extends PostModel {
     bottomToolbar?: ReactNode;
 }
 
 const Post: React.FC<PostProps> = ({
     avatarSrc,
     title,
-    subheader,
+    createdAt,
     text,
-    LikeDislikeButtonProps,
+    initialLikes,
+    initialDislikes,
+    initialChecked,
     bottomToolbar
 }) => {
     const headerAction = (
@@ -46,7 +54,7 @@ const Post: React.FC<PostProps> = ({
                 avatar={avatar}
                 action={headerAction}
                 title={title}
-                subheader={subheader}
+                subheader={createdAt}
             />
             <CardContent>
                 <Typography>
@@ -55,7 +63,9 @@ const Post: React.FC<PostProps> = ({
             </CardContent>
             <CardActions>
                 <LikeDislikeButton
-                    {...LikeDislikeButtonProps}
+                    initialLikes={initialLikes}
+                    initialDislikes={initialDislikes}
+                    initialChecked={initialChecked}
                     LikeButtonProps={{size: 'small'}}
                     DislikeButtonProps={{size: 'small'}}
                 />

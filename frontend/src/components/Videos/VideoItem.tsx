@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import Media from "./Media";
-import {toStringNumber} from "../utils/numbers";
+import Media from "../Media";
+import {toStringNumber} from "../../utils/numbers";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import {ListItem} from "@material-ui/core";
@@ -13,7 +13,7 @@ import clsx from "clsx";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 
-export interface VideoItemProps {
+export interface VideoModel {
     id: string;
     title: string;
     linkTo: string;
@@ -25,6 +25,9 @@ export interface VideoItemProps {
     isRecommended?: boolean;
     isNew?: boolean;
     createdAt?: Date;
+}
+
+export interface VideoItemProps extends VideoModel {
     variant?: 'horizontal' | 'vertical',
     className?: string;
 }
@@ -40,7 +43,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     listItem: {
         alignItems: 'flex-start',
-        padding: theme.spacing(0)
+        paddingLeft: 0,
+        paddingTop: 0,
+        paddingBottom: 0
     },
     container: {
         listStyle: 'none',
@@ -60,6 +65,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         marginBottom: theme.spacing(.5)
     },
     channelName: {
+        display: 'block',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
         overflow: 'hidden',
@@ -127,7 +133,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
             {title}
         </Typography>
     ) : null;
-    
+
     const channelNameNode = channelName ? (
         <Typography
             className={classes.channelName}
@@ -140,7 +146,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
         </Typography>
     ) : null;
 
-    const channelAvatarNode = channelImageUrl !== undefined ? (
+    const channelAvatarNode = variant === 'vertical' && channelImageUrl ? (
         <ListItemAvatar>
             <Avatar
                 src={channelImageUrl || ''}
@@ -149,19 +155,19 @@ const VideoItem: React.FC<VideoItemProps> = ({
             />
         </ListItemAvatar>
     ) : null;
-    
+
     const viewsNode = views ? (
         <span className={classes.views}>
             {toStringNumber(views)} просмотров
         </span>
     ) : null;
-    
+
     const isNewNode = isNew ?(
         <span className={classes.isNew}>
             Новинка
         </span>
     ) : null;
-    
+
     const isRecommendedNode = isRecommended ? (
         <span className={classes.isRecommended}>
             Рекомендуется для вас
@@ -186,7 +192,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
             to={linkTo}
         />
     ) : null;
-    
+
     const listItemTextNode = (
         <ListItemText
             className={classes.listItemTextNode}
@@ -202,7 +208,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
             }
         />
     );
-    
+
     return (
         <div
             className={clsx(

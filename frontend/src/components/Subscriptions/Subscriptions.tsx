@@ -1,34 +1,18 @@
 import React, {ReactNode} from "react";
-import {AvatarProps, createStyles, List, Theme} from "@material-ui/core";
-import RouteListItem from "../RouteListItem";
+import {List} from "@material-ui/core";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
-import {makeStyles} from "@material-ui/core/styles";
 import LoadList, {LoadListProps} from "../LoadList";
-
-export interface SubscriptionProps {
-    id: string;
-    title: string;
-    linkTo: string;
-    avatarUrl: AvatarProps['src'];
-}
+import Subscription, {SubscriptionProps} from "./Subscription";
 
 export interface SubscriptionsProps {
     onLoad: LoadListProps['onLoad'];
     onLoadMore?: LoadListProps['onLoad'];
 }
-
-const useStyles = makeStyles((theme: Theme) => createStyles({
-    avatar: {
-        width: theme.spacing(3),
-        height: theme.spacing(3)
-    }
-}));
 
 interface CollapsedItemsProps {
    renderItem:  (item: SubscriptionProps) => ReactNode;
@@ -67,22 +51,9 @@ const CollapsedItems: React.FC<CollapsedItemsProps> = ({ renderItem, onLoad }) =
 };
 
 const Subscriptions: React.FC<SubscriptionsProps> = ({ onLoad, onLoadMore }) => {
-    const classes = useStyles();
-
-    const renderAvatar = (avatarUrl: SubscriptionProps['avatarUrl']) => (
-        <Avatar
-            src={avatarUrl}
-            className={classes.avatar}
-        />
-    );
 
     const renderItem = (item: SubscriptionProps) => (
-        <RouteListItem
-            key={item.id}
-            title={item.title}
-            to={item.linkTo}
-            icon={() => renderAvatar(item.avatarUrl)}
-        />
+        <Subscription {...item} />
     );
 
     const collapsedItems = onLoadMore ? (

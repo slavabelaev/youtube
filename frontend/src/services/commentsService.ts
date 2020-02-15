@@ -1,7 +1,7 @@
-import {CommentProps} from "../components/Comments/Comment";
+import {CommentModel} from "../components/Comments/Comment";
 import faker from "faker/locale/en";
 
-export const generateComments = async (): Promise<CommentProps[]> => {
+export const generateComments = async (): Promise<CommentModel[]> => {
     return Array(12).fill(null).map((_, index) => ({
         id: index.toString(),
         avatarUrl: faker.image.avatar(),

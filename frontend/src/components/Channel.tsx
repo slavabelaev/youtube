@@ -6,12 +6,15 @@ import SubscribeButton from "./buttons/SubscribeButton";
 import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
-export interface ChannelProps {
+export interface ChannelModel {
     id: string;
     title: string;
     subscribersNumber: number;
     avatarUrl: AvatarProps['src'];
     linkTo: string;
+}
+
+export interface ChannelProps extends ChannelModel {
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({

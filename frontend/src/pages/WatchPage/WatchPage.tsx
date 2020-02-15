@@ -2,7 +2,6 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme} from "@material-ui/core";
 import VideoPlayer from "../../components/VideoPlayer";
-import VideosList from "../../components/VideosList";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
@@ -16,6 +15,8 @@ import CollapseText from "../../components/CollapseText";
 import Comments from "../../components/Comments";
 import LikeDislikeButton from "../../components/buttons/LikeDislikeButton";
 import ChannelToolbar from "../../components/ChannelToolbar";
+import {generateListVideos} from "../../services/videosService";
+import Videos from "../../components/Videos";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -145,7 +146,9 @@ const WatchPage: React.FC = () => {
     const aside = (
         <aside className={classes.aside}>
             {renderAutoplayListItem()}
-            <VideosList />
+            <Videos
+                onLoad={generateListVideos}
+            />
         </aside>
     );
 

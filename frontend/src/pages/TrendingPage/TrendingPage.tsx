@@ -1,9 +1,10 @@
 import React from "react";
 import {createStyles, Theme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import VideosList from "../../components/VideosList";
 import Category, {CategoryProps} from "../../components/Category";
 import Divider from "@material-ui/core/Divider";
+import {generateListVideos} from "../../services/videosService";
+import Videos from "../../components/Videos";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -43,7 +44,7 @@ const TrendingPage: React.FC = () => {
             </header>
             <Divider />
             <main className={classes.main}>
-                <VideosList />
+                <Videos onLoad={generateListVideos} />
             </main>
         </div>
     )

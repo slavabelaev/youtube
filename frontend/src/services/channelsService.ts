@@ -1,7 +1,7 @@
-import {ChannelProps} from "../components/Channel";
+import {ChannelModel} from "../components/Channel";
 import faker from "faker/locale/en";
 
-export const generateChannels = async (): Promise<ChannelProps[]> => Array(10)
+export const generateChannels = async (): Promise<ChannelModel[]> => Array(10)
     .fill(null)
     .map((item, index) => ({
         id: `${index}`,

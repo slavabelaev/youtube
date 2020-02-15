@@ -1,8 +1,12 @@
 import React from "react";
-import VideosGrid from "../../../../components/VideosGrid";
+import Videos from "../../../../components/Videos";
+import {generateListVideos} from "../../../../services/videosService";
 
 const ChannelVideosPage: React.FC = () => (
-    <VideosGrid />
+    <Videos
+        initialVariant="grid"
+        onLoad={generateListVideos}
+    />
 );
 
 export default ChannelVideosPage;

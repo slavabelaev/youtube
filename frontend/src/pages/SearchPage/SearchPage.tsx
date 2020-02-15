@@ -1,6 +1,7 @@
 import React from "react";
 import {makeStyles, createStyles, Theme} from "@material-ui/core";
-import VideosList from "../../components/VideosList";
+import Videos from "../../components/Videos";
+import {generateListVideos} from "../../services/videosService";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -15,7 +16,9 @@ const SearchPage: React.FC = () => {
 
     return (
         <main className={classes.root}>
-            <VideosList />
+            <Videos
+                onLoad={generateListVideos}
+            />
         </main>
     )
 };

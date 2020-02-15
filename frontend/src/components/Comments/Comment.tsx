@@ -16,8 +16,7 @@ import {Link} from "react-router-dom";
 import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
 import clsx from "clsx";
 
-export interface CommentProps {
-    variant?: 'mini' | 'normal';
+export interface CommentModel {
     id: string;
     avatarUrl: AvatarProps['src'];
     userName: string;
@@ -27,6 +26,10 @@ export interface CommentProps {
     initialDislikes: LikeDislikeButtonProps['initialDislikes'];
     initialChecked: LikeDislikeButtonProps['initialChecked'];
     edited: boolean;
+}
+
+export interface CommentProps extends CommentModel {
+    variant?: 'mini' | 'normal';
 }
 
 export const useStyles = makeStyles((theme: Theme) => createStyles({
