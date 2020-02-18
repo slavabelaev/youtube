@@ -6,9 +6,9 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import React from "react";
+import PopoverButton from "../buttons/PopoverButton";
+import NotificationMenu from "./NotificationMenu";
 
 export interface NotificationProps {
     id: string;
@@ -60,9 +60,9 @@ const Notification: React.FC<NotificationProps> = (props) => {
                 />
             ) : null}
             <ListItemSecondaryAction>
-                <IconButton edge="end">
-                    <MoreVertIcon />
-                </IconButton>
+                <PopoverButton
+                    content={<NotificationMenu />}
+                />
             </ListItemSecondaryAction>
         </ListItem>
     )

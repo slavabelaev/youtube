@@ -5,7 +5,6 @@ import VideoPlayer from "../../components/VideoPlayer";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
@@ -18,6 +17,7 @@ import {generateListVideos} from "../../services/videosService";
 import Videos from "../../components/Videos";
 import PopoverButton from "../../components/buttons/PopoverButton";
 import WatchPageMenu from "./WatchPageMenu";
+import SaveToPlaylistButton from "../../components/buttons/SaveToPlaylistButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -81,12 +81,7 @@ const WatchPage: React.FC = () => {
               >
                   Поделиться
               </Button>
-              <Button
-                  variant="text"
-                  startIcon={<PlaylistAddIcon />}
-              >
-                Сохранить
-              </Button>
+              <SaveToPlaylistButton />
               <PopoverButton
                   content={<WatchPageMenu />}
               >
