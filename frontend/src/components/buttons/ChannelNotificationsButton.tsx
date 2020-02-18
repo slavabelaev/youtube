@@ -1,14 +1,43 @@
-import React from "react";
+import React, {useState} from "react";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import IconButton, {IconButtonProps} from "@material-ui/core/IconButton";
+import NotificationsOffIcon from "@material-ui/icons/NotificationsOff";
+import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+import PopoverButton, {PopoverButtonProps} from "./PopoverButton";
+import Menu from "../Menu";
+import {MenuListItemProps} from "../MenuListItem";
 
-export interface ChannelNotificationsButtonProps extends IconButtonProps {}
+export interface ChannelNotificationsButtonProps {
+    className: PopoverButtonProps['className'];
+}
 
 const ChannelNotificationsButton: React.FC<ChannelNotificationsButtonProps> = (props) => {
+    const [index, setIndex] = useState(1);
+
+    const addItemHandler = (item: MenuListItemProps, idx: number) => ({
+        ...item,
+        selected: index === idx,
+        onClick: () => setIndex(idx)
+    });
+
+    const items: MenuListItemProps[] = [
+        { title: 'Все', icon: <NotificationsActiveIcon /> },
+        { title: 'На основе предпочтений', icon: <NotificationsIcon /> },
+        { title: 'Никакие', icon: <NotificationsOffIcon /> },
+    ].map(addItemHandler);
+
+    const menu = (
+        <Menu
+            items={items}
+        />
+    );
+
     return (
-        <IconButton {...props}>
-            <NotificationsIcon />
-        </IconButton>
+        <PopoverButton
+            {...props}
+            content={menu}
+        >
+            {items[index].icon}
+        </PopoverButton>
     )
 };
 

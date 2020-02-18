@@ -4,7 +4,6 @@ import {createStyles, Theme} from "@material-ui/core";
 import VideoPlayer from "../../components/VideoPlayer";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import ShareIcon from "@material-ui/icons/Share";
@@ -17,6 +16,8 @@ import LikeDislikeButton from "../../components/buttons/LikeDislikeButton";
 import ChannelToolbar from "../../components/ChannelToolbar";
 import {generateListVideos} from "../../services/videosService";
 import Videos from "../../components/Videos";
+import PopoverButton from "../../components/buttons/PopoverButton";
+import WatchPageMenu from "./WatchPageMenu";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -86,9 +87,11 @@ const WatchPage: React.FC = () => {
               >
                 Сохранить
               </Button>
-              <IconButton>
+              <PopoverButton
+                  content={<WatchPageMenu />}
+              >
                   <MoreHorizIcon />
-              </IconButton>
+              </PopoverButton>
           </aside>
       </Toolbar>
     );

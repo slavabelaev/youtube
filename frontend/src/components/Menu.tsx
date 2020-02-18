@@ -7,8 +7,11 @@ export interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ items }) => {
-    const renderItem = (item: MenuListItemProps) => (
-        <MenuListItem {...item} key={item.title} />
+    const renderItem = (item: MenuListItemProps, index: number) => (
+        <MenuListItem
+            {...item}
+            key={index}
+        />
     );
 
     return (

@@ -7,5 +7,6 @@ const VideoPopoverButton: React.FC = () => (
         edge="end"
         content={<VideoMenu />}
     />
-)
+);
+
 export default VideoPopoverButton;
