@@ -10,7 +10,7 @@ import {CHANNEL_PLAYLISTS_MENU_ITEM} from "./pages/ChannelPlaylistsPage";
 import {CHANNEL_COMMUNITY_MENU_ITEM} from "./pages/ChannelCommunityPage";
 import {CHANNEL_CHANNELS_MENU_ITEM} from "./pages/ChannelChannelsPage";
 import ChannelRoutes from "./ChannelRoutes";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 const ChannelTabs: React.FC = () => {
     const match = useRouteMatch();

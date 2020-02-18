@@ -1,4 +1,4 @@
-import {SingleChoiceItemModel} from "../components/SingleChoiceList";
+import {SingleChoiceItemModel} from "../components/common/SingleChoiceList";
 
 export const generateLanguages = async (): Promise<SingleChoiceItemModel[]> => [
     { title: 'Русский', value: 'ru', selected: true },

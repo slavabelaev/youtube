@@ -1,7 +1,7 @@
 import React from "react";
 import Post, {PostProps} from "./Post";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import LoadList, {LoadListProps} from "../LoadList";
+import LoadList, {LoadListProps} from "../common/LoadList";
 import Answers from "../Comments/Answers";
 
 export interface PostsProps {

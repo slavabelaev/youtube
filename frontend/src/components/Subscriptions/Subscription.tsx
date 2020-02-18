@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
-import LinkListItem from "../LinkListItem";
+import LinkListItem from "../common/LinkListItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {AvatarProps, createStyles, Theme} from "@material-ui/core";
 

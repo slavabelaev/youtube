@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import WifiTetheringIcon from "@material-ui/icons/WifiTethering";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 export const STREAMING_PAGE_ROUTE = '/streaming';
 

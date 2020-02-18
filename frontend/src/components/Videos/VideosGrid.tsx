@@ -1,7 +1,7 @@
 import React from "react";
 import {makeStyles, createStyles, Grid, Theme} from "@material-ui/core";
 import Video, {VideoProps} from "./Video";
-import LoadList, {LoadListProps} from "../LoadList";
+import LoadList, {LoadListProps} from "../common/LoadList";
 
 export interface VideosGridProps {
     onLoad: LoadListProps['onLoad'];

@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import SecurityIcon from "@material-ui/icons/Security";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 export const PERSONAL_DATA_PAGE_ROUTE = '/personal-data';
 

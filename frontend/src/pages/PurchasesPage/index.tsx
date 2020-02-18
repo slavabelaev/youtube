@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 export const PURCHASES_PAGE_ROUTE = '/feed/purchases';
 

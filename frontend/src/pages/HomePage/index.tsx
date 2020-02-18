@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import HomeIcon from "@material-ui/icons/Home";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 export const HOME_PAGE_ROUTE = '/';
 

@@ -1,7 +1,7 @@
 import React from "react";
-import {MenuListItemProps} from "../MenuListItem";
+import {MenuListItemProps} from "../common/MenuListItem";
 import FlagIcon from "@material-ui/icons/Flag";
-import Menu from "../Menu";
+import Menu from "../common/Menu";
 
 const CommentMenu: React.FC = () => {
     const items: MenuListItemProps[] = [

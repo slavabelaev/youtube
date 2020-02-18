@@ -18,6 +18,14 @@ export interface LayoutDrawerProps {
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
+    paper: {
+        '&::-webkit-scrollbar': {
+            width: '0 !important'
+        },
+        '&:hover::-webkit-scrollbar': {
+            width: '8px !important'
+        }
+    },
     root_variant_permanent: {
         top: theme.mixins.toolbar.minHeight,
         bottom: 0,
@@ -73,7 +81,7 @@ const LayoutDrawer: React.FC<LayoutDrawerProps> = ({
             onClose={onClose}
             variant={largeScreenVariant}
             PaperProps={{
-                className: clsx({
+                className: clsx(classes.paper, {
                     [classes.root_variant_permanent]: isPermanent
                 }),
                 style

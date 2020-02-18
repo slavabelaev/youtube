@@ -3,7 +3,7 @@ import clsx from "clsx";
 import {Link} from "react-router-dom";
 import {createStyles, Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import {RouteLink} from "./LinkListItem";
+import {RouteLink} from "./common/LinkListItem";
 
 export interface RouteLinksProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     items: RouteLink[]

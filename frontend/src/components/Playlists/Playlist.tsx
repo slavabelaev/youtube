@@ -1,5 +1,5 @@
 import React from "react";
-import LinkListItem from "../LinkListItem";
+import LinkListItem from "../common/LinkListItem";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 
 export interface PlaylistModel {

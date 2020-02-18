@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import {People} from "@material-ui/icons";
-import {RouteLink} from "../../../../components/LinkListItem";
+import {RouteLink} from "../../../../components/common/LinkListItem";
 
 export const SETTINGS_SHARING_PAGE_ROUTE = '/sharing';
 

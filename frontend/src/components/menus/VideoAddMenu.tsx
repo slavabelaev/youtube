@@ -1,7 +1,7 @@
 import React from "react";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import LiveTvIcon from "@material-ui/icons/LiveTv";
-import LinksMenu from "../LinksMenu";
+import LinksMenu from "../common/LinksMenu";
 
 const VideoAddMenu: React.FC = () => (
     <LinksMenu items={[

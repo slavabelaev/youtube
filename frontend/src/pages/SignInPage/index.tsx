@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 export const SIGN_IN_PAGE_ROUTE = '/sign-in';
 export const SIGN_OUT_PAGE_ROUTE = '/sign-out';

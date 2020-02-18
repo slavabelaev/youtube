@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import SuspenseFallback from "../SuspenseFallback";
+import SuspenseFallback from "../common/SuspenseFallback";
 import {generateLanguages} from "../../services/languagesService";
 
 const LanguagesList = React.lazy(() => import('./LanguagesList'));

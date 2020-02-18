@@ -2,7 +2,7 @@ import React from "react";
 import List from "@material-ui/core/List";
 import Video, {VideoProps} from "./Video";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import LoadList, {LoadListProps} from "../LoadList";
+import LoadList, {LoadListProps} from "../common/LoadList";
 
 export interface RecommendationsListProps {
     onLoad: LoadListProps<VideoProps>['onLoad'];

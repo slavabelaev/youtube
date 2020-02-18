@@ -5,7 +5,7 @@ import MusicVideoIcon from "@material-ui/icons/MusicVideo";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import PersonIcon from "@material-ui/icons/Person";
-import LinksMenu from "../LinksMenu";
+import LinksMenu from "../common/LinksMenu";
 
 const AppsMenu: React.FC = () => (
     <div>

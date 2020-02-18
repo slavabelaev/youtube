@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../../components/Menu";
+import Menu from "../../components/common/Menu";
 import FlagIcon from "@material-ui/icons/Flag";
 import TranslateIcon from "@material-ui/icons/Translate";
 

@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import SuspenseFallback from "../SuspenseFallback";
+import SuspenseFallback from "../common/SuspenseFallback";
 import {generateComments} from "../../services/commentsService";
 
 const Component = React.lazy(() => import('./Comments'));

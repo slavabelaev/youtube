@@ -1,6 +1,6 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import LoadList, {LoadListProps} from "../LoadList";
+import LoadList, {LoadListProps} from "../common/LoadList";
 import Playlist, {PlaylistProps} from "./Playlist";
 
 export interface PlaylistsProps {

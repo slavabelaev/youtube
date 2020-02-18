@@ -1,7 +1,7 @@
 import React from "react";
 import {List} from "@material-ui/core";
 import Comment, {CommentProps} from "./Comment";
-import LoadList, {LoadListProps} from "../LoadList";
+import LoadList, {LoadListProps} from "../common/LoadList";
 import Answers from "./Answers";
 
 export interface CommentsProps {

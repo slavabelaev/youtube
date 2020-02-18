@@ -10,7 +10,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import Switch from "@material-ui/core/Switch";
-import CollapseText from "../../components/CollapseText";
+import CollapseText from "../../components/common/CollapseText";
 import Comments from "../../components/Comments";
 import LikeDislikeButton from "../../components/buttons/LikeDislikeButton";
 import ChannelToolbar from "../../components/ChannelToolbar";

@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import {RouteLink} from "../../../../components/LinkListItem";
+import {RouteLink} from "../../../../components/common/LinkListItem";
 
 export const CHANNEL_CHANNELS_PAGE_ROUTE = '/channels';
 

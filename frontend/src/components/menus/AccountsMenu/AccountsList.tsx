@@ -1,7 +1,7 @@
 import React from "react";
 import {List} from "@material-ui/core";
 import AccountListItem, {AccountModel} from "./AccountsListItem";
-import LoadList, {LoadListProps} from "../../LoadList";
+import LoadList, {LoadListProps} from "../../common/LoadList";
 
 export interface AccountsListProps {
     onLoad: LoadListProps['onLoad'];

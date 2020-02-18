@@ -3,9 +3,9 @@ import {List} from "@material-ui/core";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import Divider from "@material-ui/core/Divider";
 import AccountsList, {AccountsListProps} from "./AccountsList";
-import LinkListItem from "../../LinkListItem";
+import LinkListItem from "../../common/LinkListItem";
 import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
-import MenuListItem from "../../MenuListItem";
+import MenuListItem from "../../common/MenuListItem";
 
 export interface AccountsMenuProps extends AccountsListProps {}
 

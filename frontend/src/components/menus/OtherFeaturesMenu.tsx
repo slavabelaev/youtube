@@ -1,5 +1,5 @@
 import React from "react";
-import LinksMenu from "../LinksMenu";
+import LinksMenu from "../common/LinksMenu";
 import {GAMING_MENU_ITEM} from "../../pages/GamingPage";
 import {STREAMING_MENU_ITEM} from "../../pages/StreamingPage";
 

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import VideosGrid from "./VideosGrid";
-import {LoadListProps} from "../LoadList";
+import {LoadListProps} from "../common/LoadList";
 import VideosList from "./VideosList";
 import Toolbar from "@material-ui/core/Toolbar";
 import {createStyles, Theme, Typography} from "@material-ui/core";

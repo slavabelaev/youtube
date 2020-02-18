@@ -1,7 +1,7 @@
 import React from "react";
 import Channel, {ChannelProps} from "../Channel";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import LoadList, {LoadListProps} from "../LoadList";
+import LoadList, {LoadListProps} from "../common/LoadList";
 
 export interface ChannelsProps {
     onLoad: LoadListProps['onLoad']

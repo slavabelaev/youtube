@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import {PlayArrow} from "@material-ui/icons";
-import {RouteLink} from "../../../../components/LinkListItem";
+import {RouteLink} from "../../../../components/common/LinkListItem";
 
 export const SETTINGS_PLAYBACK_PAGE_ROUTE = '/playback';
 

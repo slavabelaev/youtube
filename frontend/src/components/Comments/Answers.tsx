@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Collapse from "@material-ui/core/Collapse";
-import LoadList from "../LoadList";
+import LoadList from "../common/LoadList";
 import {generateComments} from "../../services/commentsService";
 
 export interface AnswersProps {

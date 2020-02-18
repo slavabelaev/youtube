@@ -1,5 +1,5 @@
 import React from "react";
-import LinksMenu from "../LinksMenu";
+import LinksMenu from "../common/LinksMenu";
 import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
 import {REPORTS_MENU_ITEM} from "../../pages/ReportsPage";
 import {HELP_MENU_ITEM} from "../../pages/HelpPage";

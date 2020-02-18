@@ -3,7 +3,7 @@ import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
-import {RouteLink} from "../../components/LinkListItem";
+import {RouteLink} from "../../components/common/LinkListItem";
 
 export const PLAYLIST_PAGE_ROUTE = '/playlist';
 

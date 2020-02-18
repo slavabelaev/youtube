@@ -7,7 +7,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 export interface MenuListItemProps {
     title: ListItemTextProps['primary'];
     icon?: ListItemIconProps['children'];
-    secondaryAction?: ListItemSecondaryActionProps['children'];
+    endIcon?: ListItemSecondaryActionProps['children'];
     selected?: ListItemProps['selected'];
     onClick?: () => void;
 }
@@ -19,9 +19,9 @@ const MenuListItem: React.FC<MenuListItemProps> = (props) => {
         </ListItemIcon>
     ) : null;
 
-    const listItemSecondaryAction = props.secondaryAction ? (
+    const listItemSecondaryAction = props.endIcon ? (
         <ListItemSecondaryAction>
-            {props.secondaryAction}
+            {props.endIcon}
         </ListItemSecondaryAction>
     ) : null;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import SingleChoiceList, {SingleChoiceListProps} from "../SingleChoiceList";
+import SingleChoiceList, {SingleChoiceListProps} from "../common/SingleChoiceList";
 
 export interface LanguagesListProps extends SingleChoiceListProps {}
 

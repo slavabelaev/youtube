@@ -9,7 +9,7 @@ import {HOME_MENU_ITEM} from "../../pages/HomePage";
 import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
 import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
 import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
-import {RouteLink} from "../LinkListItem";
+import {RouteLink} from "../common/LinkListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root_vertical: {

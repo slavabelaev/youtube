@@ -3,8 +3,8 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import NotificationsOffIcon from "@material-ui/icons/NotificationsOff";
 import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import PopoverButton, {PopoverButtonProps} from "./PopoverButton";
-import Menu from "../Menu";
-import {MenuListItemProps} from "../MenuListItem";
+import Menu from "../common/Menu";
+import {MenuListItemProps} from "../common/MenuListItem";
 
 export interface ChannelNotificationsButtonProps {
     className: PopoverButtonProps['className'];

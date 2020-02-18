@@ -1,8 +1,8 @@
 import React from "react";
 import List from "@material-ui/core/List";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import LinkListItem from "../../LinkListItem";
-import MenuListItem from "../../MenuListItem";
+import LinkListItem from "../../common/LinkListItem";
+import MenuListItem from "../../common/MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import TranslateIcon from "@material-ui/icons/Translate";
@@ -21,7 +21,7 @@ import BrightnessIcon from "@material-ui/icons/Brightness4";
 import Typography from "@material-ui/core/Typography";
 import AccountsMenu from "../AccountsMenu";
 import LanguagesList from "../../LanguagesList";
-import DescriptionBox from "../../DescriptionBox";
+import DescriptionBox from "../../common/DescriptionBox";
 import CountriesList from "../../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
 import {CHANNEL_MENU_ITEM} from "../../../pages/ChannelPage";
@@ -33,7 +33,7 @@ import {PERSONAL_DATA_MENU_ITEM} from "../../../pages/PersonalDataPage";
 import {HELP_MENU_ITEM} from "../../../pages/HelpPage";
 import {REVIEWS_MENU_ITEM} from "../../../pages/ReviewsPage";
 import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../../pages/KeyboardShortcutsPage";
-import SwitchListItem from "../../SwitchListItem";
+import SwitchListItem from "../../common/SwitchListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -78,7 +78,7 @@ const AccountMenu: React.FC = () => {
             <MenuListItem
                 title="Сменить аккаунт"
                 icon={<RecentActorsIcon />}
-                secondaryAction={<ChevronRightIcon />}
+                endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(accountsView)}
             />
             <LinkListItem {...SIGN_OUT_MENU_ITEM} />
@@ -90,13 +90,13 @@ const AccountMenu: React.FC = () => {
             <MenuListItem
                 title="Тёмная тема: откл"
                 icon={<BrightnessIcon />}
-                secondaryAction={<ChevronRightIcon />}
+                endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(darkThemeView)}
             />
             <MenuListItem
                 title="Язык: Русский"
                 icon={<TranslateIcon />}
-                secondaryAction={<ChevronRightIcon />}
+                endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(languagesView)}
             />
             <LinkListItem {...SETTINGS_MENU_ITEM} />
@@ -137,12 +137,12 @@ const AccountMenu: React.FC = () => {
         <List>
             <MenuListItem
                 title="Страна: Россия"
-                secondaryAction={<ChevronRightIcon />}
+                endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(countriesView)}
             />
             <MenuListItem
                 title="Безопасный режим: откл."
-                secondaryAction={<ChevronRightIcon />}
+                endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(safeModeView)}
             />
         </List>

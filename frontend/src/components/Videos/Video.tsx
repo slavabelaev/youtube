@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import Media from "../Media";
+import Media from "../common/Media";
 import {toStringNumber} from "../../utils/numbers";
 import {ListItem} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
