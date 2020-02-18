@@ -2,7 +2,6 @@ import React from "react";
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {createStyles, IconButton, Theme} from "@material-ui/core";
-import Popover from "@material-ui/core/Popover";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -12,6 +11,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
 import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
+import PopoverButton from "./PopoverButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     popoverPaper: {
@@ -26,18 +26,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const NotificationsMenuButton: React.FC = () => {
+const NotificationsPopoverButton: React.FC = () => {
     const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const title = 'Уведомления';
-
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
 
     const appBar = (
         <AppBar
@@ -63,43 +54,33 @@ const NotificationsMenuButton: React.FC = () => {
         </AppBar>
     );
 
-    const popover = (
-        <Popover
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            anchorEl={anchorEl}
-            PaperProps={{
-                className: classes.popoverPaper
-            }}
-            anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-            }}
-        >
+    const content = (
+        <>
             {appBar}
             <Notifications />
-        </Popover>
+        </>
     );
 
-    const button = (
-        <Tooltip title={title}>
-            <IconButton onClick={handleClick}>
-                <Badge
-                    badgeContent={199}
-                    color="primary"
-                >
-                    <NotificationsIcon />
-                </Badge>
-            </IconButton>
-        </Tooltip>
+    const iconWithBadge = (
+        <Badge
+            badgeContent={199}
+            color="primary"
+        >
+            <NotificationsIcon />
+        </Badge>
     );
 
     return (
-        <>
-            {button}
-            {popover}
-        </>
+        <PopoverButton
+            content={content}
+            tooltip={title}
+            PopoverPaperProps={{
+                className: classes.popoverPaper
+            }}
+        >
+            {iconWithBadge}
+        </PopoverButton>
     )
 };
 
-export default NotificationsMenuButton;
+export default NotificationsPopoverButton;

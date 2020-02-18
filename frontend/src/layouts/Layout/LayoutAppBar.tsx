@@ -9,13 +9,13 @@ import {
     useMediaQuery
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import AccountMenuButton from "../../components/buttons/AccountMenuButton";
-import NotificationsMenuButton from "../../components/buttons/NotificationsMenuButton";
+import AccountPopoverButton from "../../components/buttons/AccountPopoverButton";
+import NotificationsPopoverButton from "../../components/buttons/NotificationsPopoverButton";
 import SearchButton from "../../components/buttons/SearchButton";
 import SearchField from "../../components/SearchField";
 import Logo from "../Logo";
-import AppsMenuButton from "../../components/buttons/AppsMenuButton";
-import VideoMenuButton from "../../components/buttons/VideoMenuButton";
+import AppsPopoverButton from "../../components/buttons/AppsPopoverButton";
+import VideoPopoverButton from "../../components/buttons/VideoPopoverButton";
 
 interface LayoutAppBarProps {
     MenuButtonProps?: IconButtonProps;
@@ -88,12 +88,12 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({
                     <div className={classes.side}>
                         {isScreenUpMd ? (
                             <>
-                                <VideoMenuButton />
-                                <AppsMenuButton />
+                                <VideoPopoverButton />
+                                <AppsPopoverButton />
                             </>
                         ) : <SearchButton />}
-                        {isScreenDownXs ? null : <NotificationsMenuButton />}
-                        <AccountMenuButton />
+                        {isScreenDownXs ? null : <NotificationsPopoverButton />}
+                        <AccountPopoverButton />
                     </div>
                 </Toolbar>
             </AppBar>

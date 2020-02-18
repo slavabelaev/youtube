@@ -3,7 +3,7 @@ import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import LiveTvIcon from "@material-ui/icons/LiveTv";
 import LinksMenu from "../LinksMenu";
 
-const VideoMenu: React.FC = () => (
+const VideoAddMenu: React.FC = () => (
     <LinksMenu items={[
         {
             title: 'Добавить видео',
@@ -18,4 +18,4 @@ const VideoMenu: React.FC = () => (
     ]} />
 );
 
-export default VideoMenu;
+export default VideoAddMenu;
