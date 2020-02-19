@@ -8,7 +8,7 @@ interface VideoPlayerProps {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
-        backgroundColor: theme.palette.grey.A700,
+        backgroundColor: theme.palette.grey["800"],
         borderRadius: theme.shape.borderRadius
     }
 }));

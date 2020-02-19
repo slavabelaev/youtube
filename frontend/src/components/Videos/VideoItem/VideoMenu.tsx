@@ -1,5 +1,5 @@
 import React from "react";
-import {MenuListItemProps} from "../common/MenuListItem";
+import {MenuListItemProps} from "../../common/MenuListItem";
 import FlagIcon from "@material-ui/icons/Flag";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
@@ -7,7 +7,7 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import NotInterestedIcon from "@material-ui/icons/NotInterested";
 import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import Divider from "@material-ui/core/Divider";
-import Menu from "../common/Menu";
+import Menu from "../../common/Menu";
 
 const VideoMenu: React.FC = () => {
     const primaryMenuItems: MenuListItemProps[] = [

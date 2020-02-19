@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import Media from "../common/Media";
-import {toStringNumber} from "../../utils/numbers";
+import VideoThumbnail from "./VideoThumbnail";
+import {toStringNumber} from "../../../utils/numbers";
 import {ListItem} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
@@ -17,7 +17,7 @@ export interface VideoModel {
     id: string;
     title: string;
     linkTo: string;
-    imageUrl: string;
+    imageSrc: string;
     channelName: string;
     channelLinkTo: string;
     channelImageUrl?: string | null;
@@ -27,7 +27,7 @@ export interface VideoModel {
     createdAt: Date;
 }
 
-export interface VideoProps extends VideoModel {
+export interface VideoItemProps extends VideoModel {
     variant?: 'horizontal' | 'vertical',
     className?: string;
 }
@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     isNew: {
         ...theme.typography.caption,
         backgroundColor: theme.palette.grey.A100,
+        color: theme.palette.grey.A400,
         padding: theme.spacing(.125, .5),
         borderRadius: theme.shape.borderRadius
     },
@@ -106,11 +107,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Video: React.FC<VideoProps> = ({
+const VideoItem: React.FC<VideoItemProps> = ({
     variant = 'horizontal',
     title,
     linkTo,
-    imageUrl,
+    imageSrc,
     channelName,
     channelImageUrl,
     channelLinkTo,
@@ -180,15 +181,14 @@ const Video: React.FC<VideoProps> = ({
         </span>
     ) : null;
 
-    const mediaNode = imageUrl ? (
-        <Media
+    const mediaNode = imageSrc ? (
+        <VideoThumbnail
             className={clsx(
                 classes.media, {
                 [classes.media_variant_vertical]: variant === 'vertical',
                 [classes.media_variant_horizontal]: variant === 'horizontal'
             })}
-            imageUrl={imageUrl}
-            component={Link}
+            src={imageSrc}
             to={linkTo}
         />
     ) : null;
@@ -234,4 +234,4 @@ const Video: React.FC<VideoProps> = ({
     );
 };
 
-export default Video;
+export default VideoItem;

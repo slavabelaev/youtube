@@ -7,7 +7,7 @@ export const generateNotifications = async (): Promise<NotificationProps[]> => A
         id: index.toString(),
         text: faker.lorem.sentences(2),
         avatarUrl: faker.image.avatar(),
-        imageUrl: 'https://source-to-image',
+        imageSrc: 'https://source-to-image',
         linkTo: `/watch?v=${index}`,
         createdAt: new Date()
     }));

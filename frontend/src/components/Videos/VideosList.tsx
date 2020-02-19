@@ -1,11 +1,11 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import Video, {VideoProps} from "./Video";
+import VideoItem, {VideoItemProps} from "./VideoItem";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import LoadList, {LoadListProps} from "../common/LoadList";
 
 export interface RecommendationsListProps {
-    onLoad: LoadListProps<VideoProps>['onLoad'];
+    onLoad: LoadListProps<VideoItemProps>['onLoad'];
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const VideosList: React.FC<RecommendationsListProps> = ({ onLoad }) => {
     const classes = useStyles();
 
-    const renderItem = (item: VideoProps) => (
-        <Video
+    const renderItem = (item: VideoItemProps) => (
+        <VideoItem
             key={item.id}
             className={classes.item}
             {...item}

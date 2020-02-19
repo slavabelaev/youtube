@@ -51,10 +51,10 @@ const AccountMenu: React.FC = () => {
 
     const renderToolbar = (title: string) => (
         <AppBar
-            className={classes.appBar}
             position="sticky"
             variant="outlined"
             color="inherit"
+            className={classes.appBar}
         >
             <Toolbar>
                 <IconButton

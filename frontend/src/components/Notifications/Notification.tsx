@@ -14,7 +14,7 @@ export interface NotificationProps {
     id: string;
     text: string;
     avatarUrl: AvatarProps['src'];
-    imageUrl?: string;
+    imageSrc?: string;
     createdAt: Date,
     linkTo: string;
 }
@@ -27,7 +27,7 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundColor: theme.palette.grey.A700,
+        backgroundColor: theme.palette.grey["800"],
         margin: theme.spacing(1, 2),
         borderRadius: theme.shape.borderRadius
     }
@@ -51,11 +51,11 @@ const Notification: React.FC<NotificationProps> = (props) => {
                 primary={props.text}
                 secondary={props.createdAt.toLocaleDateString()}
             />
-            {props.imageUrl ? (
+            {props.imageSrc ? (
                 <div
                     className={classes.media}
                     style={{
-                        backgroundImage: `url(${props.imageUrl}`
+                        backgroundImage: `url(${props.imageSrc}`
                     }}
                 />
             ) : null}

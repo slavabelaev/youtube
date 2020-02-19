@@ -1,6 +1,6 @@
 import React from "react";
 import VideoMenu from "./VideoMenu";
-import PopoverButton from "../buttons/PopoverButton";
+import PopoverButton from "../../buttons/PopoverButton";
 
 const VideoPopoverButton: React.FC = () => (
     <PopoverButton

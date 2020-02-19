@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles, createStyles, Grid, Theme} from "@material-ui/core";
-import Video, {VideoProps} from "./Video";
+import VideoItem, {VideoItemProps} from "./VideoItem";
 import LoadList, {LoadListProps} from "../common/LoadList";
 
 export interface VideosGridProps {
@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const VideosGrid: React.FC<VideosGridProps> = ({ onLoad }) => {
     const classes = useStyles();
 
-    const renderItem = (item: VideoProps) => (
+    const renderItem = (item: VideoItemProps) => (
         <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={item.id}>
-            <Video
+            <VideoItem
                 {...item}
                 variant="vertical"
             />
