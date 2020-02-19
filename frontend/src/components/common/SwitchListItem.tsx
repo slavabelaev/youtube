@@ -1,22 +1,22 @@
 import React from "react";
 import ListItem from "@material-ui/core/ListItem";
-import {ListItemIcon, ListItemIconProps, ListItemTextProps} from "@material-ui/core";
+import {ListItemIcon, ListItemIconProps, ListItemTextProps, SwitchProps} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Switch from "@material-ui/core/Switch";
 
-export interface SwitchListItemProps {
+interface SwitchListItemBaseProps {
     title: ListItemTextProps['primary'];
     icon?: ListItemIconProps['children'];
 }
 
+export type SwitchListItemProps = SwitchListItemBaseProps & SwitchProps;
+
 const SwitchListItem: React.FC<SwitchListItemProps> = ({
     title,
-    icon
+    icon,
+    ...SwitchProps
 }) => {
-    const [checked, setChecked] = React.useState(false);
-    const toggle = () => setChecked(!checked);
-
     const listItemIcon = icon ? (
         <ListItemIcon>
             {icon}
@@ -24,15 +24,20 @@ const SwitchListItem: React.FC<SwitchListItemProps> = ({
     ) : null;
 
     return (
-        <ListItem dense button onClick={toggle}>
+        <ListItem
+            dense
+            button
+            component="label"
+            htmlFor="dark-mode-switch"
+        >
             {listItemIcon}
             <ListItemText
                 primary={title}
             />
             <ListItemSecondaryAction>
                 <Switch
-                    checked={checked}
-                    onChange={toggle}
+                    id="dark-mode-switch"
+                    {...SwitchProps}
                 />
             </ListItemSecondaryAction>
         </ListItem>

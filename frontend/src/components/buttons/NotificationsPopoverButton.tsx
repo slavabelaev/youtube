@@ -10,7 +10,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
-import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
+import {SETTINGS_MENU_ITEM} from "../pages/SettingsPage";
 import PopoverButton from "./PopoverButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -38,7 +38,10 @@ const NotificationsPopoverButton: React.FC = () => {
             color="inherit"
         >
             <Toolbar>
-                <Typography className={classes.toolbarTitle}>
+                <Typography
+                    variant="h6"
+                    className={classes.toolbarTitle}
+                >
                     {title}
                 </Typography>
                 <Tooltip title={SETTINGS_MENU_ITEM.title}>

@@ -4,7 +4,6 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import LinkListItem from "../../common/LinkListItem";
 import MenuListItem from "../../common/MenuListItem";
 import RecentActorsIcon from "@material-ui/icons/RecentActors";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
 import TranslateIcon from "@material-ui/icons/Translate";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -24,16 +23,17 @@ import LanguagesList from "../../LanguagesList";
 import DescriptionBox from "../../common/DescriptionBox";
 import CountriesList from "../../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
-import {CHANNEL_MENU_ITEM} from "../../../pages/ChannelPage";
-import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../../pages/PaidMembershipsPage";
-import {STUDIO_MENU_ITEM} from "../../../pages/StudioPage";
-import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
-import {SETTINGS_MENU_ITEM} from "../../../pages/SettingsPage";
-import {PERSONAL_DATA_MENU_ITEM} from "../../../pages/PersonalDataPage";
-import {HELP_MENU_ITEM} from "../../../pages/HelpPage";
-import {REVIEWS_MENU_ITEM} from "../../../pages/ReviewsPage";
-import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../../pages/KeyboardShortcutsPage";
+import {CHANNEL_MENU_ITEM} from "../../pages/ChannelPage";
+import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../pages/PaidMembershipsPage";
+import {STUDIO_MENU_ITEM} from "../../pages/StudioPage";
+import {SIGN_OUT_MENU_ITEM} from "../../pages/SignInPage";
+import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
+import {PERSONAL_DATA_MENU_ITEM} from "../../pages/PersonalDataPage";
+import {HELP_MENU_ITEM} from "../../pages/HelpPage";
+import {REVIEWS_MENU_ITEM} from "../../pages/ReviewsPage";
+import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../pages/KeyboardShortcutsPage";
 import SwitchListItem from "../../common/SwitchListItem";
+import DarkModeSwitchListItem from "../../listItems/DarkModeSwitchListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -63,7 +63,7 @@ const AccountMenu: React.FC = () => {
                 >
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography>
+                <Typography variant="h6">
                     {title}
                 </Typography>
             </Toolbar>
@@ -177,10 +177,7 @@ const AccountMenu: React.FC = () => {
                 ]}
             />
             <List>
-                <SwitchListItem
-                    title="Темная тема"
-                    icon={<Brightness4Icon />}
-                />
+                <DarkModeSwitchListItem />
             </List>
         </div>
     );

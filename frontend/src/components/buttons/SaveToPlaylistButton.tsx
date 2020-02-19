@@ -60,7 +60,7 @@ const SaveToPlaylistButton: React.FC = () => {
                 position="static"
             >
                 <Toolbar>
-                    <Typography>
+                    <Typography variant="h6">
                         Сохранить в...
                     </Typography>
                     <IconButton

@@ -12,10 +12,10 @@ const Comments: React.FC<CommentsProps> = ({
     onLoad
 }) => {
     const renderItem = (item: CommentProps) => (
-        <>
-            <Comment {...item} key={item.id} />
+        <div key={item.id}>
+            <Comment {...item} />
             <Answers commentId={item.id} />
-        </>
+        </div>
     );
 
     return (

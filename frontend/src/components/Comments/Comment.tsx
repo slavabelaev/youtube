@@ -11,7 +11,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import {Link} from "react-router-dom";
-import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
+import {CHANNEL_PAGE_ROUTE} from "../pages/ChannelPage";
 import clsx from "clsx";
 import {formatDistance} from "date-fns";
 import CommentPopoverButton from "./CommentPopoverButton";

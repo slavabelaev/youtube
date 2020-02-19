@@ -53,7 +53,7 @@ const CollapsedItems: React.FC<CollapsedItemsProps> = ({ renderItem, onLoad }) =
 const Subscriptions: React.FC<SubscriptionsProps> = ({ onLoad, onLoadMore }) => {
 
     const renderItem = (item: SubscriptionProps) => (
-        <Subscription {...item} />
+        <Subscription {...item} key={item.id} />
     );
 
     const collapsedItems = onLoadMore ? (
