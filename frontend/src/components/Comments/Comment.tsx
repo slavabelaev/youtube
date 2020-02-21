@@ -11,15 +11,18 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import {Link} from "react-router-dom";
-import {CHANNEL_PAGE_ROUTE} from "../pages/ChannelPage";
+import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
 import clsx from "clsx";
 import {formatDistance} from "date-fns";
 import CommentPopoverButton from "./CommentPopoverButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 export interface CommentModel {
     id: string;
     avatarUrl: AvatarProps['src'];
     userName: string;
+    verified?: boolean;
     text: string;
     createdAt: Date;
     initialLikes: LikeDislikeButtonProps['initialLikes'];
@@ -38,8 +41,13 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
         minHeight: 'auto'
     },
     userName: {
-        marginRight: theme.spacing(2),
+        display: 'inline-flex',
+        alignItems: 'center',
+        marginRight: theme.spacing(1),
         textDecoration: 'none',
+    },
+    verificationIcon: {
+        marginLeft: theme.spacing(.5)
     },
     avatar_variant_mini: {
         width: 32,
@@ -51,41 +59,65 @@ const Comment: React.FC<CommentProps> = (props) => {
     const classes = useStyles();
     const linkToChannel = CHANNEL_PAGE_ROUTE.replace(':id', props.id);
 
+    const avatar = (
+        <Avatar
+            className={clsx({
+                [classes.avatar_variant_mini]: props.variant === 'mini'
+            })}
+            component={Link}
+            to={linkToChannel}
+            src={props.avatarUrl}
+        />
+    );
+
+    const verificationIcon = props.verified ? (
+        <Tooltip
+            title="Подтверждено"
+        >
+            <CheckCircleIcon
+                className={classes.verificationIcon}
+                fontSize="inherit"
+            />
+        </Tooltip>
+    ) : null;
+
+    const userNameNode = (
+        <Typography
+            className={classes.userName}
+            variant="inherit"
+            color="textPrimary"
+            component={Link}
+            to={linkToChannel}
+        >
+            {props.userName}
+            {verificationIcon}
+        </Typography>
+    );
+
+    const createdAtNode = (
+        <Typography
+            variant="body2"
+            color="textSecondary"
+            component="span"
+        >
+            {formatDistance(new Date(), props.createdAt)}
+            {props.edited ? ' (изменено)' : null}
+        </Typography>
+    );
+
     const listItem = (
         <ListItem
             disableGutters
             alignItems="flex-start"
         >
             <ListItemAvatar>
-                <Avatar
-                    className={clsx({
-                        [classes.avatar_variant_mini]: props.variant === 'mini'
-                    })}
-                    component={Link}
-                    to={linkToChannel}
-                    src={props.avatarUrl}
-                />
+                {avatar}
             </ListItemAvatar>
             <ListItemText
                 primary={
                     <>
-                        <Typography
-                            className={classes.userName}
-                            variant="inherit"
-                            color="textPrimary"
-                            component={Link}
-                            to={linkToChannel}
-                        >
-                            {props.userName}
-                        </Typography>
-                        <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="span"
-                        >
-                            {formatDistance(new Date(), props.createdAt)}
-                            {props.edited ? ' (изменено)' : null}
-                        </Typography>
+                        {userNameNode}
+                        {createdAtNode}
                     </>
                 }
                 secondary={props.text}

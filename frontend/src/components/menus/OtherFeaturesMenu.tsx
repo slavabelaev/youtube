@@ -1,7 +1,7 @@
 import React from "react";
 import LinksMenu from "../common/LinksMenu";
-import {GAMING_MENU_ITEM} from "../pages/GamingPage";
-import {STREAMING_MENU_ITEM} from "../pages/StreamingPage";
+import {GAMING_MENU_ITEM} from "../../pages/GamingPage";
+import {STREAMING_MENU_ITEM} from "../../pages/StreamingPage";
 
 const OtherFeaturesMenu: React.FC = () => (
     <LinksMenu items={[

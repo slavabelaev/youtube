@@ -23,15 +23,15 @@ import LanguagesList from "../../LanguagesList";
 import DescriptionBox from "../../common/DescriptionBox";
 import CountriesList from "../../CountriesList";
 import AppBar from "@material-ui/core/AppBar";
-import {CHANNEL_MENU_ITEM} from "../../pages/ChannelPage";
-import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../pages/PaidMembershipsPage";
-import {STUDIO_MENU_ITEM} from "../../pages/StudioPage";
-import {SIGN_OUT_MENU_ITEM} from "../../pages/SignInPage";
-import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
-import {PERSONAL_DATA_MENU_ITEM} from "../../pages/PersonalDataPage";
-import {HELP_MENU_ITEM} from "../../pages/HelpPage";
-import {REVIEWS_MENU_ITEM} from "../../pages/ReviewsPage";
-import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../pages/KeyboardShortcutsPage";
+import {CHANNEL_MENU_ITEM} from "../../../pages/ChannelPage";
+import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../../pages/PaidMembershipsPage";
+import {STUDIO_MENU_ITEM} from "../../../pages/StudioPage";
+import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
+import {SETTINGS_MENU_ITEM} from "../../../pages/SettingsPage";
+import {PERSONAL_DATA_MENU_ITEM} from "../../../pages/PersonalDataPage";
+import {HELP_MENU_ITEM} from "../../../pages/HelpPage";
+import {REVIEWS_MENU_ITEM} from "../../../pages/ReviewsPage";
+import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../../pages/KeyboardShortcutsPage";
 import SwitchListItem from "../../common/SwitchListItem";
 import DarkModeSwitchListItem from "../../listItems/DarkModeSwitchListItem";
 
@@ -51,10 +51,10 @@ const AccountMenu: React.FC = () => {
 
     const renderToolbar = (title: string) => (
         <AppBar
+            className={classes.appBar}
             position="sticky"
             variant="outlined"
             color="inherit"
-            className={classes.appBar}
         >
             <Toolbar>
                 <IconButton

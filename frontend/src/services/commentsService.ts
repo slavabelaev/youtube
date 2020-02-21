@@ -6,6 +6,7 @@ export const generateComments = async (): Promise<CommentModel[]> => {
         id: index.toString(),
         avatarUrl: faker.image.avatar(),
         userName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+        verified: Math.random() > 0.5,
         text: faker.lorem.text(),
         createdAt: faker.date.recent(),
         initialLikes: Math.round(Math.random() * 9999),

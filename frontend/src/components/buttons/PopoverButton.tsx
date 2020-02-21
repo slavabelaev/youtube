@@ -36,6 +36,7 @@ const PopoverButton: React.FC<PopoverButtonProps> = ({
                 horizontal: 'left',
             }}
             PaperProps={PopoverPaperProps}
+            transitionDuration={0}
         >
             {content}
         </Popover>

@@ -1,21 +1,24 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import clsx from "clsx";
+import {formatDistance} from "date-fns";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import VideoThumbnail from "./VideoThumbnail";
-import {toStringNumber} from "../../../utils/numbers";
 import {ListItem} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Typography from "@material-ui/core/Typography";
-import clsx from "clsx";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import {formatDistance} from "date-fns";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import VideoThumbnail from "./VideoThumbnail";
+import {toStringNumber} from "../../../utils/numbers";
 import VideoPopoverButton from "./VideoPopoverButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 export interface VideoModel {
     id: string;
     title: string;
+    duration: number;
     linkTo: string;
     imageSrc: string;
     channelName: string;
@@ -24,6 +27,7 @@ export interface VideoModel {
     views?: number;
     isRecommended?: boolean;
     isNew?: boolean;
+    verified?: boolean;
     createdAt: Date;
 }
 
@@ -49,7 +53,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     container: {
         listStyle: 'none',
-        width: '100%'
+        display: 'block',
+        width: '100%',
+        overflow: 'hidden'
     },
     listItemTextNode: {
         marginTop: 0,
@@ -66,10 +72,15 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     channelName: {
         display: 'block',
+        alignItems: 'center',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
         overflow: 'hidden',
         textDecoration: 'none'
+    },
+    verificationIcon: {
+        marginLeft: theme.spacing(.5),
+        verticalAlign: 'middle'
     },
     views: {
         display: 'block',
@@ -85,6 +96,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         borderRadius: theme.shape.borderRadius
     },
     isRecommended: {
+        display: 'block',
         ...theme.typography.caption,
     },
     createdAt: {
@@ -110,6 +122,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const VideoItem: React.FC<VideoItemProps> = ({
     variant = 'horizontal',
     title,
+    duration,
     linkTo,
     imageSrc,
     channelName,
@@ -119,6 +132,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
     isNew,
     isRecommended,
     createdAt,
+    verified,
     className,
 }) => {
     const classes = useStyles();
@@ -135,6 +149,17 @@ const VideoItem: React.FC<VideoItemProps> = ({
         </Typography>
     ) : null;
 
+    const verificationIcon = verified ? (
+        <Tooltip
+            title="Подтверждено"
+        >
+            <CheckCircleIcon
+                className={classes.verificationIcon}
+                fontSize="inherit"
+            />
+        </Tooltip>
+    ) : null;
+
     const channelNameNode = channelName ? (
         <Typography
             className={classes.channelName}
@@ -144,6 +169,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
             to={channelLinkTo}
         >
             {channelName}
+            {verificationIcon}
         </Typography>
     ) : null;
 
@@ -190,6 +216,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
             })}
             src={imageSrc}
             to={linkTo}
+            duration={duration}
         />
     ) : null;
 
@@ -227,7 +254,8 @@ const VideoItem: React.FC<VideoItemProps> = ({
                 {channelAvatarNode}
                 {listItemTextNode}
                 <ListItemSecondaryAction>
-                    <VideoPopoverButton />
+                    <VideoPopoverButton
+                    />
                 </ListItemSecondaryAction>
             </ListItem>
         </div>

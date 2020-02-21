@@ -29,7 +29,10 @@ const VideosList: React.FC<RecommendationsListProps> = ({ onLoad }) => {
     );
 
     return (
-        <List disablePadding>
+        <List
+            component="div"
+            disablePadding
+        >
             <LoadList
                 renderItem={renderItem}
                 onLoad={onLoad}

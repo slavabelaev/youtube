@@ -5,10 +5,10 @@ import {makeStyles} from "@material-ui/core/styles";
 import {NavLink} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
-import {HOME_MENU_ITEM} from "../pages/HomePage";
-import {TRENDING_MENU_ITEM} from "../pages/TrendingPage";
-import {SUBSCRIPTIONS_MENU_ITEM} from "../pages/SubscriptionsPage";
-import {LIBRARY_MENU_ITEM} from "../pages/LibraryPage";
+import {HOME_MENU_ITEM} from "../../pages/HomePage";
+import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
+import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
+import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
 import {RouteLink} from "../common/LinkListItem";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({

@@ -35,6 +35,7 @@ const CollapseText: React.FC<CollapseText> = ({ initialText, additionalText, ...
     const button = (
         <Button
             variant="text"
+            size="small"
             onClick={toggle}
         >
             {open ? 'Свернуть' : 'Подробнее'}

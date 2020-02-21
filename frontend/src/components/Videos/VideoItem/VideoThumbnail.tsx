@@ -2,7 +2,6 @@ import React from "react";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import clsx from "clsx";
-import {Box, BoxProps} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
@@ -10,7 +9,6 @@ import Button from "@material-ui/core/Button";
 import {CreateCSSProperties} from "@material-ui/styles/withStyles";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
-import {BaseProps} from "@material-ui/core/OverridableComponent";
 
 const useStyles = makeStyles((theme: Theme) => {
     const buttonProps: CreateCSSProperties = {
@@ -37,14 +35,17 @@ const useStyles = makeStyles((theme: Theme) => {
             borderRadius: theme.shape.borderRadius,
             overflow: 'hidden',
             backgroundColor: theme.palette.grey["800"],
-            color: theme.palette.common.white
+            color: theme.palette.common.white,
+            '&:not(:hover) [aria-label="button"]': {
+                display: 'none'
+            }
         },
         link: {
             ...fullSizeProps
         },
         image: {
             ...fullSizeProps,
-            width: '100%'
+            width: '100%',
         },
         playArrowIcon: {
             color: theme.palette.common.white,
@@ -76,6 +77,7 @@ const useStyles = makeStyles((theme: Theme) => {
 export interface VideoThumbnailProps {
     src: string;
     to: string;
+    duration: number;
     className?: string;
     [key: string]: any;
 }
@@ -83,6 +85,7 @@ export interface VideoThumbnailProps {
 const VideoThumbnail: React.FC<VideoThumbnailProps> = ({
     src,
     to,
+    duration,
     className,
     style,
     ...otherProps
@@ -95,7 +98,7 @@ const VideoThumbnail: React.FC<VideoThumbnailProps> = ({
             variant="caption"
             component="span"
         >
-            10:00:00
+            {new Date(duration).toLocaleTimeString().substring(3)}
         </Typography>
     );
 
@@ -107,6 +110,7 @@ const VideoThumbnail: React.FC<VideoThumbnailProps> = ({
             <Button
                 className={classes.watchLater}
                 size="small"
+                aria-label="button"
             >
                 <WatchLaterIcon
                     fontSize="small"
@@ -119,6 +123,7 @@ const VideoThumbnail: React.FC<VideoThumbnailProps> = ({
         <Tooltip
             title="Добавить в плейлист"
             placement="left"
+            aria-label="button"
         >
             <Button
                 className={classes.addToPlaylistsButton}
@@ -144,6 +149,7 @@ const VideoThumbnail: React.FC<VideoThumbnailProps> = ({
                 />
                 <PlayArrowIcon
                     fontSize="large"
+                    aria-label="button"
                     className={classes.playArrowIcon}
                 />
             </Link>
