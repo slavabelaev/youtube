@@ -1,4 +1,5 @@
 import React, {ChangeEvent} from "react";
+import faker from "faker/locale/en";
 import { useHistory } from "react-router-dom";
 import Box from "@material-ui/core/Box";
 import {createStyles, IconButton, Theme} from "@material-ui/core";
@@ -26,12 +27,9 @@ interface Option {
     label: string;
 }
 
-const options: Option[] = [
-    { label: 'Элемент 1' },
-    { label: 'Элемент 2' },
-    { label: 'Элемент 3' },
-    { label: 'Элемент 4' },
-];
+const options: Option[] = Array(5).fill(null).map(_ => ({
+    label: faker.lorem.sentence(4)
+}));
 
 interface SearchFieldProps {
     renderInput?: (params: RenderInputParams) => React.ReactNode
@@ -62,7 +60,7 @@ function SearchField(props: SearchFieldProps) {
                 variant="outlined"
                 margin="dense"
                 fullWidth
-                placeholder="Введите запрос"
+                placeholder="Search"
                 InputProps={{
                     ...params.InputProps,
                     className: classes.input,

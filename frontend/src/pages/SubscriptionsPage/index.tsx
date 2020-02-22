@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const SUBSCRIPTIONS_PAGE_ROUTE = '/feed/subscriptions';
 
 export const SUBSCRIPTIONS_MENU_ITEM: RouteLink = {
-    title: 'Подписки',
+    title: 'Subscriptions',
     to: SUBSCRIPTIONS_PAGE_ROUTE,
     icon: SubscriptionsIcon
 };

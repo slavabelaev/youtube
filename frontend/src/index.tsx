@@ -6,13 +6,13 @@ import * as serviceWorker from './serviceWorker';
 import ThemeProvider from "./contexts/ThemeContext";
 
 function Root() {
-	return (
-  <Router>
-      <ThemeProvider>
-          <App />
-      </ThemeProvider>
-  </Router>
-)
+    return (
+        <Router>
+            <ThemeProvider>
+                <App/>
+            </ThemeProvider>
+        </Router>
+    )
 }
 ReactDOM.render(<Root />, document.getElementById('root'));
 

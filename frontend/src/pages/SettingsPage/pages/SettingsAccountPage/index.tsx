@@ -6,7 +6,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const SETTINGS_ACCOUNT_PAGE_ROUTE = '/account';
 
 export const SETTINGS_ACCOUNT_MENU_ITEM: RouteLink = {
-    title: 'Аккаунт',
+    title: 'Account',
     to: SETTINGS_ACCOUNT_PAGE_ROUTE,
     icon: AccountBox
 };

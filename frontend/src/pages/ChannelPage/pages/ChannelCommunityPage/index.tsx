@@ -5,7 +5,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const CHANNEL_COMMUNITY_PAGE_ROUTE = '/community';
 
 export const CHANNEL_COMMUNITY_MENU_ITEM: RouteLink = {
-    title: 'Сообщество',
+    title: 'Community',
     to: CHANNEL_COMMUNITY_PAGE_ROUTE
 };
 

@@ -20,9 +20,9 @@ function ChannelNotificationsButton(props: ChannelNotificationsButtonProps) {
     });
 
     const items: MenuListItemProps[] = [
-        { title: 'Все', icon: <NotificationsActiveIcon /> },
-        { title: 'На основе предпочтений', icon: <NotificationsIcon /> },
-        { title: 'Никакие', icon: <NotificationsOffIcon /> },
+        { title: 'All', icon: <NotificationsActiveIcon /> },
+        { title: 'Personalized', icon: <NotificationsIcon /> },
+        { title: 'None', icon: <NotificationsOffIcon /> },
     ].map(addItemHandler);
 
     const menu = (

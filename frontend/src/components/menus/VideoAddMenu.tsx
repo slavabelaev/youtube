@@ -7,12 +7,12 @@ function VideoAddMenu() {
 	return (
     <LinksMenu items={[
         {
-            title: 'Добавить видео',
+            title: 'Upload video',
             to: '/video/add',
             icon: () => <OndemandVideoIcon color="primary" />
         },
         {
-            title: 'Начать трансляцию',
+            title: 'Go live',
             to: '/video/streaming',
             icon: () => <LiveTvIcon color="primary" />
         }

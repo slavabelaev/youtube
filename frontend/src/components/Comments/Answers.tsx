@@ -46,7 +46,7 @@ function Answers({ commentId }: AnswersProps) {
                 startIcon={<ArrowDropDownIcon />}
                 onClick={toggle}
             >
-                {open ? 'Скрыть' : 'Показать'} ответы
+                {open ? 'Hide' : 'View'} replies
             </Button>
         </Toolbar>
     );

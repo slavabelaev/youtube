@@ -6,7 +6,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const CREATORS_PAGE_ROUTE = '/creators';
 
 export const CREATORS_MENU_ITEM: RouteLink = {
-    title: 'Авторам',
+    title: 'Creators',
     to: CREATORS_PAGE_ROUTE
 };
 

@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const KEYBOARD_SHORTCUTS_PAGE_ROUTE = '/keyboard-shortcuts';
 
 export const KEYBOARD_SHORTCUTS_MENU_ITEM: RouteLink = {
-    title: 'Быстрые клавишы',
+    title: 'Keyboard shortcuts',
     to: KEYBOARD_SHORTCUTS_PAGE_ROUTE,
     icon: KeyboardIcon
 };

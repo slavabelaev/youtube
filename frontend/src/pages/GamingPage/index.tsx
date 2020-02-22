@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const GAMING_PAGE_ROUTE = '/gaming';
 
 export const GAMING_MENU_ITEM: RouteLink = {
-    title: 'Видеоигры',
+    title: 'Gaming',
     to: GAMING_PAGE_ROUTE,
     icon: VideogameAssetIcon
 };

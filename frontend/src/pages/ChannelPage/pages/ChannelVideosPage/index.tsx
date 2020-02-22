@@ -5,7 +5,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const CHANNEL_VIDEOS_PAGE_ROUTE = '/videos';
 
 export const CHANNEL_VIDEOS_MENU_ITEM: RouteLink = {
-    title: 'Видео',
+    title: 'Videos',
     to: CHANNEL_VIDEOS_PAGE_ROUTE
 };
 

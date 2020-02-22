@@ -68,7 +68,7 @@ function Channel(props: ChannelProps) {
                 variant="body2"
                 color="textSecondary"
             >
-                {toStringNumber(props.subscribersNumber)} подписчиков
+                {toStringNumber(props.subscribersNumber)} subscribers
             </Typography>
             <SubscribeButton
                 size="small"

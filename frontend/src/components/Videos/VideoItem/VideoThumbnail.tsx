@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) => {
 export interface VideoThumbnailProps {
     src: string;
     to: string;
-    duration: number;
+    durationSeconds: number;
     className?: string;
     [key: string]: any;
 }
@@ -85,7 +85,7 @@ export interface VideoThumbnailProps {
 function VideoThumbnail({
     src,
     to,
-    duration,
+    durationSeconds,
     className,
     style,
     ...otherProps
@@ -98,13 +98,13 @@ function VideoThumbnail({
             variant="caption"
             component="span"
         >
-            {new Date(duration).toLocaleTimeString().substring(3)}
+            {new Date(durationSeconds).toLocaleTimeString().substring(3)}
         </Typography>
     );
 
     const watchLater = (
         <Tooltip
-            title="Смотреть позже"
+            title="Watch Later"
             placement="left"
         >
             <Button
@@ -121,7 +121,7 @@ function VideoThumbnail({
 
     const addToPlaylistsButton = (
         <Tooltip
-            title="Добавить в плейлист"
+            title="Save to playlist"
             placement="left"
             aria-label="button"
         >

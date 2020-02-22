@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const HISTORY_PAGE_ROUTE = '/feed/history';
 
 export const HISTORY_MENU_ITEM: RouteLink = {
-    title: 'История',
+    title: 'History',
     to: HISTORY_PAGE_ROUTE,
     icon: HistoryIcon
 };

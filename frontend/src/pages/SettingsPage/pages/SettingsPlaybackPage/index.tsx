@@ -6,7 +6,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const SETTINGS_PLAYBACK_PAGE_ROUTE = '/playback';
 
 export const SETTINGS_PLAYBACK_MENU_ITEM: RouteLink = {
-    title: 'Воспроизведение',
+    title: 'Playback',
     to: SETTINGS_PLAYBACK_PAGE_ROUTE,
     icon: PlayArrow
 };

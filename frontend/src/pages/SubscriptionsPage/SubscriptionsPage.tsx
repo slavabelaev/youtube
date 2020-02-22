@@ -18,7 +18,7 @@ function SubscriptionsPage() {
     return (
         <main className={classes.root}>
             <Videos
-                title="Сегодня"
+                title="Today"
                 initialVariant="grid"
                 onLoad={generateListVideos}
             />

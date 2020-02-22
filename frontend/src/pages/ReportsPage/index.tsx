@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const REPORTS_PAGE_ROUTE = '/reports';
 
 export const REPORTS_MENU_ITEM: RouteLink = {
-    title: 'Жалобы',
+    title: 'Report history',
     to: REPORTS_PAGE_ROUTE,
     icon: FlagIcon
 };

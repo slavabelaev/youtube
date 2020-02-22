@@ -57,7 +57,7 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
 
 function Comment(props: CommentProps) {
     const classes = useStyles();
-    const linkToChannel = CHANNEL_PAGE_ROUTE.replace(':id', props.id);
+    const channelUrl = CHANNEL_PAGE_ROUTE.replace(':id', props.id);
 
     const avatar = (
         <Avatar
@@ -65,14 +65,14 @@ function Comment(props: CommentProps) {
                 [classes.avatar_variant_mini]: props.variant === 'mini'
             })}
             component={Link}
-            to={linkToChannel}
+            to={channelUrl}
             src={props.avatarUrl}
         />
     );
 
     const verificationIcon = props.verified ? (
         <Tooltip
-            title="Подтверждено"
+            title="Verified"
         >
             <CheckCircleIcon
                 className={classes.verificationIcon}
@@ -87,7 +87,7 @@ function Comment(props: CommentProps) {
             variant="inherit"
             color="textPrimary"
             component={Link}
-            to={linkToChannel}
+            to={channelUrl}
         >
             {props.userName}
             {verificationIcon}
@@ -101,7 +101,7 @@ function Comment(props: CommentProps) {
             component="span"
         >
             {formatDistance(new Date(), props.createdAt)}
-            {props.edited ? ' (изменено)' : null}
+            {props.edited ? ' (edited)' : null}
         </Typography>
     );
 
@@ -146,7 +146,7 @@ function Comment(props: CommentProps) {
                 color="inherit"
                 size="small"
             >
-                Ответить
+                Reply
             </Button>
         </Toolbar>
     );

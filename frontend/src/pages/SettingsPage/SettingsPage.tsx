@@ -42,7 +42,7 @@ function SettingsPage() {
                         variant="h6"
                         component="h6"
                     >
-                        Настройки
+                        Settings
                     </Typography>
                     <SettingsMenu />
                 </div>

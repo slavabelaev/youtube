@@ -21,5 +21,5 @@ export const DEFAULT_DARK_THEME: Theme = createMuiTheme({
         },
         secondary: blue,
         type: "dark"
-    },
+    }
 });

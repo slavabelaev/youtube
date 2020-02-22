@@ -18,7 +18,7 @@ function PlaylistsMenu() {
                 <ListItemIcon>
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItemIcon>
-                <ListItemText primary={open ? 'Скрыть' : 'Развернуть'} />
+                <ListItemText primary={open ? 'Show less' : 'Show more'} />
             </ListItem>
         </List>
     );

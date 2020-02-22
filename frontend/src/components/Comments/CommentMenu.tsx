@@ -5,7 +5,7 @@ import Menu from "../common/Menu";
 
 function CommentMenu() {
     const items: MenuListItemProps[] = [
-        { title: 'Пожаловаться', icon: <FlagIcon />, onClick: () => null }
+        { title: 'Report', icon: <FlagIcon />, onClick: () => null }
     ];
 
     return (

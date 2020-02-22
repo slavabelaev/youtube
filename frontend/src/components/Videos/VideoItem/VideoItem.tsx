@@ -1,39 +1,38 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import {Link} from "react-router-dom";
 import clsx from "clsx";
 import {formatDistance} from "date-fns";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {ListItem} from "@material-ui/core";
+import {AvatarProps, ListItem} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import VideoThumbnail from "./VideoThumbnail";
+import VideoThumbnail, {VideoThumbnailProps} from "./VideoThumbnail";
 import {toStringNumber} from "../../../utils/numbers";
 import VideoPopoverButton from "./VideoPopoverButton";
 import Tooltip from "@material-ui/core/Tooltip";
 
-export interface VideoModel {
-    id: string;
-    title: string;
-    duration: number;
-    linkTo: string;
-    imageSrc: string;
-    channelName: string;
-    channelLinkTo: string;
-    channelImageUrl?: string | null;
-    views?: number;
-    isRecommended?: boolean;
-    isNew?: boolean;
-    verified?: boolean;
-    createdAt: Date;
-}
-
-export interface VideoItemProps extends VideoModel {
+export interface VideoItemBaseProps {
     variant?: 'horizontal' | 'vertical',
     className?: string;
+}
+
+export interface VideoItemProps extends VideoItemBaseProps {
+    primaryText: ReactNode;
+    primaryTextTo: string;
+    durationSeconds: VideoThumbnailProps['durationSeconds'];
+    imageSrc: string;
+    secondaryText: ReactNode;
+    secondaryTextTo: string;
+    avatarSrc?: AvatarProps['src'];
+    views?: number;
+    captionText?: ReactNode;
+    labelText?: ReactNode;
+    showCheckIcon?: boolean;
+    createdAt?: Date;
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -57,11 +56,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         width: '100%',
         overflow: 'hidden'
     },
-    listItemTextNode: {
+    listItemText: {
         marginTop: 0,
         marginBottom: 0
     },
-    title: {
+    primaryText: {
         display: '-webkit-box',
         '-webkit-box-orient': 'vertical',
         '-webkit-line-clamp': 2,
@@ -70,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         lineHeight: 1.25,
         marginBottom: theme.spacing(.5)
     },
-    channelName: {
+    secondaryText: {
         display: 'block',
         alignItems: 'center',
         whiteSpace: 'nowrap',
@@ -78,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         overflow: 'hidden',
         textDecoration: 'none'
     },
-    verificationIcon: {
+    checkIcon: {
         marginLeft: theme.spacing(.5),
         verticalAlign: 'middle'
     },
@@ -88,14 +87,14 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textOverflow: 'ellipsis',
         overflow: 'hidden'
     },
-    isNew: {
+    labelText: {
         ...theme.typography.caption,
         backgroundColor: theme.palette.grey.A100,
         color: theme.palette.grey.A400,
         padding: theme.spacing(.125, .5),
         borderRadius: theme.shape.borderRadius
     },
-    isRecommended: {
+    captionText: {
         display: 'block',
         ...theme.typography.caption,
     },
@@ -121,93 +120,93 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 function VideoItem({
     variant = 'horizontal',
-    title,
-    duration,
-    linkTo,
+    primaryText,
+    durationSeconds,
+    primaryTextTo,
     imageSrc,
-    channelName,
-    channelImageUrl,
-    channelLinkTo,
+    secondaryText,
+    avatarSrc,
+    secondaryTextTo,
     views,
-    isNew,
-    isRecommended,
+    labelText,
+    captionText,
     createdAt,
-    verified,
+    showCheckIcon,
     className,
 }: VideoItemProps) {
     const classes = useStyles();
 
-    const titleNode = title ? (
+    const primary = primaryText ? (
         <Typography
-            className={classes.title}
+            className={classes.primaryText}
             variant="body1"
             color="inherit"
             component={Link}
-            to={linkTo}
+            to={primaryTextTo}
         >
-            {title}
+            {primaryText}
         </Typography>
     ) : null;
 
-    const verificationIcon = verified ? (
+    const checkIcon = showCheckIcon ? (
         <Tooltip
-            title="Подтверждено"
+            title="Verified"
         >
             <CheckCircleIcon
-                className={classes.verificationIcon}
+                className={classes.checkIcon}
                 fontSize="inherit"
             />
         </Tooltip>
     ) : null;
 
-    const channelNameNode = channelName ? (
+    const secondary = secondaryText ? (
         <Typography
-            className={classes.channelName}
+            className={classes.secondaryText}
             variant="inherit"
             color="inherit"
             component={Link}
-            to={channelLinkTo}
+            to={secondaryTextTo}
         >
-            {channelName}
-            {verificationIcon}
+            {secondaryText}
+            {checkIcon}
         </Typography>
     ) : null;
 
-    const channelAvatarNode = variant === 'vertical' && channelImageUrl ? (
+    const avatar = variant === 'vertical' && avatarSrc ? (
         <ListItemAvatar>
             <Avatar
-                src={channelImageUrl || ''}
+                src={avatarSrc || ''}
                 component={Link}
-                to={channelLinkTo}
+                to={secondaryTextTo}
             />
         </ListItemAvatar>
     ) : null;
 
     const viewsNode = views ? (
         <span className={classes.views}>
-            {toStringNumber(views)} просмотров
+            {toStringNumber(views)} views
         </span>
     ) : null;
 
-    const isNewNode = isNew ?(
-        <span className={classes.isNew}>
-            Новинка
+    const labelTextNode = labelText ?(
+        <span className={classes.labelText}>
+            {labelText}
         </span>
     ) : null;
 
-    const isRecommendedNode = isRecommended ? (
-        <span className={classes.isRecommended}>
-            Рекомендуется для вас
+    const captionTextNode = captionText ? (
+        <span className={classes.captionText}>
+            {captionText}
         </span>
     ) : null;
 
-    const createdAtNode = createdAt && variant === 'vertical' ? (
+    const createdAtNode = variant === 'vertical' && createdAt ? (
         <span className={classes.createdAt}>
             {formatDistance(new Date(), createdAt)}
         </span>
     ) : null;
 
-    const mediaNode = imageSrc ? (
+    const videoThumbnail = imageSrc ? (
         <VideoThumbnail
             className={clsx(
                 classes.media, {
@@ -215,21 +214,21 @@ function VideoItem({
                 [classes.media_variant_horizontal]: variant === 'horizontal'
             })}
             src={imageSrc}
-            to={linkTo}
-            duration={duration}
+            to={primaryTextTo}
+            durationSeconds={durationSeconds}
         />
     ) : null;
 
-    const listItemTextNode = (
+    const listItemText = (
         <ListItemText
-            className={classes.listItemTextNode}
-            primary={titleNode}
+            className={classes.listItemText}
+            primary={primary}
             secondary={
                 <>
-                    {channelNameNode}
+                    {secondary}
                     {viewsNode}
-                    {isNewNode}
-                    {isRecommendedNode}
+                    {labelTextNode}
+                    {captionTextNode}
                     {createdAtNode}
                 </>
             }
@@ -244,15 +243,15 @@ function VideoItem({
                 [classes.root_variant_vertical]: variant === 'vertical'
             })}
         >
-            {mediaNode}
+            {videoThumbnail}
             <ListItem
                 className={classes.listItem}
                 ContainerProps={{
                     className: classes.container
                 }}
             >
-                {channelAvatarNode}
-                {listItemTextNode}
+                {avatar}
+                {listItemText}
                 <ListItemSecondaryAction>
                     <VideoPopoverButton
                     />

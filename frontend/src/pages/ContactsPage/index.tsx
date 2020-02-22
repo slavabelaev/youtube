@@ -6,7 +6,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const CONTACTS_PAGE_ROUTE = '/contacts';
 
 export const CONTACTS_MENU_ITEM: RouteLink = {
-    title: 'Связаться с нами',
+    title: 'Contact us',
     to: CONTACTS_PAGE_ROUTE
 };
 

@@ -6,7 +6,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const SETTINGS_ADVANCED_PAGE_ROUTE = '/advanced';
 
 export const SETTINGS_ADVANCED_MENU_ITEM: RouteLink = {
-    title: 'Расширенные настройки',
+    title: 'Advanced settings',
     to: SETTINGS_ADVANCED_PAGE_ROUTE,
     icon: Settings
 };

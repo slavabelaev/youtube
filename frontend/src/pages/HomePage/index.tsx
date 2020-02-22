@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const HOME_PAGE_ROUTE = '/';
 
 export const HOME_MENU_ITEM: RouteLink = {
-    title: 'Главная',
+    title: 'Home',
     to: HOME_PAGE_ROUTE,
     exact: true,
     icon: HomeIcon

@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const PERSONAL_DATA_PAGE_ROUTE = '/personal-data';
 
 export const PERSONAL_DATA_MENU_ITEM: RouteLink = {
-    title: 'Личные данные на YouTube',
+    title: 'Your data in YonTube',
     to: PERSONAL_DATA_PAGE_ROUTE,
     icon: SecurityIcon
 };

@@ -6,7 +6,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const PRIVACY_PAGE_ROUTE = '/privacy';
 
 export const PRIVACY_MENU_ITEM: RouteLink = {
-    title: 'Конфиденциальность', 
+    title: 'Privacy',
     to: PRIVACY_PAGE_ROUTE
 };
 

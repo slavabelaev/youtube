@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 function NotificationsPopoverButton() {
     const classes = useStyles();
-    const title = 'Уведомления';
+    const title = 'Notifications';
 
     const appBar = (
         <AppBar

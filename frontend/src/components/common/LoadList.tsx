@@ -50,8 +50,11 @@ function LoadList({
         renderLoadMore ? renderLoadMore(load) : (
             <div className={classes.container}>
                 {initialLoaded ? (
-                    <Button onClick={load}>
-                        Еще
+                    <Button
+                        size="small"
+                        onClick={load}
+                    >
+                        More
                     </Button>
                 ) : <CircularProgress />}
             </div>

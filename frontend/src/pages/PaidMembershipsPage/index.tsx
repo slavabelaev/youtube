@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const PAID_MEMBERSHIPS_PAGE_ROUTE = '/paid-memberships';
 
 export const PAID_MEMBERSHIPS_MENU_ITEM: RouteLink = {
-    title: 'Платные подписки',
+    title: 'Paid memberships',
     to: PAID_MEMBERSHIPS_PAGE_ROUTE,
     icon: MonetizationOnIcon
 };

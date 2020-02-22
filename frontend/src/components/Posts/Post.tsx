@@ -70,7 +70,7 @@ function Post({
                     DislikeButtonProps={{size: 'small'}}
                 />
                 <Button size="small">
-                    Оставить комментарий
+                    Add a public comment...
                 </Button>
             </CardActions>
             {bottomToolbar}

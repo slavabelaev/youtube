@@ -20,15 +20,14 @@ function SettingsPrivacyPage() {
                     variant="h5"
                     gutterBottom
                 >
-                    Настройте доступ к своему контенту
+                    Privacy Settings
                 </Typography>
                 <Typography
                     variant="body1"
                     color="textSecondary"
                     gutterBottom
                 >
-                    В этом разделе можно выбрать, кто сможет видеть ваши подписки и сохраненные плейлисты.
-                    Здесь же вы можете ознакомиться с Условиями использования и Политикой конфиденциальности.
+                    Privacy Settings description
                 </Typography>
             </header>
         </div>

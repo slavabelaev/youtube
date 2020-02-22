@@ -28,7 +28,7 @@ function CollapsedItems({ renderItem, onLoad }: CollapsedItemsProps) {
             <ListItemIcon>
                 {open ? <ExpandLess /> : <ExpandMore />}
             </ListItemIcon>
-            <ListItemText primary={open ? 'Скрыть' : `Показать ещё`} />
+            <ListItemText primary={open ? 'Show less' : 'Show more'} />
         </ListItem>
     );
 

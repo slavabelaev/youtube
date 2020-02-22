@@ -20,14 +20,14 @@ function SettingsNotificationsPage() {
                     variant="h5"
                     gutterBottom
                 >
-                    Настройки уведомлений
+                    Notifications settings
                 </Typography>
                 <Typography
                     variant="body1"
                     color="textSecondary"
                     gutterBottom
                 >
-                    Укажите, какие уведомления вы хотите получать
+                    Notifications settings description
                 </Typography>
             </header>
         </div>

@@ -76,7 +76,7 @@ function AccountMenu() {
             <LinkListItem {...PAID_MEMBERSHIPS_MENU_ITEM} />
             <LinkListItem {...STUDIO_MENU_ITEM} />
             <MenuListItem
-                title="Сменить аккаунт"
+                title="Switch account"
                 icon={<RecentActorsIcon />}
                 endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(accountsView)}
@@ -88,13 +88,13 @@ function AccountMenu() {
     const secondaryList = (
         <List>
             <MenuListItem
-                title="Тёмная тема: откл"
+                title="Dark theme: off"
                 icon={<BrightnessIcon />}
                 endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(darkThemeView)}
             />
             <MenuListItem
-                title="Язык: Русский"
+                title="Language: English"
                 icon={<TranslateIcon />}
                 endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(languagesView)}
@@ -124,7 +124,7 @@ function AccountMenu() {
                                 target="_blank"
                                 href="https://myaccount.google.com"
                             >
-                                Управление аккаунтом
+                                Manage your account
                             </Link>
                         </>
                     }
@@ -136,12 +136,12 @@ function AccountMenu() {
     const footerList = (
         <List>
             <MenuListItem
-                title="Страна: Россия"
+                title="Country: USA"
                 endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(countriesView)}
             />
             <MenuListItem
-                title="Безопасный режим: откл."
+                title="Safe mode: off"
                 endIcon={<ChevronRightIcon />}
                 onClick={() => setActiveView(safeModeView)}
             />
@@ -162,18 +162,19 @@ function AccountMenu() {
 
     const accountsView = (
         <div>
-            {renderToolbar('Аккаунты')}
+            {renderToolbar('Accounts')}
             <AccountsMenu />
         </div>
     );
 
     const darkThemeView = (
         <div>
-            {renderToolbar('Темная тема')}
+            {renderToolbar('Dark Theme')}
             <DescriptionBox
                 paragraphs={[
-                    'В ночном режиме цветовая схема приложения меняется со светлой на темную.',
-                    'Настройка, которую вы выберете, будет действовать только в этом браузере.'
+                    'Dark theme turns the light surfaces of the page dark, creating an experience ideal for night. Try it out!',
+                    'Dark theme turns the light surfaces of the page dark, creating an experience ideal for night. Try it out!',
+                    'Your Dark theme setting will apply to this browser only.'
                 ]}
             />
             <List>
@@ -184,16 +185,15 @@ function AccountMenu() {
 
     const safeModeView = (
         <div>
-            {renderToolbar('Безопасный режим')}
+            {renderToolbar('Safe mode')}
             <DescriptionBox
                 paragraphs={[
-                    'В безопасном режиме скрыты ролики, которые не подходят для детей. Хотя идеальных фильтров не существует, в большинстве случаев защита работает.',
-                    'Безопасный режим будет включен только в этом браузере.'
+                    'Safe mode description will here'
                 ]}
             />
             <List>
                 <SwitchListItem
-                    title="Безопасный режим"
+                    title="Safe mode"
                     icon={<SecurityIcon />}
                 />
             </List>
@@ -202,14 +202,14 @@ function AccountMenu() {
 
     const languagesView = (
         <div>
-            {renderToolbar('Выберите язык')}
+            {renderToolbar('Choose your language')}
             <LanguagesList />
         </div>
     );
 
     const countriesView = (
         <div>
-            {renderToolbar('Выберите страну')}
+            {renderToolbar('Choose your country')}
             <CountriesList />
         </div>
     );

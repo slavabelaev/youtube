@@ -38,7 +38,7 @@ function CollapseText({ initialText, additionalText, ...otherProps }: CollapseTe
             size="small"
             onClick={toggle}
         >
-            {open ? 'Свернуть' : 'Подробнее'}
+            {open ? 'Show less' : 'Show more'}
         </Button>
     );
 

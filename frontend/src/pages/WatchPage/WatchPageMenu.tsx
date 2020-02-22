@@ -7,8 +7,8 @@ function WatchPageMenu() {
     return (
         <Menu
             items={[
-                {title: 'Пожаловаться', icon: <FlagIcon/>},
-                {title: 'Поработать над переводом', icon: <TranslateIcon/>},
+                {title: 'Report', icon: <FlagIcon/>},
+                {title: 'Add translations', icon: <TranslateIcon/>},
             ]}
         />
     )

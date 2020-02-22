@@ -6,8 +6,8 @@ function NotificationMenu() {
 	return (
     <Menu
         items={[
-            { title: 'Скрыть уведомление', icon: <VisibilityOffIcon /> },
-            { title: 'Отключить все уведомления о канале', icon: <></> },
+            { title: 'Hide this notification', icon: <VisibilityOffIcon /> },
+            { title: 'Turn off all from this channel' },
         ]}
     />
 )

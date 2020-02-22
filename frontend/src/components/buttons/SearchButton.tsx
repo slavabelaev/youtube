@@ -27,7 +27,7 @@ function SearchButton() {
             inputProps={params.inputProps}
             fullWidth
             autoFocus
-            placeholder="Введите запрос"
+            placeholder="Search"
         />
     );
 

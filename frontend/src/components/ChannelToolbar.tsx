@@ -1,4 +1,5 @@
 import React from "react";
+import faker from "faker/locale/en";
 import Toolbar, {ToolbarProps} from "@material-ui/core/Toolbar";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -38,6 +39,7 @@ function ChannelToolbar(props: ChannelToolbar) {
             >
                 <ListItemAvatar>
                     <Avatar
+                        src={faker.image.avatar()}
                         component={Link}
                         to="/channel/1"
                     />
@@ -50,10 +52,10 @@ function ChannelToolbar(props: ChannelToolbar) {
                             to="/channel/1"
                             color="inherit"
                         >
-                            Название канала
+                            {faker.company.companyName()}
                         </Typography>
                     }
-                    secondary={`${toStringNumber(998999, 0)} подписчиков`}
+                    secondary={`${toStringNumber(Math.round(Math.random() * 9999999), 0)} subscribers`}
                 />
             </ListItem>
             <aside className={classes.aside}>

@@ -6,7 +6,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const SETTINGS_SHARING_PAGE_ROUTE = '/sharing';
 
 export const SETTINGS_SHARING_MENU_ITEM: RouteLink = {
-    title: 'Связанные аккаунты',
+    title: 'Connected accounts',
     to: SETTINGS_SHARING_PAGE_ROUTE,
     icon: People
 };

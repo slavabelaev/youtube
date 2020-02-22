@@ -13,7 +13,7 @@ function AccountsMenu({ onLoad }: AccountsMenuProps) {
     const actionsList = (
         <List>
             <MenuListItem
-                title="Добавить аккаунт"
+                title="Add account"
                 icon={<PersonAddIcon />}
             />
             <LinkListItem {...SIGN_OUT_MENU_ITEM} />

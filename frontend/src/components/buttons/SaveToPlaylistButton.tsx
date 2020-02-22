@@ -61,7 +61,7 @@ function SaveToPlaylistButton() {
             >
                 <Toolbar>
                     <Typography variant="h6">
-                        Сохранить в...
+                        Save to...
                     </Typography>
                     <IconButton
                         className={classes.closeButton}
@@ -88,7 +88,7 @@ function SaveToPlaylistButton() {
                 <Button
                     startIcon={<AddIcon />}
                 >
-                    Создать новый плейлист
+                    Create new playlist
                 </Button>
             </DialogActions>
         </Dialog>
@@ -100,7 +100,7 @@ function SaveToPlaylistButton() {
             startIcon={<PlaylistAddIcon />}
             onClick={toggle}
         >
-            Сохранить
+            Save
         </Button>
     );
 

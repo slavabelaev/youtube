@@ -60,7 +60,7 @@ interface DetailProps {
 function ChannelAboutPage() {
     const classes = useStyles();
 
-    const description: string = 'Подробное описание канала. Здесь можно разместить любую информацию, которая на Ваш взгляд может быть полезна пользователям.';
+    const description: string = 'Channel description';
 
     const links: LinkProps[] = [
         { label: 'Twitter', href: 'https://twitter.com/' },
@@ -70,14 +70,14 @@ function ChannelAboutPage() {
     ];
 
     const stats: string[] = [
-        'Дата регистрации: 18 сент. 2005 г.',
-        '2 855 767 413 просмотров'
+        'Joined Sept 18, 2005',
+        '2 855 767 413 views'
     ];
     
     const details: DetailProps[] = [
-        { label: 'Страна', value: 'США' },
-        { label: 'Наименование', value: 'Значение' },
-        { label: 'Длинное название', value: 'Значение' },
+        { label: 'Country', value: 'USA' },
+        { label: 'Name', value: 'Value' },
+        { label: 'Long name', value: 'Value' },
     ];
 
     const renderDetail = (item: DetailProps) => (
@@ -148,25 +148,25 @@ function ChannelAboutPage() {
         <div className={classes.root}>
             <main className={classes.main}>
                 <section className={classes.section}>
-                    {renderTitle('Описание')}
+                    {renderTitle('Description')}
                     <Typography>
                         {description}
                     </Typography>
                 </section>
                 <Divider />
                 <section className={classes.section}>
-                    {renderTitle('Дополнительно')}
+                    {renderTitle('Details')}
                     {detailsNode}
                 </section>
                 <Divider />
                 <section className={classes.section}>
-                    {renderTitle('Ссылки')}
+                    {renderTitle('Links')}
                     {linksList}
                 </section>
             </main>
             <aside className={classes.aside}>
                 <section className={classes.section}>
-                    {renderTitle('Статистика')}
+                    {renderTitle('Stats')}
                     {statsList}
                 </section>
             </aside>

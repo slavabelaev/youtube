@@ -20,15 +20,14 @@ function SettingsSharingPage() {
                     variant="h5"
                     gutterBottom
                 >
-                    Настройки синхронизации
+                    Sync Settings
                 </Typography>
                 <Typography
                     variant="body1"
                     color="textSecondary"
                     gutterBottom
                 >
-                    В этом разделе вы можете установить связь между каналом и своими аккаунтами в других сервисах.
-                    Посмотреть полный список разрешенных сервисов можно здесь.
+                    Sync settings description
                 </Typography>
             </header>
         </div>

@@ -8,7 +8,7 @@ export const SIGN_IN_PAGE_ROUTE = '/sign-in';
 export const SIGN_OUT_PAGE_ROUTE = '/sign-out';
 
 export const SIGN_OUT_MENU_ITEM: RouteLink = {
-    title: 'Выйти',
+    title: 'Sign out',
     to: SIGN_OUT_PAGE_ROUTE,
     icon: ExitToAppIcon
 };

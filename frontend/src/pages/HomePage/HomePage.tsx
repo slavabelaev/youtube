@@ -18,7 +18,7 @@ function HomePage() {
             <main className={classes.main}>
                 <Videos
                     initialVariant="grid"
-                    title="Рекомендованные"
+                    title="Recommended"
                     onLoad={generateGridVideos}
                 />
             </main>

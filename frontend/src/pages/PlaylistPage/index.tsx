@@ -8,13 +8,13 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const PLAYLIST_PAGE_ROUTE = '/playlist';
 
 export const FAVORITES_MENU_ITEM: RouteLink = {
-    title: 'Понравившиеся',
+    title: 'Favorites',
     to: `${PLAYLIST_PAGE_ROUTE}/favorites`,
     icon: ThumbUpIcon
 };
 
 export const WATCH_LATER_MENU_ITEM: RouteLink = {
-    title: 'Смотреть позже',
+    title: 'Watch Later',
     to: `${PLAYLIST_PAGE_ROUTE}/WL`,
     icon: WatchLaterIcon
 };

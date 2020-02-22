@@ -1,4 +1,5 @@
 import React from "react";
+import faker from "faker/locale/en";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme} from "@material-ui/core";
 import VideoPlayer from "../../components/VideoPlayer";
@@ -64,22 +65,21 @@ function WatchPage() {
     const toolbar = (
       <Toolbar disableGutters className={classes.toolbar}>
           <Typography className={classes.toolbarViews}>
-              625 538 просмотров
+              {Math.round(Math.random() * 9999999).toLocaleString()} views
           </Typography>
           <Typography className={classes.toolbarCreatedAt}>
-              1 февр. 2020 г.
+              {faker.date.past().toLocaleDateString()}
           </Typography>
           <aside className={classes.toolbarAside}>
               <LikeDislikeButton
-                  initialLikes={998788}
-                  initialDislikes={87654}
-                  initialChecked="like"
+                  initialLikes={Math.round(Math.random() * 999999)}
+                  initialDislikes={Math.round(Math.random() * 99999)}
               />
               <Button
                   variant="text"
                   startIcon={<ShareIcon />}
               >
-                  Поделиться
+                  Share
               </Button>
               <SaveToPlaylistButton />
               <PopoverButton
@@ -97,15 +97,15 @@ function WatchPage() {
                 height={538}
             />
             <Typography variant="h6" className={classes.title}>
-                Очень длинное название видеоролика с кратким описанием, которое должно заинтересовать зрителей / дополнительная информация
+                {faker.lorem.sentence(20)}
             </Typography>
             {toolbar}
             <Divider />
             <ChannelToolbar disableGutters />
             <CollapseText
                 className={classes.collapseText}
-                initialText={`Подробное описание видеоролика, предназначенное для продвижения в поиске, а также прочие детали которые могут быть полезны пользователям после просмотра видеоролика.`}
-                additionalText={`Дополнительный текст, который изначально скрыт и доступен при нажатии на кнопку "ещё". Например здесь можно поместить ссылки на источники информации, прдестваленной в видеоролике.`}
+                initialText={faker.lorem.sentences(5)}
+                additionalText={faker.lorem.sentences(20)}
             />
             <Divider />
             <Comments />
@@ -120,7 +120,7 @@ function WatchPage() {
                 disableGutters
             >
                 <Typography>
-                    Следующее
+                    Up next
                 </Typography>
                 <aside className={classes.toolbarAside}>
                     <Typography
@@ -128,7 +128,7 @@ function WatchPage() {
                         component="label"
                         htmlFor={id}
                     >
-                        Автовоспроизведение
+                        Autoplay
                     </Typography>
                     <Switch
                         inputProps={{

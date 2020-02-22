@@ -5,7 +5,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const CHANNEL_FEATURED_PAGE_ROUTE = '/featured';
 
 export const CHANNEL_FEATURED_MENU_ITEM: RouteLink = {
-    title: 'Главная',
+    title: 'Home',
     to: CHANNEL_FEATURED_PAGE_ROUTE
 };
 

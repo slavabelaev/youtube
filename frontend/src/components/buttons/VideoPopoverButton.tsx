@@ -7,7 +7,7 @@ function VideoPopoverButton() {
 	return (
     <PopoverButton
         content={<VideoAddMenu />}
-        tooltip="Создать видео или запись"
+        tooltip="Create video or post"
     >
         <VideoCallIcon />
     </PopoverButton>

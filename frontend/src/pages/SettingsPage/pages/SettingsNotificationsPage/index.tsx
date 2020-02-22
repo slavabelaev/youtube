@@ -6,7 +6,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const SETTINGS_NOTIFICATIONS_PAGE_ROUTE = '/notifications';
 
 export const SETTINGS_NOTIFICATIONS_MENU_ITEM: RouteLink = {
-    title: 'Уведомления',
+    title: 'Notifications',
     to: SETTINGS_NOTIFICATIONS_PAGE_ROUTE,
     icon: Notifications
 };

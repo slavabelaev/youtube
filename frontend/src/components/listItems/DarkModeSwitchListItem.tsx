@@ -8,7 +8,7 @@ function DarkModeSwitchListItem() {
     const darkThemeEnabled = themeContext?.theme.palette.type === 'dark';
     return (
         <SwitchListItem
-            title="Темная тема"
+            title="Dark Theme"
             icon={<Brightness4Icon />}
             checked={darkThemeEnabled}
             onChange={(event, checked) => {

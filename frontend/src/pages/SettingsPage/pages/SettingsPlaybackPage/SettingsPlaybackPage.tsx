@@ -20,14 +20,14 @@ function SettingsPlaybackPage() {
                     variant="h5"
                     gutterBottom
                 >
-                    Настройки проигрывателя
+                    Playback settings
                 </Typography>
                 <Typography
                     variant="body1"
                     color="textSecondary"
                     gutterBottom
                 >
-                    Здесь можно задать параметры воспроизведения видео в этом браузере
+                    Playback settings description
                 </Typography>
             </header>
         </div>

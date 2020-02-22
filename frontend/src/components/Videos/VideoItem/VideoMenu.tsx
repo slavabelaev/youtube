@@ -11,15 +11,15 @@ import Menu from "../../common/Menu";
 
 function VideoMenu() {
     const primaryMenuItems: MenuListItemProps[] = [
-        { title: 'Добавить в очередь', icon: <PlaylistPlayIcon />, onClick: () => null },
-        { title: 'Добавить в плейлист "Смотреть позже"', icon: <WatchLaterIcon />, onClick: () => null },
-        { title: 'Добавить в плейлист', icon: <PlaylistAddIcon />, onClick: () => null },
+        { title: 'Add to queue', icon: <PlaylistPlayIcon />, onClick: () => null },
+        { title: 'Save to "Watch later"', icon: <WatchLaterIcon />, onClick: () => null },
+        { title: 'Save to playlist', icon: <PlaylistAddIcon />, onClick: () => null },
     ];
 
     const secondaryMenuItems: MenuListItemProps[] = [
-        { title: 'Не интересует', icon: <NotInterestedIcon />, onClick: () => null },
-        { title: 'Не рекомендовать видео с этого канала', icon: <RemoveCircleOutlineIcon />, onClick: () => null },
-        { title: 'Пожаловаться', icon: <FlagIcon />, onClick: () => null },
+        { title: 'Not interested', icon: <NotInterestedIcon />, onClick: () => null },
+        { title: 'Don\'t recommend channel', icon: <RemoveCircleOutlineIcon />, onClick: () => null },
+        { title: 'Report', icon: <FlagIcon />, onClick: () => null },
     ];
 
     return (

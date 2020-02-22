@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const STREAMING_PAGE_ROUTE = '/streaming';
 
 export const STREAMING_MENU_ITEM: RouteLink = {
-    title: 'Трансляции',
+    title: 'Live',
     to: STREAMING_PAGE_ROUTE,
     icon: WifiTetheringIcon
 };

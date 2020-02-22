@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const SETTINGS_PAGE_ROUTE = '/settings';
 
 export const SETTINGS_MENU_ITEM: RouteLink = {
-    title: 'Настройки',
+    title: 'Settings',
     to: SETTINGS_PAGE_ROUTE,
     icon: SettingsIcon
 };

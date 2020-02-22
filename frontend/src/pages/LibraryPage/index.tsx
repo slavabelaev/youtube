@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const LIBRARY_PAGE_ROUTE = '/feed/library';
 
 export const LIBRARY_MENU_ITEM: RouteLink = {
-    title: 'Библиотека',
+    title: 'Library',
     to: LIBRARY_PAGE_ROUTE,
     icon: VideoLibraryIcon
 };

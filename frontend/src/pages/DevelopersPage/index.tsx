@@ -6,7 +6,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const DEV_PAGE_ROUTE = '/dev';
 
 export const DEV_MENU_ITEM: RouteLink = {
-    title: 'Разработчикам',
+    title: 'Developers',
     to: DEV_PAGE_ROUTE
 };
 

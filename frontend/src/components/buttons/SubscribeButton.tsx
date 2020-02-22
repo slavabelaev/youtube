@@ -14,7 +14,7 @@ function SubscribeButton(props: SubscribeButtonProps) {
            color={subscribed ? 'default' : (props.color || 'primary')}
            onClick={toggle}
        >
-           {subscribed ? 'Вы подписаны' : 'Подписаться'}
+           {subscribed ? 'Subscribed' : 'Subscribe'}
        </Button>
    )
 }

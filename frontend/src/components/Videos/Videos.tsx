@@ -40,7 +40,7 @@ function Videos({
                 {title}
             </Typography>
             <aside className={classes.toolbarAside}>
-                <Tooltip title="Сетка">
+                <Tooltip title="Grid">
                     <IconButton
                         color={variant === 'grid' ? 'secondary' : 'default'}
                         onClick={() => setVariant('grid')}
@@ -48,7 +48,7 @@ function Videos({
                         <ViewModuleIcon />
                     </IconButton>
                 </Tooltip>
-                <Tooltip title="Список">
+                <Tooltip title="List">
                     <IconButton
                         edge="end"
                         color={variant === 'list' ? 'secondary' : 'default'}

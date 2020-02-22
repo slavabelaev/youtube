@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const HELP_PAGE_ROUTE = '/help';
 
 export const HELP_MENU_ITEM: RouteLink = {
-    title: 'Справка',
+    title: 'Help',
     to: HELP_PAGE_ROUTE,
     icon: HelpIcon
 };

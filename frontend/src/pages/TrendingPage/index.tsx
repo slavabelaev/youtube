@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const TRENDING_PAGE_ROUTE = '/feed/trending';
 
 export const TRENDING_MENU_ITEM: RouteLink = {
-    title: 'В тренде',
+    title: 'Trending',
     to: TRENDING_PAGE_ROUTE,
     icon: WhatshotIcon
 };

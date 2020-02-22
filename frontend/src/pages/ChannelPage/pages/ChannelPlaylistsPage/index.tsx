@@ -5,7 +5,7 @@ import {RouteLink} from "../../../../components/common/LinkListItem";
 export const CHANNEL_PLAYLISTS_PAGE_ROUTE = '/playlists';
 
 export const CHANNEL_PLAYLISTS_MENU_ITEM: RouteLink = {
-    title: 'Плэйлисты',
+    title: 'Playlists',
     to: CHANNEL_PLAYLISTS_PAGE_ROUTE
 };
 

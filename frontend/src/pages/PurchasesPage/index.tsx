@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const PURCHASES_PAGE_ROUTE = '/feed/purchases';
 
 export const PURCHASES_MENU_ITEM: RouteLink = {
-    title: 'Покупки',
+    title: 'Purchases',
     to: PURCHASES_PAGE_ROUTE,
     icon: LocalOfferIcon
 };

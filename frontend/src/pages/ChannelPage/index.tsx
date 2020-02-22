@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const CHANNEL_PAGE_ROUTE = '/channel/:id';
 
 export const CHANNEL_MENU_ITEM: RouteLink = {
-    title: 'Мой канал',
+    title: 'Your channel',
     to: CHANNEL_PAGE_ROUTE,
     icon: AccountBoxIcon
 };

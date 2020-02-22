@@ -6,7 +6,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const NEW_PAGE_ROUTE = '/new';
 
 export const NEW_MENU_ITEM: RouteLink = {
-    title: 'Новые функции',
+    title: 'New features',
     to: NEW_PAGE_ROUTE
 };
 

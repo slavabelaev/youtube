@@ -7,7 +7,7 @@ function AppsPopoverButton() {
 	return (
     <PopoverButton
         content={<AppsMenu />}
-        tooltip="Приложения"
+        tooltip="Apps"
     >
         <AppsIcon />
     </PopoverButton>

@@ -25,10 +25,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 function TrendingPage() {
     const classes = useStyles();
     const categories: CategoryProps[] = [
-        { title: 'Музыка', avatarSrc: '' },
-        { title: 'Видеоигры', avatarSrc: '' },
-        { title: 'Новости', avatarSrc: '' },
-        { title: 'Фильмы', avatarSrc: '' },
+        { title: 'Music', avatarSrc: '' },
+        { title: 'Gaming', avatarSrc: '' },
+        { title: 'News', avatarSrc: '' },
+        { title: 'Films', avatarSrc: '' },
     ];
 
     const renderCategory = (item: CategoryProps) => (

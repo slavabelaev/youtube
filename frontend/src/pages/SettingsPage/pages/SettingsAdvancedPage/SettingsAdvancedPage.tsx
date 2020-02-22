@@ -20,7 +20,7 @@ function SettingsAdvancedPage() {
                     variant="h5"
                     gutterBottom
                 >
-                    Настройте канал и аккаунт так, как вам удобно
+                    Advanced Settings
                 </Typography>
             </header>
         </div>

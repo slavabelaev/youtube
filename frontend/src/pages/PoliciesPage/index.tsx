@@ -6,7 +6,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const POLICIES_PAGE_ROUTE = '/policies';
 
 export const RULES_MENU_ITEM: RouteLink = {
-    title: 'Правила и безопасность',
+    title: 'Policy & Safety',
     to: `${POLICIES_PAGE_ROUTE}/rules-and-safety`
 };
 

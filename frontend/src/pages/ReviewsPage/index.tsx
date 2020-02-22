@@ -7,7 +7,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 export const REVIEWS_PAGE_ROUTE = '/reviews';
 
 export const REVIEWS_MENU_ITEM: RouteLink = {
-    title: 'Отправить отзыв',
+    title: 'Send feedback',
     to: REVIEWS_PAGE_ROUTE,
     icon: RateReviewIcon
 };

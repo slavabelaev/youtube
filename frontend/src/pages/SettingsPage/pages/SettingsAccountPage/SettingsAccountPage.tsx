@@ -20,14 +20,14 @@ function SettingsAccountPage() {
                     variant="h5"
                     gutterBottom
                 >
-                    Добавьте сведения о себе и настройте доступ к функциям YouTube
+                    Account settings description
                 </Typography>
                 <Typography
                     variant="body1"
                     color="textSecondary"
                     gutterBottom
                 >
-                    Вы вошли в аккаунт slav@belaev.pro
+                    Connected account slav@belaev.pro
                 </Typography>
             </header>
         </div>

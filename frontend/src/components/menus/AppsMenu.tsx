@@ -25,7 +25,7 @@ function AppsMenu() {
                 icon: () => <MusicVideoIcon color="primary" />
             },
             {
-                title: 'YonTube Детям',
+                title: 'YonTube Kids',
                 to: '/apps/kids',
                 icon: () => <ChildCareIcon color="primary" />
             }
@@ -33,12 +33,12 @@ function AppsMenu() {
         <Divider />
         <LinksMenu items={[
             {
-                title: 'Академия для авторов',
+                title: 'Creator Academy',
                 to: '/apps/authors',
                 icon: () => <PersonIcon color="primary" />
             },
             {
-                title: 'YonTube для музыкантов',
+                title: 'YonTube for Artists',
                 to: '/apps/artists',
                 icon: () => <MusicNoteIcon color="primary" />
             }

@@ -55,7 +55,7 @@ function DrawerContent() {
             {renderTitle(SUBSCRIPTIONS_MENU_ITEM.title)}
             <Subscriptions />
             <Divider />
-            {renderTitle('Другие возможности')}
+            {renderTitle('More from YonTube')}
             <OtherFeaturesMenu />
             <Divider />
             <OptionsMenu />
