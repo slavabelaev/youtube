@@ -55,7 +55,7 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Comment: React.FC<CommentProps> = (props) => {
+function Comment(props: CommentProps) {
     const classes = useStyles();
     const linkToChannel = CHANNEL_PAGE_ROUTE.replace(':id', props.id);
 

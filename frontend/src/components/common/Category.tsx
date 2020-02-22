@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Category: React.FC<CategoryProps> = (props) => {
+function Category(props: CategoryProps) {
     const classes = useStyles();
 
     return (

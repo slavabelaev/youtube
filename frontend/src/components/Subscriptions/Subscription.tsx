@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Subscription: React.FC<SubscriptionProps> = (props) => {
+function Subscription(props: SubscriptionProps) {
     const classes = useStyles();
 
     const renderAvatar = (avatarUrl: SubscriptionProps['avatarUrl']) => (

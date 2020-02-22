@@ -24,11 +24,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Videos: React.FC<VideosProps> = ({
+function Videos({
     initialVariant = 'list',
     onLoad,
     title
-}) => {
+}: VideosProps) {
     const classes = useStyles();
     const [variant, setVariant] = useState(initialVariant);
 

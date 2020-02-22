@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideoItem: React.FC<VideoItemProps> = ({
+function VideoItem({
     variant = 'horizontal',
     title,
     duration,
@@ -134,7 +134,7 @@ const VideoItem: React.FC<VideoItemProps> = ({
     createdAt,
     verified,
     className,
-}) => {
+}: VideoItemProps) {
     const classes = useStyles();
 
     const titleNode = title ? (

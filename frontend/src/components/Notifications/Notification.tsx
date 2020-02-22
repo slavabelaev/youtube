@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Notification: React.FC<NotificationProps> = (props) => {
+function Notification(props: NotificationProps) {
     const classes = useStyles();
 
     return (

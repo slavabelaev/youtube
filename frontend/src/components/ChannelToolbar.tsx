@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 export interface ChannelToolbar extends ToolbarProps {}
 
-const ChannelToolbar: React.FC<ChannelToolbar> = (props) => {
+function ChannelToolbar(props: ChannelToolbar) {
     const classes = useStyles();
     return (
         <Toolbar {...props}>

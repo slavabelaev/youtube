@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const CollapseText: React.FC<CollapseText> = ({ initialText, additionalText, ...otherProps }) => {
+function CollapseText({ initialText, additionalText, ...otherProps }: CollapseText) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);

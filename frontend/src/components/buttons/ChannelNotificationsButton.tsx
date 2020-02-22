@@ -10,7 +10,7 @@ export interface ChannelNotificationsButtonProps {
     className: PopoverButtonProps['className'];
 }
 
-const ChannelNotificationsButton: React.FC<ChannelNotificationsButtonProps> = (props) => {
+function ChannelNotificationsButton(props: ChannelNotificationsButtonProps) {
     const [index, setIndex] = useState(1);
 
     const addItemHandler = (item: MenuListItemProps, idx: number) => ({

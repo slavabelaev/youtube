@@ -24,11 +24,11 @@ interface LoadMoreListState {
     items: any;
 }
 
-const LoadList: React.FC<LoadListProps> = ({
+function LoadList({
     renderLoadMore,
     renderItem,
     onLoad
-}) => {
+}: LoadListProps) {
     const classes = useStyles();
     const [{ items, initialLoaded }, setState] = React.useState<LoadMoreListState>({
         initialLoaded: false,

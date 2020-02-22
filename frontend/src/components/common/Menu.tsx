@@ -6,7 +6,7 @@ export interface MenuProps {
     items: MenuListItemProps[];
 }
 
-const Menu: React.FC<MenuProps> = ({ items }) => {
+function Menu({ items }: MenuProps) {
     const renderItem = (item: MenuListItemProps, index: number) => (
         <MenuListItem
             {...item}

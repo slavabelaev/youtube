@@ -26,7 +26,7 @@ export interface PostProps extends PostModel {
     bottomToolbar?: ReactNode;
 }
 
-const Post: React.FC<PostProps> = ({
+function Post({
     avatarSrc,
     title,
     createdAt,
@@ -35,7 +35,7 @@ const Post: React.FC<PostProps> = ({
     initialDislikes,
     initialChecked,
     bottomToolbar
-}) => {
+}: PostProps) {
     const headerAction = (
         <IconButton>
             <MoreVertIcon />

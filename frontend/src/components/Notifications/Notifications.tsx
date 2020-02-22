@@ -7,7 +7,7 @@ export interface NotificationsProps {
     onLoad: LoadListProps['onLoad']
 }
 
-const Notifications: React.FC<NotificationsProps> = ({ onLoad }) => {
+function Notifications({ onLoad }: NotificationsProps) {
     const renderItem = (item: NotificationProps) => (
         <Notification
             {...item}

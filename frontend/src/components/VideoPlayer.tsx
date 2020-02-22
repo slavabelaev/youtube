@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ width, height }) => {
+function VideoPlayer({ width, height }: VideoPlayerProps) {
     const classes = useStyles();
     return (
         <div

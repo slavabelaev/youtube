@@ -19,7 +19,7 @@ interface CollapsedItemsProps {
    onLoad: LoadListProps['onLoad'];
 }
 
-const CollapsedItems: React.FC<CollapsedItemsProps> = ({ renderItem, onLoad }) => {
+function CollapsedItems({ renderItem, onLoad }: CollapsedItemsProps) {
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);
 
@@ -50,7 +50,7 @@ const CollapsedItems: React.FC<CollapsedItemsProps> = ({ renderItem, onLoad }) =
     )
 };
 
-const Subscriptions: React.FC<SubscriptionsProps> = ({ onLoad, onLoadMore }) => {
+function Subscriptions({ onLoad, onLoadMore }: SubscriptionsProps) {
 
     const renderItem = (item: SubscriptionProps) => (
         <Subscription {...item} key={item.id} />

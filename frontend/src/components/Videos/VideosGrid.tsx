@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideosGrid: React.FC<VideosGridProps> = ({ onLoad }) => {
+function VideosGrid({ onLoad }: VideosGridProps) {
     const classes = useStyles();
 
     const renderItem = (item: VideoItemProps) => (

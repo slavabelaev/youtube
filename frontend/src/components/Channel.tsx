@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Channel: React.FC<ChannelProps> = (props) => {
+function Channel(props: ChannelProps) {
     const classes = useStyles();
     return (
         <div className={classes.root}>

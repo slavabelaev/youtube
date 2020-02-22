@@ -82,14 +82,14 @@ export interface VideoThumbnailProps {
     [key: string]: any;
 }
 
-const VideoThumbnail: React.FC<VideoThumbnailProps> = ({
+function VideoThumbnail({
     src,
     to,
     duration,
     className,
     style,
     ...otherProps
-}) => {
+}: VideoThumbnailProps) {
     const classes = useStyles();
 
     const timeStatus = (

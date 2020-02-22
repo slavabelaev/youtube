@@ -19,7 +19,7 @@ export interface SingleChoiceListProps {
     onLoad: LoadListProps['onLoad']
 }
 
-const SingleChoiceList: React.FC<SingleChoiceListProps> = ({ onLoad }) => {
+function SingleChoiceList({ onLoad }: SingleChoiceListProps) {
     const renderItem = (item: SingleChoiceItemProps, index: number) => (
         <ListItem dense button key={index}>
             <ListItemIcon>

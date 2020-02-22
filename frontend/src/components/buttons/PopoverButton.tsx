@@ -10,13 +10,13 @@ export interface PopoverButtonProps extends IconButtonProps {
     PopoverPaperProps?: PopoverProps['PaperProps'];
 }
 
-const PopoverButton: React.FC<PopoverButtonProps> = ({
+function PopoverButton({
     content,
     children = <MoreVertIcon />,
     tooltip,
     PopoverPaperProps,
     ...IconButtonProps
-}) => {
+}: PopoverButtonProps) {
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);

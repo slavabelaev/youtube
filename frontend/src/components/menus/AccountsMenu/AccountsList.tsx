@@ -7,7 +7,7 @@ export interface AccountsListProps {
     onLoad: LoadListProps['onLoad'];
 }
 
-const AccountsList: React.FC<AccountsListProps> = ({ onLoad }) => {
+function AccountsList({ onLoad }: AccountsListProps) {
     const renderItem = (item: AccountModel) => (
         <AccountListItem
             {...item}

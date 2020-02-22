@@ -49,12 +49,12 @@ export interface NavigationLinksMenuProps extends BottomNavigationProps {
     position?: 'fixed' | 'static'
 }
 
-const NavigationMenu: React.FC<NavigationLinksMenuProps> = ({
+function NavigationMenu({
     variant = 'horizontal',
     position = 'static',
     className,
     ...otherProps
-}) => {
+}: NavigationLinksMenuProps) {
     const classes = useStyles();
     const isVertical = variant === 'vertical';
 

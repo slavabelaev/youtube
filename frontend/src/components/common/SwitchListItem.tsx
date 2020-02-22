@@ -12,11 +12,11 @@ interface SwitchListItemBaseProps {
 
 export type SwitchListItemProps = SwitchListItemBaseProps & SwitchProps;
 
-const SwitchListItem: React.FC<SwitchListItemProps> = ({
+function SwitchListItem({
     title,
     icon,
     ...SwitchProps
-}) => {
+}: SwitchListItemProps) {
     const listItemIcon = icon ? (
         <ListItemIcon>
             {icon}

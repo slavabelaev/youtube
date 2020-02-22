@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Answers: React.FC<AnswersProps> = ({ commentId }) => {
+function Answers({ commentId }: AnswersProps) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);

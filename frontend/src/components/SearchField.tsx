@@ -37,7 +37,7 @@ interface SearchFieldProps {
     renderInput?: (params: RenderInputParams) => React.ReactNode
 }
 
-const SearchField: React.FC<SearchFieldProps> = (props) => {
+function SearchField(props: SearchFieldProps) {
     const classes = useStyles();
     const history = useHistory();
 

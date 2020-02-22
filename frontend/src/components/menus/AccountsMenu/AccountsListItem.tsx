@@ -15,12 +15,12 @@ export interface AccountModel {
 
 export interface AccountListItemProps extends AccountModel {}
 
-export const AccountListItem: React.FC<AccountListItemProps> = ({
+export function AccountListItem({
     fullName,
     email,
     avatarUrl,
     selected = false
-}) => {
+}: AccountListItemProps) {
     const selectedIcon = (
         <ListItemSecondaryAction>
             <CheckIcon />

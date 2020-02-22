@@ -14,13 +14,13 @@ interface CheckedListItemBaseProps {
 
 export type CheckedListItemProps = CheckboxProps & CheckedListItemBaseProps;
 
-const CheckedListItem: React.FC<CheckedListItemProps> = ({
+function CheckedListItem({
     primary,
     secondary,
     secondaryAction,
     onChange,
     ...CheckboxProps
-}) => {
+}: CheckedListItemProps) {
     const [checked, setChecked] = useState(Boolean(CheckboxProps.checked));
     const toggle = () => onChange ? onChange(checked) : setChecked(!checked);
 

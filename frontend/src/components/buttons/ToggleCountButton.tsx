@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const ToggleCountButton: React.FC<ToggleCountButtonProps> = ({
+function ToggleCountButton({
     value=  0,
     checked = false,
     icon,
     onClick,
     ...IconButtonProps
-}) => {
+}: ToggleCountButtonProps) {
     const classes = useStyles();
     const color = checked ? 'secondary' : undefined;
     const id = (+new Date()).toString(16);

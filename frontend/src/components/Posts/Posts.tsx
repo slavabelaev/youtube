@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Posts: React.FC<PostsProps> = ({ onLoad }) => {
+function Posts({ onLoad }: PostsProps) {
     const classes = useStyles();
 
     const renderItem = (item: PostProps) => (

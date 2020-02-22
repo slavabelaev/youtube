@@ -24,11 +24,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const RouteLinks: React.FC<RouteLinksProps> = ({
+function RouteLinks({
     items,
     className,
     ...otherProps
-}) => {
+}: RouteLinksProps) {
     const classes = useStyles();
     const renderItem = (item: RouteLink, index: number) => (
         <Typography

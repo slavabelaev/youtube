@@ -7,7 +7,7 @@ export interface LinksMenuProps {
     items: RouteLink[];
 }
 
-const LinksMenu: React.FC<LinksMenuProps> = ({ items }) => {
+function LinksMenu({ items }: LinksMenuProps) {
     const renderItem = (item: RouteLink) => (
         <LinkListItem {...item} key={item.to} />
     );

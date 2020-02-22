@@ -12,7 +12,7 @@ interface DescriptionBoxProps {
     paragraphs: string[]
 }
 
-const DescriptionBox: React.FC<DescriptionBoxProps> = ({ paragraphs }) => {
+function DescriptionBox({ paragraphs }: DescriptionBoxProps) {
     const classes = useStyles();
 
     const renderItem = (text: string, index: number) => (

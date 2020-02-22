@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const LinkListItem: React.FC<LinkListItemProps> = ({ icon, to, exact = false, title }) => {
+function LinkListItem({ icon, to, exact = false, title }: LinkListItemProps) {
     const classes = useStyles();
 
     const renderIcon = () => {

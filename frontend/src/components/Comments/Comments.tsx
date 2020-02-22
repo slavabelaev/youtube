@@ -8,9 +8,9 @@ export interface CommentsProps {
     onLoad: LoadListProps<CommentProps>['onLoad'];
 }
 
-const Comments: React.FC<CommentsProps> = ({
+function Comments({
     onLoad
-}) => {
+}: CommentsProps) {
     const renderItem = (item: CommentProps) => (
         <div key={item.id}>
             <Comment {...item} />

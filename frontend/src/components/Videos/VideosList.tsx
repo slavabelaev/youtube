@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const VideosList: React.FC<RecommendationsListProps> = ({ onLoad }) => {
+function VideosList({ onLoad }: RecommendationsListProps) {
     const classes = useStyles();
 
     const renderItem = (item: VideoItemProps) => (

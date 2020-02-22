@@ -9,7 +9,7 @@ import MenuListItem from "../../common/MenuListItem";
 
 export interface AccountsMenuProps extends AccountsListProps {}
 
-const AccountsMenu: React.FC<AccountsMenuProps> = ({ onLoad }) => {
+function AccountsMenu({ onLoad }: AccountsMenuProps) {
     const actionsList = (
         <List>
             <MenuListItem

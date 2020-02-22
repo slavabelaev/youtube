@@ -12,7 +12,7 @@ export interface MenuListItemProps {
     onClick?: () => void;
 }
 
-const MenuListItem: React.FC<MenuListItemProps> = (props) => {
+function MenuListItem(props: MenuListItemProps) {
     const listItemIcon = props.icon ? (
         <ListItemIcon>
             {props.icon}

@@ -7,7 +7,7 @@ export interface PlaylistsProps {
     onLoad: LoadListProps['onLoad'];
 }
 
-const Playlists: React.FC<PlaylistsProps> = ({ onLoad }) => {
+function Playlists({ onLoad }: PlaylistsProps) {
     const renderItem = (item: PlaylistProps) => (
         <Playlist {...item} />
     );

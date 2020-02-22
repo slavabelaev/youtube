@@ -12,13 +12,13 @@ export interface LikeDislikeButtonProps {
     DislikeButtonProps?: Partial<IconButtonProps>;
 }
 
-const LikeDislikeButton: React.FC<LikeDislikeButtonProps> = ({
+function LikeDislikeButton({
     initialLikes = 0,
     initialDislikes = 0,
     initialChecked = 'none',
     LikeButtonProps,
     DislikeButtonProps
-}) => {
+}: LikeDislikeButtonProps) {
     const [{ likes, dislikes, checked }, setState] = React.useState({
         likes: initialLikes,
         dislikes: initialDislikes,
