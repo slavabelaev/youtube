@@ -3,8 +3,10 @@ import SingleChoiceList, {SingleChoiceListProps} from "../common/SingleChoiceLis
 
 export interface CountriesListProps extends SingleChoiceListProps {}
 
-const CountriesList: React.FC<CountriesListProps> = ({ onLoad }) => (
-    <SingleChoiceList onLoad={onLoad} />
-);
+function CountriesList({ onLoad }: CountriesListProps) {
+    return (
+        <SingleChoiceList onLoad={onLoad}/>
+    )
+}
 
 export default CountriesList;

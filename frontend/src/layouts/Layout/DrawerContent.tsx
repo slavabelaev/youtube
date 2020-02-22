@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const DrawerContent: React.FC = () => {
+function DrawerContent() {
     const classes = useStyles();
 
     const renderTitle = (title: string) => (
@@ -83,7 +83,7 @@ const DrawerContent: React.FC = () => {
                 ]}
             />
         </div>
-    );
-};
+    )
+}
 
 export default DrawerContent;

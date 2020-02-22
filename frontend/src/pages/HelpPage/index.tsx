@@ -14,12 +14,14 @@ export const HELP_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./HelpPage'));
 
-const HelpPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function HelpPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default HelpPage;

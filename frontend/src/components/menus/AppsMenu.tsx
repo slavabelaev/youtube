@@ -7,7 +7,8 @@ import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import PersonIcon from "@material-ui/icons/Person";
 import LinksMenu from "../common/LinksMenu";
 
-const AppsMenu: React.FC = () => (
+function AppsMenu() {
+	return (
     <div>
         <LinksMenu items={[
             {
@@ -43,6 +44,7 @@ const AppsMenu: React.FC = () => (
             }
         ]} />
     </div>
-);
+)
+}
 
 export default AppsMenu;

@@ -66,6 +66,6 @@ function Notification(props: NotificationProps) {
             </ListItemSecondaryAction>
         </ListItem>
     )
-};
+}
 
 export default Notification;

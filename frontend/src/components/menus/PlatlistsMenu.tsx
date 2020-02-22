@@ -8,7 +8,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Playlists from "../Playlists";
 
-const PlaylistsMenu: React.FC = () => {
+function PlaylistsMenu() {
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);
 
@@ -35,6 +35,6 @@ const PlaylistsMenu: React.FC = () => {
             {triggerItem}
         </>
     );
-};
+}
 
 export default PlaylistsMenu;

@@ -14,12 +14,14 @@ export const REVIEWS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ReviewsPage'));
 
-const ReviewsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function ReviewsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default ReviewsPage;

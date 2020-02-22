@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsSharingPage: React.FC = () => {
+function SettingsSharingPage() {
     const classes = useStyles();
 
     return (
@@ -33,6 +33,6 @@ const SettingsSharingPage: React.FC = () => {
             </header>
         </div>
     )
-};
+}
 
 export default SettingsSharingPage;

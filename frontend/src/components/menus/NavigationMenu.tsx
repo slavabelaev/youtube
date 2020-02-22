@@ -104,6 +104,6 @@ function NavigationMenu({
             <div className={classes.spaceFiller} />
         </>
     )
-};
+}
 
 export default NavigationMenu;

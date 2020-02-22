@@ -46,6 +46,6 @@ function RouteLinks({
             {items.map(renderItem)}
         </div>
     )
-};
+}
 
 export default RouteLinks;

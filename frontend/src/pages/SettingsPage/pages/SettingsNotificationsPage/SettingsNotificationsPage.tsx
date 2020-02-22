@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsNotificationsPage: React.FC = () => {
+function SettingsNotificationsPage() {
     const classes = useStyles();
 
     return (
@@ -32,6 +32,6 @@ const SettingsNotificationsPage: React.FC = () => {
             </header>
         </div>
     )
-};
+}
 
 export default SettingsNotificationsPage;

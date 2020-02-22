@@ -29,6 +29,6 @@ function AccountsMenu({ onLoad }: AccountsMenuProps) {
             {actionsList}
         </div>
     );
-};
+}
 
 export default AccountsMenu;

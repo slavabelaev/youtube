@@ -34,6 +34,6 @@ function Posts({ onLoad }: PostsProps) {
             onLoad={onLoad}
         />
     )
-};
+}
 
 export default Posts;

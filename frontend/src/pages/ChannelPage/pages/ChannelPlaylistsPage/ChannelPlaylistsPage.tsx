@@ -1,9 +1,11 @@
 import React from "react";
 
-const ChannelPlaylistsPage: React.FC = () => (
+function ChannelPlaylistsPage() {
+	return (
     <div>
         Playlists
     </div>
-);
+)
+}
 
 export default ChannelPlaylistsPage;

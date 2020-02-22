@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsPage: React.FC = () => {
+function SettingsPage() {
     const classes = useStyles();
 
     return (
@@ -52,6 +52,6 @@ const SettingsPage: React.FC = () => {
             </main>
         </div>
     )
-};
+}
 
 export default SettingsPage;

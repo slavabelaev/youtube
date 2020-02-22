@@ -40,6 +40,6 @@ function SingleChoiceList({ onLoad }: SingleChoiceListProps) {
             />
         </List>
     );
-};
+}
 
 export default SingleChoiceList;

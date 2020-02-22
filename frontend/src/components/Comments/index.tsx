@@ -4,12 +4,14 @@ import {generateComments} from "../../services/commentsService";
 
 const Component = React.lazy(() => import('./Comments'));
 
-const Comments: React.FC = () => (
+function Comments() {
+	return (
     <Suspense fallback={<SuspenseFallback />}>
         <Component
             onLoad={generateComments}
         />
     </Suspense>
-);
+)
+}
 
 export default Comments;

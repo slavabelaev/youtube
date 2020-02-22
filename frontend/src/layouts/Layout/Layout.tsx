@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PropsWithChildren} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {createStyles, Theme, useMediaQuery} from "@material-ui/core";
 import LayoutAppBar from "./LayoutAppBar";
@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 const loadedOnLargeScreen = window.outerWidth > 992;
-const Layout: React.FC<LayoutProps> = ({
+function Layout({
     children,
     largeScreenVariant = 'permanent'
-}) => {
+}: PropsWithChildren<LayoutProps>) {
     const classes = useStyles();
     const isScreenDownSm = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
     const isPermanent = largeScreenVariant === 'permanent';
@@ -49,6 +49,6 @@ const Layout: React.FC<LayoutProps> = ({
             {isScreenDownSm ? <NavigationMenu position="fixed" /> : null}
         </>
     )
-};
+}
 
 export default Layout;

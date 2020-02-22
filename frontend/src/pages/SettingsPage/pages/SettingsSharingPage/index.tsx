@@ -13,10 +13,12 @@ export const SETTINGS_SHARING_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsSharingPage'));
 
-const SettingsSharingPage: React.FC = () => (
-    <Suspense fallback={<LinearProgress />}>
-        <Page />
-    </Suspense>
-);
+function SettingsSharingPage() {
+    return (
+        <Suspense fallback={<LinearProgress/>}>
+            <Page/>
+        </Suspense>
+    )
+}
 
 export default SettingsSharingPage;

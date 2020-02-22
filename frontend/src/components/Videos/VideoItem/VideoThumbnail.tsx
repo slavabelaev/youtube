@@ -158,6 +158,6 @@ function VideoThumbnail({
             {timeStatus}
         </div>
     )
-};
+}
 
 export default VideoThumbnail;

@@ -9,14 +9,13 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const HelpPage: React.FC = () => {
+function HelpPage() {
     const classes = useStyles();
-
     return (
         <main className={classes.root}>
             Playlist Page
         </main>
     )
-};
+}
 
 export default HelpPage;

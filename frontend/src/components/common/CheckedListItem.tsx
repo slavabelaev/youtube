@@ -52,6 +52,6 @@ function CheckedListItem({
             {listItemSecondaryAction}
         </ListItem>
     )
-};
+}
 
 export default CheckedListItem;

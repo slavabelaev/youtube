@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const TermsPage: React.FC = () => {
+function TermsPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const TermsPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default TermsPage;

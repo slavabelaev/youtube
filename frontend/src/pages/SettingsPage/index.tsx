@@ -14,12 +14,14 @@ export const SETTINGS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsPage'));
 
-const SettingsPage: React.FC = () => (
-    <Layout largeScreenVariant="temporary">
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function SettingsPage() {
+    return (
+        <Layout largeScreenVariant="temporary">
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default SettingsPage;

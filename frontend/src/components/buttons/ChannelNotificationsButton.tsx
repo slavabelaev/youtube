@@ -39,6 +39,6 @@ function ChannelNotificationsButton(props: ChannelNotificationsButtonProps) {
             {items[index].icon}
         </PopoverButton>
     )
-};
+}
 
 export default ChannelNotificationsButton;

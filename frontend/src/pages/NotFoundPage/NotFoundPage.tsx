@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const NotFoundPage: React.FC = () => {
+function NotFoundPage() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -23,6 +23,6 @@ const NotFoundPage: React.FC = () => {
             </Typography>
         </div>
     )
-};
+}
 
 export default NotFoundPage;

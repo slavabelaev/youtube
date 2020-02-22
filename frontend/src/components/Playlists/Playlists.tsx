@@ -20,6 +20,6 @@ function Playlists({ onLoad }: PlaylistsProps) {
             />
         </List>
     )
-};
+}
 
 export default Playlists;

@@ -21,12 +21,14 @@ export const WATCH_LATER_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./PlaylistPage'));
 
-const PlaylistPage: React.FC = () => (
+function PlaylistPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default PlaylistPage;

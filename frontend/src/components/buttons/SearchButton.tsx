@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
 }));
 
-const SearchButton: React.FC = () => {
+function SearchButton() {
     const classes = useStyles();
     const [show, setShow] = React.useState(false);
     const toggle = () => setShow(!show);
@@ -71,6 +71,6 @@ const SearchButton: React.FC = () => {
             {button}
         </>
     )
-};
+}
 
 export default SearchButton;

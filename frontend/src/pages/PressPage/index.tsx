@@ -12,12 +12,14 @@ export const PRESS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./PressPage'));
 
-const PressPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function PressPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default PressPage;

@@ -11,10 +11,12 @@ export const CHANNEL_VIDEOS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ChannelVideosPage'));
 
-const ChannelVideosPage: React.FC = () => (
+function ChannelVideosPage() {
+	return (
     <Suspense fallback={<LinearProgress />}>
         <Page />
     </Suspense>
-);
+)
+}
 
 export default ChannelVideosPage;

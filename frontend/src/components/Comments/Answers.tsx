@@ -68,6 +68,6 @@ function Answers({ commentId }: AnswersProps) {
             </Collapse>
         </>
     );
-};
+}
 
 export default Answers;

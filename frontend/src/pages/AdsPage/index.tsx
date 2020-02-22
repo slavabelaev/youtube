@@ -12,12 +12,14 @@ export const ADS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./AdsPage'));
 
-const AdsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function AdsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default AdsPage;

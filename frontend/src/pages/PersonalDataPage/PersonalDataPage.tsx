@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const PersonalDataPage: React.FC = () => {
+function PersonalDataPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const PersonalDataPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default PersonalDataPage;

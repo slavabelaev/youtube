@@ -14,12 +14,14 @@ export const CHANNEL_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ChannelPage'));
 
-const ChannelPage: React.FC = () => (
+function ChannelPage() {
+	return (
     <Suspense fallback={<LinearProgress />}>
         <Layout>
             <Page />
         </Layout>
     </Suspense>
-);
+)
+}
 
 export default ChannelPage;

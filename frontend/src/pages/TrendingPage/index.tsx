@@ -14,12 +14,14 @@ export const TRENDING_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./TrendingPage'));
 
-const TrendingPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function TrendingPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default TrendingPage;

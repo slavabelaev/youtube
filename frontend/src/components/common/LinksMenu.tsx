@@ -17,6 +17,6 @@ function LinksMenu({ items }: LinksMenuProps) {
             {items.map(renderItem)}
         </List>
     )
-};
+}
 
 export default LinksMenu;

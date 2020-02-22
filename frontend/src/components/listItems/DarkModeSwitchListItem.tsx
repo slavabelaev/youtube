@@ -3,7 +3,7 @@ import Brightness4Icon from "@material-ui/icons/Brightness4";
 import SwitchListItem from "../common/SwitchListItem";
 import {ThemeContext} from "../../contexts/ThemeContext/ThemeContext";
 
-const DarkModeSwitchListItem: React.FC = () => {
+function DarkModeSwitchListItem() {
     const themeContext = useContext(ThemeContext);
     const darkThemeEnabled = themeContext?.theme.palette.type === 'dark';
     return (
@@ -16,6 +16,6 @@ const DarkModeSwitchListItem: React.FC = () => {
             }}
         />
     );
-};
+}
 
 export default DarkModeSwitchListItem;

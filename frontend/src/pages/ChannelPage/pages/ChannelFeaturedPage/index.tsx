@@ -11,10 +11,12 @@ export const CHANNEL_FEATURED_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ChannelFeaturedPage'));
 
-const ChannelFeaturedPage: React.FC = () => (
+function ChannelFeaturedPage() {
+	return (
     <Suspense fallback={<LinearProgress />}>
         <Page />
     </Suspense>
-);
+)
+}
 
 export default ChannelFeaturedPage;

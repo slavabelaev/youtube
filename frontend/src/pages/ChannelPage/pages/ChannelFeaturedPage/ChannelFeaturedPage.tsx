@@ -1,9 +1,11 @@
 import React from "react";
 
-const ChannelFeaturedPage: React.FC = () => (
+function ChannelFeaturedPage() {
+	return (
     <div>
         Featured
     </div>
-);
+)
+}
 
 export default ChannelFeaturedPage;

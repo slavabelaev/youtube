@@ -39,6 +39,6 @@ function MenuListItem(props: MenuListItemProps) {
             {listItemSecondaryAction}
         </ListItem>
     )
-};
+}
 
 export default MenuListItem;

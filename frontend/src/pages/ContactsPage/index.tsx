@@ -12,12 +12,14 @@ export const CONTACTS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ContactsPage'));
 
-const ContactsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function ContactsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default ContactsPage;

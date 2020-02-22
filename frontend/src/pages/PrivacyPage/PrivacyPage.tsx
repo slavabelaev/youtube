@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const PrivacyPage: React.FC = () => {
+function PrivacyPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const PrivacyPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default PrivacyPage;

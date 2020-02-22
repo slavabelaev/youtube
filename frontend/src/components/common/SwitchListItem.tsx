@@ -42,6 +42,6 @@ function SwitchListItem({
             </ListItemSecondaryAction>
         </ListItem>
     )
-};
+}
 
 export default SwitchListItem;

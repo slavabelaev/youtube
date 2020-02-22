@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const ContactsPage: React.FC = () => {
+function ContactsPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const ContactsPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default ContactsPage;

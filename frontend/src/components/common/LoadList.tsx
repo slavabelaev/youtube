@@ -63,6 +63,6 @@ function LoadList({
             {button}
         </>
     );
-};
+}
 
 export default LoadList;

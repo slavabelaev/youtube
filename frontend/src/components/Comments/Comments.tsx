@@ -26,6 +26,6 @@ function Comments({
             />
         </List>
     )
-};
+}
 
 export default Comments;

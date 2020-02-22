@@ -17,6 +17,6 @@ function SubscribeButton(props: SubscribeButtonProps) {
            {subscribed ? 'Вы подписаны' : 'Подписаться'}
        </Button>
    )
-};
+}
 
 export default SubscribeButton;

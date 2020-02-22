@@ -14,12 +14,14 @@ export const PURCHASES_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./PurchasesPage'));
 
-const PurchasesPage: React.FC = () => (
+function PurchasesPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default PurchasesPage;

@@ -86,6 +86,6 @@ function SearchField(props: SearchFieldProps) {
             onChange={handleChange}
         />
     );
-};
+}
 
 export default SearchField;

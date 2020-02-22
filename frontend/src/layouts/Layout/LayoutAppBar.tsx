@@ -48,9 +48,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const LayoutAppBar: React.FC<LayoutAppBarProps> = ({
+function LayoutAppBar({
     MenuButtonProps
-}) => {
+}: LayoutAppBarProps) {
     const classes = useStyles();
     const isScreenUpMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
     const isScreenDownXs = useMediaQuery((theme: Theme) => theme.breakpoints.down('xs'));
@@ -100,6 +100,6 @@ const LayoutAppBar: React.FC<LayoutAppBarProps> = ({
             <div className={classes.toolbar} />
         </>
     )
-};
+}
 
 export default LayoutAppBar;

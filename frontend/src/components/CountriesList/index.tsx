@@ -4,10 +4,12 @@ import {generateCountries} from "../../services/countriesService";
 
 const Component = React.lazy(() => import('./CountriesList'));
 
-const CountriesList = () => (
-    <Suspense fallback={<SuspenseFallback />}>
-        <Component onLoad={generateCountries} />
-    </Suspense>
-);
+function CountriesList() {
+    return (
+        <Suspense fallback={<SuspenseFallback />}>
+            <Component onLoad={generateCountries} />
+        </Suspense>
+    );
+}
 
 export default CountriesList;

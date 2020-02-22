@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const NotificationsPopoverButton: React.FC = () => {
+function NotificationsPopoverButton() {
     const classes = useStyles();
     const title = 'Уведомления';
 
@@ -84,6 +84,6 @@ const NotificationsPopoverButton: React.FC = () => {
             {iconWithBadge}
         </PopoverButton>
     )
-};
+}
 
 export default NotificationsPopoverButton;

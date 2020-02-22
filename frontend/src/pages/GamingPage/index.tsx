@@ -14,12 +14,14 @@ export const GAMING_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./GamingPage'));
 
-const GamingPage: React.FC = () => (
+function GamingPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default GamingPage;

@@ -14,12 +14,14 @@ export const HISTORY_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./HistoryPage'));
 
-const HistoryPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function HistoryPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default HistoryPage;

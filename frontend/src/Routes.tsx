@@ -32,7 +32,8 @@ import PrivacyPage, {PRIVACY_PAGE_ROUTE} from "./pages/PrivacyPage";
 import PoliciesPage, {POLICIES_PAGE_ROUTE} from "./pages/PoliciesPage";
 import NewPage, {NEW_PAGE_ROUTE} from "./pages/NewPage";
 
-const Routes: React.FC = () => (
+function Routes() {
+	return (
     <Switch>
         <Route exact={true} path={HOME_PAGE_ROUTE} component={HomePage} />
         <Route path={WATCH_PAGE_ROUTE} component={WatchPage} />
@@ -67,6 +68,7 @@ const Routes: React.FC = () => (
         <Route path={NEW_PAGE_ROUTE} component={NewPage} />
         <Route component={NotFoundPage} />
     </Switch>
-);
+)
+}
 
 export default Routes;

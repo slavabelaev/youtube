@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const StreamingPage: React.FC = () => {
+function StreamingPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const StreamingPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default StreamingPage;

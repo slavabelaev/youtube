@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsAccountPage: React.FC = () => {
+function SettingsAccountPage() {
     const classes = useStyles();
 
     return (
@@ -32,6 +32,6 @@ const SettingsAccountPage: React.FC = () => {
             </header>
         </div>
     )
-};
+}
 
 export default SettingsAccountPage;

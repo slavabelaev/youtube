@@ -14,12 +14,14 @@ export const STREAMING_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./StreamingPage'));
 
-const StreamingPage: React.FC = () => (
+function StreamingPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default StreamingPage;

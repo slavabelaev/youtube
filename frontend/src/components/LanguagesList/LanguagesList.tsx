@@ -3,8 +3,10 @@ import SingleChoiceList, {SingleChoiceListProps} from "../common/SingleChoiceLis
 
 export interface LanguagesListProps extends SingleChoiceListProps {}
 
-const LanguagesList: React.FC<LanguagesListProps> = ({ onLoad }) => (
-    <SingleChoiceList onLoad={onLoad} />
-);
+function LanguagesList({ onLoad }: LanguagesListProps) {
+    return (
+        <SingleChoiceList onLoad={onLoad}/>
+    )
+}
 
 export default LanguagesList;

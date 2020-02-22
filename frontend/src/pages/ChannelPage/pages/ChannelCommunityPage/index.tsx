@@ -11,10 +11,12 @@ export const CHANNEL_COMMUNITY_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ChannelCommunityPage'));
 
-const ChannelCommunityPage: React.FC = () => (
+function ChannelCommunityPage() {
+	return (
     <Suspense fallback={<LinearProgress />}>
         <Page />
     </Suspense>
-);
+)
+}
 
 export default ChannelCommunityPage;

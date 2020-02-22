@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const DevelopersPage: React.FC = () => {
+function DevelopersPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const DevelopersPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default DevelopersPage;

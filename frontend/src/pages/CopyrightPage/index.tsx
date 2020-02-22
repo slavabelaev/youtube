@@ -12,12 +12,14 @@ export const COPYRIGHT_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./CopyrightPage'));
 
-const CopyrightPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function CopyrightPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default CopyrightPage;

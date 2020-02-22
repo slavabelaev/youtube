@@ -34,6 +34,6 @@ function Channels({ onLoad }: ChannelsProps) {
             />
         </div>
     )
-};
+}
 
 export default Channels;

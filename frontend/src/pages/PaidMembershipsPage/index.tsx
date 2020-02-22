@@ -14,12 +14,14 @@ export const PAID_MEMBERSHIPS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./PaidMembershipsPage'));
 
-const PaidMembershipsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function PaidMembershipsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default PaidMembershipsPage;

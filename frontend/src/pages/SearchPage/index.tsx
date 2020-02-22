@@ -6,12 +6,14 @@ export const SEARCH_PAGE_ROUTE = '/search';
 
 const Page = React.lazy(() => import('./SearchPage'));
 
-const SearchPage: React.FC = () => (
+function SearchPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default SearchPage;

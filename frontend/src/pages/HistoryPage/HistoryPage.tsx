@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const HistoryPage: React.FC = () => {
+function HistoryPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const HistoryPage: React.FC = () => {
             History Page
         </main>
     )
-};
+}
 
 export default HistoryPage;

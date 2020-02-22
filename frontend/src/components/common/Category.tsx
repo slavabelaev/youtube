@@ -35,6 +35,6 @@ function Category(props: CategoryProps) {
             </Typography>
         </div>
     )
-};
+}
 
 export default Category;

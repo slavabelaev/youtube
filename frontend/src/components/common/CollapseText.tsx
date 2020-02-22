@@ -49,6 +49,6 @@ function CollapseText({ initialText, additionalText, ...otherProps }: CollapseTe
             {additionalText ? button : null}
         </div>
     )
-};
+}
 
 export default CollapseText;

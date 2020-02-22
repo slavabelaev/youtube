@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {PropsWithChildren, useState} from "react";
 import {DEFAULT_DARK_THEME, DEFAULT_THEME} from "./theme";
 import {MuiThemeProvider, Theme} from "@material-ui/core";
 import {Palette} from "@material-ui/core/styles/createPalette";
@@ -10,7 +10,7 @@ export interface ThemeContextProps {
 
 export const ThemeContext = React.createContext<ThemeContextProps | undefined>(undefined);
 
-const ThemeProvider: React.FC = (props) => {
+function ThemeProvider(props: PropsWithChildren<{}>) {
     const darkThemeEnabled = localStorage.getItem('darkThemeEnabled') === 'true';
     const [theme, setTheme] = useState(darkThemeEnabled ? DEFAULT_DARK_THEME : DEFAULT_THEME);
 
@@ -30,6 +30,6 @@ const ThemeProvider: React.FC = (props) => {
             </MuiThemeProvider>
         </ThemeContext.Provider>
     )
-};
+}
 
 export default ThemeProvider;

@@ -39,6 +39,6 @@ function VideosList({ onLoad }: RecommendationsListProps) {
             />
         </List>
     );
-};
+}
 
 export default VideosList;

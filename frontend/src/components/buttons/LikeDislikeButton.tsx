@@ -46,6 +46,6 @@ function LikeDislikeButton({
             />
         </>
     );
-};
+}
 
 export default LikeDislikeButton;

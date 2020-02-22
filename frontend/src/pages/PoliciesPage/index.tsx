@@ -12,12 +12,14 @@ export const RULES_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./PoliciesPage'));
 
-const PoliciesPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function PoliciesPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default PoliciesPage;

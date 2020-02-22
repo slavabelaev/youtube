@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const Logo: React.FC = () => {
+function Logo() {
     const classes = useStyles();
     const themeContext = useContext(ThemeContext);
     const darkModeEnabled = themeContext?.theme.palette.type === 'dark';
@@ -28,6 +28,6 @@ const Logo: React.FC = () => {
             />
         </Link>
     )
-};
+}
 
 export default Logo;

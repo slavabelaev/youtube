@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const AccountMenu: React.FC = () => {
+function AccountMenu() {
     const classes = useStyles();
 
     const renderToolbar = (title: string) => (
@@ -216,6 +216,6 @@ const AccountMenu: React.FC = () => {
 
     const [activeView, setActiveView] = React.useState(initialView);
     return activeView;
-};
+}
 
 export default AccountMenu;

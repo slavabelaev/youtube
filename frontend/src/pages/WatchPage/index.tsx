@@ -6,12 +6,14 @@ export const WATCH_PAGE_ROUTE = '/watch';
 
 const Page = React.lazy(() => import('./WatchPage'));
 
-const WatchPage: React.FC = () => (
+function WatchPage() {
+	return (
     <Layout largeScreenVariant="temporary">
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default WatchPage;

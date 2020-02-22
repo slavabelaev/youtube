@@ -2,11 +2,13 @@ import React from "react";
 import Routes from "./Routes";
 import {CssBaseline} from "@material-ui/core";
 
-const App: React.FC = () => (
+function App() {
+	return (
     <>
         <CssBaseline />
         <Routes />
     </>
-);
+)
+}
 
 export default App;

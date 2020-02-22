@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SuspenseFallback: React.FC = () => {
+function SuspenseFallback() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -23,6 +23,6 @@ const SuspenseFallback: React.FC = () => {
             />
         </div>
     )
-};
+}
 
 export default SuspenseFallback;

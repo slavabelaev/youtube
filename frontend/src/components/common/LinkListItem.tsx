@@ -55,6 +55,6 @@ function LinkListItem({ icon, to, exact = false, title }: LinkListItemProps) {
             />
         </ListItem>
     )
-};
+}
 
 export default LinkListItem;

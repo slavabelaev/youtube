@@ -14,12 +14,14 @@ export const LIBRARY_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./LibraryPage'));
 
-const LibraryPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function LibraryPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default LibraryPage;

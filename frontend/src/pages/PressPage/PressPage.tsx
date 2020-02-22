@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const PressPage: React.FC = () => {
+function PressPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const PressPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default PressPage;

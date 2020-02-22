@@ -13,10 +13,12 @@ export const SETTINGS_ADVANCED_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsAdvancedPage'));
 
-const SettingsAdvancedPage: React.FC = () => (
-    <Suspense fallback={<LinearProgress />}>
-        <Page />
-    </Suspense>
-);
+function SettingsAdvancedPage() {
+    return (
+        <Suspense fallback={<LinearProgress/>}>
+            <Page/>
+        </Suspense>
+    )
+}
 
 export default SettingsAdvancedPage;

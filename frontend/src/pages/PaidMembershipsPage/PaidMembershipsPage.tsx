@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const PaidMembershipsPage: React.FC = () => {
+function PaidMembershipsPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const PaidMembershipsPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default PaidMembershipsPage;

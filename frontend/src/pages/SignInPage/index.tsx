@@ -15,12 +15,14 @@ export const SIGN_OUT_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SignInPage'));
 
-const SignInPage: React.FC = () => (
+function SignInPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default SignInPage;

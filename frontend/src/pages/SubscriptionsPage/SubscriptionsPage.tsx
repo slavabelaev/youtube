@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
 }));
 
-const SubscriptionsPage: React.FC = () => {
+function SubscriptionsPage() {
     const classes = useStyles();
 
     return (
@@ -24,6 +24,6 @@ const SubscriptionsPage: React.FC = () => {
             />
         </main>
     )
-};
+}
 
 export default SubscriptionsPage;

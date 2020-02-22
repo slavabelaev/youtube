@@ -9,7 +9,7 @@ import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import Divider from "@material-ui/core/Divider";
 import Menu from "../../common/Menu";
 
-const VideoMenu: React.FC = () => {
+function VideoMenu() {
     const primaryMenuItems: MenuListItemProps[] = [
         { title: 'Добавить в очередь', icon: <PlaylistPlayIcon />, onClick: () => null },
         { title: 'Добавить в плейлист "Смотреть позже"', icon: <WatchLaterIcon />, onClick: () => null },
@@ -29,6 +29,6 @@ const VideoMenu: React.FC = () => {
             <Menu items={secondaryMenuItems} />
         </div>
     )
-};
+}
 
 export default VideoMenu;

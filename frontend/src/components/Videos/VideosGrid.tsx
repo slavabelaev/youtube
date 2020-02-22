@@ -38,6 +38,6 @@ function VideosGrid({ onLoad }: VideosGridProps) {
             />
         </Grid>
     )
-};
+}
 
 export default VideosGrid;

@@ -26,6 +26,6 @@ function DescriptionBox({ paragraphs }: DescriptionBoxProps) {
             {paragraphs.map(renderItem)}
         </div>
     );
-};
+}
 
 export default DescriptionBox;

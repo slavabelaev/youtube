@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const LibraryPage: React.FC = () => {
+function LibraryPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const LibraryPage: React.FC = () => {
             Library Page
         </main>
     )
-};
+}
 
 export default LibraryPage;

@@ -11,13 +11,15 @@ export interface PlaylistModel {
 export interface PlaylistProps extends PlaylistModel {
 }
 
-const Playlist: React.FC<PlaylistProps> = (props) => (
-    <LinkListItem
-        key={props.id}
-        title={props.title}
-        to={props.linkTo}
-        icon={PlaylistPlayIcon}
-    />
-);
+function Playlist(props: PlaylistProps) {
+    return (
+        <LinkListItem
+            key={props.id}
+            title={props.title}
+            to={props.linkTo}
+            icon={PlaylistPlayIcon}
+        />
+    )
+}
 
 export default Playlist;

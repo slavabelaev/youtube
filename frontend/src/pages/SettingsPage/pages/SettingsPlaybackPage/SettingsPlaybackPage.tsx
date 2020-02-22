@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsPlaybackPage: React.FC = () => {
+function SettingsPlaybackPage() {
     const classes = useStyles();
 
     return (
@@ -32,6 +32,6 @@ const SettingsPlaybackPage: React.FC = () => {
             </header>
         </div>
     )
-};
+}
 
 export default SettingsPlaybackPage;

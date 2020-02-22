@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const CopyrightPage: React.FC = () => {
+function CopyrightPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const CopyrightPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default CopyrightPage;

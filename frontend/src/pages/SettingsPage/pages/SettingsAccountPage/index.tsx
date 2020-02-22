@@ -13,10 +13,12 @@ export const SETTINGS_ACCOUNT_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsAccountPage'));
 
-const SettingsAccountPage: React.FC = () => (
-    <Suspense fallback={<LinearProgress />}>
-        <Page />
-    </Suspense>
-);
+function SettingsAccountPage() {
+    return (
+        <Suspense fallback={<LinearProgress/>}>
+            <Page/>
+        </Suspense>
+    )
+}
 
 export default SettingsAccountPage;

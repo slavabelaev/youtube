@@ -42,11 +42,11 @@ const useStyles = makeStyles((theme: Theme) => {
     })
 });
 
-const LayoutDrawer: React.FC<LayoutDrawerProps> = ({
+function LayoutDrawer({
     largeScreenVariant = 'permanent',
     open = true,
     onClose
-}) => {
+}: LayoutDrawerProps) {
     const classes = useStyles();
     const isPermanent = largeScreenVariant === 'permanent';
     const drawerWidth = isPermanent ? (open ? 240 : 72) : 240;
@@ -104,6 +104,6 @@ const LayoutDrawer: React.FC<LayoutDrawerProps> = ({
             {spaceFiller}
         </>
     )
-};
+}
 
 export default LayoutDrawer;

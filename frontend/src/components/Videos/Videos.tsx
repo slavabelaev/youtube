@@ -73,6 +73,6 @@ function Videos({
             {videos}
         </>
     )
-};
+}
 
 export default Videos;

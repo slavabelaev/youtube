@@ -19,6 +19,6 @@ function Menu({ items }: MenuProps) {
             {items.map(renderItem)}
         </List>
     )
-};
+}
 
 export default Menu;

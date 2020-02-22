@@ -12,12 +12,14 @@ export const CREATORS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./CreatorsPage'));
 
-const CreatorsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function CreatorsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default CreatorsPage;

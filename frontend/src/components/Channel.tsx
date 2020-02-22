@@ -76,6 +76,6 @@ function Channel(props: ChannelProps) {
             />
         </div>
     )
-};
+}
 
 export default Channel;

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SignInPage: React.FC = () => {
+function SignInPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const SignInPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default SignInPage;

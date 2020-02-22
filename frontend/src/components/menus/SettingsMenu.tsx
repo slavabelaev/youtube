@@ -9,7 +9,7 @@ import {SETTINGS_SHARING_MENU_ITEM} from "../../pages/SettingsPage/pages/Setting
 import {SETTINGS_ADVANCED_MENU_ITEM} from "../../pages/SettingsPage/pages/SettingsAdvancedPage";
 import {RouteLink} from "../common/LinkListItem";
 
-const SettingsMenu: React.FC = () => {
+function SettingsMenu() {
     const match = useRouteMatch();
     const items: RouteLink[] = [
         SETTINGS_ACCOUNT_MENU_ITEM,
@@ -23,6 +23,6 @@ const SettingsMenu: React.FC = () => {
     return (
         <LinksMenu items={items} />
     );
-};
+}
 
 export default SettingsMenu;

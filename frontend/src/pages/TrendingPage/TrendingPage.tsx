@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const TrendingPage: React.FC = () => {
+function TrendingPage() {
     const classes = useStyles();
     const categories: CategoryProps[] = [
         { title: 'Музыка', avatarSrc: '' },
@@ -48,6 +48,6 @@ const TrendingPage: React.FC = () => {
             </main>
         </div>
     )
-};
+}
 
 export default TrendingPage;

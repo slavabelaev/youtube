@@ -38,6 +38,6 @@ function Subscription(props: SubscriptionProps) {
             icon={() => renderAvatar(props.avatarUrl)}
         />
     );
-};
+}
 
 export default Subscription;

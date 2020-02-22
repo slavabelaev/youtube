@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const WatchPage: React.FC = () => {
+function WatchPage() {
     const classes = useStyles();
 
     const toolbar = (
@@ -156,6 +156,6 @@ const WatchPage: React.FC = () => {
             {aside}
         </div>
     )
-};
+}
 
 export default WatchPage;

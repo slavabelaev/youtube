@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SearchPage: React.FC = () => {
+function SearchPage() {
     const classes = useStyles();
 
     return (
@@ -21,6 +21,6 @@ const SearchPage: React.FC = () => {
             />
         </main>
     )
-};
+}
 
 export default SearchPage;

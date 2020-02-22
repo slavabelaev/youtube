@@ -24,6 +24,6 @@ function AccountsList({ onLoad }: AccountsListProps) {
             />
         </List>
     )
-};
+}
 
 export default AccountsList;

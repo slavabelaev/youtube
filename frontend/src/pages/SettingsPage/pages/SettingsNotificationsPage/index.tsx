@@ -13,10 +13,12 @@ export const SETTINGS_NOTIFICATIONS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsNotificationsPage'));
 
-const SettingsNotificationsPage: React.FC = () => (
-    <Suspense fallback={<LinearProgress />}>
-        <Page />
-    </Suspense>
-);
+function SettingsNotificationsPage() {
+    return (
+        <Suspense fallback={<LinearProgress/>}>
+            <Page/>
+        </Suspense>
+    )
+}
 
 export default SettingsNotificationsPage;

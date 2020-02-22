@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const HomePage: React.FC = () => {
+function HomePage() {
     const classes = useStyles();
 
     return (
@@ -24,6 +24,6 @@ const HomePage: React.FC = () => {
             </main>
         </>
     )
-};
+}
 
 export default HomePage;

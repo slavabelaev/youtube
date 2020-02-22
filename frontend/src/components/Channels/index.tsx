@@ -4,11 +4,13 @@ import {generateChannels} from "../../services/channelsService";
 
 const Component = React.lazy(() => import('./Channels'));
 
-const Channels: React.FC = () => (
-    <Suspense fallback={<SuspenseFallback />}>
-        <Component onLoad={generateChannels} />
-    </Suspense>
-);
+function Channels() {
+    return (
+        <Suspense fallback={<SuspenseFallback/>}>
+            <Component onLoad={generateChannels}/>
+        </Suspense>
+    )
+}
 
 export default Channels;
 

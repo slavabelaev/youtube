@@ -14,12 +14,14 @@ export const KEYBOARD_SHORTCUTS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./KeyboardShortcutsPage'));
 
-const KeyboardShortcutsPage: React.FC = () => (
+function KeyboardShortcutsPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default KeyboardShortcutsPage;

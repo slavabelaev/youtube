@@ -3,10 +3,12 @@ import SuspenseFallback from "../../common/SuspenseFallback";
 
 const Component = React.lazy(() => import('./AccountMenu'));
 
-const AccountMenu: React.FC = () => (
+function AccountMenu() {
+	return (
     <Suspense fallback={<SuspenseFallback />}>
         <Component />
     </Suspense>
-);
+)
+}
 
 export default AccountMenu;

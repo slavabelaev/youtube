@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const PlaylistPage: React.FC = () => {
+function PlaylistPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const PlaylistPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default PlaylistPage;

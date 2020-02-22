@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SaveToPlaylistButton: React.FC = () => {
+function SaveToPlaylistButton() {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const toggle = () => setOpen(!open);
@@ -110,6 +110,6 @@ const SaveToPlaylistButton: React.FC = () => {
             {dialog}
         </>
     )
-};
+}
 
 export default SaveToPlaylistButton;

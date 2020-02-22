@@ -13,10 +13,12 @@ export const SETTINGS_PRIVACY_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsPrivacyPage'));
 
-const SettingsPrivacyPage: React.FC = () => (
+function SettingsPrivacyPage() {
+	return (
     <Suspense fallback={<LinearProgress />}>
         <Page />
     </Suspense>
-);
+)
+}
 
 export default SettingsPrivacyPage;

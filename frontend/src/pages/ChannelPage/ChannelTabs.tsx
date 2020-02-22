@@ -12,7 +12,7 @@ import {CHANNEL_CHANNELS_MENU_ITEM} from "./pages/ChannelChannelsPage";
 import ChannelRoutes from "./ChannelRoutes";
 import {RouteLink} from "../../components/common/LinkListItem";
 
-const ChannelTabs: React.FC = () => {
+function ChannelTabs() {
     const match = useRouteMatch();
     const { location } = useHistory();
     const items: RouteLink[] = [
@@ -54,6 +54,6 @@ const ChannelTabs: React.FC = () => {
             <ChannelRoutes />
         </>
     )
-};
+}
 
 export default ChannelTabs;

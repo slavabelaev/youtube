@@ -4,12 +4,14 @@ import Layout from "../../layouts/Layout";
 
 const Page = React.lazy(() => import('./NotFoundPage'));
 
-const NotFoundPage: React.FC = () => (
+function NotFoundPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default NotFoundPage;

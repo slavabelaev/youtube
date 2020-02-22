@@ -76,6 +76,6 @@ function Post({
             {bottomToolbar}
         </Card>
     )
-};
+}
 
 export default Post;

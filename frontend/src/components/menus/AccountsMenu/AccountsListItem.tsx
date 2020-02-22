@@ -39,6 +39,6 @@ export function AccountListItem({
             {selected ? selectedIcon : null}
         </ListItem>
     )
-};
+}
 
 export default AccountListItem;

@@ -57,7 +57,7 @@ interface DetailProps {
     value: string;
 }
 
-const ChannelAboutPage: React.FC = () => {
+function ChannelAboutPage() {
     const classes = useStyles();
 
     const description: string = 'Подробное описание канала. Здесь можно разместить любую информацию, которая на Ваш взгляд может быть полезна пользователям.';
@@ -101,7 +101,7 @@ const ChannelAboutPage: React.FC = () => {
         </>
     );
 
-    const Details = () => (
+    const detailsNode = (
         <dl className={classes.details}>
             {details.map(renderDetail)}
         </dl>
@@ -156,7 +156,7 @@ const ChannelAboutPage: React.FC = () => {
                 <Divider />
                 <section className={classes.section}>
                     {renderTitle('Дополнительно')}
-                    <Details />
+                    {detailsNode}
                 </section>
                 <Divider />
                 <section className={classes.section}>
@@ -172,6 +172,6 @@ const ChannelAboutPage: React.FC = () => {
             </aside>
         </div>
     )
-};
+}
 
 export default ChannelAboutPage;

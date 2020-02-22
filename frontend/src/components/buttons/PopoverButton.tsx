@@ -63,6 +63,6 @@ function PopoverButton({
             {popover}
         </>
     )
-};
+}
 
 export default PopoverButton;

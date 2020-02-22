@@ -12,12 +12,14 @@ export const NEW_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./NewPage'));
 
-const NewPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function NewPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default NewPage;

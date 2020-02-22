@@ -14,12 +14,14 @@ export const REPORTS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./ReportsPage'));
 
-const ReportsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function ReportsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default ReportsPage;

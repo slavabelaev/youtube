@@ -64,6 +64,6 @@ function ChannelToolbar(props: ChannelToolbar) {
             </aside>
         </Toolbar>
     );
-};
+}
 
 export default ChannelToolbar;

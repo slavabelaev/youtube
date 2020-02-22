@@ -260,6 +260,6 @@ function VideoItem({
             </ListItem>
         </div>
     );
-};
+}
 
 export default VideoItem;

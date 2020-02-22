@@ -15,12 +15,14 @@ export const HOME_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./HomePage'));
 
-const HomePage: React.FC = () => (
+function HomePage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default HomePage;

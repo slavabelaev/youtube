@@ -12,12 +12,14 @@ export const TERMS_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./TermsPage'));
 
-const TermsPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function TermsPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default TermsPage;

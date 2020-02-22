@@ -157,6 +157,6 @@ function Comment(props: CommentProps) {
             {toolbar}
         </div>
     )
-};
+}
 
 export default Comment;

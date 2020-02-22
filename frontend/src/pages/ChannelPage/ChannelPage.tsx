@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) => {
     })
 });
 
-const ChannelPage: React.FC = () => {
+function ChannelPage() {
     const classes = useStyles();
 
     const renderSocialLink = (item: string, index: number) => (
@@ -77,6 +77,6 @@ const ChannelPage: React.FC = () => {
             {header}
         </>
     )
-};
+}
 
 export default ChannelPage;

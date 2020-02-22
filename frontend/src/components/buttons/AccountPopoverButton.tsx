@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const AccountPopoverButton: React.FC = () => {
+function AccountPopoverButton() {
     const classes = useStyles();
 
     const avatar = (
@@ -39,6 +39,6 @@ const AccountPopoverButton: React.FC = () => {
             {avatar}
         </PopoverButton>
     );
-};
+}
 
 export default AccountPopoverButton;

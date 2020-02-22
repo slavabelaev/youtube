@@ -16,13 +16,13 @@ function Notifications({ onLoad }: NotificationsProps) {
     );
 
     return (
-      <List>
+        <List>
           <LoadList
               renderItem={renderItem}
               onLoad={onLoad}
           />
-      </List>
+        </List>
     );
-};
+}
 
 export default Notifications;

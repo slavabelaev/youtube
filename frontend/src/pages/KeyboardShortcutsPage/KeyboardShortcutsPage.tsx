@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const KeyboardShortcutsPage: React.FC = () => {
+function KeyboardShortcutsPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const KeyboardShortcutsPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default KeyboardShortcutsPage;

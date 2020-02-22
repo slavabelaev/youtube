@@ -14,12 +14,14 @@ export const STUDIO_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./StudioPage'));
 
-const StudioPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function StudioPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default StudioPage;

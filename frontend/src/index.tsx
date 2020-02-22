@@ -5,13 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ThemeProvider from "./contexts/ThemeContext";
 
-const Root: React.FC = () => (
+function Root() {
+	return (
   <Router>
       <ThemeProvider>
           <App />
       </ThemeProvider>
   </Router>
-);
+)
+}
 ReactDOM.render(<Root />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

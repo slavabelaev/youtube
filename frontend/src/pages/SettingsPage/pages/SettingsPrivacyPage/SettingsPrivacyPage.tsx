@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsPrivacyPage: React.FC = () => {
+function SettingsPrivacyPage() {
     const classes = useStyles();
 
     return (
@@ -33,6 +33,6 @@ const SettingsPrivacyPage: React.FC = () => {
             </header>
         </div>
     )
-};
+}
 
 export default SettingsPrivacyPage;

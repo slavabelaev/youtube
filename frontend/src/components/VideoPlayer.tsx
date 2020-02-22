@@ -24,6 +24,6 @@ function VideoPlayer({ width, height }: VideoPlayerProps) {
             }}
         />
     )
-};
+}
 
 export default VideoPlayer;

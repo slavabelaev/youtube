@@ -14,12 +14,14 @@ export const PERSONAL_DATA_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./PersonalDataPage'));
 
-const PersonalDataPage: React.FC = () => (
+function PersonalDataPage() {
+	return (
     <Layout>
         <Suspense fallback={<LinearProgress />}>
             <Page />
         </Suspense>
     </Layout>
-);
+)
+}
 
 export default PersonalDataPage;

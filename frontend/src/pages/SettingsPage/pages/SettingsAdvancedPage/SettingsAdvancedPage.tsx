@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const SettingsAdvancedPage: React.FC = () => {
+function SettingsAdvancedPage() {
     const classes = useStyles();
 
     return (
@@ -25,6 +25,6 @@ const SettingsAdvancedPage: React.FC = () => {
             </header>
         </div>
     )
-};
+}
 
 export default SettingsAdvancedPage;

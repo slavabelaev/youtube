@@ -8,7 +8,8 @@ import ChannelChannelsPage, {CHANNEL_CHANNELS_PAGE_ROUTE} from "./pages/ChannelC
 import ChannelAboutPage, {CHANNEL_ABOUT_PAGE_ROUTE} from "./pages/ChannelAboutPage";
 import {CHANNEL_PAGE_ROUTE} from "./index";
 
-const ChannelRoutes: React.FC = () => (
+function ChannelRoutes() {
+	return (
     <Switch>
         <Route path={CHANNEL_PAGE_ROUTE + CHANNEL_FEATURED_PAGE_ROUTE} component={ChannelFeaturedPage} />
         <Route path={CHANNEL_PAGE_ROUTE + CHANNEL_VIDEOS_PAGE_ROUTE} component={ChannelVideosPage} />
@@ -18,6 +19,7 @@ const ChannelRoutes: React.FC = () => (
         <Route path={CHANNEL_PAGE_ROUTE + CHANNEL_ABOUT_PAGE_ROUTE} component={ChannelAboutPage} />
         <Redirect to={CHANNEL_PAGE_ROUTE + CHANNEL_FEATURED_PAGE_ROUTE} />
     </Switch>
-);
+)
+}
 
 export default ChannelRoutes;

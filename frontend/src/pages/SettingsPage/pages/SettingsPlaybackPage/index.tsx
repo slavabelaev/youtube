@@ -13,10 +13,12 @@ export const SETTINGS_PLAYBACK_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./SettingsPlaybackPage'));
 
-const SettingsPlaybackPage: React.FC = () => (
-    <Suspense fallback={<LinearProgress />}>
-        <Page />
-    </Suspense>
-);
+function SettingsPlaybackPage() {
+    return (
+        <Suspense fallback={<LinearProgress/>}>
+            <Page/>
+        </Suspense>
+    )
+}
 
 export default SettingsPlaybackPage;

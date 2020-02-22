@@ -48,7 +48,7 @@ function CollapsedItems({ renderItem, onLoad }: CollapsedItemsProps) {
             {triggerListItem}
         </>
     )
-};
+}
 
 function Subscriptions({ onLoad, onLoadMore }: SubscriptionsProps) {
 
@@ -73,6 +73,6 @@ function Subscriptions({ onLoad, onLoadMore }: SubscriptionsProps) {
             {collapsedItems}
         </List>
     );
-};
+}
 
 export default Subscriptions;

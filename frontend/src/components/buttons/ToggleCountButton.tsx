@@ -60,6 +60,6 @@ function ToggleCountButton({
             {icon ? valueBox : null}
         </div>
     );
-};
+}
 
 export default ToggleCountButton;

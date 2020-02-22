@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const AdsPage: React.FC = () => {
+function AdsPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const AdsPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default AdsPage;

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-const GamingPage: React.FC = () => {
+function GamingPage() {
     const classes = useStyles();
 
     return (
@@ -17,6 +17,6 @@ const GamingPage: React.FC = () => {
             Playlist Page
         </main>
     )
-};
+}
 
 export default GamingPage;

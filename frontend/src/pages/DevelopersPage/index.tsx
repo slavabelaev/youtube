@@ -12,12 +12,14 @@ export const DEV_MENU_ITEM: RouteLink = {
 
 const Page = React.lazy(() => import('./DevelopersPage'));
 
-const DevelopersPage: React.FC = () => (
-    <Layout>
-        <Suspense fallback={<LinearProgress />}>
-            <Page />
-        </Suspense>
-    </Layout>
-);
+function DevelopersPage() {
+    return (
+        <Layout>
+            <Suspense fallback={<LinearProgress/>}>
+                <Page/>
+            </Suspense>
+        </Layout>
+    )
+}
 
 export default DevelopersPage;
