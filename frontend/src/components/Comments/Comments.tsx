@@ -1,11 +1,11 @@
 import React from "react";
 import {List} from "@material-ui/core";
 import Comment, {CommentProps} from "./Comment";
-import LoadList, {LoadListProps} from "../common/LoadList";
+import Items, {ItemsProps} from "../common/Items";
 import Answers from "./Answers";
 
 export interface CommentsProps {
-    onLoad: LoadListProps<CommentProps>['onLoad'];
+    onLoad: ItemsProps<CommentProps>['onLoad'];
     variant?: CommentProps['variant'];
 }
 
@@ -25,7 +25,7 @@ function Comments({
 
     return (
         <List>
-            <LoadList
+            <Items
                 renderItem={renderItem}
                 onLoad={onLoad}
             />

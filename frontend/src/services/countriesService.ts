@@ -1,6 +1,6 @@
-import {SingleChoiceItemModel} from "../components/common/SingleChoiceList";
+import {CountryModel} from "../models/CountryModel";
 
-export const generateCountries = async (): Promise<SingleChoiceItemModel[]> => [
-    { title: 'USA', value: 'en', selected: true },
-    { title: 'Россия', value: 'ru' },
+export const generateCountries = async (): Promise<CountryModel[]> => [
+    { label: 'USA', code: 'en' },
+    { label: 'Россия', code: 'ru' },
 ];

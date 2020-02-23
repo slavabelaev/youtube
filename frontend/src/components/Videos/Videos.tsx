@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import VideosGrid from "./VideosGrid";
-import {LoadListProps} from "../common/LoadList";
+import {ItemsProps} from "../common/Items";
 import VideosList from "./VideosList";
 import Toolbar from "@material-ui/core/Toolbar";
 import {createStyles, Theme, Typography} from "@material-ui/core";
@@ -12,7 +12,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 export interface VideosProps {
     initialVariant?: 'grid' | 'list';
-    onLoad: LoadListProps['onLoad'];
+    onLoad: ItemsProps['onLoad'];
     title?: string;
 }
 

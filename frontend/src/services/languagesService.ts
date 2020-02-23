@@ -1,6 +1,6 @@
-import {SingleChoiceItemModel} from "../components/common/SingleChoiceList";
+import {LanguageModel} from "../models/LanguageModel";
 
-export const generateLanguages = async (): Promise<SingleChoiceItemModel[]> => [
-    { title: 'English', value: 'en', selected: true },
-    { title: 'Русский', value: 'ru' },
+export const generateLanguages = async (): Promise<LanguageModel[]> => [
+    { label: 'English', code: 'en' },
+    { label: 'Русский', code: 'ru' },
 ];

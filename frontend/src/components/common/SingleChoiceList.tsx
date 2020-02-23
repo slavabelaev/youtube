@@ -1,41 +1,59 @@
-import React from "react";
+import React, {Dispatch, ReactElement, ReactNode, SetStateAction, useState} from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import CheckIcon from "@material-ui/icons/Check";
-import ListItemText from "@material-ui/core/ListItemText";
+import ListItemText, {ListItemTextProps} from "@material-ui/core/ListItemText";
 import {List} from "@material-ui/core";
-import LoadList, {LoadListProps} from "./LoadList";
+import Items, {ItemsProps} from "./Items";
 
-export interface SingleChoiceItemModel {
-    title: string;
-    selected?: boolean;
-    value: any;
+export interface SingleChoiceItemProps {
+    label: ListItemTextProps['primary'];
+    value: string;
+    selected: boolean;
+    onSelect?: () => void;
 }
 
-export interface SingleChoiceItemProps extends SingleChoiceItemModel {
-}
-
-export interface SingleChoiceListProps {
-    onLoad: LoadListProps['onLoad']
-}
-
-function SingleChoiceList({ onLoad }: SingleChoiceListProps) {
-    const renderItem = (item: SingleChoiceItemProps, index: number) => (
-        <ListItem dense button key={index}>
+export function SingleChoiceItem(props: SingleChoiceItemProps) {
+    return (
+        <ListItem
+            dense
+            button
+            onClick={props.onSelect}
+        >
             <ListItemIcon>
-                {item.selected ? <CheckIcon /> : <></>}
+                {props.selected ? <CheckIcon /> : <></>}
             </ListItemIcon>
             <ListItemText
-                primary={item.title}
+                primary={props.label}
             />
         </ListItem>
-    );
+    )
+}
+
+export interface SingleChoiceListProps<T = any> {
+    onLoad: ItemsProps['onLoad'];
+    renderItem: (
+        item: T,
+        value: SingleChoiceItemProps['value'],
+        setValue: Dispatch<SetStateAction<SingleChoiceItemProps['value']>>
+    ) => ReactElement<SingleChoiceItemProps>;
+    initialValue?: SingleChoiceItemProps['value'];
+}
+
+function SingleChoiceList({
+    onLoad,
+    renderItem,
+    initialValue = ''
+}: SingleChoiceListProps) {
+    const [value, setValue] = useState(initialValue);
 
     return (
         <List>
-            <LoadList
+            <Items
                 renderLoadMore={null}
-                renderItem={renderItem}
+                renderItem={
+                    (item) => renderItem(item, value, setValue)
+                }
                 onLoad={onLoad}
             />
         </List>

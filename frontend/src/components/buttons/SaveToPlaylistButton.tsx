@@ -14,7 +14,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import LockIcon from "@material-ui/icons/Lock";
 import CheckedListItem from "../common/CheckedListItem";
 import AppBar from "@material-ui/core/AppBar";
-import LoadList from "../common/LoadList";
+import Items from "../common/Items";
 import {generatePlaylists} from "../../services/playlistsService";
 import {PlaylistModel} from "../Playlists/Playlist";
 
@@ -76,7 +76,7 @@ function SaveToPlaylistButton() {
                 className={classes.content}
             >
                 <List disablePadding>
-                    <LoadList
+                    <Items
                         onLoad={generatePlaylists}
                         renderItem={renderItem}
                     />

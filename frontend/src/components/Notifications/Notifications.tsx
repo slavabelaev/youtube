@@ -1,10 +1,10 @@
 import React from "react";
 import {List} from "@material-ui/core";
-import LoadList, {LoadListProps} from "../common/LoadList";
+import Items, {ItemsProps} from "../common/Items";
 import Notification, {NotificationProps} from "./Notification";
 
 export interface NotificationsProps {
-    onLoad: LoadListProps['onLoad']
+    onLoad: ItemsProps['onLoad']
 }
 
 function Notifications({ onLoad }: NotificationsProps) {
@@ -17,7 +17,7 @@ function Notifications({ onLoad }: NotificationsProps) {
 
     return (
         <List>
-          <LoadList
+          <Items
               renderItem={renderItem}
               onLoad={onLoad}
           />

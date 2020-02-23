@@ -1,10 +1,10 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import LoadList, {LoadListProps} from "../common/LoadList";
+import Items, {ItemsProps} from "../common/Items";
 import Playlist, {PlaylistProps} from "./Playlist";
 
 export interface PlaylistsProps {
-    onLoad: LoadListProps['onLoad'];
+    onLoad: ItemsProps['onLoad'];
 }
 
 function Playlists({ onLoad }: PlaylistsProps) {
@@ -14,7 +14,7 @@ function Playlists({ onLoad }: PlaylistsProps) {
 
     return (
         <List>
-            <LoadList
+            <Items
                 onLoad={onLoad}
                 renderItem={renderItem}
             />

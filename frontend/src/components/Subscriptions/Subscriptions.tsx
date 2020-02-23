@@ -6,17 +6,17 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
-import LoadList, {LoadListProps} from "../common/LoadList";
+import Items, {ItemsProps} from "../common/Items";
 import Subscription, {SubscriptionProps} from "./Subscription";
 
 export interface SubscriptionsProps {
-    onLoad: LoadListProps['onLoad'];
-    onLoadMore?: LoadListProps['onLoad'];
+    onLoad: ItemsProps['onLoad'];
+    onLoadMore?: ItemsProps['onLoad'];
 }
 
 interface CollapsedItemsProps {
    renderItem:  (item: SubscriptionProps) => ReactNode;
-   onLoad: LoadListProps['onLoad'];
+   onLoad: ItemsProps['onLoad'];
 }
 
 function CollapsedItems({ renderItem, onLoad }: CollapsedItemsProps) {
@@ -34,7 +34,7 @@ function CollapsedItems({ renderItem, onLoad }: CollapsedItemsProps) {
 
     const collapse = (
         <Collapse in={open} timeout="auto" unmountOnExit>
-            <LoadList
+            <Items
                 renderLoadMore={null}
                 renderItem={renderItem}
                 onLoad={onLoad}
@@ -65,7 +65,7 @@ function Subscriptions({ onLoad, onLoadMore }: SubscriptionsProps) {
 
     return (
         <List>
-            <LoadList
+            <Items
                 renderLoadMore={null}
                 renderItem={renderItem}
                 onLoad={onLoad}

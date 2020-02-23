@@ -3,7 +3,7 @@ import {Button, createStyles, Theme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-export interface LoadListProps<T = any> {
+export interface ItemsProps<T = any> {
     renderLoadMore?: ((onClick: VoidFunction) => ReactNode) | null;
     renderItem: (item: T, index: number) => ReactNode;
     onLoad: (skip: number) => Promise<T[]>;
@@ -24,11 +24,11 @@ interface LoadMoreListState {
     items: any;
 }
 
-function LoadList({
+function Items({
     renderLoadMore,
     renderItem,
     onLoad
-}: LoadListProps) {
+}: ItemsProps) {
     const classes = useStyles();
     const [{ items, initialLoaded }, setState] = React.useState<LoadMoreListState>({
         initialLoaded: false,
@@ -68,4 +68,4 @@ function LoadList({
     );
 }
 
-export default LoadList;
+export default Items;

@@ -1,10 +1,10 @@
 import React from "react";
 import {List} from "@material-ui/core";
 import AccountListItem, {AccountModel} from "./AccountsListItem";
-import LoadList, {LoadListProps} from "../../common/LoadList";
+import Items, {ItemsProps} from "../../common/Items";
 
 export interface AccountsListProps {
-    onLoad: LoadListProps['onLoad'];
+    onLoad: ItemsProps['onLoad'];
 }
 
 function AccountsList({ onLoad }: AccountsListProps) {
@@ -17,7 +17,7 @@ function AccountsList({ onLoad }: AccountsListProps) {
 
     return (
         <List>
-            <LoadList
+            <Items
                 renderItem={renderItem}
                 renderLoadMore={null}
                 onLoad={onLoad}

@@ -1,11 +1,11 @@
 import React from "react";
 import Post, {PostProps} from "./Post";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import LoadList, {LoadListProps} from "../common/LoadList";
+import Items, {ItemsProps} from "../common/Items";
 import Answers from "../Comments/Answers";
 
 export interface PostsProps {
-    onLoad: LoadListProps['onLoad']
+    onLoad: ItemsProps['onLoad']
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -29,7 +29,7 @@ function Posts({ onLoad }: PostsProps) {
     );
 
     return (
-        <LoadList
+        <Items
             renderItem={renderItem}
             onLoad={onLoad}
         />

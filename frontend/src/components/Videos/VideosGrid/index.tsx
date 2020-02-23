@@ -1,10 +1,10 @@
 import React from "react";
 import {makeStyles, createStyles, Grid, Theme} from "@material-ui/core";
 import VideoItem, {VideoItemProps} from "../VideoItem";
-import LoadList, {LoadListProps} from "../../common/LoadList";
+import Items, {ItemsProps} from "../../common/Items";
 
 export interface VideosGridProps {
-    onLoad: LoadListProps['onLoad'];
+    onLoad: ItemsProps['onLoad'];
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -32,7 +32,7 @@ function VideosGrid({ onLoad }: VideosGridProps) {
             container
             spacing={2}
         >
-            <LoadList
+            <Items
                 renderItem={renderItem}
                 onLoad={onLoad}
             />
