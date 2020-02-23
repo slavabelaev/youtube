@@ -1,6 +1,6 @@
 import {makeStyles} from "@material-ui/core/styles";
 import {AvatarProps, createStyles, Theme} from "@material-ui/core";
-import LikeDislikeButton, {LikeDislikeButtonProps} from "../buttons/LikeDislikeButton";
+import LikeDislikeButton, {LikeDislikeButtonProps} from "../../buttons/LikeDislikeButton";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
@@ -9,30 +9,30 @@ import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import React from "react";
+import React, {ReactNode} from "react";
 import {Link} from "react-router-dom";
-import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
 import clsx from "clsx";
 import {formatDistance} from "date-fns";
 import CommentPopoverButton from "./CommentPopoverButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
-export interface CommentModel {
-    id: string;
-    avatarUrl: AvatarProps['src'];
-    userName: string;
-    verified?: boolean;
-    text: string;
+export interface CommentBaseProps {
+    variant?: 'mini' | 'normal';
+}
+
+export interface CommentProps extends CommentBaseProps {
+    avatarSrc: AvatarProps['src'];
+    avatarTo?: string;
+    title: ReactNode;
+    titleTo?: string;
+    text: ReactNode;
     createdAt: Date;
     initialLikes: LikeDislikeButtonProps['initialLikes'];
     initialDislikes: LikeDislikeButtonProps['initialDislikes'];
     initialChecked: LikeDislikeButtonProps['initialChecked'];
-    edited: boolean;
-}
-
-export interface CommentProps extends CommentModel {
-    variant?: 'mini' | 'normal';
+    edited?: boolean;
+    verified?: boolean;
 }
 
 export const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -40,7 +40,7 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
         padding: theme.spacing(0, 0, 0, 7),
         minHeight: 'auto'
     },
-    userName: {
+    title: {
         display: 'inline-flex',
         alignItems: 'center',
         marginRight: theme.spacing(1),
@@ -55,22 +55,35 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-function Comment(props: CommentProps) {
+function Comment({
+    variant = 'normal',
+    avatarSrc,
+    avatarTo = '',
+    title,
+    titleTo = '',
+    text,
+    createdAt,
+    initialLikes,
+    initialDislikes,
+    initialChecked,
+    edited = false,
+    verified= false,
+
+}: CommentProps) {
     const classes = useStyles();
-    const channelUrl = CHANNEL_PAGE_ROUTE.replace(':id', props.id);
 
     const avatar = (
         <Avatar
             className={clsx({
-                [classes.avatar_variant_mini]: props.variant === 'mini'
+                [classes.avatar_variant_mini]: variant === 'mini'
             })}
             component={Link}
-            to={channelUrl}
-            src={props.avatarUrl}
+            to={avatarTo}
+            src={avatarSrc}
         />
     );
 
-    const verificationIcon = props.verified ? (
+    const verificationIcon = verified ? (
         <Tooltip
             title="Verified"
         >
@@ -81,15 +94,15 @@ function Comment(props: CommentProps) {
         </Tooltip>
     ) : null;
 
-    const userNameNode = (
+    const titleNode = (
         <Typography
-            className={classes.userName}
+            className={classes.title}
             variant="inherit"
             color="textPrimary"
             component={Link}
-            to={channelUrl}
+            to={titleTo}
         >
-            {props.userName}
+            {title}
             {verificationIcon}
         </Typography>
     );
@@ -100,8 +113,8 @@ function Comment(props: CommentProps) {
             color="textSecondary"
             component="span"
         >
-            {formatDistance(new Date(), props.createdAt)}
-            {props.edited ? ' (edited)' : null}
+            {formatDistance(new Date(), createdAt)}
+            {edited ? ' (edited)' : null}
         </Typography>
     );
 
@@ -116,11 +129,11 @@ function Comment(props: CommentProps) {
             <ListItemText
                 primary={
                     <>
-                        {userNameNode}
+                        {titleNode}
                         {createdAtNode}
                     </>
                 }
-                secondary={props.text}
+                secondary={text}
             />
             <ListItemSecondaryAction>
                 <CommentPopoverButton />
@@ -131,9 +144,9 @@ function Comment(props: CommentProps) {
     const toolbar = (
         <Toolbar className={classes.toolbar}>
             <LikeDislikeButton
-                initialLikes={props.initialLikes}
-                initialDislikes={props.initialDislikes}
-                initialChecked={props.initialChecked}
+                initialLikes={initialLikes}
+                initialDislikes={initialDislikes}
+                initialChecked={initialChecked}
                 LikeButtonProps={{
                     size: 'small'
                 }}

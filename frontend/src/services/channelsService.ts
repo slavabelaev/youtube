@@ -6,7 +6,7 @@ export const generateChannels = async (): Promise<ChannelModel[]> => Array(10)
     .map((item, index) => ({
         id: `${index}`,
         title: faker.company.companyName(),
-        avatarUrl: faker.image.avatar(),
+        avatarSrc: faker.image.avatar(),
         subscribersNumber: Math.round(Math.random() * 10000000),
         linkTo: `/channel/${index}`
     }));

@@ -44,7 +44,9 @@ function TrendingPage() {
             </header>
             <Divider />
             <main className={classes.main}>
-                <Videos onLoad={generateListVideos} />
+                <Videos
+                    onLoad={generateListVideos}
+                />
             </main>
         </div>
     )

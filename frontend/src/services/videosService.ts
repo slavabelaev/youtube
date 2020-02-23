@@ -1,5 +1,5 @@
-import {VideoModel} from "../components/Videos/VideoItem";
 import faker from "faker/locale/en";
+import {VideoModel} from "../models/VideoModel";
 
 export const generateGridVideos = async (): Promise<VideoModel[]> => Array(12)
     .fill(null)

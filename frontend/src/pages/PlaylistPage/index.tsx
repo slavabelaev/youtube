@@ -14,7 +14,7 @@ export const FAVORITES_MENU_ITEM: RouteLink = {
 };
 
 export const WATCH_LATER_MENU_ITEM: RouteLink = {
-    title: 'Watch Later',
+    title: 'Watch later',
     to: `${PLAYLIST_PAGE_ROUTE}/WL`,
     icon: WatchLaterIcon
 };

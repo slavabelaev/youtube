@@ -1,21 +1,6 @@
 import React from "react";
 import Component, {VideoItemBaseProps} from "./VideoItem";
-
-export interface VideoModel {
-    id: string;
-    title: string;
-    videoUrl: string;
-    duration: number;
-    previewUrl: string;
-    channelName: string;
-    channelUrl: string;
-    channelAvatarUrl?: string;
-    views?: number;
-    isRecommended?: boolean;
-    isNew?: boolean;
-    verified?: boolean;
-    createdAt: Date;
-}
+import {VideoModel} from "../../../models/VideoModel";
 
 export interface VideoItemProps extends VideoItemBaseProps, VideoModel {}
 

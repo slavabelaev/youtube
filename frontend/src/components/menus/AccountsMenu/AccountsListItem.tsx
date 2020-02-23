@@ -7,7 +7,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import CheckIcon from "@material-ui/icons/Check";
 
 export interface AccountModel {
-    avatarUrl: string;
+    avatarSrc: string;
     fullName: string;
     email: string;
     selected?: boolean;
@@ -18,7 +18,7 @@ export interface AccountListItemProps extends AccountModel {}
 export function AccountListItem({
     fullName,
     email,
-    avatarUrl,
+    avatarSrc,
     selected = false
 }: AccountListItemProps) {
     const selectedIcon = (
@@ -30,7 +30,7 @@ export function AccountListItem({
     return (
         <ListItem dense button>
             <ListItemAvatar>
-                <Avatar src={avatarUrl} />
+                <Avatar src={avatarSrc} />
             </ListItemAvatar>
             <ListItemText
                 primary={fullName}

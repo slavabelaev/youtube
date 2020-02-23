@@ -1,16 +1,13 @@
+import React, {ReactNode} from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {createStyles, List, Theme} from "@material-ui/core";
-import React from "react";
-import Comment, {CommentProps} from "./Comment";
+import {createStyles, Theme} from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Collapse from "@material-ui/core/Collapse";
-import LoadList from "../common/LoadList";
-import {generateComments} from "../../services/commentsService";
 
 export interface AnswersProps {
-    commentId: CommentProps['id'];
+    body: ReactNode;
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -23,20 +20,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-function Answers({ commentId }: AnswersProps) {
+function Answers({
+    body
+}: AnswersProps) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const toggle = () => setOpen(!open);
-
-    const renderItem = (item: CommentProps) => (
-        <>
-            <Comment
-                {...item}
-                key={item.id}
-                variant="mini"
-            />
-        </>
-    );
 
     const toolbar = (
         <Toolbar className={classes.toolbar}>
@@ -59,12 +48,7 @@ function Answers({ commentId }: AnswersProps) {
                 in={open}
                 unmountOnExit
             >
-                <List>
-                    <LoadList
-                        renderItem={renderItem}
-                        onLoad={generateComments}
-                    />
-                </List>
+                {body}
             </Collapse>
         </>
     );

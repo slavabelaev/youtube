@@ -13,7 +13,7 @@ import NotificationMenu from "./NotificationMenu";
 export interface NotificationProps {
     id: string;
     text: string;
-    avatarUrl: AvatarProps['src'];
+    avatarSrc: AvatarProps['src'];
     imageSrc?: string;
     createdAt: Date,
     linkTo: string;
@@ -45,7 +45,7 @@ function Notification(props: NotificationProps) {
             to={props.linkTo}
         >
             <ListItemAvatar>
-                <Avatar src={props.avatarUrl} />
+                <Avatar src={props.avatarSrc} />
             </ListItemAvatar>
             <ListItemText
                 primary={props.text}

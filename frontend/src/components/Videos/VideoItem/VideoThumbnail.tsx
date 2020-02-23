@@ -104,7 +104,7 @@ function VideoThumbnail({
 
     const watchLater = (
         <Tooltip
-            title="Watch Later"
+            title="Watch later"
             placement="left"
         >
             <Button

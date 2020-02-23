@@ -1,6 +1,6 @@
 import React from "react";
 import CommentMenu from "./CommentMenu";
-import PopoverButton from "../buttons/PopoverButton";
+import PopoverButton from "../../buttons/PopoverButton";
 
 function CommentPopoverButton() {
 	return (

@@ -7,5 +7,5 @@ export const generateSubscriptions = async (): Promise<SubscriptionModel[]> => A
         id: `${index}`,
         title: faker.company.companyName(),
         linkTo: `/channel/${index}`,
-        avatarUrl: faker.image.avatar()
+        avatarSrc: faker.image.avatar()
     }));

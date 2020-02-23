@@ -1,17 +1,15 @@
 import React, {Suspense} from "react";
 import SuspenseFallback from "../common/SuspenseFallback";
-import {generateComments} from "../../services/commentsService";
+import {CommentsProps} from "./Comments";
 
 const Component = React.lazy(() => import('./Comments'));
 
-function Comments() {
-	return (
-    <Suspense fallback={<SuspenseFallback />}>
-        <Component
-            onLoad={generateComments}
-        />
-    </Suspense>
-)
+function Comments(props: CommentsProps) {
+    return (
+        <Suspense fallback={<SuspenseFallback/>}>
+            <Component {...props} />
+        </Suspense>
+    )
 }
 
 export default Comments;

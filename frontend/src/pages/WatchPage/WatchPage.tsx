@@ -19,6 +19,7 @@ import Videos from "../../components/Videos";
 import PopoverButton from "../../components/buttons/PopoverButton";
 import WatchPageMenu from "./WatchPageMenu";
 import SaveToPlaylistButton from "../../components/buttons/SaveToPlaylistButton";
+import {generateComments} from "../../services/commentsService";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -108,7 +109,7 @@ function WatchPage() {
                 additionalText={faker.lorem.sentences(20)}
             />
             <Divider />
-            <Comments />
+            <Comments onLoad={generateComments} />
         </main>
     );
 

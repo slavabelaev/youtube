@@ -1,5 +1,5 @@
-import {CommentModel} from "../components/Comments/Comment";
 import faker from "faker/locale/en";
+import {CommentModel} from "../models/CommentModel";
 
 export const generateComments = async (): Promise<CommentModel[]> => {
     return Array(12).fill(null).map((_, index) => ({
@@ -9,9 +9,10 @@ export const generateComments = async (): Promise<CommentModel[]> => {
         verified: Math.random() > 0.5,
         text: faker.lorem.text(),
         createdAt: faker.date.recent(),
-        initialLikes: Math.round(Math.random() * 9999),
-        initialDislikes: Math.round(Math.random() * 9999),
-        initialChecked: index % 4 === 0 ? 'like' : 'none',
+        likes: Math.round(Math.random() * 9999),
+        dislikes: Math.round(Math.random() * 9999),
+        liked: index % 4 === 0,
+        disliked: !(index % 4 === 0),
         edited: index % 3 === 0
     }));
 };

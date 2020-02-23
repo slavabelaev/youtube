@@ -10,7 +10,7 @@ export interface ChannelModel {
     id: string;
     title: string;
     subscribersNumber: number;
-    avatarUrl: AvatarProps['src'];
+    avatarSrc: AvatarProps['src'];
     linkTo: string;
 }
 
@@ -52,7 +52,7 @@ function Channel(props: ChannelProps) {
         <div className={classes.root}>
             <Avatar
                 className={classes.avatar}
-                src={props.avatarUrl}
+                src={props.avatarSrc}
             />
             <Typography
                 className={classes.title}

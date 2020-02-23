@@ -22,7 +22,7 @@ function Posts({ onLoad }: PostsProps) {
             <Post
                 {...item}
                 bottomToolbar={
-                    <Answers commentId={item.id} />
+                    <Answers />
                 }
             />
         </div>

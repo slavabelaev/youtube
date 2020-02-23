@@ -8,7 +8,7 @@ export interface SubscriptionModel {
     id: string;
     title: string;
     linkTo: string;
-    avatarUrl: AvatarProps['src'];
+    avatarSrc: AvatarProps['src'];
 }
 
 export interface SubscriptionProps extends SubscriptionModel {}
@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 function Subscription(props: SubscriptionProps) {
     const classes = useStyles();
 
-    const renderAvatar = (avatarUrl: SubscriptionProps['avatarUrl']) => (
+    const renderAvatar = (avatarSrc: SubscriptionProps['avatarSrc']) => (
         <Avatar
-            src={avatarUrl}
+            src={avatarSrc}
             className={classes.avatar}
         />
     );
@@ -35,7 +35,7 @@ function Subscription(props: SubscriptionProps) {
             key={props.id}
             title={props.title}
             to={props.linkTo}
-            icon={() => renderAvatar(props.avatarUrl)}
+            icon={() => renderAvatar(props.avatarSrc)}
         />
     );
 }
