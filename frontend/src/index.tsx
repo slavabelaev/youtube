@@ -4,13 +4,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ThemeProvider from "./contexts/ThemeContext";
+import LanguageProvider from "./contexts/LanguageContext";
 
 function Root() {
     return (
         <Router>
-            <ThemeProvider>
-                <App/>
-            </ThemeProvider>
+            <LanguageProvider>
+                <ThemeProvider>
+                    <App/>
+                </ThemeProvider>
+            </LanguageProvider>
         </Router>
     )
 }

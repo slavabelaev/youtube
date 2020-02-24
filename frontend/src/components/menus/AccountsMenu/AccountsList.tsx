@@ -1,7 +1,8 @@
 import React from "react";
 import {List} from "@material-ui/core";
-import AccountListItem, {AccountModel} from "./AccountsListItem";
+import AccountListItem from "./AccountsListItem";
 import Items, {ItemsProps} from "../../common/Items";
+import {AccountModel} from "../../../models/AccountModel";
 
 export interface AccountsListProps {
     onLoad: ItemsProps['onLoad'];
@@ -10,8 +11,12 @@ export interface AccountsListProps {
 function AccountsList({ onLoad }: AccountsListProps) {
     const renderItem = (item: AccountModel) => (
         <AccountListItem
-            {...item}
-            key={item.email}
+            key={item.id}
+            avatarSrc={item.avatarUrl}
+            fullName={item.fullName}
+            email={item.email}
+            selected={false}
+            onClick={() => null}
         />
     );
 

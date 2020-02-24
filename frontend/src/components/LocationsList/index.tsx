@@ -4,13 +4,13 @@ import SingleChoiceItem from "../common/SingleChoice/SingleChoiceItem";
 import {CountryModel} from "../../models/CountryModel";
 import SingleChoice, {SingleChoiceProps} from "../common/SingleChoice/SingleChoice";
 
-function CountriesList() {
+function LocationsList() {
     const renderItem: SingleChoiceProps['renderItem'] = (item: CountryModel, value, setValue) => (
         <SingleChoiceItem
             label={item.label}
             value={item.code}
             selected={item.code === value}
-            onSelect={() => setValue(item.code)}
+            onClick={() => setValue(item.code)}
         />
     );
 
@@ -23,4 +23,4 @@ function CountriesList() {
     );
 }
 
-export default CountriesList;
+export default LocationsList;

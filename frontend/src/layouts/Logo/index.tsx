@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import logoDark from "./logoDark.svg";
 import {Link} from "react-router-dom";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import {ThemeContext} from "../../contexts/ThemeContext/ThemeContext";
+import {ThemeContext} from "../../contexts/ThemeContext";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     img: {

@@ -1,39 +1,33 @@
 import React from "react";
 import List from "@material-ui/core/List";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import LinkListItem from "../../common/LinkListItem";
-import MenuListItem from "../../common/MenuListItem";
-import RecentActorsIcon from "@material-ui/icons/RecentActors";
-import TranslateIcon from "@material-ui/icons/Translate";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Divider from "@material-ui/core/Divider";
 import Link from "@material-ui/core/Link";
-import {Toolbar} from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import SecurityIcon from "@material-ui/icons/Security";
-import BrightnessIcon from "@material-ui/icons/Brightness4";
-import Typography from "@material-ui/core/Typography";
 import AccountsMenu from "../AccountsMenu";
 import LanguagesList from "../../LanguagesList";
 import DescriptionBox from "../../common/DescriptionBox";
-import CountriesList from "../../CountriesList";
-import AppBar from "@material-ui/core/AppBar";
-import {CHANNEL_MENU_ITEM} from "../../../pages/ChannelPage";
-import {PAID_MEMBERSHIPS_MENU_ITEM} from "../../../pages/PaidMembershipsPage";
-import {STUDIO_MENU_ITEM} from "../../../pages/StudioPage";
-import {SIGN_OUT_MENU_ITEM} from "../../../pages/SignInPage";
-import {SETTINGS_MENU_ITEM} from "../../../pages/SettingsPage";
-import {PERSONAL_DATA_MENU_ITEM} from "../../../pages/PersonalDataPage";
-import {HELP_MENU_ITEM} from "../../../pages/HelpPage";
-import {REVIEWS_MENU_ITEM} from "../../../pages/ReviewsPage";
-import {KEYBOARD_SHORTCUTS_MENU_ITEM} from "../../../pages/KeyboardShortcutsPage";
-import SwitchListItem from "../../common/SwitchListItem";
-import DarkModeSwitchListItem from "../../listItems/DarkModeSwitchListItem";
+import LocationsList from "../../LocationsList";
+import DarkThemeSwitchListItem from "../../listItems/DarkThemeSwitchListItem";
+import PersonalChannelListItem from "../../listItems/PersonalChannelListItem";
+import PaidMembershipsListItem from "../../listItems/PaidMembershipsListItem";
+import StudioListItem from "../../listItems/StudioListItem";
+import SwitchAccountListItem from "../../listItems/SwitchAccountListItem";
+import SignOutListItem from "../../listItems/SignOutListItem";
+import DarkThemeListItem from "../../listItems/DarkThemeListItem";
+import LocationListItem from "../../listItems/LocationListItem";
+import SettingsListItem from "../../listItems/SettingsListItem";
+import PersonalDataListItem from "../../listItems/PersonalDataListItem";
+import HelpListItem from "../../listItems/HelpListItem";
+import SendFeedbackListItem from "../../listItems/SendFeedbackListItem";
+import KeyboardShortcutsListItem from "../../listItems/KeyboardShortcutsListItem";
+import RestrictedModeListItem from "../../listItems/RestrictedModeListItem";
+import RestrictedModeSwitchListItem from "../../listItems/RestrictedModeSwitchListItem";
+import LanguageListItem from "../../listItems/LanguageListItem";
+import AccountListItem from "../AccountsMenu/AccountsListItem";
+import PopoverAppBar from "../../PopoverAppBar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     link: {
@@ -50,84 +44,57 @@ function AccountMenu() {
     const classes = useStyles();
 
     const renderToolbar = (title: string) => (
-        <AppBar
-            className={classes.appBar}
-            position="sticky"
-            variant="outlined"
-            color="inherit"
-        >
-            <Toolbar>
-                <IconButton
-                    edge="start"
-                    onClick={() => setActiveView(initialView)}
-                >
-                    <ArrowBackIcon />
-                </IconButton>
-                <Typography variant="h6">
-                    {title}
-                </Typography>
-            </Toolbar>
-        </AppBar>
+        <PopoverAppBar
+            title={title}
+            onBack={() => setActiveView(initialView)}
+        />
     );
 
     const primaryList = (
         <List>
-            <LinkListItem {...CHANNEL_MENU_ITEM} />
-            <LinkListItem {...PAID_MEMBERSHIPS_MENU_ITEM} />
-            <LinkListItem {...STUDIO_MENU_ITEM} />
-            <MenuListItem
-                title="Switch account"
-                icon={<RecentActorsIcon />}
-                endIcon={<ChevronRightIcon />}
+            <PersonalChannelListItem/>
+            <PaidMembershipsListItem/>
+            <StudioListItem/>
+            <SwitchAccountListItem 
                 onClick={() => setActiveView(accountsView)}
             />
-            <LinkListItem {...SIGN_OUT_MENU_ITEM} />
+            <SignOutListItem/>
         </List>
     );
 
     const secondaryList = (
         <List>
-            <MenuListItem
-                title="Dark theme: off"
-                icon={<BrightnessIcon />}
-                endIcon={<ChevronRightIcon />}
+            <DarkThemeListItem 
                 onClick={() => setActiveView(darkThemeView)}
             />
-            <MenuListItem
-                title="Language: English"
-                icon={<TranslateIcon />}
-                endIcon={<ChevronRightIcon />}
-                onClick={() => setActiveView(languagesView)}
+            <LanguageListItem 
+                onClick={() => setActiveView(languageView)}
             />
-            <LinkListItem {...SETTINGS_MENU_ITEM} />
-            <LinkListItem {...PERSONAL_DATA_MENU_ITEM} />
-            <LinkListItem {...HELP_MENU_ITEM} />
-            <LinkListItem {...REVIEWS_MENU_ITEM} />
-            <LinkListItem {...KEYBOARD_SHORTCUTS_MENU_ITEM} />
+            <SettingsListItem/>
+            <PersonalDataListItem/>
+            <HelpListItem/>
+            <SendFeedbackListItem/>
+            <KeyboardShortcutsListItem/>
         </List>
     );
 
     const accountHeader = (
         <List>
-            <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                    <Avatar />
-                </ListItemAvatar>
+            <AccountListItem
+                fullName="Slava Belaev"
+                email="slav@belaev.pro"
+            />
+
+            <ListItem
+                dense
+                color="secondary"
+                component={Link}
+                target="_blank"
+                href="https://myaccount.google.com"
+            >
+                <ListItemAvatar />
                 <ListItemText
-                    primary="Slava Belaev"
-                    secondary={
-                        <>
-                            <div>slav@belaev.pro</div>
-                            <Link
-                                className={classes.link}
-                                color="secondary"
-                                target="_blank"
-                                href="https://myaccount.google.com"
-                            >
-                                Manage your account
-                            </Link>
-                        </>
-                    }
+                    primary="Manage your account"
                 />
             </ListItem>
         </List>
@@ -135,15 +102,11 @@ function AccountMenu() {
 
     const footerList = (
         <List>
-            <MenuListItem
-                title="Country: USA"
-                endIcon={<ChevronRightIcon />}
-                onClick={() => setActiveView(countriesView)}
+            <LocationListItem
+                onClick={() => setActiveView(locationView)}
             />
-            <MenuListItem
-                title="Safe mode: off"
-                endIcon={<ChevronRightIcon />}
-                onClick={() => setActiveView(safeModeView)}
+            <RestrictedModeListItem
+                onClick={() => setActiveView(restrictedModeView)}
             />
         </List>
     );
@@ -178,39 +141,37 @@ function AccountMenu() {
                 ]}
             />
             <List>
-                <DarkModeSwitchListItem />
+                <DarkThemeSwitchListItem />
             </List>
         </div>
     );
 
-    const safeModeView = (
+    const restrictedModeView = (
         <div>
-            {renderToolbar('Safe mode')}
+            {renderToolbar('Restricted mode')}
             <DescriptionBox
                 paragraphs={[
-                    'Safe mode description will here'
+                    'This helps hide potentially mature videos. No filter is 100% accurate.',
+                    'This setting only applies to this browser.'
                 ]}
             />
             <List>
-                <SwitchListItem
-                    title="Safe mode"
-                    icon={<SecurityIcon />}
-                />
+                <RestrictedModeSwitchListItem/>
             </List>
         </div>
     );
 
-    const languagesView = (
+    const languageView = (
         <div>
             {renderToolbar('Choose your language')}
             <LanguagesList />
         </div>
     );
 
-    const countriesView = (
+    const locationView = (
         <div>
-            {renderToolbar('Choose your country')}
-            <CountriesList />
+            {renderToolbar('Choose your location')}
+            <LocationsList />
         </div>
     );
 

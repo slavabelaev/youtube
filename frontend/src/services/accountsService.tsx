@@ -1,10 +1,10 @@
 import faker from "faker/locale/en";
-import {AccountModel} from "../components/menus/AccountsMenu/AccountsListItem";
+import {AccountModel} from "../models/AccountModel";
 
 export const generateAccounts = async (): Promise<AccountModel[]> => await Array(3).fill(null)
     .map((_, index) => ({
+        id: index.toString(),
+        avatarUrl: faker.image.avatar(),
         fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
-        avatarSrc: faker.image.avatar(),
-        email: faker.internet.email(),
-        selected: index % 3 === 0
+        email: faker.internet.email()
     }));

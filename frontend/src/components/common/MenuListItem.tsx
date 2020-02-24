@@ -3,6 +3,7 @@ import React from "react";
 import {ListItemIcon, ListItemIconProps, ListItemSecondaryActionProps, ListItemTextProps} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import IconButton from "@material-ui/core/IconButton";
 
 export interface MenuListItemProps {
     title: ListItemTextProps['primary'];
@@ -21,7 +22,12 @@ function MenuListItem(props: MenuListItemProps) {
 
     const listItemSecondaryAction = props.endIcon ? (
         <ListItemSecondaryAction>
-            {props.endIcon}
+            <IconButton
+                size="small"
+                onClick={props.onClick}
+            >
+                {props.endIcon}
+            </IconButton>
         </ListItemSecondaryAction>
     ) : null;
 

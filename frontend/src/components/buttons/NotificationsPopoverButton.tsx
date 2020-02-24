@@ -2,16 +2,14 @@ import React from "react";
 import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {createStyles, IconButton, Theme} from "@material-ui/core";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Notifications from "../Notifications";
 import {makeStyles} from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
 import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
 import PopoverButton from "./PopoverButton";
+import PopoverAppBar from "../PopoverAppBar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     popoverPaper: {
@@ -30,31 +28,23 @@ function NotificationsPopoverButton() {
     const classes = useStyles();
     const title = 'Notifications';
 
+    const settingsIconButton = (
+        <Tooltip title={SETTINGS_MENU_ITEM.title}>
+            <IconButton
+                edge="end"
+                component={Link}
+                to={SETTINGS_MENU_ITEM.to}
+            >
+                <SettingsIcon />
+            </IconButton>
+        </Tooltip>
+    );
+
     const appBar = (
-        <AppBar
-            className={classes.appBar}
-            position="sticky"
-            variant="outlined"
-            color="inherit"
-        >
-            <Toolbar>
-                <Typography
-                    variant="h6"
-                    className={classes.toolbarTitle}
-                >
-                    {title}
-                </Typography>
-                <Tooltip title={SETTINGS_MENU_ITEM.title}>
-                    <IconButton
-                        edge="end"
-                        component={Link}
-                        to={SETTINGS_MENU_ITEM.to}
-                    >
-                        <SettingsIcon />
-                    </IconButton>
-                </Tooltip>
-            </Toolbar>
-        </AppBar>
+        <PopoverAppBar
+            title={title}
+            endAction={settingsIconButton}
+        />
     );
 
     const content = (

@@ -8,7 +8,7 @@ export interface SingleChoiceItemProps {
     label: ListItemTextProps['primary'];
     value: string;
     selected: boolean;
-    onSelect: () => void;
+    onClick: () => void;
 }
 
 function SingleChoiceItem(props: SingleChoiceItemProps) {
@@ -16,7 +16,7 @@ function SingleChoiceItem(props: SingleChoiceItemProps) {
         <ListItem
             dense
             button
-            onClick={props.onSelect}
+            onClick={props.onClick}
         >
             <ListItemIcon>
                 {props.selected ? <CheckIcon /> : <></>}
