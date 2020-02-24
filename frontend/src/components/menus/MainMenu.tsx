@@ -1,19 +1,19 @@
 import React from "react";
-import {HOME_MENU_ITEM} from "../../pages/HomePage";
-import {TRENDING_MENU_ITEM} from "../../pages/TrendingPage";
-import {SUBSCRIPTIONS_MENU_ITEM} from "../../pages/SubscriptionsPage";
-import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
-import LinksMenu from "../common/LinksMenu";
+import List from "@material-ui/core/List";
+import HomeListItem from "../listItems/HomeListItem";
+import TrendingListItem from "../listItems/TrendingListItem";
+import SubscriptionsListItem from "../listItems/SubscriptionsListItem";
+import LibraryListItem from "../listItems/LibraryListItem";
 
 function MainMenu() {
     return (
-        <LinksMenu items={[
-            HOME_MENU_ITEM,
-            TRENDING_MENU_ITEM,
-            SUBSCRIPTIONS_MENU_ITEM,
-            LIBRARY_MENU_ITEM
-        ]}/>
-    )
+        <List>
+            <HomeListItem/>
+            <TrendingListItem/>
+            <SubscriptionsListItem/>
+            <LibraryListItem/>
+        </List>
+    );
 }
 
 export default MainMenu;

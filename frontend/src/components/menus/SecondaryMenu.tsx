@@ -1,19 +1,20 @@
 import React from "react";
-import {LIBRARY_MENU_ITEM} from "../../pages/LibraryPage";
-import {HISTORY_MENU_ITEM} from "../../pages/HistoryPage";
-import {FAVORITES_MENU_ITEM, WATCH_LATER_MENU_ITEM} from "../../pages/PlaylistPage";
-import {PURCHASES_MENU_ITEM} from "../../pages/PurchasesPage";
-import LinksMenu from "../common/LinksMenu";
+import LibraryListItem from "../listItems/LibraryListItem";
+import List from "@material-ui/core/List";
+import HistoryListItem from "../listItems/HistoryListItem";
+import WatchLaterListItem from "../listItems/WatchLaterListItem";
+import PurchasesListItem from "../listItems/PurchasesListItem";
+import FavoritesListItem from "../listItems/FavoritesListItem";
 
 function SecondaryMenu() {
     return (
-        <LinksMenu items={[
-            LIBRARY_MENU_ITEM,
-            HISTORY_MENU_ITEM,
-            WATCH_LATER_MENU_ITEM,
-            PURCHASES_MENU_ITEM,
-            FAVORITES_MENU_ITEM
-        ]}/>
+        <List>
+            <LibraryListItem/>
+            <HistoryListItem/>
+            <WatchLaterListItem/>
+            <PurchasesListItem/>
+            <FavoritesListItem/>
+        </List>
     )
 }
 

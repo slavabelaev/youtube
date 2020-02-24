@@ -18,7 +18,7 @@ import HistoryPage, {HISTORY_PAGE_ROUTE} from "./pages/HistoryPage";
 import PlaylistPage, {PLAYLIST_PAGE_ROUTE} from "./pages/PlaylistPage";
 import PurchasesPage, {PURCHASES_PAGE_ROUTE} from "./pages/PurchasesPage";
 import GamingPage, {GAMING_PAGE_ROUTE} from "./pages/GamingPage";
-import StreamingPage, {STREAMING_PAGE_ROUTE} from "./pages/StreamingPage";
+import StreamingPage, {LIVE_PAGE_ROUTE} from "./pages/LivePage";
 import ReportsPage, {REPORTS_PAGE_ROUTE} from "./pages/ReportsPage";
 import AboutPage, {ABOUT_PAGE_ROUTE} from "./pages/AboutPage";
 import PressPage, {PRESS_PAGE_ROUTE} from "./pages/PressPage";
@@ -52,7 +52,7 @@ function Routes() {
         <Route path={PLAYLIST_PAGE_ROUTE} component={PlaylistPage} />
         <Route path={PURCHASES_PAGE_ROUTE} component={PurchasesPage} />
         <Route path={GAMING_PAGE_ROUTE} component={GamingPage} />
-        <Route path={STREAMING_PAGE_ROUTE} component={StreamingPage} />
+        <Route path={LIVE_PAGE_ROUTE} component={StreamingPage} />
         <Route path={REPORTS_PAGE_ROUTE} component={ReportsPage} />
         <Route path={ABOUT_PAGE_ROUTE} component={AboutPage} />
         <Route path={PRESS_PAGE_ROUTE} component={PressPage} />

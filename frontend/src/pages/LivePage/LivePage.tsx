@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-function StreamingPage() {
+function LivePage() {
     const classes = useStyles();
 
     return (
@@ -19,4 +19,4 @@ function StreamingPage() {
     )
 }
 
-export default StreamingPage;
+export default LivePage;
