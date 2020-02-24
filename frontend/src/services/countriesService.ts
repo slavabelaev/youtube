@@ -1,6 +1,6 @@
-import {CountryModel} from "../models/CountryModel";
+import {LocationModel} from "../models/LocationModel";
 
-export const generateCountries = async (): Promise<CountryModel[]> => [
+export const generateCountries = async (): Promise<LocationModel[]> => [
     { label: 'USA', code: 'en' },
     { label: 'Россия', code: 'ru' },
 ];

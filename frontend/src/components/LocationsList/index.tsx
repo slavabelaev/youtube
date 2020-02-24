@@ -1,22 +1,27 @@
-import React from "react";
+import React, {useContext} from "react";
 import {generateCountries} from "../../services/countriesService";
 import SingleChoiceItem from "../common/SingleChoice/SingleChoiceItem";
-import {CountryModel} from "../../models/CountryModel";
+import {LocationModel} from "../../models/LocationModel";
 import SingleChoice, {SingleChoiceProps} from "../common/SingleChoice/SingleChoice";
+import {LocationContext} from "../../contexts/LocationContext";
 
 function LocationsList() {
-    const renderItem: SingleChoiceProps['renderItem'] = (item: CountryModel, value, setValue) => (
+    const context = useContext(LocationContext);
+    const renderItem: SingleChoiceProps['renderItem'] = (item: LocationModel, value, setValue) => (
         <SingleChoiceItem
             label={item.label}
             value={item.code}
             selected={item.code === value}
-            onClick={() => setValue(item.code)}
+            onClick={() => {
+                setValue(item.code);
+                context?.switchLocation(item);
+            }}
         />
     );
 
     return (
         <SingleChoice
-            initialValue="en"
+            initialValue={context?.location.code}
             onLoad={generateCountries}
             renderItem={renderItem}
         />

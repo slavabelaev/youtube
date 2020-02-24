@@ -5,15 +5,21 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ThemeProvider from "./contexts/ThemeContext";
 import LanguageProvider from "./contexts/LanguageContext";
+import LocationProvider from "./contexts/LocationContext";
+import RestrictedModeProvider from "./contexts/RestrictedModeContext";
 
 function Root() {
     return (
         <Router>
-            <LanguageProvider>
-                <ThemeProvider>
-                    <App/>
-                </ThemeProvider>
-            </LanguageProvider>
+            <RestrictedModeProvider>
+                <LocationProvider>
+                    <LanguageProvider>
+                        <ThemeProvider>
+                            <App/>
+                        </ThemeProvider>
+                    </LanguageProvider>
+                </LocationProvider>
+            </RestrictedModeProvider>
         </Router>
     )
 }
