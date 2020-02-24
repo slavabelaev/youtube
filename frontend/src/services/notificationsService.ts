@@ -1,13 +1,12 @@
 import faker from "faker/locale/en";
-import {NotificationProps} from "../components/Notifications/Notification";
+import {NotificationModel} from "../models/NotificationModel";
 
-export const generateNotifications = async (): Promise<NotificationProps[]> => Array(12)
+export const generateNotifications = async (): Promise<NotificationModel[]> => Array(12)
     .fill(null)
     .map((_, index) => ({
         id: index.toString(),
         text: faker.lorem.sentences(2),
-        avatarSrc: faker.image.avatar(),
-        imageSrc: 'https://source-to-image',
-        linkTo: `/watch?v=${index}`,
+        avatarUrl: faker.image.avatar(),
+        imageUrl: 'https://source-to-image',
         createdAt: new Date()
     }));

@@ -7,7 +7,9 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
 import Items, {ItemsProps} from "../common/Items";
-import Subscription, {SubscriptionProps} from "./Subscription";
+import Subscription from "./Subscription";
+import {SubscriptionModel} from "../../models/SubscriptionModel";
+import {CHANNEL_PAGE_ROUTE} from "../../pages/ChannelPage";
 
 export interface SubscriptionsProps {
     onLoad: ItemsProps['onLoad'];
@@ -15,7 +17,7 @@ export interface SubscriptionsProps {
 }
 
 interface CollapsedItemsProps {
-   renderItem:  (item: SubscriptionProps) => ReactNode;
+   renderItem:  (item: SubscriptionModel) => ReactNode;
    onLoad: ItemsProps['onLoad'];
 }
 
@@ -51,9 +53,13 @@ function CollapsedItems({ renderItem, onLoad }: CollapsedItemsProps) {
 }
 
 function Subscriptions({ onLoad, onLoadMore }: SubscriptionsProps) {
-
-    const renderItem = (item: SubscriptionProps) => (
-        <Subscription {...item} key={item.id} />
+    const renderItem = (item: SubscriptionModel) => (
+        <Subscription
+            key={item.id}
+            title={item.title}
+            to={CHANNEL_PAGE_ROUTE.replace(':id', item.id)}
+            avatarSrc={item.avatarUrl}
+        />
     );
 
     const collapsedItems = onLoadMore ? (

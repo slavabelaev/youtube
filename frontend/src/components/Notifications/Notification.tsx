@@ -11,7 +11,6 @@ import PopoverButton from "../buttons/PopoverButton";
 import NotificationMenu from "./NotificationMenu";
 
 export interface NotificationProps {
-    id: string;
     text: string;
     avatarSrc: AvatarProps['src'];
     imageSrc?: string;

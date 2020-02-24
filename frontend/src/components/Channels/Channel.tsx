@@ -1,20 +1,16 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Avatar, AvatarProps, createStyles, Theme} from "@material-ui/core";
-import {toStringNumber} from "../utils/numbers";
-import SubscribeButton from "./buttons/SubscribeButton";
+import {toStringNumber} from "../../utils/numbers";
+import SubscribeButton from "../buttons/SubscribeButton";
 import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
-export interface ChannelModel {
-    id: string;
+export interface ChannelProps {
     title: string;
     subscribersNumber: number;
     avatarSrc: AvatarProps['src'];
-    linkTo: string;
-}
-
-export interface ChannelProps extends ChannelModel {
+    to: string;
 }
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -59,7 +55,7 @@ function Channel(props: ChannelProps) {
                 variant="body1"
                 color="textPrimary"
                 component={Link}
-                to={props.linkTo}
+                to={props.to}
             >
                 {props.title}
             </Typography>

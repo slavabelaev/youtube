@@ -4,14 +4,11 @@ import LinkListItem from "../common/LinkListItem";
 import {makeStyles} from "@material-ui/core/styles";
 import {AvatarProps, createStyles, Theme} from "@material-ui/core";
 
-export interface SubscriptionModel {
-    id: string;
+export interface SubscriptionProps {
     title: string;
-    linkTo: string;
+    to: string;
     avatarSrc: AvatarProps['src'];
 }
-
-export interface SubscriptionProps extends SubscriptionModel {}
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     avatar: {
@@ -32,9 +29,8 @@ function Subscription(props: SubscriptionProps) {
 
     return (
         <LinkListItem
-            key={props.id}
             title={props.title}
-            to={props.linkTo}
+            to={props.to}
             icon={() => renderAvatar(props.avatarSrc)}
         />
     );

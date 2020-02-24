@@ -1,13 +1,13 @@
 import React, {Suspense} from "react";
 import SuspenseFallback from "../common/SuspenseFallback";
-import {generatePosts} from "../../services/postsService";
+import {PostsProps} from "./Posts";
 
 const Component = React.lazy(() => import('./Posts'));
 
-function Posts() {
+function Posts(props: PostsProps) {
     return (
         <Suspense fallback={<SuspenseFallback/>}>
-            <Component onLoad={generatePosts}/>
+            <Component {...props} />
         </Suspense>
     )
 }

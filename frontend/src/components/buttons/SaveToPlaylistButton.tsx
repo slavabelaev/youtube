@@ -16,7 +16,7 @@ import CheckedListItem from "../common/CheckedListItem";
 import AppBar from "@material-ui/core/AppBar";
 import Items from "../common/Items";
 import {generatePlaylists} from "../../services/playlistsService";
-import {PlaylistModel} from "../Playlists/Playlist";
+import {PlaylistModel} from "../../models/PlaylistModel";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     content: {
@@ -34,11 +34,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-function SaveToPlaylistButton() {
-    const classes = useStyles();
-    const [open, setOpen] = useState(false);
-    const toggle = () => setOpen(!open);
-
+function PlaylistsMultiChoice() {
     const renderItem = (item: PlaylistModel) => (
         <CheckedListItem
             key={item.id}
@@ -46,6 +42,21 @@ function SaveToPlaylistButton() {
             secondaryAction={<LockIcon color="action" />}
         />
     );
+
+    return (
+        <List disablePadding>
+            <Items
+                onLoad={generatePlaylists}
+                renderItem={renderItem}
+            />
+        </List>
+    )
+}
+
+function SaveToPlaylistButton() {
+    const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    const toggle = () => setOpen(!open);
 
     const dialog = (
         <Dialog
@@ -75,12 +86,7 @@ function SaveToPlaylistButton() {
             <DialogContent
                 className={classes.content}
             >
-                <List disablePadding>
-                    <Items
-                        onLoad={generatePlaylists}
-                        renderItem={renderItem}
-                    />
-                </List>
+                <PlaylistsMultiChoice />
             </DialogContent>
             <DialogActions
                 className={classes.actions}

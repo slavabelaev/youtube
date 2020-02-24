@@ -1,15 +1,16 @@
-import {PostModel} from "../components/Posts/Post";
 import faker from "faker/locale/en";
+import {PostModel} from "../models/PostModel";
 
 export const generatePosts = async (): Promise<PostModel[]> => Array(12)
     .fill(null)
     .map((item, index) => ({
         id: index.toString(),
-        avatarSrc: faker.image.avatar(),
+        avatarUrl: faker.image.avatar(),
         title: faker.company.companyName(),
-        createdAt: faker.date.past().toLocaleDateString(),
+        createdAt: faker.date.past(),
         text: faker.lorem.paragraph(),
-        initialLikes: Math.round(Math.random() * 10000),
-        initialDislikes: Math.round(Math.random() * 5000),
-        initialChecked: 'none'
+        likes: Math.round(Math.random() * 10000),
+        dislikes: Math.round(Math.random() * 5000),
+        liked: false,
+        disliked: false
     }));

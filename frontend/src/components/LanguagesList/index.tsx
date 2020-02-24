@@ -1,24 +1,25 @@
-import React, {Suspense} from "react";
-import SuspenseFallback from "../common/SuspenseFallback";
+import React from "react";
 import {generateLanguages} from "../../services/languagesService";
 import {LanguageModel} from "../../models/LanguageModel";
-import {SingleChoiceItem} from "../common/SingleChoiceList";
+import SingleChoiceItem from "../common/SingleChoice/SingleChoiceItem";
+import SingleChoice, {SingleChoiceProps} from "../common/SingleChoice/SingleChoice";
 
-const SingleChoiceList = React.lazy(() => import('../common/SingleChoiceList'));
+function LanguageList() {
+    const renderItem: SingleChoiceProps['renderItem'] = (item: LanguageModel, value, setValue) => (
+        <SingleChoiceItem
+            label={item.label}
+            value={item.code}
+            selected={item.code === value}
+            onSelect={() => setValue(item.code)}
+        />
+    );
 
-export default () => (
-    <Suspense fallback={<SuspenseFallback />}>
-        <SingleChoiceList
+    return (
+        <SingleChoice
             initialValue="en"
             onLoad={generateLanguages}
-            renderItem={(item: LanguageModel, value, setValue) => (
-                <SingleChoiceItem
-                    label={item.label}
-                    value={item.code}
-                    selected={item.code === value}
-                    onSelect={() => setValue(item.code)}
-                />
-            )}
+            renderItem={renderItem}
         />
-    </Suspense>
-);
+    )
+}
+export default LanguageList;

@@ -10,8 +10,11 @@ import Typography from "@material-ui/core/Typography";
 import LikeDislikeButton, {LikeDislikeButtonProps} from "../buttons/LikeDislikeButton";
 import Button from "@material-ui/core/Button";
 
-export interface PostModel {
-    id: string;
+interface PostBaseProps {
+    bottomToolbar?: ReactNode;
+}
+
+export interface PostProps extends PostBaseProps {
     avatarSrc: AvatarProps['src']
     title: CardHeaderProps['title'];
     createdAt: CardHeaderProps['subheader'];
@@ -19,11 +22,6 @@ export interface PostModel {
     initialLikes: LikeDislikeButtonProps['initialLikes'];
     initialDislikes: LikeDislikeButtonProps['initialDislikes'];
     initialChecked: LikeDislikeButtonProps['initialChecked'];
-
-}
-
-export interface PostProps extends PostModel {
-    bottomToolbar?: ReactNode;
 }
 
 function Post({

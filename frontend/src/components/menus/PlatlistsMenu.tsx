@@ -7,6 +7,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Playlists from "../Playlists";
+import {generatePlaylists} from "../../services/playlistsService";
 
 function PlaylistsMenu() {
     const [open, setOpen] = React.useState(false);
@@ -25,7 +26,9 @@ function PlaylistsMenu() {
 
     const collapse = (
         <Collapse in={open} timeout="auto" unmountOnExit>
-            <Playlists />
+            <Playlists
+                onLoad={generatePlaylists}
+            />
         </Collapse>
     );
 
