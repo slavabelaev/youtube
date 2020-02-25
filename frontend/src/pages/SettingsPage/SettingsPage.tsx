@@ -39,7 +39,7 @@ function SettingsPage() {
                 <div className={classes.asideContent}>
                     <Typography
                         className={classes.menuTitle}
-                        variant="h6"
+                        variant="body1"
                         component="h6"
                     >
                         Settings

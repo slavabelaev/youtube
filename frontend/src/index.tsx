@@ -7,22 +7,23 @@ import ThemeProvider from "./contexts/ThemeContext";
 import LanguageProvider from "./contexts/LanguageContext";
 import LocationProvider from "./contexts/LocationContext";
 import RestrictedModeProvider from "./contexts/RestrictedModeContext";
+import MultipleProvider from "./contexts/MultipleProvider";
 
 function Root() {
     return (
         <Router>
-            <RestrictedModeProvider>
-                <LocationProvider>
-                    <LanguageProvider>
-                        <ThemeProvider>
-                            <App/>
-                        </ThemeProvider>
-                    </LanguageProvider>
-                </LocationProvider>
-            </RestrictedModeProvider>
+            <MultipleProvider providers={[
+                RestrictedModeProvider,
+                LocationProvider,
+                LanguageProvider,
+                ThemeProvider
+            ]}>
+                <App/>
+            </MultipleProvider>
         </Router>
     )
 }
+
 ReactDOM.render(<Root />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
