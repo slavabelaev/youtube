@@ -1,8 +1,9 @@
-import ListItemText, {ListItemTextProps} from "@material-ui/core/ListItemText";
+import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import CheckIcon from "@material-ui/icons/Check";
 import React from "react";
+import {Radio} from "@material-ui/core";
 
 export interface SingleChoiceItemBaseProps {
     label: string;
@@ -10,22 +11,42 @@ export interface SingleChoiceItemBaseProps {
 }
 
 export interface SingleChoiceItemProps extends SingleChoiceItemBaseProps {
-    selected?: boolean;
+    variant?: 'check' | 'radio';
+    checked?: boolean;
     onClick?: () => void;
 }
 
-function SingleChoiceItem(props: SingleChoiceItemProps) {
+function SingleChoiceItem({
+    label,
+    value,
+    variant ,
+    checked,
+    onClick
+}: SingleChoiceItemProps) {
+    const icon = variant === 'check' ? (
+        <Radio
+            checked={checked}
+            icon={<CheckIcon style={{opacity: 0}} />}
+            checkedIcon={<CheckIcon />}
+        />
+    ) : (
+        <Radio
+            checked={checked}
+        />
+    );
+
     return (
         <ListItem
             dense
             button
-            onClick={props.onClick}
+            selected={checked}
+            onClick={onClick}
         >
             <ListItemIcon>
-                {props.selected ? <CheckIcon /> : <></>}
+                {icon}
             </ListItemIcon>
             <ListItemText
-                primary={props.label}
+                primary={label}
             />
         </ListItem>
     )

@@ -6,11 +6,13 @@ import SingleChoiceItem, {SingleChoiceItemBaseProps, SingleChoiceItemProps} from
 export interface SingleChoiceListProps<T = any> {
     onLoad: ItemsProps['onLoad'];
     fromModelToProps: (model: any) => SingleChoiceItemBaseProps;
+    variant?: SingleChoiceItemProps['variant'];
     initialValue?: SingleChoiceItemProps['value'];
     onChange?: (item: SingleChoiceItemBaseProps) => void;
 }
 
 function SingleChoiceList({
+    variant,
     onLoad,
     fromModelToProps,
     initialValue = '',
@@ -23,7 +25,8 @@ function SingleChoiceList({
         return (
             <SingleChoiceItem
                 {...item}
-                selected={value === item.value}
+                variant={variant}
+                checked={value === item.value}
                 onClick={() => {
                     setValue(item.value);
                     if (onChange) onChange(item);

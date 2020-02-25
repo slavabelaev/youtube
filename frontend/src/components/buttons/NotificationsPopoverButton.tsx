@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         width: '100%',
         maxWidth: 500
     },
-    appBar: {
-        borderWidth: '0 0 1px 0',
-    },
     toolbarTitle: {
         flex: 1
     }

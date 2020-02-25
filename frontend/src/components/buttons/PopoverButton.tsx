@@ -1,8 +1,9 @@
 import React, {ReactNode} from "react";
 import Popover, {PopoverProps} from "@material-ui/core/Popover";
 import Tooltip, {TooltipProps} from "@material-ui/core/Tooltip";
-import {IconButton, IconButtonProps} from "@material-ui/core";
+import {IconButton, IconButtonProps, Theme, useMediaQuery} from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Dialog from "@material-ui/core/Dialog";
 
 export interface PopoverButtonProps extends IconButtonProps {
     content: ReactNode;
@@ -17,6 +18,7 @@ function PopoverButton({
     PopoverPaperProps,
     ...IconButtonProps
 }: PopoverButtonProps) {
+    const isDownXs = useMediaQuery((theme: Theme) => theme.breakpoints.down('xs'));
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
@@ -26,7 +28,15 @@ function PopoverButton({
         setAnchorEl(null);
     };
 
-    const popover = (
+    const popover = isDownXs ? (
+        <Dialog
+            fullWidth
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+        >
+            {content}
+        </Dialog>
+    ) : (
         <Popover
             open={Boolean(anchorEl)}
             onClose={handleClose}

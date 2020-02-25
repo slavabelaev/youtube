@@ -92,7 +92,7 @@ function LayoutAppBar({
                                 <AppsPopoverButton />
                             </>
                         ) : <SearchButton />}
-                        {isScreenDownXs ? null : <NotificationsPopoverButton />}
+                        <NotificationsPopoverButton />
                         <AccountPopoverButton />
                     </div>
                 </Toolbar>

@@ -4,8 +4,6 @@ import Layout from "../../layouts/Layout";
 
 export const GAMING_PAGE_ROUTE = '/gaming';
 
-
-
 const Page = React.lazy(() => import('./GamingPage'));
 
 function GamingPage() {

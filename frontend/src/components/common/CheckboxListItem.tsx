@@ -5,22 +5,22 @@ import ListItemText, {ListItemTextProps} from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction, {ListItemSecondaryActionProps} from "@material-ui/core/ListItemSecondaryAction";
 import ListItem from "@material-ui/core/ListItem";
 
-interface CheckedListItemBaseProps {
+interface CheckboxListItemBaseProps {
     primary: ListItemTextProps['primary'];
     secondary?: ListItemTextProps['secondary'];
     secondaryAction?: ListItemSecondaryActionProps['children'];
     onChange?: (checked: boolean) => void;
 }
 
-export type CheckedListItemProps = CheckboxProps & CheckedListItemBaseProps;
+export type CheckboxListItemProps = CheckboxProps & CheckboxListItemBaseProps;
 
-function CheckedListItem({
+function CheckboxListItem({
     primary,
     secondary,
     secondaryAction,
     onChange,
     ...CheckboxProps
-}: CheckedListItemProps) {
+}: CheckboxListItemProps) {
     const [checked, setChecked] = useState(Boolean(CheckboxProps.checked));
     const toggle = () => onChange ? onChange(checked) : setChecked(!checked);
 
@@ -54,4 +54,4 @@ function CheckedListItem({
     )
 }
 
-export default CheckedListItem;
+export default CheckboxListItem;

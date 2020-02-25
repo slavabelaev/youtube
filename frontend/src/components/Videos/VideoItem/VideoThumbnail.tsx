@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import {CreateCSSProperties} from "@material-ui/styles/withStyles";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
+import SaveToPlaylistButton from "../../buttons/SaveToPlaylistButton";
 
 const useStyles = makeStyles((theme: Theme) => {
     const buttonProps: CreateCSSProperties = {
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme: Theme) => {
             ...buttonProps,
             top: theme.spacing(1),
         },
-        addToPlaylistsButton: {
+        saveToPlaylistButton: {
             ...buttonProps,
             top: theme.spacing(5.25),
         }
@@ -102,7 +103,7 @@ function VideoThumbnail({
         </Typography>
     );
 
-    const watchLater = (
+    const saveToWatchLaterButton = (
         <Tooltip
             title="Watch later"
             placement="left"
@@ -119,42 +120,51 @@ function VideoThumbnail({
         </Tooltip>
     );
 
-    const addToPlaylistsButton = (
-        <Tooltip
-            title="Save to playlist"
-            placement="left"
-            aria-label="button"
+    const saveToPlaylistButton = (
+        <SaveToPlaylistButton
+            renderAction={(onClick) => (
+                <Tooltip
+                    title="Save to playlist"
+                    placement="left"
+                    aria-label="button"
+                >
+                    <Button
+                        className={classes.saveToPlaylistButton}
+                        size="small"
+                        onClick={onClick}
+                    >
+                        <PlaylistPlayIcon
+                            fontSize="small"
+                        />
+                    </Button>
+                </Tooltip>
+            )}
+        />
+    );
+
+    const preview = (
+        <Link
+            className={classes.link}
+            to={to}
         >
-            <Button
-                className={classes.addToPlaylistsButton}
-                size="small"
-            >
-                <PlaylistPlayIcon
-                    fontSize="small"
-                />
-            </Button>
-        </Tooltip>
+            <img
+                className={classes.image}
+                src={src}
+                alt=""
+            />
+            <PlayArrowIcon
+                fontSize="large"
+                aria-label="button"
+                className={classes.playArrowIcon}
+            />
+        </Link>
     );
 
     return (
         <div className={clsx(classes.root, className)}>
-            <Link
-                className={classes.link}
-                to={to}
-            >
-                <img
-                    className={classes.image}
-                    src={src}
-                    alt=""
-                />
-                <PlayArrowIcon
-                    fontSize="large"
-                    aria-label="button"
-                    className={classes.playArrowIcon}
-                />
-            </Link>
-            {watchLater}
-            {addToPlaylistsButton}
+            {preview}
+            {saveToWatchLaterButton}
+            {saveToPlaylistButton}
             {timeStatus}
         </div>
     )

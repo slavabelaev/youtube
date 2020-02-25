@@ -9,6 +9,7 @@ function LocationChoiceList() {
 
     return (
         <SingleChoiceList
+            variant="check"
             initialValue={context?.location.code}
             onLoad={generateLanguages}
             fromModelToProps={(model: LocationModel) => ({

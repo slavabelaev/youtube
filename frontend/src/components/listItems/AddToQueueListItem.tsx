@@ -5,7 +5,7 @@ import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 function AddToQueueListItem() {
     return (
         <MenuListItem
-            title="Add account"
+            title="Add to queue"
             icon={<PlaylistPlayIcon />}
         />
     )

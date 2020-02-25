@@ -9,11 +9,12 @@ function LanguageChoiceList() {
     
     return (
         <SingleChoiceList
+            variant="check"
             initialValue={context?.language.code}
             onLoad={generateLanguages}
-            fromModelToProps={(model: LanguageModel) => ({
-                label: model.label,
-                value: model.code
+            fromModelToProps={(language: LanguageModel) => ({
+                label: language.label,
+                value: language.code
             })}
             onChange={item => context?.switchLanguage({
                 label: item.label,
