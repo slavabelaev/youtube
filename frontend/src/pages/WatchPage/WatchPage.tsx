@@ -18,7 +18,7 @@ import {generateListVideos} from "../../services/videosService";
 import Videos from "../../components/Videos";
 import PopoverButton from "../../components/buttons/PopoverButton";
 import VideoMenu from "../../components/menus/VideoMenu";
-import SaveToPlaylistButton from "../../components/buttons/SaveToPlaylistButton";
+import SaveToPlaylistTrigger from "../../components/triggers/SaveToPlaylistTrigger";
 import {generateComments} from "../../services/commentsService";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -82,9 +82,9 @@ function WatchPage() {
               >
                   Share
               </Button>
-              <SaveToPlaylistButton />
+              <SaveToPlaylistTrigger />
               <PopoverButton
-                  content={<VideoMenu />}
+                  renderContent={() => <VideoMenu />}
               >
                   <MoreHorizIcon />
               </PopoverButton>

@@ -4,7 +4,7 @@ import List from "@material-ui/core/List";
 import ReportListItem from "../../listItems/ReportListItem";
 
 function CommentPopoverButton() {
-    const list = (
+    const renderContent = () => (
         <List>
             <ReportListItem/>
         </List>
@@ -13,7 +13,7 @@ function CommentPopoverButton() {
     return (
         <PopoverButton
             edge="end"
-            content={list}
+            renderContent={renderContent}
         />
     )
 }

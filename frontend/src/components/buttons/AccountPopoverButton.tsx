@@ -31,7 +31,7 @@ function AccountPopoverButton() {
         <PopoverButton
             className={classes.iconButton}
             edge="end"
-            content={<AccountMenu />}
+            renderContent={() => <AccountMenu />}
             PopoverPaperProps={{
                 className: classes.paper
             }}

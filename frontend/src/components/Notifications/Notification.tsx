@@ -60,7 +60,7 @@ function Notification(props: NotificationProps) {
             ) : null}
             <ListItemSecondaryAction>
                 <PopoverButton
-                    content={<NotificationMenu />}
+                    renderContent={() => <NotificationMenu />}
                 />
             </ListItemSecondaryAction>
         </ListItem>

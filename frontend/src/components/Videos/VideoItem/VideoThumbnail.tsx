@@ -9,7 +9,8 @@ import Button from "@material-ui/core/Button";
 import {CreateCSSProperties} from "@material-ui/styles/withStyles";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
-import SaveToPlaylistButton from "../../buttons/SaveToPlaylistButton";
+import SaveToPlaylistTrigger from "../../triggers/SaveToPlaylistTrigger";
+import SnackbarTrigger from "../../triggers/SnackbarTrigger";
 
 const useStyles = makeStyles((theme: Theme) => {
     const buttonProps: CreateCSSProperties = {
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) => {
             ...buttonProps,
             top: theme.spacing(1),
         },
-        saveToPlaylistButton: {
+        SaveToPlaylistTrigger: {
             ...buttonProps,
             top: theme.spacing(5.25),
         }
@@ -104,32 +105,38 @@ function VideoThumbnail({
     );
 
     const saveToWatchLaterButton = (
-        <Tooltip
-            title="Watch later"
-            placement="left"
-        >
-            <Button
-                className={classes.watchLater}
-                size="small"
-                aria-label="button"
-            >
-                <WatchLaterIcon
-                    fontSize="small"
-                />
-            </Button>
-        </Tooltip>
+        <SnackbarTrigger
+            message={'Saved to "Watch later"'}
+            renderTrigger={onClick => (
+                <Tooltip
+                    title="Watch later"
+                    placement="left"
+                >
+                    <Button
+                        className={classes.watchLater}
+                        size="small"
+                        aria-label="button"
+                        onClick={onClick}
+                    >
+                        <WatchLaterIcon
+                            fontSize="small"
+                        />
+                    </Button>
+                </Tooltip>
+            )}
+        />
     );
 
-    const saveToPlaylistButton = (
-        <SaveToPlaylistButton
-            renderAction={(onClick) => (
+    const saveToPlaylistTrigger = (
+        <SaveToPlaylistTrigger
+            renderTrigger={onClick => (
                 <Tooltip
                     title="Save to playlist"
                     placement="left"
                     aria-label="button"
                 >
                     <Button
-                        className={classes.saveToPlaylistButton}
+                        className={classes.SaveToPlaylistTrigger}
                         size="small"
                         onClick={onClick}
                     >
@@ -164,7 +171,7 @@ function VideoThumbnail({
         <div className={clsx(classes.root, className)}>
             {preview}
             {saveToWatchLaterButton}
-            {saveToPlaylistButton}
+            {saveToPlaylistTrigger}
             {timeStatus}
         </div>
     )

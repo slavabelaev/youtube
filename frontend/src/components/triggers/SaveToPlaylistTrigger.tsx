@@ -3,14 +3,14 @@ import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import PlaylistsMultipleChoice from "../PlaylistsMultipleChoice";
-import DialogButton, {DialogButtonProps} from "./DialogButton";
+import DialogTrigger, {DialogTriggerProps} from "./DialogTrigger";
 
-export interface SaveToPlaylistButtonProps {
-    renderAction?: DialogButtonProps['renderAction'];
+export interface SaveToPlaylistTriggerProps {
+    renderTrigger?: DialogTriggerProps['renderTrigger'];
 }
 
-function SaveToPlaylistButton(props: SaveToPlaylistButtonProps) {
-    const renderAction = props.renderAction || (
+function SaveToPlaylistTrigger(props: SaveToPlaylistTriggerProps) {
+    const renderTrigger = props.renderTrigger || (
         onClick => (
             <Button
                 variant="text"
@@ -23,11 +23,11 @@ function SaveToPlaylistButton(props: SaveToPlaylistButtonProps) {
     );
 
     return (
-        <DialogButton
+        <DialogTrigger
             title="Save to..."
             maxWidth="xs"
             content={<PlaylistsMultipleChoice />}
-            renderAction={renderAction}
+            renderTrigger={renderTrigger}
             renderActions={() => (
                 <Button
                     startIcon={<AddIcon />}
@@ -39,4 +39,4 @@ function SaveToPlaylistButton(props: SaveToPlaylistButtonProps) {
     )
 }
 
-export default SaveToPlaylistButton;
+export default SaveToPlaylistTrigger;

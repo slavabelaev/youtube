@@ -6,13 +6,13 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Dialog from "@material-ui/core/Dialog";
 
 export interface PopoverButtonProps extends IconButtonProps {
-    content: ReactNode;
+    renderContent: (onClose: VoidFunction) => ReactNode;
     tooltip?: TooltipProps['title'];
     PopoverPaperProps?: PopoverProps['PaperProps'];
 }
 
 function PopoverButton({
-    content,
+    renderContent,
     children = <MoreVertIcon />,
     tooltip,
     PopoverPaperProps,
@@ -28,6 +28,7 @@ function PopoverButton({
         setAnchorEl(null);
     };
 
+    const content = renderContent(handleClose);
     const popover = isDownXs ? (
         <Dialog
             fullWidth

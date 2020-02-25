@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 import {Typography} from "@material-ui/core";
 import {toStringNumber} from "../utils/numbers";
 import SubscribeButton from "./buttons/SubscribeButton";
-import ChannelNotificationsButton from "./buttons/ChannelNotificationsButton";
+import NotificationsToggleButton from "./buttons/NotificationsToggleButton";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     listItem: {
@@ -60,7 +60,7 @@ function ChannelToolbar(props: ChannelToolbar) {
             </ListItem>
             <aside className={classes.aside}>
                 <SubscribeButton />
-                <ChannelNotificationsButton
+                <NotificationsToggleButton
                     className={classes.notificationsButton}
                 />
             </aside>

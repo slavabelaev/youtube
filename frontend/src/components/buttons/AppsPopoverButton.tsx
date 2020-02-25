@@ -6,7 +6,7 @@ import PopoverButton from "./PopoverButton";
 function AppsPopoverButton() {
 	return (
     <PopoverButton
-        content={<AppsMenu />}
+        renderContent={() => <AppsMenu />}
         tooltip="Apps"
     >
         <AppsIcon />

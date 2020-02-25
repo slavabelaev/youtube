@@ -44,7 +44,7 @@ function NotificationsPopoverButton() {
         />
     );
 
-    const content = (
+    const renderContent = () => (
         <>
             {appBar}
             <Notifications />
@@ -62,7 +62,7 @@ function NotificationsPopoverButton() {
 
     return (
         <PopoverButton
-            content={content}
+            renderContent={renderContent}
             tooltip={title}
             PopoverPaperProps={{
                 className: classes.popoverPaper

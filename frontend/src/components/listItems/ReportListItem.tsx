@@ -1,13 +1,13 @@
 import React from "react";
 import MenuListItem from "../common/MenuListItem";
 import FlagIcon from "@material-ui/icons/Flag";
-import DialogButton, {DialogButtonProps} from "../buttons/DialogButton";
+import DialogTrigger, {DialogTriggerProps} from "../triggers/DialogTrigger";
 import SingleChoiceList from "../common/SingleChoice";
 import {Button} from "@material-ui/core";
 
 function ReportListItem() {
     const title = 'Report';
-    const renderAction: DialogButtonProps['renderAction'] = (onClick) => (
+    const renderTrigger: DialogTriggerProps['renderTrigger'] = (onClick) => (
         <MenuListItem
             title={title}
             icon={<FlagIcon />}
@@ -31,7 +31,7 @@ function ReportListItem() {
         />
     );
 
-    const renderActions: DialogButtonProps['renderActions'] = onClose => (
+    const renderActions: DialogTriggerProps['renderActions'] = onClose => (
         <>
             <Button onClick={onClose}>
                 Cancel
@@ -46,10 +46,10 @@ function ReportListItem() {
     );
 
     return (
-        <DialogButton
+        <DialogTrigger
             title={title}
             content={content}
-            renderAction={renderAction}
+            renderTrigger={renderTrigger}
             renderActions={renderActions}
         />
     )

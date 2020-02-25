@@ -7,9 +7,9 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import {makeStyles} from "@material-ui/core/styles";
 
-export interface DialogButtonProps {
+export interface DialogTriggerProps {
     content: DialogProps['children'];
-    renderAction: (onClick: VoidFunction) => ReactElement;
+    renderTrigger: (onClick: VoidFunction) => ReactElement;
     renderActions?: (onClose: VoidFunction) => ReactNode;
     title?: PopoverAppBarProps['title'];
     maxWidth?: DialogProps['maxWidth'];
@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-function DialogButton({
+function DialogTrigger({
     title,
     maxWidth,
-    renderAction,
+    renderTrigger,
     content,
     renderActions
-}: DialogButtonProps) {
+}: DialogTriggerProps) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const handleToggle = () => setOpen(!open);
@@ -59,7 +59,7 @@ function DialogButton({
 
     const dialogActions = renderActions ? (
         <DialogActions className={classes.actions}>
-            {renderActions(handleToggle)}
+            {renderActions(() => setOpen(false))}
         </DialogActions>
     ) : null;
 
@@ -75,7 +75,7 @@ function DialogButton({
         </Dialog>
     );
 
-    const button = renderAction(handleToggle);
+    const button = renderTrigger(handleToggle);
 
     return (
         <>
@@ -85,4 +85,4 @@ function DialogButton({
     )
 }
 
-export default DialogButton;
+export default DialogTrigger;

@@ -5,5 +5,5 @@ export const generatePlaylists = async (): Promise<PlaylistModel[]> => Array(10)
     .fill(null)
     .map((item, index) => ({
         id: `${index}`,
-        title: faker.lorem.sentence(4)
+        title: faker.company.companyName()
     }));

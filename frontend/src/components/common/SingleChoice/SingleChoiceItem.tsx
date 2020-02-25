@@ -25,6 +25,7 @@ function SingleChoiceItem({
 }: SingleChoiceItemProps) {
     const icon = variant === 'check' ? (
         <Radio
+            size="small"
             checked={checked}
             icon={<CheckIcon style={{opacity: 0}} />}
             checkedIcon={<CheckIcon />}
@@ -39,7 +40,6 @@ function SingleChoiceItem({
         <ListItem
             dense
             button
-            selected={checked}
             onClick={onClick}
         >
             <ListItemIcon>

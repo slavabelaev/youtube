@@ -1,11 +1,8 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
 import Layout from "../../layouts/Layout";
-import {RouteLink} from "../../components/common/LinkListItem";
 
 export const PRIVACY_PAGE_ROUTE = '/privacy';
-
-
 
 const Page = React.lazy(() => import('./PrivacyPage'));
 

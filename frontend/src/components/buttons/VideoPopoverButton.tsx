@@ -6,7 +6,7 @@ import PopoverButton from "./PopoverButton";
 function VideoPopoverButton() {
 	return (
     <PopoverButton
-        content={<VideoAddMenu />}
+        renderContent={() => <VideoAddMenu />}
         tooltip="Create video or post"
     >
         <VideoCallIcon />

@@ -1,20 +1,27 @@
 import React from "react";
-import MenuListItem from "../common/MenuListItem";
+import MenuListItem, {MenuListItemProps} from "../common/MenuListItem";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
-import SaveToPlaylistButton, {SaveToPlaylistButtonProps} from "../buttons/SaveToPlaylistButton";
+import SaveToPlaylistTrigger, {SaveToPlaylistTriggerProps} from "../triggers/SaveToPlaylistTrigger";
 
-function SaveToPlaylistListItem() {
-    const renderAction: SaveToPlaylistButtonProps['renderAction'] = (onClick) => (
+export interface SaveToPlaylistListItemProps {
+    onClick?: MenuListItemProps['onClick'];
+}
+
+function SaveToPlaylistListItem({ onClick }: SaveToPlaylistListItemProps) {
+    const renderTrigger: SaveToPlaylistTriggerProps['renderTrigger'] = (showPlaylists) => (
         <MenuListItem
             title={'Save to playlist'}
             icon={<PlaylistAddIcon />}
-            onClick={onClick}
+            onClick={() => {
+                showPlaylists();
+                if (onClick) onClick();
+            }}
         />
     );
 
     return (
-        <SaveToPlaylistButton
-            renderAction={renderAction}
+        <SaveToPlaylistTrigger
+            renderTrigger={renderTrigger}
         />
     )
 }

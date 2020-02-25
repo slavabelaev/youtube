@@ -6,7 +6,7 @@ function VideoPopoverButton() {
     return (
         <PopoverButton
             edge="end"
-            content={<VideoMenu/>}
+            renderContent={() => <VideoMenu />}
         />
     )
 }
