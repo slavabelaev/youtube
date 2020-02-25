@@ -5,10 +5,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 
 export const ADS_PAGE_ROUTE = '/ads';
 
-export const ADS_MENU_ITEM: RouteLink = {
-    title: 'Advertise',
-    to: ADS_PAGE_ROUTE
-};
+
 
 const Page = React.lazy(() => import('./AdsPage'));
 

@@ -5,10 +5,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 
 export const PRESS_PAGE_ROUTE = '/new';
 
-export const PRESS_MENU_ITEM: RouteLink = {
-    title: 'Press',
-    to: PRESS_PAGE_ROUTE
-};
+
 
 const Page = React.lazy(() => import('./PressPage'));
 

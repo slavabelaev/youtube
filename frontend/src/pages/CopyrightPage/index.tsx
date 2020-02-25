@@ -5,10 +5,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 
 export const COPYRIGHT_PAGE_ROUTE = '/copyright';
 
-export const COPYRIGHT_MENU_ITEM: RouteLink = {
-    title: 'Copyright',
-    to: COPYRIGHT_PAGE_ROUTE
-};
+
 
 const Page = React.lazy(() => import('./CopyrightPage'));
 

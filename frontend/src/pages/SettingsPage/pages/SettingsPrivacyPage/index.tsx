@@ -1,15 +1,8 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import {Info} from "@material-ui/icons";
-import {RouteLink} from "../../../../components/common/LinkListItem";
+import {SETTINGS_PAGE_ROUTE} from "../../index";
 
-export const SETTINGS_PRIVACY_PAGE_ROUTE = '/privacy';
-
-export const SETTINGS_PRIVACY_MENU_ITEM: RouteLink = {
-    title: 'Privacy',
-    to: SETTINGS_PRIVACY_PAGE_ROUTE,
-    icon: Info
-};
+export const SETTINGS_PRIVACY_PAGE_ROUTE = `${SETTINGS_PAGE_ROUTE}/privacy`;
 
 const Page = React.lazy(() => import('./SettingsPrivacyPage'));
 

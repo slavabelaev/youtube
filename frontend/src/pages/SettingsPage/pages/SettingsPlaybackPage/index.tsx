@@ -1,15 +1,10 @@
 import React, {Suspense} from "react";
 import {LinearProgress} from "@material-ui/core";
-import {PlayArrow} from "@material-ui/icons";
-import {RouteLink} from "../../../../components/common/LinkListItem";
+import {SETTINGS_PAGE_ROUTE} from "../../index";
 
-export const SETTINGS_PLAYBACK_PAGE_ROUTE = '/playback';
+export const SETTINGS_PLAYBACK_PAGE_ROUTE = `${SETTINGS_PAGE_ROUTE}/playback`;
 
-export const SETTINGS_PLAYBACK_MENU_ITEM: RouteLink = {
-    title: 'Playback',
-    to: SETTINGS_PLAYBACK_PAGE_ROUTE,
-    icon: PlayArrow
-};
+
 
 const Page = React.lazy(() => import('./SettingsPlaybackPage'));
 

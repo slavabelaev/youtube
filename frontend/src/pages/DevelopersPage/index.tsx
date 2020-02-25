@@ -5,10 +5,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 
 export const DEV_PAGE_ROUTE = '/dev';
 
-export const DEV_MENU_ITEM: RouteLink = {
-    title: 'Developers',
-    to: DEV_PAGE_ROUTE
-};
+
 
 const Page = React.lazy(() => import('./DevelopersPage'));
 

@@ -3,7 +3,7 @@ import {LocationModel} from "../../models/LocationModel";
 
 export interface LocationContextProps {
     location: LocationModel;
-    switchLocation: (language: LocationModel) => void;
+    switchLocation: (location: LocationModel) => void;
 }
 
 export const LocationContext = React.createContext<LocationContextProps | undefined>(undefined);

@@ -16,7 +16,11 @@ function DescriptionBox({ paragraphs }: DescriptionBoxProps) {
     const classes = useStyles();
 
     const renderItem = (text: string, index: number) => (
-        <Typography component="p" key={index}>
+        <Typography
+            component="p"
+            gutterBottom
+            key={index}
+        >
             {text}
         </Typography>
     );

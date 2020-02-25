@@ -17,7 +17,7 @@ import ChannelToolbar from "../../components/ChannelToolbar";
 import {generateListVideos} from "../../services/videosService";
 import Videos from "../../components/Videos";
 import PopoverButton from "../../components/buttons/PopoverButton";
-import WatchPageMenu from "./WatchPageMenu";
+import VideoMenu from "../../components/menus/VideoMenu";
 import SaveToPlaylistButton from "../../components/buttons/SaveToPlaylistButton";
 import {generateComments} from "../../services/commentsService";
 
@@ -84,7 +84,7 @@ function WatchPage() {
               </Button>
               <SaveToPlaylistButton />
               <PopoverButton
-                  content={<WatchPageMenu />}
+                  content={<VideoMenu />}
               >
                   <MoreHorizIcon />
               </PopoverButton>

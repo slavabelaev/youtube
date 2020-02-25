@@ -5,10 +5,7 @@ import {RouteLink} from "../../components/common/LinkListItem";
 
 export const TERMS_PAGE_ROUTE = '/terms';
 
-export const TERMS_MENU_ITEM: RouteLink = {
-    title: 'Terms',
-    to: TERMS_PAGE_ROUTE
-};
+
 
 const Page = React.lazy(() => import('./TermsPage'));
 

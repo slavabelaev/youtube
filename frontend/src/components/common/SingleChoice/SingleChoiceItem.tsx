@@ -4,11 +4,14 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import CheckIcon from "@material-ui/icons/Check";
 import React from "react";
 
-export interface SingleChoiceItemProps {
-    label: ListItemTextProps['primary'];
+export interface SingleChoiceItemBaseProps {
+    label: string;
     value: string;
-    selected: boolean;
-    onClick: () => void;
+}
+
+export interface SingleChoiceItemProps extends SingleChoiceItemBaseProps {
+    selected?: boolean;
+    onClick?: () => void;
 }
 
 function SingleChoiceItem(props: SingleChoiceItemProps) {

@@ -1,6 +1,6 @@
 import React from "react";
 import {List} from "@material-ui/core";
-import AccountListItem from "./AccountsListItem";
+import AccountListItem from "./AccountListItem";
 import Items, {ItemsProps} from "../../common/Items";
 import {AccountModel} from "../../../models/AccountModel";
 

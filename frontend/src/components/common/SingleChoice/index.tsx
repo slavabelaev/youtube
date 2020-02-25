@@ -1,3 +1,3 @@
-import SingleChoice from "./SingleChoice";
+import SingleChoiceList from "./SingleChoiceList";
 
-export default SingleChoice;
+export default SingleChoiceList;
