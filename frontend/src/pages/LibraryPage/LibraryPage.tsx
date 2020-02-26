@@ -1,6 +1,5 @@
 import React from "react";
 import {makeStyles, createStyles, Theme} from "@material-ui/core";
-import AuthForm from "../../components/forms/SignInForm";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -15,7 +14,7 @@ function LibraryPage() {
 
     return (
         <main className={classes.root}>
-            <AuthForm/>
+            Library Page
         </main>
     )
 }
