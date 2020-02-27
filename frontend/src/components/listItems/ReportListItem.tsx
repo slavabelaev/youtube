@@ -24,7 +24,7 @@ function ReportListItem() {
                 'Harmful or dangerous acts',
                 'Spam or misleading'
             ]}
-            fromModelToProps={(reason: string) => ({
+            itemToProps={(reason: string) => ({
                 label: reason,
                 value: reason
             })}

@@ -1,6 +1,6 @@
 import React from "react";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import ChannelToolbar from "../../components/ChannelToolbar";
+import ChannelToolbar from "../../components/core/ChannelToolbar";
 import ChannelTabs from "./ChannelTabs";
 import {generateBackgroundImageStyles} from "./styles";
 

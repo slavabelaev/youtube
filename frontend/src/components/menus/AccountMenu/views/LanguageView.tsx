@@ -1,6 +1,6 @@
 import React from "react";
-import PopoverAppBar from "../../../PopoverAppBar";
-import LanguagesList from "../../../LanguageChoiceList";
+import PopoverAppBar from "../../../core/PopoverAppBar";
+import LanguagesList from "../../../core/LanguageChoiceList";
 import {AccountMenuViewProps} from "../AccountMenuViewProps";
 
 export interface LanguageViewProps extends AccountMenuViewProps {}

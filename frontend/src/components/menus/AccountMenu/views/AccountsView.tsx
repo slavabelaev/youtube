@@ -1,6 +1,6 @@
 import React from "react";
 import AccountsMenu from "../../AccountsMenu";
-import PopoverAppBar from "../../../PopoverAppBar";
+import PopoverAppBar from "../../../core/PopoverAppBar";
 import {AccountMenuViewProps} from "../AccountMenuViewProps";
 
 export interface AccountsViewProps extends AccountMenuViewProps {}

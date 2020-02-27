@@ -5,7 +5,7 @@ import SingleChoiceItem, {SingleChoiceItemBaseProps, SingleChoiceItemProps} from
 
 export interface SingleChoiceListProps<T = any> {
     onLoad: ItemsProps['onLoad'];
-    fromModelToProps: (model: any) => SingleChoiceItemBaseProps;
+    itemToProps: (model: any) => SingleChoiceItemBaseProps;
     variant?: SingleChoiceItemProps['variant'];
     initialValue?: SingleChoiceItemProps['value'];
     onChange?: (item: SingleChoiceItemBaseProps) => void;
@@ -14,14 +14,14 @@ export interface SingleChoiceListProps<T = any> {
 function SingleChoiceList({
     variant,
     onLoad,
-    fromModelToProps,
+    itemToProps,
     initialValue = '',
     onChange
 }: SingleChoiceListProps) {
     const [value, setValue] = useState(initialValue);
 
     const renderItem = (model: any) => {
-        const item = fromModelToProps(model);
+        const item = itemToProps(model);
         return (
             <SingleChoiceItem
                 {...item}

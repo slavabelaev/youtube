@@ -6,7 +6,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import Playlists from "../Playlists";
+import Playlists from "../core/Playlists";
 import {generatePlaylists} from "../../services/playlistsService";
 
 function PlaylistsMenu() {

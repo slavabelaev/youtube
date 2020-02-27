@@ -1,5 +1,4 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
 import {Link as StyledLink} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
@@ -51,7 +50,6 @@ export interface SignInFormProps {
 
 export function SignInForm(props: SignInFormProps) {
     const classes = useStyles();
-    const history = useHistory();
     const {onSignUp, onRecovery} = props;
     const [showPassword, setShowPassword] = React.useState(false);
     const [values, setValues] = React.useState<SignInFormState>({

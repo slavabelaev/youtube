@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import SuspenseFallback from "../../common/SuspenseFallback";
+import SuspenseFallback from "../../../layouts/SuspenseFallback";
 import {generateAccounts} from "../../../services/accountsService";
 
 const Component = React.lazy(() => import('./AccountsMenu'));

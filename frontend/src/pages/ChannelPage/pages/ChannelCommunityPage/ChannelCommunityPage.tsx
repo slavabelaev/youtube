@@ -1,5 +1,5 @@
 import React from "react";
-import Posts from "../../../../components/Posts";
+import Posts from "../../../../components/core/Posts";
 import {generatePosts} from "../../../../services/postsService";
 
 function ChannelCommunityPage() {

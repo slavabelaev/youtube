@@ -8,7 +8,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import InputBase from "@material-ui/core/InputBase";
 import {RenderInputParams} from "@material-ui/lab";
-import SearchField from "../SearchField";
+import SearchField from "../common/SearchField";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {

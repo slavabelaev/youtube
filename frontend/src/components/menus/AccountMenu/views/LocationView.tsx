@@ -1,6 +1,6 @@
 import React from "react";
-import PopoverAppBar from "../../../PopoverAppBar";
-import LocationsList from "../../../LocationChoiceList";
+import PopoverAppBar from "../../../core/PopoverAppBar";
+import LocationsList from "../../../core/LocationChoiceList";
 import {AccountMenuViewProps} from "../AccountMenuViewProps";
 
 export interface LocationViewProps extends AccountMenuViewProps {}

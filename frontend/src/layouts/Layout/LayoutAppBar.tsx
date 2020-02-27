@@ -12,7 +12,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountPopoverButton from "../../components/buttons/AccountPopoverButton";
 import NotificationsPopoverButton from "../../components/buttons/NotificationsPopoverButton";
 import SearchButton from "../../components/buttons/SearchButton";
-import SearchField from "../../components/SearchField";
+import SearchField from "../../components/common/SearchField";
 import Logo from "../Logo";
 import AppsPopoverButton from "../../components/buttons/AppsPopoverButton";
 import VideoPopoverButton from "../../components/buttons/VideoPopoverButton";

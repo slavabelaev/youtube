@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles, createStyles, Theme} from "@material-ui/core";
-import Videos from "../../components/Videos";
+import Videos from "../../components/core/Videos";
 import {generateListVideos} from "../../services/videosService";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({

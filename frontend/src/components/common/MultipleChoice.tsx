@@ -1,4 +1,4 @@
-import CheckboxListItem from "./CheckboxListItem";
+import CheckboxListItem from "../listItems/CheckboxListItem";
 import LockIcon from "@material-ui/icons/Lock";
 import List from "@material-ui/core/List";
 import Items, {ItemsProps} from "./Items";
@@ -11,15 +11,15 @@ export interface MultiChoiceListItemProps {
 
 export interface MultipleChoiceListProps {
     onLoad: ItemsProps['onLoad'];
-    fromModelToProps: (item: any) => MultiChoiceListItemProps
+    itemToProps: (item: any) => MultiChoiceListItemProps
 }
 
 function MultipleChoiceList({
     onLoad,
-    fromModelToProps
+    itemToProps
 }: MultipleChoiceListProps) {
     const renderItem = (model: any) => {
-        const item: MultiChoiceListItemProps = fromModelToProps(model);
+        const item: MultiChoiceListItemProps = itemToProps(model);
         return (
             <CheckboxListItem
                 key={item.value}

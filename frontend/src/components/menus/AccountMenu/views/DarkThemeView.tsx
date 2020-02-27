@@ -1,5 +1,5 @@
 import React from "react";
-import PopoverAppBar from "../../../PopoverAppBar";
+import PopoverAppBar from "../../../core/PopoverAppBar";
 import DescriptionBox from "../../../common/DescriptionBox";
 import List from "@material-ui/core/List";
 import DarkThemeSwitchListItem from "../../../listItems/DarkThemeSwitchListItem";

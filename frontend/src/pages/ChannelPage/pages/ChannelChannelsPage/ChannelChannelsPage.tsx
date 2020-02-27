@@ -1,5 +1,5 @@
 import React from "react";
-import Channels from "../../../../components/Channels";
+import Channels from "../../../../components/core/Channels";
 
 function ChannelChannelsPage() {
 	return (

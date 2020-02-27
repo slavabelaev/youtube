@@ -3,13 +3,13 @@ import Badge from "@material-ui/core/Badge";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {createStyles, IconButton, Theme} from "@material-ui/core";
 import SettingsIcon from "@material-ui/icons/Settings";
-import Notifications from "../Notifications";
+import Notifications from "../core/Notifications";
 import {makeStyles} from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 import {Link} from "react-router-dom";
 import {SETTINGS_MENU_ITEM} from "../../pages/SettingsPage";
 import PopoverButton from "./PopoverButton";
-import PopoverAppBar from "../PopoverAppBar";
+import PopoverAppBar from "../core/PopoverAppBar";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     popoverPaper: {

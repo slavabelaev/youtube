@@ -2,7 +2,7 @@ import React from "react";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
-import PlaylistsMultipleChoice from "../PlaylistsMultipleChoice";
+import PlaylistsMultipleChoice from "../core/PlaylistsMultipleChoice";
 import DialogTrigger, {DialogTriggerProps} from "./DialogTrigger";
 
 export interface SaveToPlaylistTriggerProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import Videos from "../../../../components/Videos";
+import Videos from "../../../../components/core/Videos";
 import {generateListVideos} from "../../../../services/videosService";
 
 function ChannelVideosPage() {

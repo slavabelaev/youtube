@@ -4,7 +4,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Category, {CategoryProps} from "../../components/common/Category";
 import Divider from "@material-ui/core/Divider";
 import {generateListVideos} from "../../services/videosService";
-import Videos from "../../components/Videos";
+import Videos from "../../components/core/Videos";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
