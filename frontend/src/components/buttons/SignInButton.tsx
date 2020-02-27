@@ -1,9 +1,9 @@
 import React from "react";
-import SignInDialogTrigger, {SignInDialogTriggerProps} from "../triggers/SignInDialogTrigger";
+import AuthDialogTrigger, {AuthDialogTriggerProps} from "../triggers/AuthDialogTrigger";
 import {Button} from "@material-ui/core";
 
 function SignInButton() {
-    const renderButton: SignInDialogTriggerProps['renderTrigger'] = (openDialog) => (
+    const renderButton: AuthDialogTriggerProps['renderTrigger'] = (openDialog) => (
         <Button
             variant="contained"
             color="secondary"
@@ -14,7 +14,7 @@ function SignInButton() {
     );
 
     return (
-        <SignInDialogTrigger
+        <AuthDialogTrigger
             renderTrigger={renderButton}
         />
     )

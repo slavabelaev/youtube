@@ -1,10 +1,10 @@
 import React from "react";
 import MenuListItem from "../common/MenuListItem";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import SignInDialogTrigger, {SignInDialogTriggerProps} from "../triggers/SignInDialogTrigger";
+import AuthDialogTrigger, {AuthDialogTriggerProps} from "../triggers/AuthDialogTrigger";
 
 function AddAccountListItem() {
-    const renderTrigger: SignInDialogTriggerProps['renderTrigger'] = (openDialog) => (
+    const renderTrigger: AuthDialogTriggerProps['renderTrigger'] = (openDialog) => (
         <MenuListItem
             title="Add account"
             icon={<PersonAddIcon />}
@@ -13,7 +13,7 @@ function AddAccountListItem() {
     );
 
     return (
-        <SignInDialogTrigger
+        <AuthDialogTrigger
             renderTrigger={renderTrigger}
         />
     )

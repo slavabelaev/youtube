@@ -5,7 +5,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import SignUpForm from "../forms/SignUpForm";
 import RecoveryForm from "../forms/RecoveryForm";
 
-export interface SignInDialogTriggerProps {
+export interface AuthDialogTriggerProps {
     renderTrigger: DialogTriggerProps['renderTrigger'];
 }
 
@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     }
 }));
 
-function SignInDialogTrigger({
+function AuthDialogTrigger({
     renderTrigger
-}: SignInDialogTriggerProps) {
+}: AuthDialogTriggerProps) {
     const classes = useStyles();
 
     const signInView = (
@@ -56,4 +56,4 @@ function SignInDialogTrigger({
     )
 }
 
-export default SignInDialogTrigger;
+export default AuthDialogTrigger;
