@@ -58,7 +58,7 @@ export function SignUpForm(props: SignUpFormProps) {
                 <PersonIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-                Создайте аккаунт
+                Create an account
             </Typography>
             <form className={classes.form} noValidate>
                 <Grid container spacing={2}>
@@ -69,7 +69,7 @@ export function SignUpForm(props: SignUpFormProps) {
                             variant="outlined"
                             fullWidth
                             id="firstName"
-                            label="Имя"
+                            label="Name"
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -77,7 +77,7 @@ export function SignUpForm(props: SignUpFormProps) {
                             variant="outlined"
                             fullWidth
                             id="lastName"
-                            label="Фамилия"
+                            label="Surname"
                             name="lastName"
                             autoComplete="lastName"
                         />
@@ -87,7 +87,7 @@ export function SignUpForm(props: SignUpFormProps) {
                             variant="outlined"
                             fullWidth
                             id="email"
-                            label="Телефон или адрес эл. почты"
+                            label="Phone or email"
                             name="email"
                             autoComplete="email"
                         />
@@ -98,7 +98,7 @@ export function SignUpForm(props: SignUpFormProps) {
                             fullWidth
                             variant="outlined"
                             type={showPassword ? 'text' : 'password'}
-                            label="Пароль"
+                            label="Password"
                             autoComplete="current-password"
                             InputProps={{
                                 endAdornment: (
@@ -111,7 +111,7 @@ export function SignUpForm(props: SignUpFormProps) {
                                         >
                                             <Tooltip
                                                 placement="left"
-                                                title={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+                                                title={showPassword ? 'Hide password' : 'Show password'}
                                             >
                                                 {showPassword ? <Visibility /> : <VisibilityOff />}
                                             </Tooltip>
@@ -124,7 +124,7 @@ export function SignUpForm(props: SignUpFormProps) {
                     <Grid item xs={12}>
                         <FormControlLabel
                             control={<Checkbox value="allowExtraEmails" color="primary" />}
-                            label="Я хочу получать уведомления и новости"
+                            label="I want to receive notifications and news"
                         />
                     </Grid>
                     <Grid item xs={6}>
@@ -132,7 +132,7 @@ export function SignUpForm(props: SignUpFormProps) {
                             color="primary"
                             onClick={handleSignIn}
                         >
-                            Войти
+                            Sign In
                         </Button>
                     </Grid>
                     <Grid item xs={6} component={Box} display="flex" justifyContent="flex-end">
@@ -141,7 +141,7 @@ export function SignUpForm(props: SignUpFormProps) {
                             variant="contained"
                             color="primary"
                         >
-                            Создать
+                            Create
                         </Button>
                     </Grid>
                 </Grid>

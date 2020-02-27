@@ -83,13 +83,13 @@ export function SignInForm(props: SignInFormProps) {
                 component="h1"
                 variant="h5"
             >
-                Вход
+                Sign In
             </Typography>
             <Typography
                 component="p"
                 variant="subtitle1"
             >
-                Используйте свой аккаунт
+                Use your account
             </Typography>
             <form noValidate className={classes.form}>
                 <Grid container spacing={2}>
@@ -98,7 +98,7 @@ export function SignInForm(props: SignInFormProps) {
                             variant="outlined"
                             fullWidth
                             id="login"
-                            label="Телефон или адрес эл. почты"
+                            label="Phone or email"
                             name="login"
                             autoComplete="login"
                             value={values.login}
@@ -111,7 +111,7 @@ export function SignInForm(props: SignInFormProps) {
                             fullWidth
                             variant="outlined"
                             type={showPassword ? 'text' : 'password'}
-                            label="Пароль"
+                            label="Password"
                             autoComplete="current-password"
                             value={values.password}
                             onChange={handleChange('password')}
@@ -126,7 +126,7 @@ export function SignInForm(props: SignInFormProps) {
                                         >
                                             <Tooltip
                                                 placement="left"
-                                                title={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+                                                title={showPassword ? 'Hide password' : 'Show password'}
                                             >
                                                 {showPassword ? <Visibility /> : <VisibilityOff />}
                                             </Tooltip>
@@ -142,7 +142,7 @@ export function SignInForm(props: SignInFormProps) {
                             onClick={handleRecovery}
                         >
                             <SettingsBackupRestoreIcon />
-                            Забыли пароль?
+                            Forgot your password?
                         </StyledLink>
                     </Grid>
                     <Grid item xs={6}>
@@ -150,7 +150,7 @@ export function SignInForm(props: SignInFormProps) {
                             color="primary"
                             onClick={handleSignUp}
                         >
-                            Создать аккаунт
+                            Create an account
                         </Button>
                     </Grid>
                     <Grid item xs={6} component={Box} display="flex" justify="flex-end">
@@ -159,7 +159,7 @@ export function SignInForm(props: SignInFormProps) {
                             variant="contained"
                             color="primary"
                         >
-                            Войти
+                            Login to account
                         </Button>
                     </Grid>
                 </Grid>

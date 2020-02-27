@@ -60,14 +60,14 @@ export function RecoveryForm(props: RecoveryFormProps) {
                 component="h1"
                 variant="h5"
             >
-                Восстановление доступа
+                Access recovery
             </Typography>
             <Typography
                 component="p"
                 variant="subtitle1"
                 className={classes.description}
             >
-                Укажите данные указанные при регистрации
+                Enter the data specified during registration
             </Typography>
             <form noValidate className={classes.form}>
                 <Grid container spacing={2}>
@@ -76,7 +76,7 @@ export function RecoveryForm(props: RecoveryFormProps) {
                             variant="outlined"
                             fullWidth
                             id="login"
-                            label="Телефон или адрес эл. почты"
+                            label="Phone or email"
                             name="login"
                             autoComplete="login"
                             value={values.login}
@@ -88,7 +88,7 @@ export function RecoveryForm(props: RecoveryFormProps) {
                             color="primary"
                             onClick={handleSignIn}
                         >
-                            Войти
+                            Sign In
                         </Button>
                     </Grid>
                     <Grid item xs={6} component={Box} display="flex" justify="flex-end">
@@ -97,7 +97,7 @@ export function RecoveryForm(props: RecoveryFormProps) {
                             variant="contained"
                             color="primary"
                         >
-                            Подтвердить
+                            Confirm
                         </Button>
                     </Grid>
                 </Grid>
