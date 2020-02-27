@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[43],{519:function(t,e,n){"use strict";n.r(e);var a=n(0),o=n.n(a),c=n(69),r=n(112),i=n(89),s=Object(c.a)((function(t){return Object(r.a)({root:{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"calc(100vh - ".concat(t.mixins.toolbar.minHeight,"px)")}})}));e.default=function(){var t=s();return o.a.createElement("div",{className:t.root},o.a.createElement(i.a,{variant:"h3",component:"h1"},"Page Not Found"))}}}]);
+//# sourceMappingURL=43.70152498.chunk.js.map
